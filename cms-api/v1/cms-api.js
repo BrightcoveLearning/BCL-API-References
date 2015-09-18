@@ -2,7 +2,7 @@
  * @api {get} /accounts/:account_id/videos Get Videos
  * @apiName Get Videos
  * @apiGroup Video
- * @apiVersion 0.1.0
+ * @apiVersion 1.0.0
  *
  * @apiDescription Gets a page of video objects
  * for the account
@@ -101,11 +101,12 @@
  *
  */
 
+
 /**
  * @api {post} /accounts/:account_id/videos Create Video
  * @apiName Create Video
  * @apiGroup Video
- * @apiVersion 0.1.0
+ * @apiVersion 1.0.0
  *
  * @apiDescription Create a new video object in the account
  * this does not ingest a video file - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion
@@ -191,11 +192,12 @@
  *
  */
 
+
  /**
  * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID
- * @apiName Get Video ID
+ * @apiName Get Video by ID
  * @apiGroup Video
- * @apiVersion 0.1.0
+ * @apiVersion 1.0.0
  *
  * @apiDescription Gets a video objects
  * for the account
@@ -283,11 +285,12 @@
  *     ]
  */
 
+
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id Update Video
  * @apiName Update Video
  * @apiGroup Video
- * @apiVersion 0.1.0
+ * @apiVersion 1.0.0
  *
  * @apiDescription Update a new video object in the account
  * *note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion*
@@ -304,6 +307,12 @@
  * @apiParam (Request Body Fields) {string="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
  * @apiParam (Request Body Fields) {string[]} [tags="[]"] array of tags
  * @apiParam (Request Body Fields) {object} [custom_fields={}] map of fieldname-value pairs
+ * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
+ * @apiParam (Request Body Fields) {string} [cue_points.name] cue point name
+ * @apiParam (Request Body Fields) {string="AD","CODE"} [cue_points.type=AD] cue point type
+ * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
+ * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
+ * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
  * @apiParam (Request Body Fields) {object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {string[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
  * @apiParam (Request Body Fields) {boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
