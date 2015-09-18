@@ -299,6 +299,7 @@
  * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID.
  *
  * @apiParam (Request Body Fields) {string} name video title
  * @apiParam (Request Body Fields) {string} [description] video short description
