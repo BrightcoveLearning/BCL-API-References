@@ -310,13 +310,14 @@
  * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
  * @apiParam (Request Body Fields) {string} [cue_points.name] cue point name
  * @apiParam (Request Body Fields) {string="AD","CODE"} [cue_points.type=AD] cue point type
- * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
- * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
- * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
+ * @apiParam (Request Body Fields) {number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiParam (Request Body Fields) {string} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
+ * @apiParam (Request Body Fields) {boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
  * @apiParam (Request Body Fields) {object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {string[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
  * @apiParam (Request Body Fields) {boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
  * @apiParam (Request Body Fields) {boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
+ * @apiParam (Request Body Fields) {object} [link={}] map of scheduling properties
  * @apiParam (Request Body Fields) {object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {dateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {dateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
