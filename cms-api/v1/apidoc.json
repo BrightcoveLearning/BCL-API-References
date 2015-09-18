@@ -1,0 +1,7 @@
+{
+    "name": "CMS API",
+    "version": "0.1.0",
+    "description": "Reference for the Brightcove CMS API, used to access and manage your Video Cloud media library.",
+    "title": "CMS API Reference",
+    "url" : "https://cms.api.brightcove.com/v1"
+}
