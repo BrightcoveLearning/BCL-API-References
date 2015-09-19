@@ -603,6 +603,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  */
 
 // update video
@@ -696,7 +697,8 @@
  *        ],
  *        "text_tracks": [],
  *        "updated_at": "2015-09-18T15:59:23.764Z"
- *    } *
+ *    }
+ *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
