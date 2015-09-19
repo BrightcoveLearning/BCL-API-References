@@ -16,7 +16,7 @@
  *
  * @apiparam (URL Parameters) {number} [limit=10] number of videos to return
  * @apiparam (URL Parameters) {number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {string} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiparam (URL Parameters) {string} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {string} Search Example:
@@ -746,5 +746,126 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ */
+
+// get playlists
+
+/**
+ * @api {get} /accounts/:account_id/playlists Get Playlists
+ * @apiName Get Playlists
+ * @apiGroup Playlist
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a page of playlist objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ *
+ * @apiparam (URL Parameters) {number} [limit=10] number of videos to return
+ * @apiparam (URL Parameters) {number} [offset=0] number of videos to skip in the response
+ * @apiparam (URL Parameters) {string} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
+ * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ *
+ * @apiParamExample {string} Search Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *    [
+ *        {
+ *            "account_id": "1752604059001",
+ *            "created_at": "2015-08-31T15:57:34.885Z",
+ *            "description": null,
+ *            "favorite": true,
+ *            "id": "4452341376001",
+ *            "name": "OutLearn Demo Playlist",
+ *            "reference_id": null,
+ *            "type": "EXPLICIT",
+ *            "updated_at": "2015-08-31T15:57:52.437Z",
+ *            "video_ids": [
+ *                "4454723119001",
+ *                "4454629913001",
+ *                "4454629914001",
+ *                "4454620115001",
+ *                "4454620114001",
+ *                "4454620113001",
+ *                "4454620112001"
+ *            ]
+ *        },
+ *        {
+ *            "account_id": "1752604059001",
+ *            "created_at": "2012-12-10T19:58:26.710Z",
+ *            "description": null,
+ *            "favorite": false,
+ *            "id": "2025881886001",
+ *            "limit": 30,
+ *            "name": "node7707 Playlist",
+ *            "reference_id": null,
+ *            "search": "+tags:\"node7704\"",
+ *            "type": "ACTIVATED_NEWEST_TO_OLDEST",
+ *            "updated_at": "2012-12-10T19:58:26.738Z"
+ *        }
+ *    ] *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
+
+// get video count
+
+/**
+ * @api {get} /accounts/:account_id/counts/videos Get Video Count
+ * @apiName Get Video Count
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a page of video objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ *
+ * @apiparam (URL Parameters) {string} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ *
+ * @apiParamExample {string} Search Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *         "count": 2678
+ *     }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
  */
 
