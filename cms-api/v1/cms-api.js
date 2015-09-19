@@ -319,6 +319,8 @@
  * @apiParam (Request Body Fields) {boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
  * @apiParam (Request Body Fields) {boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
  * @apiParam (Request Body Fields) {object} [link={}] map of scheduling properties
+ * @apiParam (Request Body Fields) {string} [link.text] text for the link
+ * @apiParam (Request Body Fields) {string} [link.url] URL for the link
  * @apiParam (Request Body Fields) {object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {dateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {dateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
