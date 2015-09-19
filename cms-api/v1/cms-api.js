@@ -324,8 +324,15 @@
  * @apiParam (Request Body Fields) {object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {dateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {dateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {object[]} [text_tracks="[]"] array of text track maps
+ * @apiParam (Request Body Fields) {string} text_tracks.src="" URL for the .vtt file
+ * @apiParam (Request Body Fields) {string="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
+ * @apiParam (Request Body Fields) {string} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
+ * @apiParam (Request Body Fields) {string} [text_tracks.mime_type=""] mime-type for the track
+ * @apiParam (Request Body Fields) {string} [text_tracks.label=""] label for the track
+ * @apiParam (Request Body Fields) {boolean} [text_tracks.default=false] whether this is the default track
  *
- * @apiParamExample {json} Create Video Example:
+ * @apiParamExample {json} Update Video Example:
  *     {
  *         "name": "Moose Herd",
  *         "description": "Herd of moose grazing",
