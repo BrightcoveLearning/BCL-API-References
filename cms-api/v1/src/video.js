@@ -665,40 +665,43 @@
  *         ],
  *         "custom_fields": {
  *             "topic": "wildlife",
- *             "subtopic": "mammals"
+ *             "subtopic": "mam
+ *             mals"
  *         }
  *     }
  *
+ * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {String} [description] video short description
- * @apiSuccess (Response Fields) {String} [long_description] video long description
- * @apiSuccess (Response Fields) {String} [reference_id] video reference-id (must be unique within the account)
- * @apiSuccess (Response Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
- * @apiSuccess (Response Fields) {String[]} [tags="[]"] array of tags
- * @apiSuccess (Response Fields) {Object} [custom_fields={}] map of fieldname-value pairs
- * @apiSuccess (Response Fields) {Object[]} [cue_points="[]"] array of cue point maps
- * @apiSuccess (Response Fields) {String} [cue_points.name] cue point name
- * @apiSuccess (Response Fields) {String="AD","CODE"} [cue_points.type=AD] cue point type
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {String} description video short description
+ * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
+ * @apiSuccess (Response Fields) {String} cue_points.name cue point name
+ * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess (Response Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
- * @apiSuccess (Response Fields) {Object} [geo={}] map of geo-filtering properties
- * @apiSuccess (Response Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
- * @apiSuccess (Response Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
- * @apiSuccess (Response Fields) {Object} [link={}] map of scheduling properties
- * @apiSuccess (Response Fields) {String} [link.text] text for the link
- * @apiSuccess (Response Fields) {String} [link.url] URL for the link
- * @apiSuccess (Response Fields) {Object} [schedule={}] map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {Object[]} [text_tracks="[]"] array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src="" URL for the .vtt file
- * @apiSuccess (Response Fields) {String="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
- * @apiSuccess (Response Fields) {String} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} [text_tracks.mime_type=""] mime-type for the track
- * @apiSuccess (Response Fields) {String} [text_tracks.label=""] label for the track
- * @apiSuccess (Response Fields) {Boolean} [text_tracks.default=false] whether this is the default track
+ * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} link map of scheduling properties
+ * @apiSuccess (Response Fields) {String} link.text text for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
+ * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
+ * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
+ * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  *
  *
  * @apiSuccessExample {json} Success Response:
@@ -752,8 +755,8 @@
 // delete video
 
  /**
- * @api {delete} /accounts/:account_id/videos/:video_id Delete Video by ID or Reference ID
- * @apiName Delete Video by ID or Reference ID
+ * @api {delete} /accounts/:account_id/videos/:video_id Delete Video
+ * @apiName Delete Video
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
@@ -779,126 +782,5 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
- */
-
-// get playlists
-
-/**
- * @api {get} /accounts/:account_id/playlists Get Playlists
- * @apiName Get Playlists
- * @apiGroup Playlist
- * @apiVersion 1.0.0
- *
- * @apiDescription Gets a page of playlist objects
- * for the account
- *
- * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
- *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
- *
- * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
- * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
- * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
- *
- * @apiParamExample {String} Search Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
- *
- * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
- *    [
- *        {
- *            "account_id": "1752604059001",
- *            "created_at": "2015-08-31T15:57:34.885Z",
- *            "description": null,
- *            "favorite": true,
- *            "id": "4452341376001",
- *            "name": "OutLearn Demo Playlist",
- *            "reference_id": null,
- *            "type": "EXPLICIT",
- *            "updated_at": "2015-08-31T15:57:52.437Z",
- *            "video_ids": [
- *                "4454723119001",
- *                "4454629913001",
- *                "4454629914001",
- *                "4454620115001",
- *                "4454620114001",
- *                "4454620113001",
- *                "4454620112001"
- *            ]
- *        },
- *        {
- *            "account_id": "1752604059001",
- *            "created_at": "2012-12-10T19:58:26.710Z",
- *            "description": null,
- *            "favorite": false,
- *            "id": "2025881886001",
- *            "limit": 30,
- *            "name": "node7707 Playlist",
- *            "reference_id": null,
- *            "search": "+tags:\"node7704\"",
- *            "type": "ACTIVATED_NEWEST_TO_OLDEST",
- *            "updated_at": "2012-12-10T19:58:26.738Z"
- *        }
- *    ] *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
- *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
- *
- *
- */
-
-// get video count
-
-/**
- * @api {get} /accounts/:account_id/counts/videos Get Video Count
- * @apiName Get Video Count
- * @apiGroup Video
- * @apiVersion 1.0.0
- *
- * @apiDescription Gets a page of video objects
- * for the account
- *
- * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
- *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
- *
- * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
- *
- * @apiParamExample {String} Search Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
- *
- * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
- *     {
- *         "count": 2678
- *     }
- *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
- *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
- *
- *
  */
 
