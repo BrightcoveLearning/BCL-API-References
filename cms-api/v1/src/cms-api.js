@@ -248,7 +248,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a video objects
+ * @apiDescription Gets a video object
  * for the account
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
@@ -340,7 +340,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a video objects
+ * @apiDescription Gets an array of sources (renditions) for a video
  * for the account
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
@@ -461,7 +461,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a video objects
+ * @apiDescription Gets the images for a video
  * for the account
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
@@ -513,7 +513,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a video objects
+ * @apiDescription Gets the stored digital master for a video, if any
  * for the account
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
@@ -567,6 +567,44 @@
  *     ]
  */
 
+// get digital master
+
+ /**
+ * @api {get} /accounts/:account_id/videos/:video_id/references Get Playlists by Video or Reference ID
+ * @apiName Get Playlists by Video or Reference ID
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets an array of Manual (EXPLICIT) playlists that contain a video object
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *    {
+ *        "playlists": [
+ *            "4452341376001",
+ *            "7894341376001"
+ *        ]
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ */
+
 // update video
 
 /**
@@ -575,7 +613,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Update a new video object in the account
+ * @apiDescription Update a video's metadata
  * _note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
@@ -684,7 +722,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a video objects
+ * @apiDescription Deletes a video
  * for the account
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
