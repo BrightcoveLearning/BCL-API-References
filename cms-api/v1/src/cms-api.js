@@ -1,3 +1,5 @@
+// get videos
+
 /**
  * @api {get} /accounts/:account_id/videos Get Videos
  * @apiName Get Videos
@@ -101,6 +103,8 @@
  *
  */
 
+// get video count
+
 /**
  * @api {get} /accounts/:account_id/counts/videos Get Video Count
  * @apiName Get Video Count
@@ -143,6 +147,7 @@
  *
  */
 
+// create video
 
 /**
  * @api {post} /accounts/:account_id/videos Create Video
@@ -235,6 +240,7 @@
  *
  */
 
+// get video by id
 
  /**
  * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID or Reference ID
@@ -326,8 +332,10 @@
  *     ]
  */
 
+// get sources
+
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/source Get Sources by Video or Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/sources Get Sources by Video or Reference ID
  * @apiName Get Sources by Video or Reference ID
  * @apiGroup Video
  * @apiVersion 1.0.0
@@ -445,6 +453,8 @@
  *     ]
  */
 
+// get images
+
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/images Get Images by Video or Reference ID
  * @apiName Get Images by Video or Reference ID
@@ -494,6 +504,8 @@
  *         }
  *     ]
  */
+
+// get digital master
 
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master by Video or Reference ID
@@ -555,7 +567,7 @@
  *     ]
  */
 
-
+// update video
 
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id Update Video
@@ -663,6 +675,8 @@
  *
  *
  */
+
+// delete video
 
  /**
  * @api {delete} /accounts/:account_id/videos/:video_id Delete Video by ID or Reference ID
