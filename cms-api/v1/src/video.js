@@ -22,6 +22,44 @@
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
+ * @apiSuccess (Response Fields) {String} id video id
+ * @apiSuccess (Response Fields) {String} name video title
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
+ * @apiSuccess (Response Fields) {String} cue_points.name cue point name
+ * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
+ * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (Response Fields) {String} description video short description
+ * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} link map of scheduling properties
+ * @apiSuccess (Response Fields) {String} link.text text for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
+ * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
+ * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
+ * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
  *     [
@@ -192,6 +230,45 @@
  *             "subtopic": "mammals"
  *         }
  *     }
+ *
+ * @apiSuccess (Response Fields) {String} id video id
+ * @apiSuccess (Response Fields) {String} name video title
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
+ * @apiSuccess (Response Fields) {String} cue_points.name cue point name
+ * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
+ * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (Response Fields) {String} description video short description
+ * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} link map of scheduling properties
+ * @apiSuccess (Response Fields) {String} link.text text for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
+ * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
+ * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
+ * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 201 Created
  *    {
@@ -256,6 +333,44 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
+ *
+ * @apiSuccess (Response Fields) {String} id video id
+ * @apiSuccess (Response Fields) {String} name video title
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {DateString} created_at when the video was created
+ * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
+ * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
+ * @apiSuccess (Response Fields) {String} cue_points.name cue point name
+ * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
+ * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
+ * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (Response Fields) {String} description video short description
+ * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
+ * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
+ * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} link map of scheduling properties
+ * @apiSuccess (Response Fields) {String} link.text text for the link
+ * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
+ * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
+ * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
+ * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
+ * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
+ * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
+ * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -673,11 +788,7 @@
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
  * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
- * @apiSuccess (Response Fields) {String} description video short description
- * @apiSuccess (Response Fields) {String} long_description video long description
- * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
- * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
  * @apiSuccess (Response Fields) {String} cue_points.name cue point name
@@ -685,6 +796,10 @@
  * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
  * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
  * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
+ * @apiSuccess (Response Fields) {String} description video short description
+ * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
+ * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
@@ -692,9 +807,13 @@
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
  * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
@@ -702,6 +821,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  *
  * @apiSuccessExample {json} Success Response:
