@@ -237,8 +237,8 @@
 
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID
- * @apiName Get Video by ID
+ * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID or Reference ID
+ * @apiName Get Video by ID or Reference ID
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
@@ -249,7 +249,7 @@
  * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -329,8 +329,8 @@
  */
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/source Get Video Sources by ID
- * @apiName Get Video Sources by ID
+ * @api {get} /accounts/:account_id/videos/:video_id/source Get Sources by Video or Reference ID
+ * @apiName Get Sources by Video or Reference ID
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
@@ -341,7 +341,7 @@
  * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -449,8 +449,8 @@
  */
 
  /**
- * @api {get} /accounts/:account_id/videos/ref:reference_id Get Video by Reference ID
- * @apiName Get Video by Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/source Get Images by Video or Reference ID
+ * @apiName Get Images by Video or Reference ID
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
@@ -461,71 +461,99 @@
  * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} reference_d Video Cloud video reference ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
- *     {
- *         "account_id": "1752604059001",
- *         "complete": true,
- *         "created_at": "2015-09-17T16:08:37.108Z",
- *         "cue_points": [],
- *         "custom_fields": {},
- *         "description": null,
- *         "digital_master_id": "4492154733001",
- *         "duration": 155573,
- *         "economics": "AD_SUPPORTED",
- *         "folder_id": null,
- *         "geo": null,
- *         "id": "4492075574001",
- *         "images": {
- *             "poster": {
- *                 "asset_id": "4492153571001",
- *                 "sources": [
- *                     {
- *                         "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492153571001_4492075574001-vs.jpg?pubId=1752604059001&videoId=4492075574001"
- *                     }
- *                 ],
- *                 "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492153571001_4492075574001-vs.jpg?pubId=1752604059001&videoId=4492075574001"
- *             },
- *             "thumbnail": {
- *                 "asset_id": "4492154714001",
- *                 "sources": [
- *                     {
- *                         "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492154714001_4492075574001-th.jpg?pubId=1752604059001&videoId=4492075574001"
- *                     }
- *                 ],
- *                 "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492154714001_4492075574001-th.jpg?pubId=1752604059001&videoId=4492075574001"
- *             }
- *         },
- *         "link": null,
- *         "long_description": null,
- *         "name": "sea_marvels.mp4",
- *         "reference_id": null,
- *         "schedule": null,
- *         "sharing": null,
- *         "state": "ACTIVE",
- *         "tags": [],
- *         "text_tracks": [
- *             {
- *                 "asset_id": "0cbd3425-8e94-46e6-9a10-a0d4491d4893",
- *                 "default": true,
- *                 "id": "c9001cee-d7f9-4b67-955c-9764cfc3d1f4",
- *                 "kind": "captions",
- *                 "label": null,
- *                 "mime_type": "text/vtt",
- *                 "sources": [
- *                     {
- *                         "src": "https://bcsecure01-a.akamaihd.net/3/1752604059001/201509/3164/1752604059001_0cbd3425-8e94-46e6-9a10-a0d4491d4893_intro-vcs.vtt?pubId=1752604059001&videoId=4492075574001"
- *                     }
- *                 ],
- *                 "src": "https://bcsecure01-a.akamaihd.net/3/1752604059001/201509/3164/1752604059001_0cbd3425-8e94-46e6-9a10-a0d4491d4893_intro-vcs.vtt?pubId=1752604059001&videoId=4492075574001",
- *                 "srclang": "en"
- *             }
- *         ],
- *         "updated_at": "2015-09-17T17:41:20.782Z"
- *     }
- *
+ *    [
+ *        {
+ *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
+ *            "asset_id": "4492154718001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 454000,
+ *            "height": 270,
+ *            "size": 8897044,
+ *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154718001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
+ *            "uploaded_at": "2015-09-17T16:09:25.136Z",
+ *            "width": 480
+ *        },
+ *        {
+ *            "asset_id": "4492154718001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 454000,
+ *            "height": 270,
+ *            "size": 8897044,
+ *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154718001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
+ *            "uploaded_at": "2015-09-17T16:09:25.136Z",
+ *            "width": 480
+ *        },
+ *        {
+ *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
+ *            "asset_id": "4492154738001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 907000,
+ *            "height": 360,
+ *            "size": 17723314,
+ *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154738001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
+ *            "uploaded_at": "2015-09-17T16:09:30.719Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "asset_id": "4492154738001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 907000,
+ *            "height": 360,
+ *            "size": 17723314,
+ *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154738001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
+ *            "uploaded_at": "2015-09-17T16:09:30.719Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
+ *            "asset_id": "4492154767001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 1717000,
+ *            "height": 360,
+ *            "size": 33469559,
+ *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154767001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
+ *            "uploaded_at": "2015-09-17T16:09:41.433Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "asset_id": "4492154767001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 1717000,
+ *            "height": 360,
+ *            "size": 33469559,
+ *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154767001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
+ *            "uploaded_at": "2015-09-17T16:09:41.433Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "codec": "H264",
+ *            "container": "M2TS",
+ *            "src": "http://c.brightcove.com/services/mobile/streaming/ *    index/master. *    m3u8?videoId=4492075574001&pubId=1752604059001",
+ *            "type": "application/x-mpegURL"
+ *        },
+ *        {
+ *            "codec": "H264",
+ *            "container": "M2TS",
+ *            "src": "https://secure.brightcove.com/services/mobile/ *    streaming/index/master.m3u8?videoId=4492075574001&pubId=17 *    52604059001&secure=true",
+ *            "type": "application/x-mpegURL"
+ *        }
+ *    ] *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
@@ -539,6 +567,7 @@
  *         }
  *     ]
  */
+
 
 
 /**
