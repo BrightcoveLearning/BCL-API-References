@@ -101,6 +101,48 @@
  *
  */
 
+/**
+ * @api {get} /accounts/:account_id/counts/videos Get Video Count
+ * @apiName Get Video Count
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a page of video objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ *
+ * @apiparam (URL Parameters) {string} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ *
+ * @apiParamExample {string} Search Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *         "count": 2678
+ *     }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
+
 
 /**
  * @api {post} /accounts/:account_id/videos Create Video
@@ -272,6 +314,126 @@
  *         "updated_at": "2015-09-17T17:41:20.782Z"
  *     }
  *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ */
+
+ /**
+ * @api {get} /accounts/:account_id/videos/:video_id/source Get Video Sources by ID
+ * @apiName Get Video Sources by ID
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a video objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID.
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *    [
+ *        {
+ *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
+ *            "asset_id": "4492154718001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 454000,
+ *            "height": 270,
+ *            "size": 8897044,
+ *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154718001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
+ *            "uploaded_at": "2015-09-17T16:09:25.136Z",
+ *            "width": 480
+ *        },
+ *        {
+ *            "asset_id": "4492154718001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 454000,
+ *            "height": 270,
+ *            "size": 8897044,
+ *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154718001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
+ *            "uploaded_at": "2015-09-17T16:09:25.136Z",
+ *            "width": 480
+ *        },
+ *        {
+ *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
+ *            "asset_id": "4492154738001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 907000,
+ *            "height": 360,
+ *            "size": 17723314,
+ *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154738001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
+ *            "uploaded_at": "2015-09-17T16:09:30.719Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "asset_id": "4492154738001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 907000,
+ *            "height": 360,
+ *            "size": 17723314,
+ *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154738001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
+ *            "uploaded_at": "2015-09-17T16:09:30.719Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
+ *            "asset_id": "4492154767001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 1717000,
+ *            "height": 360,
+ *            "size": 33469559,
+ *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154767001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
+ *            "uploaded_at": "2015-09-17T16:09:41.433Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "asset_id": "4492154767001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 155573,
+ *            "encoding_rate": 1717000,
+ *            "height": 360,
+ *            "size": 33469559,
+ *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154767001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
+ *            "uploaded_at": "2015-09-17T16:09:41.433Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "codec": "H264",
+ *            "container": "M2TS",
+ *            "src": "http://c.brightcove.com/services/mobile/streaming/ *    index/master. *    m3u8?videoId=4492075574001&pubId=1752604059001",
+ *            "type": "application/x-mpegURL"
+ *        },
+ *        {
+ *            "codec": "H264",
+ *            "container": "M2TS",
+ *            "src": "https://secure.brightcove.com/services/mobile/ *    streaming/index/master.m3u8?videoId=4492075574001&pubId=17 *    52604059001&secure=true",
+ *            "type": "application/x-mpegURL"
+ *        }
+ *    ] *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
