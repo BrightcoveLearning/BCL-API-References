@@ -9,17 +9,17 @@
  * @apiDescription Gets a page of video objects
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
- * @apiparam (URL Parameters) {number} [limit=10] number of videos to return
- * @apiparam (URL Parameters) {number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {string} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
+ * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
+ * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {string} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccessExample {json} Success Response:
@@ -114,15 +114,15 @@
  * @apiDescription Gets a page of video objects
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
- * @apiparam (URL Parameters) {string} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {string} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccessExample {json} Success Response:
@@ -158,25 +158,25 @@
  * @apiDescription Create a new video object in the account.
  * _Note: this does not ingest a video file - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
- * @apiParam (Request Body Fields) {string} name video title
- * @apiParam (Request Body Fields) {string} [description] video short description
- * @apiParam (Request Body Fields) {string} [long_description] video long description
- * @apiParam (Request Body Fields) {string} [reference_id] video reference-id (must be unique within the account)
- * @apiParam (Request Body Fields) {string="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
- * @apiParam (Request Body Fields) {string[]} [tags="[]"] array of tags
- * @apiParam (Request Body Fields) {object} [custom_fields={}] map of fieldname-value pairs
- * @apiParam (Request Body Fields) {object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {string[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
- * @apiParam (Request Body Fields) {boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiParam (Request Body Fields) {boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
- * @apiParam (Request Body Fields) {object} [schedule={}] map of scheduling properties
- * @apiParam (Request Body Fields) {dateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {dateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {String} name video title
+ * @apiParam (Request Body Fields) {String} [description] video short description
+ * @apiParam (Request Body Fields) {String} [long_description] video long description
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
+ * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
+ * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
+ * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
+ * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
+ * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
+ * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
+ * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
+ * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  *
  * @apiParamExample {json} Create Video Example:
  *     {
@@ -251,11 +251,11 @@
  * @apiDescription Gets a video object
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -335,19 +335,19 @@
 // get sources
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/sources Get Sources by Video or Reference ID
- * @apiName Get Sources by Video or Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/sources Get Video Sources
+ * @apiName Get Video Sources
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an array of sources (renditions) for a video
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -456,19 +456,19 @@
 // get images
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/images Get Images by Video or Reference ID
- * @apiName Get Images by Video or Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/images Get Video Images
+ * @apiName Get Video Images
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the images for a video
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -508,19 +508,19 @@
 // get digital master
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master by Video or Reference ID
- * @apiName Get Digital Master by Video or Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master
+ * @apiName Get Digital Master
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the stored digital master for a video, if any
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader cms-api.js} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -578,11 +578,11 @@
  * @apiDescription Gets an array of Manual (EXPLICIT) playlists that contain a video object
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -617,42 +617,42 @@
  * @apiDescription Update a video's metadata
  * _note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID.
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
  *
- * @apiParam (Request Body Fields) {string} name video title
- * @apiParam (Request Body Fields) {string} [description] video short description
- * @apiParam (Request Body Fields) {string} [long_description] video long description
- * @apiParam (Request Body Fields) {string} [reference_id] video reference-id (must be unique within the account)
- * @apiParam (Request Body Fields) {string="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
- * @apiParam (Request Body Fields) {string[]} [tags="[]"] array of tags
- * @apiParam (Request Body Fields) {object} [custom_fields={}] map of fieldname-value pairs
- * @apiParam (Request Body Fields) {object[]} [cue_points="[]"] array of cue point maps
- * @apiParam (Request Body Fields) {string} [cue_points.name] cue point name
- * @apiParam (Request Body Fields) {string="AD","CODE"} [cue_points.type=AD] cue point type
- * @apiParam (Request Body Fields) {number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiParam (Request Body Fields) {string} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
- * @apiParam (Request Body Fields) {boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
- * @apiParam (Request Body Fields) {object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {string[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
- * @apiParam (Request Body Fields) {boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiParam (Request Body Fields) {boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
- * @apiParam (Request Body Fields) {object} [link={}] map of scheduling properties
- * @apiParam (Request Body Fields) {string} [link.text] text for the link
- * @apiParam (Request Body Fields) {string} [link.url] URL for the link
- * @apiParam (Request Body Fields) {object} [schedule={}] map of scheduling properties
- * @apiParam (Request Body Fields) {dateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {dateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {object[]} [text_tracks="[]"] array of text track maps
- * @apiParam (Request Body Fields) {string} text_tracks.src="" URL for the .vtt file
- * @apiParam (Request Body Fields) {string="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
- * @apiParam (Request Body Fields) {string} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
- * @apiParam (Request Body Fields) {string} [text_tracks.mime_type=""] mime-type for the track
- * @apiParam (Request Body Fields) {string} [text_tracks.label=""] label for the track
- * @apiParam (Request Body Fields) {boolean} [text_tracks.default=false] whether this is the default track
+ * @apiParam (Request Body Fields) {String} name video title
+ * @apiParam (Request Body Fields) {String} [description] video short description
+ * @apiParam (Request Body Fields) {String} [long_description] video long description
+ * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
+ * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
+ * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
+ * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
+ * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
+ * @apiParam (Request Body Fields) {String="AD","CODE"} [cue_points.type=AD] cue point type
+ * @apiParam (Request Body Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
+ * @apiParam (Request Body Fields) {String} [cue_points.metadata=null] optional metadata string (128 single-byte characters maximum)
+ * @apiParam (Request Body Fields) {Boolean} [cue_points.force-stop=false] whether video is force-stopped at the cue point
+ * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
+ * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
+ * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
+ * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
+ * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
+ * @apiParam (Request Body Fields) {String} [link.text] text for the link
+ * @apiParam (Request Body Fields) {String} [link.url] URL for the link
+ * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
+ * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {Object[]} [text_tracks="[]"] array of text track maps
+ * @apiParam (Request Body Fields) {String} text_tracks.src="" URL for the .vtt file
+ * @apiParam (Request Body Fields) {String="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
+ * @apiParam (Request Body Fields) {String} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
+ * @apiParam (Request Body Fields) {String} [text_tracks.mime_type=""] mime-type for the track
+ * @apiParam (Request Body Fields) {String} [text_tracks.label=""] label for the track
+ * @apiParam (Request Body Fields) {Boolean} [text_tracks.default=false] whether this is the default track
  *
  * @apiParamExample {json} Update Video Example:
  *     {
@@ -727,11 +727,11 @@
  * @apiDescription Deletes a video
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiSuccessExample {json} Success Response:
  *     HHTTP/1.1 204 No Content
@@ -759,17 +759,17 @@
  * @apiDescription Gets a page of playlist objects
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
- * @apiparam (URL Parameters) {number} [limit=10] number of videos to return
- * @apiparam (URL Parameters) {number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {string} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
- * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
+ * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
+ * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
+ * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {string} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccessExample {json} Success Response:
@@ -836,15 +836,15 @@
  * @apiDescription Gets a page of video objects
  * for the account
  *
- * @apiHeader {string} Content-Type Content-Type: application/json
- * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
- * @apiparam (URL Parameters) {string} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiparam (URL Parameters) {string} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {string} Search Example:
+ * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccessExample {json} Success Response:
