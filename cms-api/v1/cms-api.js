@@ -108,8 +108,8 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Create a new video object in the account
- * this does not ingest a video file - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion
+ * @apiDescription Create a new video object in the account.
+ * _Note: this does not ingest a video file - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
  * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -175,6 +175,7 @@
  *        "text_tracks": [],
  *        "updated_at": "2015-09-18T15:59:23.764Z"
  *    } *
+ *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
@@ -285,6 +286,98 @@
  *     ]
  */
 
+ /**
+ * @api {get} /accounts/:account_id/videos/ref:reference_id Get Video by Reference ID
+ * @apiName Get Video by Reference ID
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a video objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {number} reference_d Video Cloud video reference ID.
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *         "account_id": "1752604059001",
+ *         "complete": true,
+ *         "created_at": "2015-09-17T16:08:37.108Z",
+ *         "cue_points": [],
+ *         "custom_fields": {},
+ *         "description": null,
+ *         "digital_master_id": "4492154733001",
+ *         "duration": 155573,
+ *         "economics": "AD_SUPPORTED",
+ *         "folder_id": null,
+ *         "geo": null,
+ *         "id": "4492075574001",
+ *         "images": {
+ *             "poster": {
+ *                 "asset_id": "4492153571001",
+ *                 "sources": [
+ *                     {
+ *                         "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492153571001_4492075574001-vs.jpg?pubId=1752604059001&videoId=4492075574001"
+ *                     }
+ *                 ],
+ *                 "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492153571001_4492075574001-vs.jpg?pubId=1752604059001&videoId=4492075574001"
+ *             },
+ *             "thumbnail": {
+ *                 "asset_id": "4492154714001",
+ *                 "sources": [
+ *                     {
+ *                         "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492154714001_4492075574001-th.jpg?pubId=1752604059001&videoId=4492075574001"
+ *                     }
+ *                 ],
+ *                 "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/201509/3164/1752604059001_4492154714001_4492075574001-th.jpg?pubId=1752604059001&videoId=4492075574001"
+ *             }
+ *         },
+ *         "link": null,
+ *         "long_description": null,
+ *         "name": "sea_marvels.mp4",
+ *         "reference_id": null,
+ *         "schedule": null,
+ *         "sharing": null,
+ *         "state": "ACTIVE",
+ *         "tags": [],
+ *         "text_tracks": [
+ *             {
+ *                 "asset_id": "0cbd3425-8e94-46e6-9a10-a0d4491d4893",
+ *                 "default": true,
+ *                 "id": "c9001cee-d7f9-4b67-955c-9764cfc3d1f4",
+ *                 "kind": "captions",
+ *                 "label": null,
+ *                 "mime_type": "text/vtt",
+ *                 "sources": [
+ *                     {
+ *                         "src": "https://bcsecure01-a.akamaihd.net/3/1752604059001/201509/3164/1752604059001_0cbd3425-8e94-46e6-9a10-a0d4491d4893_intro-vcs.vtt?pubId=1752604059001&videoId=4492075574001"
+ *                     }
+ *                 ],
+ *                 "src": "https://bcsecure01-a.akamaihd.net/3/1752604059001/201509/3164/1752604059001_0cbd3425-8e94-46e6-9a10-a0d4491d4893_intro-vcs.vtt?pubId=1752604059001&videoId=4492075574001",
+ *                 "srclang": "en"
+ *             }
+ *         ],
+ *         "updated_at": "2015-09-17T17:41:20.782Z"
+ *     }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
+ * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ */
+
 
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id Update Video
@@ -293,7 +386,7 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Update a new video object in the account
- * *note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion*
+ * _note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
  *
  * @apiHeader {string} Content-Type Content-Type: application/json
  * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
