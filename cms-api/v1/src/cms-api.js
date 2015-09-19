@@ -316,8 +316,6 @@
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -437,8 +435,6 @@
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -450,7 +446,7 @@
  */
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/source Get Images by Video or Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/images Get Images by Video or Reference ID
  * @apiName Get Images by Video or Reference ID
  * @apiGroup Video
  * @apiVersion 1.0.0
@@ -489,8 +485,66 @@
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ */
+
+ /**
+ * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master by Video or Reference ID
+ * @apiName Get Digital Master by Video or Reference ID
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a video objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 200 OK
+ *    {
+ *        "account_id": "1752604059001",
+ *        "audio_only": false,
+ *        "cdn_origin_id": "",
+ *        "complete": true,
+ *        "controller_type": "DEFAULT",
+ *        "current_filename": "1752604059001_4492154733001_4492075574001 *    .mp4",
+ *        "drm": null,
+ *        "encoding_rate": 10130000,
+ *        "frame_height": 360,
+ *        "frame_width": 640,
+ *        "hds": null,
+ *        "hls": null,
+ *        "id": "4492154733001",
+ *        "name": "sea_marvels.mp4",
+ *        "preview_thumbnail_asset_id": "",
+ *        "progressive_download": true,
+ *        "reference_id": "",
+ *        "remote_stream_name": "",
+ *        "remote_url": "",
+ *        "sharded_directory": "",
+ *        "size": 398423279,
+ *        "type": "DIGITAL_MASTER",
+ *        "updated_at": "2015-09-17T16:09:53.122Z",
+ *        "uploaded_at": "2015-09-17T16:09:29.867Z",
+ *        "version": 1,
+ *        "video_codec": "H264",
+ *        "video_container": "MP4",
+ *        "video_duration": 155500
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -609,3 +663,34 @@
  *
  *
  */
+
+ /**
+ * @api {delete} /accounts/:account_id/videos/:video_id Delete Video by ID or Reference ID
+ * @apiName Delete Video by ID or Reference ID
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a video objects
+ * for the account
+ *
+ * @apiHeader {string} Content-Type Content-Type: application/json
+ * @apiHeader {string} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {number} video_id Video Cloud video ID (or `ref:reference_id`)
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HHTTP/1.1 204 No Content
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ */
+
