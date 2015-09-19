@@ -570,8 +570,8 @@
 // get digital master
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/references Get Playlists by Video or Reference ID
- * @apiName Get Playlists by Video or Reference ID
+ * @api {get} /accounts/:account_id/videos/:video_id/references Get Playlists for Video
+ * @apiName Get Playlists for Video
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
