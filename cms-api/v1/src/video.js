@@ -800,7 +800,7 @@
  *     ]
  */
 
-// get digital master
+// get playlist references
 
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/references Get Playlists for Video
@@ -817,6 +817,8 @@
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
+ * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
  *    {
@@ -825,6 +827,41 @@
  *            "7894341376001"
  *        ]
  *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// remove video from playlists
+
+ /**
+ * @api {delete} /accounts/:account_id/videos/:video_id/references Remove Video from all Playlists
+ * @apiName Remove Video from all Playlists
+ * @apiGroup Video
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Removes the video from all EXPLICIT playlists
+ * for the account
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
+ *
+ * @apiSuccessExample {json} Success Response:
+ *     HTTP/1.1 204 No Content
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
