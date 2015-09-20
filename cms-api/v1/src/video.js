@@ -718,6 +718,21 @@
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
+ * @apiSuccess (Response Field) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Field) {Boolean} audio_only whether this assest has an audio track only
+ * @apiSuccess (Response Field) {String} cdn_origin_id id on the origin CDN if any
+ * @apiSuccess (Response Field) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Field) {String} controller_type video controller type
+ * @apiSuccess (Response Field) {String} current_filename the file name
+ * @apiSuccess (Response Field) {Object} drm DRM licensing information
+ * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in kbps
+ * @apiSuccess (Response Field) {Number} frame_height frame height in pixels
+ * @apiSuccess (Response Field) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Field) {Object} hds HDS information
+ * @apiSuccess (Response Field) {Object} hls HLS information
+ * @apiSuccess (Response Field) {String} id the video id
+ * @apiSuccess (Response Field) {String} name the video title
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
  *    {
