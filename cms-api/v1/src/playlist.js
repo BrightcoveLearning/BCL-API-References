@@ -22,6 +22,18 @@
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
+ * @apiSuccess (Response Field) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Field) {DateString} created_at date/time created
+ * @apiSuccess (Response Field) {String} description playlist description
+ * @apiSuccess (Response Field) {Boolean} favorite whether playlist is in favorites list
+ * @apiSuccess (Response Field) {String} id the playlist id
+ * @apiSuccess (Response Field) {String} name the playlist name
+ * @apiSuccess (Response Field) {String} reference_id the playlist reference id
+ * @apiSuccess (Response Field) {String} type the playlist type: EXPLICIT or smart playlist type
+ * @apiSuccess (Response Field) {DateString} updated_at date/time last modified
+ * @apiSuccess (Response Field) {String[]} video_ids array of video ids (EXPLICIT playlists only)
+ * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
  *    [
@@ -96,6 +108,8 @@
  *
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+ *
+ * @apiSuccess (Response Field) {Number} count count of playlists found
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
