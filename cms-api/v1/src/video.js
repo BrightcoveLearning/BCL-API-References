@@ -272,7 +272,7 @@
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
  * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {String} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
@@ -381,7 +381,7 @@
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
  * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {String} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
@@ -838,7 +838,13 @@
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
  * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state=ACTIVE state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
+ * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
+ * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
+ * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
+ * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
+ * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
