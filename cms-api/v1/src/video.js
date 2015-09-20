@@ -732,6 +732,20 @@
  * @apiSuccess (Response Field) {Object} hls HLS information
  * @apiSuccess (Response Field) {String} id the video id
  * @apiSuccess (Response Field) {String} name the video title
+ * @apiSuccess (Response Field) {String} preview_thumbnail_asset_id thumbnail asset id
+ * @apiSuccess (Response Field) {Boolean} progressive_download whether available via progressive download
+ * @apiSuccess (Response Field) {String} reference_id reference id
+ * @apiSuccess (Response Field) {String} remote_stream_name for remote stream types
+ * @apiSuccess (Response Field) {String} remote_url for HTTP types
+ * @apiSuccess (Response Field) {String} sharded_directory
+ * @apiSuccess (Response Field) {Number} size in bytes
+ * @apiSuccess (Response Field) {String} type asset type
+ * @apiSuccess (Response Field) {DateString} update_at date/time last modified
+ * @apiSuccess (Response Field) {DateString} uploaded_at date/time added
+ * @apiSuccess (Response Field) {Number} version
+ * @apiSuccess (Response Field) {String} video_codec the video codec
+ * @apiSuccess (Response Field) {String} video_container the video container
+ * @apiSuccess (Response Field) {Number} video_duration in milliseconds
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
