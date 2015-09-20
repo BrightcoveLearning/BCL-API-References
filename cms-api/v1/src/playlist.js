@@ -149,6 +149,10 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
+ * @apiparam (Request Body Fields) {String} name playlist name
+ * @apiparam (Request Body Fields) {String} [description] playlist description
+ * @apiparam (Request Body Fields) {String} [reference_id] playlist reference id
+ * @apiparam (Request Body Fields) {String="EXPLICIT", "ACTIVATEDOLDESTTONEWEST", "ACTIVATEDNEWESTTOOLDEST", "ALPHABETICAL", "PLAYSTOTAL", "PLAYSTRAILINGWEEK", "STARTDATEOLDESTTONEWEST", "STARTDATENEWESTTO_OLDEST"} [type] of playlist
  * @apiparam (Request Body Fields) {Number} [limit] maximum number of videos to include (smart playlists only)
  * @apiparam (Request Body Fields) {Number} [offset=0] number of videos to skip in the response
  * @apiparam (Request Body Fields) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
