@@ -1,1 +1,32 @@
-{"description" : "My first bird playlist", "name" : "Bird Videos", "type" : "EXPLICIT, "video_ids" : ["123456789" , "987654321", 88777666"] }
+{"description" : "My new bird playlist", "name" : "Bird Videos", "type" : "EXPLICIT", "video_ids" : ["4084164751001" , "734484322001", "734462570001"] }
+https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
+
+
+
+ *    {
+ *        "description": "My new bird playlist",
+ *        "name": "Bird Videos",
+ *        "type": "EXPLICIT",
+ *        "video_ids": [
+ *            "4084164751001",
+ *            "734484322001",
+ *            "734462570001"
+ *        ]
+ *    }
+
+ *    {
+ *        "account_id": "57838016001",
+ *        "created_at": "2015-09-20T18:50:27.865Z",
+ *        "description": "My new bird playlist",
+ *        "favorite": false,
+ *        "id": "4492151631001",
+ *        "name": "Bird Videos",
+ *        "reference_id": null,
+ *        "type": "EXPLICIT",
+ *        "updated_at": "2015-09-20T18:50:27.865Z",
+ *        "video_ids": [
+ *            "4084164751001",
+ *            "734484322001",
+ *            "734462570001"
+ *        ]
+ *    }
