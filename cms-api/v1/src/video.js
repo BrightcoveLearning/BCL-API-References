@@ -46,7 +46,7 @@
  * @apiSuccess (Response Fields) {Object} poster map of poster properties
  * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {Object[]} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
@@ -258,6 +258,12 @@
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} images map of image maps
+ * @apiSuccess (Response Fields) {Object} poster map of poster properties
+ * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
@@ -361,6 +367,12 @@
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} images map of image maps
+ * @apiSuccess (Response Fields) {Object} poster map of poster properties
+ * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
@@ -812,6 +824,12 @@
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Object} images map of image maps
+ * @apiSuccess (Response Fields) {Object} poster map of poster properties
+ * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
