@@ -177,6 +177,8 @@
  * @apiParamExample {String} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
+ * @apiSuccess (Response Fields) {Number} count the count of videos found
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
  *     {
@@ -501,6 +503,20 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiSuccess (Response Field) {String} app_name address for RTMP stream
+ * @apiSuccess (Response Field) {String} asset_id system id for the rendition
+ * @apiSuccess (Response Field) {String} codec the video codec for the rendition
+ * @apiSuccess (Response Field) {String} container the video container for the rendition
+ * @apiSuccess (Response Field) {Number} duration duration in milliseconds
+ * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in kbps
+ * @apiSuccess (Response Field) {Number} height frame height in pixels
+ * @apiSuccess (Response Field) {Number} size file size in bytes
+ * @apiSuccess (Response Field) {String} src URL for HTTP rendition
+ * @apiSuccess (Response Field) {String} steam_name the stream name on the CDN
+ * @apiSuccess (Response Field) {String} type the type for segmented streams
+ * @apiSuccess (Response Field) {DateString} uploaded_at date/time when the video was uploaded
+ * @apiSuccess (Response Field) {Number} width frame width in pixels
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
