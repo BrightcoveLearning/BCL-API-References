@@ -43,11 +43,16 @@
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
  * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} poster map of poster properties
- * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
+ * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
@@ -267,11 +272,16 @@
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
  * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} poster map of poster properties
- * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
+ * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
@@ -382,11 +392,16 @@
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
  * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} poster map of poster properties
- * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
+ * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
@@ -639,6 +654,18 @@
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
+ * @apiSuccess (Response Fields) {Object} images map of image maps
+ * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
+ * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
+ *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
  *    {
@@ -859,11 +886,16 @@
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
  * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
  * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} poster map of poster properties
- * @apiSuccess (Response Fields) {String} poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
+ * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
+ * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
+ * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
+ * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {String} link.url URL for the link
