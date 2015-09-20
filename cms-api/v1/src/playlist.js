@@ -133,15 +133,15 @@
  *
  */
 
-// create playlist
+// updates playlist
 
 /**
- * @api {post} /accounts/:account_id/playlists Create a Playlist
- * @apiName Create a Playlist
+ * @api {patch} /accounts/:account_id/playlists/:playlist_id Update a Playlist
+ * @apiName Update a Playlist
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Create a new playlist
+ * @apiDescription Update a new playlist
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
@@ -149,7 +149,7 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  *
- * @apiparam (Request Body Fields) {Number} [limit=10] number of videos to return
+ * @apiparam (Request Body Fields) {Number} [limit] maximum number of videos to include (smart playlists only)
  * @apiparam (Request Body Fields) {Number} [offset=0] number of videos to skip in the response
  * @apiparam (Request Body Fields) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
  * @apiparam (Request Body Fields) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
