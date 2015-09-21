@@ -786,13 +786,12 @@
 // create playlist
 
 /**
- * @api {post} /accounts/:account_id/playlists Update a Playlist
- * @apiName Update a Playlist
+ * @api {post} /accounts/:account_id/playlists Create a Playlist
+ * @apiName Create a Playlist
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
  * @apiDescription Update a new playlist
- * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -818,7 +817,8 @@
  *            "734484322001",
  *            "734462570001"
  *        ]
- *    } *
+ *    }
+ *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
  * @apiSuccess (Response Field) {DateString} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description
