@@ -1,5 +1,5 @@
 {"description" : "My new bird playlist", "name" : "Bird Videos", "type" : "EXPLICIT", "video_ids" : ["4084164751001" , "734484322001", "734462570001"] }
-https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
+https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001/videos
 
 
 
