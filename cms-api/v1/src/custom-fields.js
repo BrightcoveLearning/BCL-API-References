@@ -3,7 +3,7 @@
 /**
  * @api {get} /accounts/:account_id/video_fields Get Custom Fields
  * @apiName Get Custom Fields
- * @apiGroup Video
+ * @apiGroup Custom Fields
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets list of custom fields for the account
