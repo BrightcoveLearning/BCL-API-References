@@ -3,7 +3,7 @@
 /**
  * @api {get} /accounts/:account_id/video_fields Get Folders
  * @apiName Get Folders
- * @apiGroup Custom Fields
+ * @apiGroup Folders
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets list of folders for the account
