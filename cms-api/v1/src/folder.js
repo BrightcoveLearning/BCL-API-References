@@ -17,13 +17,11 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} create_at date/time folder created
+ * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
+ * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
  * @apiSuccess (Response Fields) {String} id system id for the folder
  * @apiSuccess (Response Fields) {String} name folder name
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -33,29 +31,23 @@
  *            "created_at": "2015-09-21T17:09:51.375Z",
  *            "id": "560039dfe4b0471bef470c47",
  *            "name": "birds",
- *            "sort_name": "birds",
  *            "updated_at": "2015-09-21T17:11:23.839Z",
- *            "version": 30,
- *            "video_count": 0
+ *            "video_count": 17
  *        },
  *        {
  *            "account_id": "57838016001",
  *            "created_at": "2015-09-21T17:09:57.260Z",
  *            "id": "560039e5e4b0e69e4b01cacd",
  *            "name": "fish",
- *            "sort_name": "fish",
  *            "updated_at": "2015-09-21T17:12:08.955Z",
- *            "version": 38,
- *            "video_count": 0
+ *            "video_count": 12
  *        },
  *        {
  *            "account_id": "57838016001",
  *            "created_at": "2015-09-21T17:10:09.422Z",
  *            "id": "560039f1e4b0e69e4b01cad3",
  *            "name": "water",
- *            "sort_name": "water",
  *            "updated_at": "2015-09-21T17:12:09.037Z",
- *            "version": 26,
  *            "video_count": 26
  *        }
  *    ]
