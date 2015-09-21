@@ -867,7 +867,8 @@
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
+ * @apiParamExample {String} Get Video References Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 204 No Content
@@ -1070,6 +1071,9 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
+ *
+ * @apiParamExample {String} Get Video References Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 204 No Content
