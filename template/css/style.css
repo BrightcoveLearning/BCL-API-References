@@ -167,7 +167,7 @@ pre {
   background-color: #292b36;
   color: #ffffff;
   padding: 10px;
-  border-radius: 6px;
+  /*border-radius: 6px;*/
   position: relative;
   margin: 10px 0 20px 0;
 }
@@ -242,6 +242,7 @@ pre, pre.prettyprint {
     padding: .5rem;
     padding-left: 1rem;
     border-left: 5px solid rgb(99,99,99);
+    border-radius: 0;
     -webkit-box-shadow: 5px 5px 10px rgba(192, 192, 192, 1.000);
     -moz-box-shadow: 5px 5px 10px rgba(192, 192, 192, 1.000);
     box-shadow: 5px 5px 10px rgba(192, 192, 192, 1.000);
@@ -542,7 +543,7 @@ ul.nav-tabs {
     color: #000000;
     padding: 10px;
     border: #808080 1px solid;
-    border-radius: 6px;
+    /*border-radius: 6px;*/
     position: relative;
     margin: 10px 0 20px 0;
   }
