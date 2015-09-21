@@ -7,7 +7,6 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a page of video objects
- * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -171,8 +170,7 @@
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a page of video objects
- * for the account
+ * @apiDescription Gets count of videos for the account or a search
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -182,8 +180,8 @@
  * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {String} Search Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+ * @apiParamExample {String} Search Count Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/videos?q=tags:nature,name:nature
  *
  * @apiSuccess (Response Fields) {Number} count the count of videos found
  *
@@ -372,13 +370,15 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a video object
- * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
+ *
+ * @apiParamExample {String} Get Video Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
@@ -519,13 +519,15 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an array of sources (renditions) for a video
- * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiParamExample {String} Get Video Sources Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/sources
  *
  * @apiSuccess (Response Field) {String} app_name address for RTMP stream
  * @apiSuccess (Response Field) {String} asset_id system id for the rendition
@@ -654,13 +656,15 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the images for a video
- * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiParamExample {String} Get Video Images Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/images
  *
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
@@ -718,13 +722,15 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the stored digital master for a video, if any
- * for the account
  *
  * @apiHeader cms-api.js} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiParamExample {String} Get Video Digital MasterExample:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/digital_master
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
  * @apiSuccess (Response Field) {Boolean} audio_only whether this assest has an audio track only
@@ -816,6 +822,9 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
+ *
+ * @apiParamExample {String} Get Video References Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
  * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
  *
@@ -1055,7 +1064,6 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Deletes a video
- * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -1064,7 +1072,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
  *
  * @apiSuccessExample {json} Success Response:
- *     HHTTP/1.1 204 No Content
+ *     HTTP/1.1 204 No Content
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
