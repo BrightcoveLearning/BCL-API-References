@@ -16,22 +16,18 @@
  * @apiParamExample {String} Get Custom Fields Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
- * @apiSuccess (Response Fields) {Object[]} custom_fields array of custom field maps
- * @apiSuccess (Response Fields) {String} custom_fields.description description (instruction for user)
- * @apiSuccess (Response Fields) {String} custom_fields.display_name display name
- * @apiSuccess (Response Fields) {String[]} custom_fields.enum_values array of string values for select type fields
- * @apiSuccess (Response Fields) {String} custom_fields.id data name for the field (used to access it in searches, etc.)
- * @apiSuccess (Response Fields) {Boolean} custom_fields.required whether field must have a value before video can be active
- * @apiSuccess (Response Fields) {String} custom_fields.type custom field type (enum or string)
- * @apiSuccess (Response Fields) {String} max_custom_fields maximum number of custom fields for the account
- * @apiSuccess (Response Fields) {Object[]} standard_fields array of standard field maps
- * @apiSuccess (Response Fields) {String} standard_fields.description description (instruction for user)
- * @apiSuccess (Response Fields) {String} standard_fields.id data name for the field (used to access it in searches, etc.)
- * @apiSuccess (Response Fields) {Boolean} standard_fields.required whether field must have a value before video can be active
+ * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Fields) {DateString} create_at date/time folder created
+ * @apiSuccess (Response Fields) {String} id system id for the folder
+ * @apiSuccess (Response Fields) {String} name folder name
+ * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
+ * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
-*    [
+ *    [
  *        {
  *            "account_id": "57838016001",
  *            "created_at": "2015-09-21T17:09:51.375Z",
