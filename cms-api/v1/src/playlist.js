@@ -95,7 +95,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a page of playlist objects
+ * @apiDescription Gets a playlist object
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
@@ -103,11 +103,6 @@
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
- *
- * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
- * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
- * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {String} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001

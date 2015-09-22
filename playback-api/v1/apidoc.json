@@ -3,5 +3,6 @@
     "version": "1.0.0",
     "description": "Reference for the Brightcove Playback API, used for client-side access video and playlist information.",
     "title": "Playback API Reference",
+    "order": ["Video", "Playlist"],
     "url" : "https://edge.api.brightcove.com/playback/v1"
 }

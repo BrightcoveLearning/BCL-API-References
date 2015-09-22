@@ -19,7 +19,6 @@
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
@@ -171,7 +170,6 @@
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
@@ -287,7 +285,7 @@
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} FORBIDDEN 403: The asset cannot be retrieved because: 1) DOMAIN: the video is restricted from playing on the current domain; 2) CLIENT_IP: the video is restricted at the current IP address; 3) CLIENT_GEO: the video is restricted from playing in the current geo region
+ * @apiError (Error 4xx) {json} FORBIDDEN 403: The video cannot be retrieved because: 1) DOMAIN: the video is restricted from playing on the current domain; 2) CLIENT_IP: the video is restricted at the current IP address; 3) CLIENT_GEO: the video is restricted from playing in the current geo region
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
