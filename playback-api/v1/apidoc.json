@@ -1,7 +1,7 @@
 {
     "name": "Playback API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Playback API, used for client-side access video and playlist information.",
+    "description": "Reference for the Brightcove Playback API, used for client-side access video and playlist information. Note: customers using IP Restrictions and have whitelisted IPs that are outside of the US <strong>must</strong> use <code>https://edge-elb.api.brightcove.com/playback/v1</code> instead of the standard URL.",
     "title": "Playback API Reference",
     "order": ["Video", "Playlist"],
     "url" : "https://edge.api.brightcove.com/playback/v1"
