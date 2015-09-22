@@ -13,7 +13,33 @@ o = output folder (default is doc/ )
 f = file type to scan (include one or more -f flags; by default, .cs .dart .erl .go .java .js .php .py .rb .ts files are scanned)
 t = template folder
 
-## Params @apiparam
+## @api
+
+Sample:
+
+    @api {get} /accounts/:account_id/video_fields Get Folders
+
+"Get Folders" is the name that will appear in the sidenav
+
+Also put the name in the @apiName:
+
+    @apiName Get Folders
+
+I think the template should be using apiName to populate the sidenav - will try to fix that at some point
+
+## @apiGroup
+
+The api groups make up the main headings in the sidenav
+
+    @apiGroup Folders
+
+## @apiVersion
+
+The version of the API that first included this operation
+
+    @apiVersion 1.0.0
+
+## @apiparam
 
 - be sure to include group by type - I'm using groups:
     - `Path Parameters`
