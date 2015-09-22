@@ -832,7 +832,7 @@
  * @apiSuccess (Response Field) {String} search search string to retrieve the videos (smart playlists only)
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 201 Created
  *    {
  *        "account_id": "57838016001",
  *        "created_at": "2015-09-20T18:50:27.865Z",
