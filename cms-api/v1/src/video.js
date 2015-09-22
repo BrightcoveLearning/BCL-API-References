@@ -68,7 +68,7 @@
  * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
  * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
@@ -301,7 +301,7 @@
  * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
  * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
@@ -425,7 +425,7 @@
  * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
  * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
@@ -995,7 +995,7 @@
  * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
  * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String} tags array of tags
+ * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
