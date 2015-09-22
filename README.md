@@ -5,13 +5,26 @@
 - install: npm -g apidoc
 (there is also a grunt task - I haven't tried that)
 
-- run command (for standard file setup - see below):
-apidoc -i src/  -f .js -o doc/ -t ../../template
+## apidoc.json
 
-i = input folder
-o = output folder (default is doc/ )
-f = file type to scan (include one or more -f flags; by default, .cs .dart .erl .go .java .js .php .py .rb .ts files are scanned)
-t = template folder
+    {
+        "name": "CMS API",
+        "version": "1.0.0",
+        "description": "Reference for the Brightcove CMS API, used to access and manage your Video Cloud media library.",
+        "title": "CMS API Reference",
+        "url" : "https://cms.api.brightcove.com/v1"
+    }
+
+## Run
+
+- run command (for standard file setup):
+
+    apidoc -i src/  -f .js -o doc/ -t ../../template
+
+- i = input folder
+- o = output folder (default is doc/ )
+- f = file type to scan (include one or more -f flags; by default, .cs .dart .erl .go .java .js .php .py .rb .ts files are scanned)
+- t = template folder
 
 ## @api
 
