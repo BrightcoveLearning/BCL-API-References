@@ -21,7 +21,39 @@
  * @apiParam (Request Body Fields Full Format) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
  *
  * @apiParamExample {json} Create Policy Request Body Examples:
- *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999
+ *     // concise format
+ *     {
+ *         "account-id": "8523",
+ *         "allowed-domains": [
+ *             "http://www.safaribooksonline.com",
+ *             "https://secure.safaribooksonline.com"
+ *         ]
+ *     }
+ *     // full format
+ *     {
+ *          "policies": [
+ *              {
+ *                  "pattern": {
+ *                      "!=": [
+ *                          "[request.params.account-id]"
+ *                      ]
+ *                  },
+ *                  "effect": "deny"
+ *              },
+ *              {
+ *                  "pattern": {
+ *                      "not-contains?": [
+ *                          [
+ *                              "http://www.mysite.com",
+ *                              "https://secure.mysite.com"
+ *                          ],
+ *                          "[request.domain]"
+ *                      ]
+ *                  },
+ *                  "effect": "deny"
+ *              }
+ *          ]
+ *      }
  *
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
