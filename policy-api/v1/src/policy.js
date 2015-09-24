@@ -17,9 +17,10 @@
  * @apiParam (Request Body Fields Concise Format) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
  * @apiParam (Request Body Fields Full Format) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
  * @apiParam (Request Body Fields Full Format) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
- * @apiParam (Request Body Fields Full Format) {Object} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
+ * @apiParam (Request Body Fields Full Format) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
+ * @apiParam (Request Body Fields Full Format) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
  *
- * @apiParamExample {json} Get Video Example:
+ * @apiParamExample {json} Create Policy Request Body Examples:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999
  *
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
