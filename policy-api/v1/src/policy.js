@@ -12,11 +12,13 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
- * @apiParam (Request Body Fields) {Object} key-data data for the policy key (used for concise format)
- * @apiParam (Request Body Fields) {String} key-data.account-id Video Cloud account id
- * @apiParam (Request Body Fields) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
- * @apiParam (Request Body Fields) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
- * @apiParam (Request Body Fields) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
+ * @apiParam (Request Body Fields Concise Format) {Object} key-data data for the policy key (used for concise format)
+ * @apiParam (Request Body Fields Concise Format) {String} key-data.account-id Video Cloud account id
+ * @apiParam (Request Body Fields Concise Format) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
+ * @apiParam (Request Body Fields Full Format) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
+ * @apiParam (Request Body Fields Full Format) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
+ * @apiParam (Request Body Fields Full Format) {Object} policies.pattern.= for matching the specified account or domains
+ * @apiParam (Request Body Fields Full Format) {Object} policies.pattern.!= for not matching the account or domains
  *
  * @apiParamExample {json} Get Video Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/videos/38467382999
