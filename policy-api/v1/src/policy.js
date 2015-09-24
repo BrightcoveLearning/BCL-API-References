@@ -12,21 +12,21 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
- * @apiParam (Request Body Fields Concise Format) {Object} key-data data for the policy key (used for concise format)
- * @apiParam (Request Body Fields Concise Format) {String} key-data.account-id Video Cloud account id
- * @apiParam (Request Body Fields Concise Format) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
- * @apiParam (Request Body Fields Full Format) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
- * @apiParam (Request Body Fields Full Format) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
- * @apiParam (Request Body Fields Full Format) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
- * @apiParam (Request Body Fields Full Format) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
+ * @apiParam (Request Body Fields (Concise Format)) {Object} key-data data for the policy key (used for concise format)
+ * @apiParam (Request Body Fields (Concise Format)) {String} key-data.account-id Video Cloud account id
+ * @apiParam (Request Body Fields (Concise Format)) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
+ * @apiParam (Request Body Fields (Full Format)) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
+ * @apiParam (Request Body Fields (Full Format)) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
+ * @apiParam (Request Body Fields (Full Format)) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
+ * @apiParam (Request Body Fields (Full Format)) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
  *
  * @apiParamExample {json} Create Policy Request Body Examples:
  *     // concise format
  *     {
  *         "account-id": "8523",
  *         "allowed-domains": [
- *             "http://www.safaribooksonline.com",
- *             "https://secure.safaribooksonline.com"
+ *             "http://www.mysite.com",
+ *             "https://secure.mysite.com"
  *         ]
  *     }
  *     // full format
