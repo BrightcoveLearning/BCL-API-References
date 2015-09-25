@@ -35,7 +35,7 @@
  *              {
  *                  "pattern": {
  *                      "!=": [
- *                          "[request.params.account-id]"
+ *                          "1752604059001"
  *                      ]
  *                  },
  *                  "effect": "deny"
@@ -70,7 +70,7 @@
  *                "effect": "deny",
  *                "pattern": {
  *                    "!=": [
- *                        "[request.params.account-id]",
+ *                        "1752604059001",
  *                        "57838016001"
  *                    ]
  *                }
@@ -129,7 +129,7 @@
  *                "effect": "deny",
  *                "pattern": {
  *                    "!=": [
- *                        "[request.params.account-id]",
+ *                        "1752604059001",
  *                        "57838016001"
  *                    ]
  *                }
