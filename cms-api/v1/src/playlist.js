@@ -175,8 +175,8 @@
 // get videos in playlist
 
 /**
- * @api {get} /accounts/:account_id/playlists/:playlist_id/videos Get Videos in a Playlist
- * @apiName Get Videos in a Playlist
+ * @api {get} /accounts/:account_id/playlists/:playlist_id/videos Get Videos in Playlist
+ * @apiName Get Videos in Playlist
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
@@ -781,8 +781,8 @@
 // create playlist
 
 /**
- * @api {post} /accounts/:account_id/playlists Create a Playlist
- * @apiName Create a Playlist
+ * @api {post} /accounts/:account_id/playlists Create Playlist
+ * @apiName Create Playlist
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
@@ -866,8 +866,8 @@
 // update playlist
 
 /**
- * @api {patch} /accounts/:account_id/playlists/:playlist_id Update a Playlist
- * @apiName Update a Playlist
+ * @api {patch} /accounts/:account_id/playlists/:playlist_id Update Playlist
+ * @apiName Update Playlist
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
