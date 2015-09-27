@@ -3,5 +3,5 @@
     "version": "1.0.0",
     "description": "Reference for the Brightcove Analytics API, used to retrieve analytics data for your accounts.",
     "title": "Analytics API Reference",
-    "url" : "https://policy.brightcove.com/v1"
+    "url" : "https://analytics.api.brightcove.com/v1"
 }
