@@ -200,60 +200,117 @@
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    [
- *      {
- *        "id": "4500731849001",
- *        "account_id": "57838016001",
- *        "complete": true,
- *        "created_at": "2015-09-22T09:43:13.500Z",
- *        "cue_points": [
+ *        {
+ *            "id": "3931368155001",
+ *            "account_id": "57838016001",
+ *            "complete": true,
+ *            "created_at": "2014-12-09T06:07:11.877Z",
+ *            "cue_points": [
+ *                {
+ *                    "id": "3981500051001",
+ *                    "name": "cue3",
+ *                    "type": "CODE",
+ *                    "time": 17.319,
+ *                    "metadata": "Mother-child interaction",
+ *                    "force_stop": false
+ *                },
+ *                {
+ *                    "id": "3981500052001",
+ *                    "name": "Pre-roll",
+ *                    "type": "AD",
+ *                    "time": 0,
+ *                    "metadata": null,
+ *                    "force_stop": false
+ *                },
+ *                {
+ *                    "id": "3981500053001",
+ *                    "name": "cue2",
+ *                    "type": "CODE",
+ *                    "time": 10.527,
+ *                    "metadata": "Owl turns face to us",
+ *                    "force_stop": false
+ *                },
+ *                {
+ *                    "id": "3981500055001",
+ *                    "name": "Post-roll",
+ *                    "type": "AD",
+ *                    "time": 41.237,
+ *                    "metadata": null,
+ *                    "force_stop": false
+ *                },
+ *                {
+ *                    "id": "3981500054001",
+ *                    "name": "cue1",
+ *                    "type": "CODE",
+ *                    "time": 4.418,
+ *                    "metadata": "owl turns away",
+ *                    "force_stop": false
+ *                }
+ *            ],
+ *            "custom_fields": {
+ *                "associated-topics": "Air, Nature",
+ *                "subject": "Birds"
+ *            },
+ *            "description": "Mother and child owls...",
+ *            "digital_master_id": "4508192940001",
+ *            "duration": 41237,
+ *            "economics": "AD_SUPPORTED",
+ *            "folder_id": "560039dfe4b0471bef470c47",
+ *            "geo": null,
+ *            "images": {
+ *                "thumbnail": {
+ *                    "asset_id": "4508192962001",
+ *                    "remote": false,
+ *                    "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201509/826/57838016001_4508192962001_3931368155001-th.jpg?pubId=57838016001&videoId=3931368155001",
+ *                    "sources": [
+ *                        {
+ *                            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201509/826/57838016001_4508192962001_3931368155001-th.jpg?pubId=57838016001&videoId=3931368155001"
+ *                        }
+ *                    ]
+ *                },
+ *                "poster": {
+ *                    "asset_id": "4508192954001",
+ *                    "remote": false,
+ *                    "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201509/826/57838016001_4508192954001_3931368155001-vs.jpg?pubId=57838016001&videoId=3931368155001",
+ *                    "sources": [
+ *                        {
+ *                            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201509/826/57838016001_4508192954001_3931368155001-vs.jpg?pubId=57838016001&videoId=3931368155001"
+ *                        }
+ *                    ]
+ *                }
+ *            },
+ *            "link": {
+ *                "text": "Brightcove Developer Documentation",
+ *                "url": "http://docs.brightcove.com"
+ *            },
+ *            "long_description": "A large owl with perky ears that look like horns",
+ *            "name": "Great Horned Owl",
+ *            "reference_id": "greathornedowl.mp4_1418105221982",
+ *            "schedule": {
+ *                "ends_at": "2017-01-01T05:00:00.000Z",
+ *                "starts_at": "2015-01-13T05:00:00.000Z"
+ *            },
+ *            "sharing": {
+ *                "by_external_acct": false,
+ *                "by_id": null,
+ *                "source_id": null,
+ *                "to_external_acct": true,
+ *                "by_reference": false
+ *            },
+ *            "state": "ACTIVE",
+ *            "tags": [
+ *                "bird",
+ *                "nature",
+ *                "foo",
+ *                "air",
+ *                "bar"
+ *            ],
+ *            "text_tracks": [
  *
- *        ],
- *        "custom_fields": {
- *
- *        },
- *        "description": null,
- *        "digital_master_id": "4500794241001",
- *        "duration": 18203,
- *        "economics": "AD_SUPPORTED",
- *        "folder_id": "560039dfe4b0471bef470c47",
- *        "geo": null,
- *        "images": {
- *          "thumbnail": {
- *            "asset_id": "4500794244001",
- *            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201509/3538/57838016001_4500794244001_4500731849001-th. *    jpg?pubId=57838016001&videoId=4500731849001",
- *            "sources": [
- *              {
- *                "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201509/3538/57838016001_4500794244001_4500731849001-th. *    jpg?pubId=57838016001&videoId=4500731849001"
- *              }
- *            ]
- *          },
- *          "poster": {
- *            "asset_id": "4500794252001",
- *            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201509/3538/57838016001_4500794252001_4500731849001-vs. *    jpg?pubId=57838016001&videoId=4500731849001",
- *            "sources": [
- *              {
- *                "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201509/3538/57838016001_4500794252001_4500731849001-vs. *    jpg?pubId=57838016001&videoId=4500731849001"
- *              }
- *            ]
- *          }
- *        },
- *        "link": null,
- *        "long_description": null,
- *        "name": "My test Video",
- *        "reference_id": null,
- *        "schedule": null,
- *        "sharing": null,
- *        "state": "ACTIVE",
- *        "tags": [
- *
- *        ],
- *        "text_tracks": [
- *
- *        ],
- *        "updated_at": "2015-09-22T09:44:21.989Z"
- *      }
- *    ]
- *
+ *            ],
+ *            "updated_at": "2015-09-25T07:19:15.473Z"
+ *        }
+ *    ] *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
