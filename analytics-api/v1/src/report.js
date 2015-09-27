@@ -20,11 +20,13 @@
  * @apiparam (URL Parameters) {String="dimension==value"} [where] one or more dimension==value pairs to filter the results; see [Where Filters](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#filterValues) for details
  * @apiparam (URL Parameters) {String} [from="(30 days before now)"] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  * @apiparam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
+ * @apiparam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] format to return the results in
+ * @apiparam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
  *
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/data?accounts=57838016001&dimensions=video&where=video==4442677263001&from=2015-08-01&to=2015-08-31&fields=video_view,video_impression,video
  *
- * @apiSuccess (Response Fields) {String} key_string the policy key string
+ * @apiSuccess (Response Fields) {String} account the Video Cloud account id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
