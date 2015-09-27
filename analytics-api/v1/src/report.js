@@ -11,14 +11,10 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
- * @apiParam (Request Body Fields (Concise Format)) {Object} key-data data for the policy key (used for concise format)
- * @apiParam (Request Body Fields (Concise Format)) {String} key-data.account-id Video Cloud account id
- * @apiParam (Request Body Fields (Concise Format)) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
- * @apiParam (Request Body Fields (Full Format)) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
- * @apiParam (Request Body Fields (Full Format)) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
- * @apiParam (Request Body Fields (Full Format)) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
- * @apiParam (Request Body Fields (Full Format)) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
+ * @apiParam (URL Parameters) {Number} account_ids one or more Video Cloud account IDs separated by commas
+ * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
+ * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
+ * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {json} Create Policy Request Body Examples:
  *     // concise format
