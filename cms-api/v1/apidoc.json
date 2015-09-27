@@ -2,7 +2,7 @@
     "name": "CMS API",
     "version": "1.0.0",
     "description": "Reference for the Brightcove CMS API, used to access and manage your media library.",
-    "title": "Policy API Reference",
+    "title": "Analytics API Reference",
     "url" : "https://policy.brightcove.com/v1",
     "order": [
         "Video",
