@@ -24,12 +24,56 @@
  * @apiparam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
  *
  * @apiParamExample {String} Video Dimension Report Example:
- *     https://analytics.api.brightcove.com/v1/data?accounts=57838016001&dimensions=video&where=video==4442677263001&from=2015-08-01&to=2015-08-31&fields=video_view,video_impression,video
+ *     https://analytics.api.brightcove.com/v1/data?accounts=20318290001&dimensions=video&fields=video_view,video_impression&limit=1
  *
  * @apiSuccess (Response Fields) {String} account the Video Cloud account id
+ * @apiSuccess (Response Fields) {String} account.name the name of the Video Cloud account id
+ * @apiSuccess (Response Fields) {Number} item_count the total number of items matching the request
+ * @apiSuccess (Response Fields) {Object[]} items array of analytics objects for the videos returned
+ * @apiSuccess (Response Fields) {Number} items.engagement_score the calculated engagement score for the video
+ * @apiSuccess (Response Fields) {Number} items.play_rate video views divided by video impressions
+ * @apiSuccess (Response Fields) {String} items.video the video id
+ * @apiSuccess (Response Fields) {String} items.duration the duration of the video in seconds
+ * @apiSuccess (Response Fields) {String} items.video_engagement_1 number of views at the 1% point of the video
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
+ *    {
+ *        "account": "20318290001",
+ *        "account.name": "BC Training Videos",
+ *        "item_count": 125,
+ *        "items": [
+ *            {
+ *                "engagement_score": 189.443,
+ *                "play_rate": 0.667,
+ *                "video": "2127084613001",
+ *                "video_duration": "341",
+ *                "video_engagement_1": 3.0000000000000004,
+ *                "video_engagement_25": 3.0000000000000004,
+ *                "video_engagement_50": 4.000000000000001,
+ *                "video_engagement_75": 4.000000000000001,
+ *                "video_engagement_100": 3.0000000000000004,
+ *                "video_impression": 3,
+ *                "video_name": "Live Streaming using Telestream Wirecast (Japanese)",
+ *                "video_percent_viewed": 378.88563049853377,
+ *                "video_seconds_viewed": 1292,
+ *                "video_view": 2
+ *            }
+ *        ],
+ *        "summary": {
+ *            "video_engagement_1": 1875.083,
+ *            "video_engagement_25": 1356.95,
+ *            "video_engagement_50": 1107.931,
+ *            "video_engagement_75": 956.374,
+ *            "video_engagement_100": 777.37,
+ *            "video_seconds_viewed": 238952,
+ *            "video_percent_viewed": 115377.945,
+ *            "video_impression": 11479,
+ *            "video_view": 2013,
+ *            "play_rate": 0.175,
+ *            "engagement_score": 57.316
+ *        }
+ *    }
  *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
