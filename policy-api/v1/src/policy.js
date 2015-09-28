@@ -11,7 +11,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Request Body Fields (Concise Format)) {Object} key-data data for the policy key (used for concise format)
  * @apiParam (Request Body Fields (Concise Format)) {String} key-data.account-id Video Cloud account id
  * @apiParam (Request Body Fields (Concise Format)) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
@@ -108,7 +108,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} key_string the key string for the policy
  *
  * @apiParamExample {String} Get Policy Example:

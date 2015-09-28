@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} Accept Authorization: application/json;pk=policy_key See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/video-cloud/player-management/guides/policy-key.html) for information on getting policy keys
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID
  *
  * @apiParamExample {String} Get Video Example:
@@ -161,7 +161,7 @@
  *
  * @apiHeader {String} Accept Authorization: application/json;pk=policy_key See [Policy API Overview](http://docs.brightcove.com/en/video-cloud/policy-api/getting-started/api-overview.html) or [Policy Keys](http://docs.brightcove.com/en/video-cloud/player-management/guides/policy-key.html) for information on getting policy keys
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} reference_id Video Cloud video reference ID
  *
  * @apiParamExample {String} Get Video Example:

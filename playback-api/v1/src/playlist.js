@@ -12,7 +12,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID
  *
  * @apiParamExample {String} Get Playlists Example:
@@ -272,7 +272,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} reference_id Video Cloud playlist reference ID
  *
  * @apiParamExample {String} Get Playlists Example:

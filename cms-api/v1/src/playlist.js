@@ -12,7 +12,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
  * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
@@ -101,7 +101,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
  * @apiParamExample {String} Search for Playlists Example:
@@ -186,7 +186,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
  * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
@@ -702,7 +702,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
@@ -748,7 +748,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
  * @apiParamExample {String} Search Example:
@@ -791,7 +791,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiparam (Request Body Fields) {String} name playlist name
  * @apiparam (Request Body Fields) {String} [description] playlist description
@@ -877,7 +877,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiparam (Request Body Fields) {String} name playlist name
  * @apiparam (Request Body Fields) {String} [description] playlist description
@@ -960,7 +960,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {Number} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
  * @apiParamExample {String} Search for Playlists Example:
