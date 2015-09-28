@@ -10,6 +10,7 @@
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
  * @apiParam (URL Parameters) {Number} account_ids one or more Video Cloud account IDs separated by commas
  * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
