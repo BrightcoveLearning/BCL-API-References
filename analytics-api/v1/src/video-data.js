@@ -1,7 +1,7 @@
 // get alltime video views
 
 /**
- * @api {get} /accounts/:account_id/ Get Alltime Video Views
+ * @api {get} /alltime/accounts/:account_id/videos/:video_id Get Alltime Video Views
  * @apiName Get Alltime Video Views
  * @apiGroup Video Data
  * @apiVersion 1.0.0
@@ -21,26 +21,23 @@
  * @apiparam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  *
  * @apiParamExample {String} Video Dimension Report Example:
- *     https://analytics.api.brightcove.com/v1/engagement/accounts/20318290001
+ *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
  *
- * @apiSuccess (Response Fields) {Object} timeline detailed engagement data
- * @apiSuccess (Response Fields) {String} timeline.type type of data in the `values` array
- * @apiSuccess (Response Fields) {Number[]} timeline.values array of views in each 100th part of video duration
+ * @apiSuccess (Response Fields) {Number} alltime_video_views all-time video views
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "timeline":{
- *            "type":"percentile",
- *            "values":[6153.16,5850.24,5581.33,5338.86,5153.62,5022.97,4912.26,4807.87,4715.83,4646.73,4603.09,4571.91,4523.94,4487.29,4445.27,4407.97,4380.57,4350.83,4305.49,4243.03,4211.5,4167.62,4124.87,4080.44,4064.16,4018.67,3985,3944.24,3916.86,3880.34,3840.7,3821.87,3795.75,3774.92,3750.34,3732.99,3703.09,3686.11,3661.87,3650.8,3610.64,3584.09,3545.07,3516.15,3491.22,3450.7,3412.2,3389.83,3387.64,3364.07,3361.53,3350.72,3337.98,3320.95,3287.75,3273.17,3241.1,3209.6,3176.8,3173.18,3138.19,3125.17,3095.23,3079.62,3058.27,3039.31,3009.82,2977.99,2964.75,2955.75,2932.5,2914.99,2902.7,2880.58,2881.75,2863.65,2849.35,2819.21,2793.2,2769.22,2773.77,2758.13,2764.13,2742.38,2736.89,2724.19,2700.26,2681.57,2653.3,2635.27,2613.04,2580.96,2551.63,2536.11,2497.8,2453.68,2399.81,2358.69,2288.65,2090.52]
- *        }
+ *        "alltime_video_views": 7690
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
+ * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
+ * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
+ * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
