@@ -34,7 +34,22 @@
  * @apiSuccess (Response Fields) {Number} items.play_rate video views divided by video impressions
  * @apiSuccess (Response Fields) {String} items.video the video id
  * @apiSuccess (Response Fields) {String} items.duration the duration of the video in seconds
- * @apiSuccess (Response Fields) {String} items.video_engagement_1 number of views at the 1% point of the video
+ * @apiSuccess (Response Fields) {Number} items.video_engagement_1 number of views at the 1% point of the video duration
+ * @apiSuccess (Response Fields) {Number} items.video_engagement_25 number of views at the 25% point of the video duration
+ * @apiSuccess (Response Fields) {Number} items.video_engagement_50 number of views at the 50% point of the video duration
+ * @apiSuccess (Response Fields) {Number} items.video_engagement_75 number of views at the 75% point of the video duration
+ * @apiSuccess (Response Fields) {Number} items.video_engagement_100 number of views at the 100% point of the video duration
+ * @apiSuccess (Response Fields) {Number} items.video_impression number of times the video was loaded in a player
+ * @apiSuccess (Response Fields) {String} items.name name of the video
+ * @apiSuccess (Response Fields) {Number} items.video_percent_viewed average percentage of the video played when viewed
+ * @apiSuccess (Response Fields) {Number} items.video_seconds_viewed total seconds of the video viewed
+ * @apiSuccess (Response Fields) {Number} items.video_view number of times some portion of the video was viewed
+ * @apiSuccess (Response Fields) {Object} summary of all videos matching this request that had views
+ * @apiSuccess (Response Fields) {Number} video_engagement_1 number of views at the 1% point of the video duration for all videos
+ * @apiSuccess (Response Fields) {Number} video_engagement_25 number of views at the 25% point of the video duration for all videos
+ * @apiSuccess (Response Fields) {Number} video_engagement_50 number of views at the 50% point of the video duration for all videos
+ * @apiSuccess (Response Fields) {Number} video_engagement_75 number of views at the 75% point of the video duration for all videos
+ * @apiSuccess (Response Fields) {Number} video_engagement_100 number of views at the 100% point of the video duration for all videos
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
