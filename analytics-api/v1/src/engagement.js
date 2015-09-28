@@ -45,11 +45,13 @@
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
+ *    [
+ *        {
+ *            "error_code": "NOT_FOUND",
+ *            "message": "Requested resource does not exist",
+ *            "request_id": "df35af83-ac9b-44b0-b172-a80a11bd0bfa"
+ *        }
+ *    ]
  *
  */
 
@@ -102,11 +104,13 @@
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
+ *    [
+ *        {
+ *            "error_code": "NOT_FOUND",
+ *            "message": "Requested resource does not exist",
+ *            "request_id": "df35af83-ac9b-44b0-b172-a80a11bd0bfa"
+ *        }
+ *    ]
  *
  *//**
  * @api {get} /engagement/accounts/:account_id/video/:video_id Get Video Engagement
@@ -156,10 +160,12 @@
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
+ *    [
+ *        {
+ *            "error_code": "NOT_FOUND",
+ *            "message": "Requested resource does not exist",
+ *            "request_id": "df35af83-ac9b-44b0-b172-a80a11bd0bfa"
+ *        }
+ *    ]
  *
  */
