@@ -1,9 +1,9 @@
-// get alltime video views
+// get send event to data collector
 
 /**
- * @api {get} /alltime/accounts/:account_id/videos/:video_id Get Alltime Video Views
- * @apiName Get Alltime Video Views
- * @apiGroup Video Data
+ * @api {get} /alltime/accounts/:account_id/videos/:video_id Send Event
+ * @apiName Send Event
+ * @apiGroup Events
  * @apiVersion 1.0.0
  *
  * @apiDescription Get a summary report of engagement for the account. Note:
