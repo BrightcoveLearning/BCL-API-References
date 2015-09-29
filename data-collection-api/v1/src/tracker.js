@@ -6,10 +6,7 @@
  * @apiGroup Events
  * @apiVersion 1.0.0
  *
- * @apiDescription Get a summary report of engagement for the account. Note:
- * 1. Engagement reports are only available for periods within the past 32 days. Requests outside that range will return an error
- * 2. The only parameters supported for Engagement reports are `from` and `to`
- * 3. Engagement reports are available for single accounts only - reports on multiple accounts will not work
+ * @apiDescription Send event information to the dta
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
