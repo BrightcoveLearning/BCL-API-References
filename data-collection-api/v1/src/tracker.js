@@ -6,7 +6,7 @@
  * @apiGroup Events
  * @apiVersion 1.0.0
  *
- * @apiDescription Send event information to the dta
+ * @apiDescription Send event information to the data collector for Brightcove Analytics
  *
  * @apiparam (URL Parameters) {String} account account id
  * @apiparam (URL Parameters) {String="videocloud"} domain always equal to `videocloud`
@@ -21,9 +21,11 @@
  * @apiparam (URL Parameters) {String} [source] URI that sent the end-user to the `destination` URI
  * @apiparam (URL Parameters) {String="direct","mobile","tablet","tv","desktop","other"} [device_type] Override to specify the type of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. **Not typically included**)
  * @apiparam (URL Parameters) {String="direct","android","bada","ios","linux","mac","tv","os_x","rim","sybian","windows","other"} [device_os] Override to specify the OS of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. **Not typically included**)
- * @apiparam (URL Parameters) {String} [country] ISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiparam (URL Parameters) {String} [country] ISO-3166 (alpha 2) region cISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
  * @apiparam (URL Parameters) {String} [country_name] Human readable country name (override in case the system can not detect geographic information from the IP address) **Not typically included**
- * @apiparam (URL Parameters) {String} [region] Human readable country name (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiparam (URL Parameters) {String} [region] ISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiparam (URL Parameters) {String} [region_name] Human readable region name (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiparam (URL Parameters) {String} [city] City name **Not typically included**
  *
  * @apiParamExample {String} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
