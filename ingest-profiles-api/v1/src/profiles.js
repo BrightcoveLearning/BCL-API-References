@@ -37,10 +37,13 @@
  * @apiParam (Request Body Fields) {Boolean} [renditions.hls_optimized_ts] Time segments optimized for HLS
  * @apiParam (Request Body Fields) {Number} [renditions.keyframe_interval] Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
  * @apiParam (Request Body Fields) {Number} [renditions.keyframe_rate] Maximum number of keyframes per second
- * @apiParam (Request Body Fields) {String} [renditions.label="poster","thumnail"] Image type for image renditions; __required__ for image renditions
+ * @apiParam (Request Body Fields) {String} [renditions.label="poster","thumbnail"] Image type for image renditions; __required__ for image renditions
  * @apiParam (Request Body Fields) {Boolean} [renditions.live_stream] Whether this will be for live streaming video
  * @apiParam (Request Body Fields) {Number} [renditions.live_sliding_window_duration] Duration of stream to keep available for LiveDVR delivery (in seconds)
  * @apiParam (Request Body Fields) {Number} [renditions.max_video_bitrate] Maximum video bitrate (h.264 only)
+ * @apiParam (Request Body Fields) {Number} [renditions.max_frame_rate] Limits the frame rate rather than sets it, use as an alternative to frame rate
+ * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
+ * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
  *
  *
  * @apiParamExample {json} Create Video Example:
