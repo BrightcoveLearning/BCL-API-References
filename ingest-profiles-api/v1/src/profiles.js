@@ -64,6 +64,8 @@
  * @apiParam (Request Body Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
  * @apiParam (Request Body Fields) {Object[]} packages array of package maps for DRM (see [Content Security](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/drm.html))
  * @apiParam (Request Body Fields) {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
+ * @apiParam (Request Body Fields) {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
+ * @apiParam (Request Body Fields) {String|String[]} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  *
  * @apiParamExample {json} Create Video Example:
