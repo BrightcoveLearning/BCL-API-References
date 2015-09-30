@@ -16,8 +16,24 @@
  * @apiParam (Request Body Fields) {String} name video title
  * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID.
  * @apiParam (Request Body Fields) {String} [description] description of the profile
- * @apiParam (Request Body Fields) {String} [long_description] video long description
- * @apiParam (Request Body Fields) {String} [long_description] video long description
+ * @apiParam (Request Body Fields) {Object[]} renditions array of rendition maps
+ * @apiParam (Request Body Fields) {String="preserve","stretch","crop","pad"} [renditions.aspect_mode="preserve"] how to handle mismatch between source and rendition aspect ratio
+ * @apiParam (Request Body Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
+ * @apiParam (Request Body Fields) {Number=1,2} [renditions.audio_channels] number of audio channels
+ * @apiParam (Request Body Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
+ * @apiParam (Request Body Fields) {Boolean} [renditions.constant_bitrate=false] whether to use constant bitrate for encoding
+ * @apiParam (Request Body Fields) {Number} [renditions.crf] 1-51, not used by default. Overrides `quality`
+ * @apiParam (Request Body Fields) {Number} [renditions.decoder_bitrate_cap] In kbps, the max bitrate fed to the decoder
+ * @apiParam (Request Body Fields) {String} [renditions.encryption_method] encryption_method to use, e.g. `aes-128`
+ * @apiParam (Request Body Fields) {Number} [renditions.encryption_key_rotation_period=10] use a different key for each set of segments, rotating to a new key after this many segments
+ * @apiParam (Request Body Fields) {Number} [renditions.fixed_keyframe_interval] Forces a keyframe every X frames, but still allows additional keyframes
+ * @apiParam (Request Body Fields) {Number} [renditions.forced_keyframe_rate] Force the keyframe rate, h264 only, ignored if forced_keyframe_interval is used
+ * @apiParam (Request Body Fields) {String} renditions.format video format, e.g. `mp4`, `ts` (for HLS), flv, `m4f` for video, `png` or `jpg` for images
+ * @apiParam (Request Body Fields) {Number} [renditions.frame_rate="(same as source)"] frame rate in frames per second
+ * @apiParam (Request Body Fields) {Number} [renditions.h264_bframes=0] number of bframes for h.264
+ * @apiParam (Request Body Fields) {Number} [renditions.h264_level="(calculated)"] h.264 profile level
+ * @apiParam (Request Body Fields) {String="baseline","main","high"} [renditions.h264_profile="baseline"] h.264 profile
+ *
  *
  * @apiParamExample {json} Create Video Example:
  *     {
@@ -139,97 +155,3 @@
  *
  */
 
-// ingest media asset
-
- /**
- * @api {post} /accounts/:account_id/videos/:video_id/ingest-requests Ingest Media Asset
- * @apiName Ingest Media Asset
- * @apiGroup Ingest
- * @apiVersion 1.0.0
- *
- * @apiDescription Uploads a video, images, and/or text track (WebVTT files) and adds them to your media library
- *
- * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
- *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
- * @apiParam (Request Body Fields) {Object} [master] the video master to be ingested
- * @apiParam (Request Body Fields) {String} [master.url] URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video
- * @apiParam (Request Body Fields) {String} [profile] ingest profile to use for transcoding; if absent, account default profile will be used
- * @apiParam (Request Body Fields) {Object[]} [text_tracks] array of text_track maps
- * @apiParam (Request Body Fields) {String} text_tracks.url URL for a WebVTT file
- * @apiParam (Request Body Fields) {String} text_tracks.srclang ISO 639 2-letter (alpha-2) language code for the text tracks
- * @apiParam (Request Body Fields) {String="captions","subtitles","descriptions","chapters","metadata"} [text_tracks.kind="captions"] how the vtt file is meant to be used
- * @apiParam (Request Body Fields) {String} [text_tracks.label] user-readable title
- * @apiParam (Request Body Fields) {Boolean} [text_tracks.default] sets the default language for captions/subtitles
- * @apiParam (Request Body Fields) {Object} [poster] the video master to be ingested
- * @apiParam (Request Body Fields) {String} poster.url URL for the video poster image
- * @apiParam (Request Body Fields) {String} [poster.height] pixel height of the image
- * @apiParam (Request Body Fields) {String} [poster.width] pixel width of the image
- * @apiParam (Request Body Fields) {Object} [thumbnail] the video master to be ingested
- * @apiParam (Request Body Fields) {String} thumbnail.url URL for the video thumbnail image
- * @apiParam (Request Body Fields) {String} [thumbnail.height] pixel height of the image
- * @apiParam (Request Body Fields) {String} [thumbnail.width] pixel width of the image
- * @apiParam (Request Body Fields) {Boolean} [capture-images] whether poster and thumbnail should be captured during transcoding; defaults to `true` if the the profile has image renditions, `false` if it does not
- * @apiParam (Request Body Fields) {String[]} [callbacks] array of URLs that [notifications](http://docs.brightcove.com/en/video-cloud/media-management/guides/notifications.html) should be sent to
- *
- * @apiParamExample {json} Ingest Request Example:
- *    {
- *      "master": {"
- *          url": "http://host/master.mp4"
- *      },
- *      "profile": "high-resolution",
- *      "capture-images": "false",
- *      "poster": {
- *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png"
- *            "width": "640",
- *            "height": "360"
- *        },
- *        "thumbnail": {
- *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-thumbnail.png"
- *            "width": "160",
- *            "height": "90"
- *        },
- *        "capture-images": false,
- *        "text_tracks": [
- *            {
- *                "url": "http://learning-services-media.brightcove.com/captions/for_video/Water-in-Motion.vtt",
- *                "srclang": "en",
- *                "kind": "captions",
- *                "label": "EN",
- *                "default": true
- *            }
- *        ],
- *        "callbacks": [
- *            "http://solutions.brightcove.com/bcls/di-api/di-callbacks.php"
- *        ]
- *    }
- *
- * @apiSuccess (Response Fields) {String} id job id for the request
- *
- * @apiSuccessExample {json} Success Response:
- *    HTTP/1.1 200 OK
- *    {
- *       "id":"c6926dcf-0978-4085-8afc-e578ccfbf742"
- *    }
- *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} PROFILE 400: Unable to find profile by name
- * @apiError (Error 4xx) {json} NOT_SUBMITTED 400: Unable to submit job, please try again later
- * @apiError (Error 4xx) {json} NO_SUCH_VIDEO 400: Unable to find the referenced video
- * @apiError (Error 4xx) {json} BAD_ACCOUNT 400: Account ID was missing or invalid
- * @apiError (Error 4xx) {json} NO_SOURCE 400: Unable to find a source to use
- * @apiError (Error 4xx) {json} CDN_CREDENTIALS 400: Unable to fetch CDN credentials
- * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
- * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
- *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
- */
