@@ -48,6 +48,16 @@
  * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
  * @apiParam (Request Body Fields) {Boolean} [renditions.skip_video] Set to `true` to skip video encoding for audio-only renditions
  * @apiParam (Request Body Fields) {Number=1-5} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
+ * @apiParam (Request Body Fields) {String} [renditions.streaming_delivery_format] Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
+ * @apiParam (Request Body Fields) {String} [renditions.streaming_delivery_profile="live"] Sets the profile of the streaming delivery format, ensuring options are selected for compatibility with the profile
+ * @apiParam (Request Body Fields) {String} [renditions.type] transmuxing type for HLS; typical value is `segmented`
+ * @apiParam (Request Body Fields) {Boolean} [renditions.upscale] whether to upsize the frames if the source frame size is smaller than the target
+ * @apiParam (Request Body Fields) {Number} renditions.video_bitrate target video bitrate in kbps
+ * @apiParam (Request Body Fields) {String} renditions.video_codec target video codec
+ * @apiParam (Request Body Fields) {Number} renditions.height target frame height in pixels
+ * @apiParam (Request Body Fields) {Number} renditions.width target frame width in pixels
+ * @apiParam (Request Body Fields) {Object[]} renditions.watermarks array of watermark maps
+ * @apiParam (Request Body Fields) {String} renditions.watermarks array of watermark maps
  *
  *
  * @apiParamExample {json} Create Video Example:
