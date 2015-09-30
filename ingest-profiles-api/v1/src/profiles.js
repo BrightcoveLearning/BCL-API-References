@@ -44,6 +44,7 @@
  * @apiParam (Request Body Fields) {Number} [renditions.max_frame_rate] Limits the frame rate rather than sets it, use as an alternative to frame rate
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
  * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
+ * @apiParam (Request Body Fields) {String="zip","tar"} [renditions.package_format] Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
  *
  *
  * @apiParamExample {json} Create Video Example:
