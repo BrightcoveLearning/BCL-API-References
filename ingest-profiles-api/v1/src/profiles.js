@@ -47,7 +47,7 @@
  * @apiParam (Request Body Fields) {String="zip","tar"} [renditions.package_format] Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
  * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
  * @apiParam (Request Body Fields) {Boolean} [renditions.skip_video] Set to `true` to skip video encoding for audio-only renditions
- * @apiParam (Request Body Fields) {Number} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
+ * @apiParam (Request Body Fields) {Number=1-5} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  *
  *
  * @apiParamExample {json} Create Video Example:
