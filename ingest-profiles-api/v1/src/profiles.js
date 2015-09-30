@@ -62,6 +62,7 @@
  * @apiParam (Request Body Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
  * @apiParam (Request Body Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
  * @apiParam (Request Body Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
+ * @apiParam (Request Body Fields) {Object[]} packages array of package maps for DRM (see )
  *
  *
  * @apiParamExample {json} Create Video Example:
