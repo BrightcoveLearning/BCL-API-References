@@ -57,7 +57,11 @@
  * @apiParam (Request Body Fields) {Number} renditions.height target frame height in pixels
  * @apiParam (Request Body Fields) {Number} renditions.width target frame width in pixels
  * @apiParam (Request Body Fields) {Object[]} renditions.watermarks array of watermark maps
- * @apiParam (Request Body Fields) {String} renditions.watermarks array of watermark maps
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.url URL for the watermark image
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%`
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%`
  *
  *
  * @apiParamExample {json} Create Video Example:
