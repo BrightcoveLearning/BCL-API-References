@@ -33,6 +33,11 @@
  * @apiParam (Request Body Fields) {Number} [renditions.h264_bframes=0] number of bframes for h.264
  * @apiParam (Request Body Fields) {Number} [renditions.h264_level="(calculated)"] h.264 profile level
  * @apiParam (Request Body Fields) {String="baseline","main","high"} [renditions.h264_profile="baseline"] h.264 profile
+ * @apiParam (Request Body Fields) {Number} [renditions.h264_reference_frames=3] number of h.264 reference frames to use
+ * @apiParam (Request Body Fields) {Boolean} [renditions.hls_optimized_ts] Time segments optimized for HLS
+ * @apiParam (Request Body Fields) {Number} [renditions.keyframe_interval] Maximum number of frames between keyframes (default is 250, and overrides keyframe_rate)
+ * @apiParam (Request Body Fields) {Number} [renditions.keyframe_rate] Maximum number of keyframes per second
+ * @apiParam (Request Body Fields) {String} [renditions.label="poster","thumnail"] Image type for image renditions; required for image renditions
  *
  *
  * @apiParamExample {json} Create Video Example:
