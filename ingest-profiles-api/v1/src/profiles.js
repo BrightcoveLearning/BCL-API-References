@@ -69,19 +69,46 @@
  *
  *
  * @apiParamExample {json} Create Video Example:
- *     {
- *         "name": "Moose Herd",
- *         "description": "Herd of moose grazing",
- *         "reference_id": "moose_2015_09_17",
- *         "tags": [
- *             "nature",
- *             "animals"
- *         ],
- *         "custom_fields": {
- *             "topic": "wildlife",
- *             "subtopic": "mammals"
- *         }
- *     }
+ *    {
+ *      "account_id": "57838016001",
+ *      "name": "Protected",
+ *      "description": "This will produce 1 HLS rendition and 2 image renditions.",
+ *      "renditions": [
+ *        {
+ *          "media_type": "video",
+ *          "reference_id": "ts1",
+ *          "format": "ts",
+ *          "type": "segmented",
+ *          "audio_codec": "aac",
+ *          "audio_bitrate": 96,
+ *          "video_codec": "h264",
+ *          "keyframe_rate": 0.5,
+ *          "max_frame_rate": 30,
+ *          "width": 1280,
+ *          "height": 720,
+ *          "h264_profile": "main"
+ *        },
+ *        {
+ *          "media_type": "image",
+ *          "format": "png",
+ *          "label": "poster",
+ *          "width": 960,
+ *          "height": 540
+ *        },
+ *        {
+ *          "media_type": "image",
+ *          "format": "png",
+ *          "label": "thumbnail",
+ *          "width": 160,
+ *          "height": 90
+ *        }
+ *      ]
+ *      "digital_master": {
+ *            "rendition": "passthrough",
+ *            "distribute": true
+ *        },
+ *      "packages": []
+ *    }
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
