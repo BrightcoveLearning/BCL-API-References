@@ -46,13 +46,13 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
  *
  * @apiErrorExample {json} 409 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *            "error_code": "REFERENCE_ID_IN_USE",
- *            "message": "Reference id moose_2015_09_17 is already in use."
- *         }
- *     ]
+ *    HTTP/1.1 404 Not Found
+ *    [
+ *        {
+ *            "error_code": "NOT_AUTHORIZED",
+ *            "message": "Credentials are required to access this resource."
+ *        }
+ *    ]
  *
  *
  */
@@ -111,13 +111,13 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
  *
  * @apiErrorExample {json} 409 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *            "error_code": "REFERENCE_ID_IN_USE",
- *            "message": "Reference id moose_2015_09_17 is already in use."
- *         }
- *     ]
+ *    HTTP/1.1 404 Not Found
+ *    [
+ *        {
+ *            "error_code": "NOT_AUTHORIZED",
+ *            "message": "Credentials are required to access this resource."
+ *        }
+ *    ]
  *
  *
  */
@@ -177,13 +177,13 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
  *
  * @apiErrorExample {json} 409 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *            "error_code": "REFERENCE_ID_IN_USE",
- *            "message": "Reference id moose_2015_09_17 is already in use."
- *         }
- *     ]
+ *    HTTP/1.1 404 Not Found
+ *    [
+ *        {
+ *            "error_code": "NOT_AUTHORIZED",
+ *            "message": "Credentials are required to access this resource."
+ *        }
+ *    ]
  *
  *
  */

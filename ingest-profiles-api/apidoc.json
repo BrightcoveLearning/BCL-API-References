@@ -5,13 +5,13 @@
     "title": "Ingest Profiles API Reference",
     "url" : "https://ingestion.api.brightcove.com/v1",
     "order": [
-        "Create Ingest Profile",
-        "Get All Ingest Profiles",
-        "Get Ingest Profile by ID",
-        "Update Ingest Profile",
-        "Delete Ingest Profile",
-        "Get Default Profile",
-        "Set Default Profile",
-        "Update Default Profile"
+        "Create_Ingest_Profile",
+        "Get_All_Ingest_Profiles",
+        "Get_Ingest_Profile_by_ID",
+        "Update_Ingest_Profile",
+        "Delete_Ingest_Profile",
+        "Get_Default_Profile",
+        "Set_Default_Profile",
+        "Update_Default_Profile"
     ]
 }
