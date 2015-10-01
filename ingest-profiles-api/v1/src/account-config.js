@@ -1,47 +1,24 @@
-// create video
+// set default profile
 
 /**
- * @api {post} /accounts/:account_id/videos Create Video Object
- * @apiName Create Video Object
- * @apiGroup Video
+ * @api {post} /accounts/:account_id/configurations Set Default Profile
+ * @apiName Set Default Profile
+ * @apiGroup Account Configuration
  * @apiVersion 1.0.0
  *
- * @apiDescription Create a new video object in the account.
- * _Note: this request is made to the CMS API, and is required only if you are ingesting a new video; the URI for this request is `https://cms.api.brightcove.com/v1/accounts/{account_id}/videos`_
+ * @apiDescription Sets an ingest profile as the default for the account.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- *
- * @apiParam (Request Body Fields) {String} name video title
- * @apiParam (Request Body Fields) {String} [description] video short description
- * @apiParam (Request Body Fields) {String} [long_description] video long description
- * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
- * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
- * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
- * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
- * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
- * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
- * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
- * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
+ * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID
+ * @apiParam (Request Body Fields) {String} default_profile_id The id or name of the profile you want to set as the default
  *
  * @apiParamExample {json} Create Video Example:
  *     {
- *         "name": "Moose Herd",
- *         "description": "Herd of moose grazing",
- *         "reference_id": "moose_2015_09_17",
- *         "tags": [
- *             "nature",
- *             "animals"
- *         ],
- *         "custom_fields": {
- *             "topic": "wildlife",
- *             "subtopic": "mammals"
- *         }
+ *         "account_id": 57838016001,
+ *         "default_profile_id": "high-resolution"
  *     }
  *
  * @apiSuccess (Response Fields) {String} id video id
