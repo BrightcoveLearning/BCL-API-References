@@ -766,7 +766,7 @@
  * @apiGroup Profile
  * @apiVersion 1.0.0
  *
- * @apiDescription Get a single profile map by its ID
+ * @apiDescription Delete an ingest profile
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
