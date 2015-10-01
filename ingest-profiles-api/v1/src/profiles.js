@@ -13,7 +13,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParam (Request Body Fields) {String} name video title
+ * @apiParam (Request Body Fields) {String} name profile name (must be unique within the account)
  * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID.
  * @apiParam (Request Body Fields) {String} [description] description of the profile
  * @apiParam (Request Body Fields) {Object[]} renditions array of rendition maps
@@ -102,7 +102,7 @@
  *          "width": 160,
  *          "height": 90
  *        }
- *      ]
+ *      ],
  *      "digital_master": {
  *            "rendition": "passthrough",
  *            "distribute": true
@@ -112,89 +112,62 @@
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
- * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
- * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
- * @apiSuccess (Response Fields) {String} cue_points.name cue point name
- * @apiSuccess (Response Fields) {String} cue_points.type=AD cue point type
- * @apiSuccess (Response Fields) {Number} cue_points.time time of the cue point in seconds; example: 10.527
- * @apiSuccess (Response Fields) {String} cue_points.metadata=null optional metadata string (128 single-byte characters maximum)
- * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} description video short description
- * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
- * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
- * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
- * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
- * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
- * @apiSuccess (Response Fields) {Object} images map of image maps
- * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
- * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
- * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
- * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
- * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
- * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
- * @apiSuccess (Response Fields) {Object} link map of scheduling properties
- * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
- * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
- * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
- * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
- * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
- * @apiSuccess (Response Fields) {String} sharing.by_id id of the account that shared the video; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {String} sharing.source_id id of the video in its original account; __note that this field is populated only for the shared copy, not for the original video__
- * @apiSuccess (Response Fields) {Boolean} sharing.to_external_acct whether the video is shared to another account
- * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
- * @apiSuccess (Response Fields) {String[]} tags array of tags
- * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
- * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
- * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
- * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
- * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
- * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 201 Created
+ *    HTTP/1.1 201 Created
  *    {
- *        "account_id": "57838016001",
- *        "complete": false,
- *        "created_at": "2015-09-18T15:59:23.756Z",
- *        "cue_points": [],
- *        "custom_fields": {},
- *        "description": "Herd of moose grazing",
- *        "digital_master_id": null,
- *        "duration": null,
- *        "economics": "AD_SUPPORTED",
- *        "folder_id": null,
- *        "geo": null,
- *        "id": "4494811891001",
- *        "images": {},
- *        "link": null,
- *        "long_description": null,
- *        "name": "Moose Herd",
- *        "reference_id": "moose_2015_09_17",
- *        "schedule": null,
- *        "sharing": null,
- *        "state": "ACTIVE",
- *        "tags": [
- *            "animals",
- *            "nature"
+ *        "account_id": 57838016001,
+ *        "brightcove_standard": false,
+ *        "date_created": 1443700501852,
+ *        "date_last_modified": 1443700501852,
+ *        "description": "This will produce 1 HLS rendition and 2 image renditions.",
+ *        "digital_master": {
+ *            "distribute": true,
+ *            "rendition": "passthrough"
+ *        },
+ *        "id": "560d1f15e4b05e8c5d7fa5c4",
+ *        "keep_renditions": true,
+ *        "name": "Protected",
+ *        "packages": [],
+ *        "renditions": [
+ *            {
+ *                "audio_bitrate": 96,
+ *                "audio_codec": "aac",
+ *                "format": "ts",
+ *                "h264_profile": "main",
+ *                "height": 720,
+ *                "id": "560d1f15e4b05e8c5d7fa5c1",
+ *                "keyframe_rate": 0.5,
+ *                "max_frame_rate": 30.0,
+ *                "media_type": "video",
+ *                "reference_id": "ts1",
+ *                "type": "segmented",
+ *                "video_codec": "h264",
+ *                "width": 1280
+ *            },
+ *            {
+ *                "format": "png",
+ *                "height": 540,
+ *                "id": "560d1f15e4b05e8c5d7fa5c2",
+ *                "label": "poster",
+ *                "media_type": "image",
+ *                "width": 960
+ *            },
+ *            {
+ *                "format": "png",
+ *                "height": 90,
+ *                "id": "560d1f15e4b05e8c5d7fa5c3",
+ *                "label": "thumbnail",
+ *                "media_type": "image",
+ *                "width": 160
+ *            }
  *        ],
- *        "text_tracks": [],
- *        "updated_at": "2015-09-18T15:59:23.764Z"
- *    } *
+ *        "version": 1443700501853
+ *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
