@@ -4,5 +4,14 @@
     "description": "Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters.",
     "title": "Ingest Profiles API Reference",
     "url" : "https://ingestion.api.brightcove.com/v1",
-    "order": ["Profiles","Account Configuration"]
+    "order": [
+        "Create Ingest Profile",
+        "Get All Ingest Profiles",
+        "Get Ingest Profile by ID",
+        "Update Ingest Profile",
+        "Delete Ingest Profile",
+        "Get Default Profile",
+        "Set Default Profile",
+        "Update Default Profile"
+    ]
 }
