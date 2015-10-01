@@ -112,8 +112,8 @@
  *
  * @apiSuccess (Response Fields) {String} id profile id
  * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {DateString} date_created when the profile was created
- * @apiSuccess (Response Fields) {DateString} date_last_modified when the profile was last modified
+ * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
@@ -259,8 +259,8 @@
  *
  * @apiSuccess (Response Fields) {String} id profile id
  * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {DateString} date_created when the profile was created
- * @apiSuccess (Response Fields) {DateString} date_last_modified when the profile was last modified
+ * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
@@ -400,8 +400,8 @@
  *
  * @apiSuccess (Response Fields) {String} id profile id
  * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {DateString} date_created when the profile was created
- * @apiSuccess (Response Fields) {DateString} date_last_modified when the profile was last modified
+ * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
@@ -632,8 +632,8 @@
  *
  * @apiSuccess (Response Fields) {String} id profile id
  * @apiSuccess (Response Fields) {String} name profile name
- * @apiSuccess (Response Fields) {DateString} date_created when the profile was created
- * @apiSuccess (Response Fields) {DateString} date_last_modified when the profile was last modified
+ * @apiSuccess (Response Fields) {Number} date_created when the profile was created (epoch time in milliseconds)
+ * @apiSuccess (Response Fields) {Number} date_last_modified when the profile was last modified (epoch time in milliseconds)
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
