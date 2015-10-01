@@ -1,8 +1,7 @@
 {
-    "name": "Dynamic Ingest API",
+    "name": "OAuth API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Dynamic Ingest API, used to add videos, images, and captions to your media library, and to replace existing media assets.",
-    "title": "Dynamic Ingest API Reference",
-    "url" : "https://ingest.api.brightcove.com/v1",
-    "order": ["Video","Ingest"]
+    "description": "Reference for the Brightcove OAuth API, used to get client credentials and access tokens for the other APIs.",
+    "title": "OAuth API Reference",
+    "url" : "https://ingest.api.brightcove.com/v1"
 }
