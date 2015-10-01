@@ -1,4 +1,4 @@
-// create video
+// get client-credentials
 
 /**
  * @api {post} /accounts/:account_id/videos Create Video Object
