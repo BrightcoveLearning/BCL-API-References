@@ -214,15 +214,97 @@
  *
  */
 
-// update client-credential
+// get client-credential by ID
 
 /**
- * @api {put} /client_credentials/:client_id Update Client Credential
- * @apiName Update Client Credential
+ * @api {get} /client_credentials/:client_id Get Client Credential by ID
+ * @apiName Get Client Credential By ID
  * @apiGroup Credentials
  * @apiVersion 3.0.0
  *
  * @apiDescription Get a client credential
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ *
+ * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
+ *
+ * @apiParamExample {String} Create Credentials Example:
+ *    https://oauth.brightcove.com/v3/client_credentials/1fa5f786-3418-4a69-8b78-6772f283d838
+ *
+ * @apiSuccess (Response Fields) {String} name credential name
+ * @apiSuccess (Response Fields) {String} name_html html version of credential name
+ * @apiSuccess (Response Fields) {String} description credential description
+ * @apiSuccess (Response Fields) {String} description_html html version of credential description
+ * @apiSuccess (Response Fields) {String} client_id the client id
+ * @apiSuccess (Response Fields) {String} client_secret client secret &mdash; note that it will always be `null`; it is returned only for the `POST` request that creates the credential
+ * @apiSuccess (Response Fields) {String} type the type - currently always equals `credential`
+ * @apiSuccess (Response Fields) {String} issued_to the email address of the account user issued to
+ * @apiSuccess (Response Fields) {String} issued_user system id for user issued to
+ * @apiSuccess (Response Fields) {String} redirect_url currently not used
+ * @apiSuccess (Response Fields) {Boolean} trusted whether the client is trusted
+ * @apiSuccess (Response Fields) {Boolean} revoked whether the credential is revoked
+ * @apiSuccess (Response Fields) {DateString} expires_at when the credential expires
+ * @apiSuccess (Response Fields) {DateString} issued_at when the credential was issued
+ * @apiSuccess (Response Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
+ * @apiSuccess (Response Fields) {Object} maximum_scope.identity map defining the account and operations
+ * @apiSuccess (Response Fields) {String} maximum_scope.identity.type the type of account
+ * @apiSuccess (Response Fields) {String} maximum_scope.identity.account-id the account ID
+ * @apiSuccess (Response Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "redirect_url": null,
+ *        "maximum_scope": [
+ *            {
+ *                "identity": {
+ *                    "type": "video-cloud-account",
+ *                    "account-id": 57838016001
+ *                },
+ *                "operations": [
+ *                    "video-cloud/player/all"
+ *                ]
+ *            }
+ *        ],
+ *        "name_html": "Sample-Client",
+ *        "issued_to": "rcrooks@brightcove.com",
+ *        "trusted": null,
+ *        "expires_at": null,
+ *        "issued_at": "2015-06-19T13:19:58Z",
+ *        "name": "Sample-Client",
+ *        "description_html": null,
+ *        "revoked": null,
+ *        "type": "credential",
+ *        "client_secret": null,
+ *        "description": null,
+ *        "client_id": "1fa5f786-3418-4a69-8b78-6772f283d838",
+ *        "issued_user": 53255203001
+ *    }
+ *
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; The request does not carry authentication credentials sufficient to authorize the requested access.
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ *
+ * @apiErrorExample {json} 409 Error Response
+ *    HTTP/1.1 401 Unauthorized
+ *    {
+ *      "error": "access_denied",
+ *      "error_description": "The request does not carry authentication credentials sufficient to authorize the requested access."
+ *    }
+ *
+ *
+ */
+
+// update client-credential
+
+/**
+ * @api {get} /client_credentials/:client_id Update Client Credential
+ * @apiName Update Client Credential
+ * @apiGroup Credentials
+ * @apiVersion 3.0.0
+ *
+ * @apiDescription Update a client credential
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
