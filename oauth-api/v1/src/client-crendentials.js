@@ -18,21 +18,21 @@
  * @apiParam (Request Body Fields) {String="video-cloud-account","perform-account"} maximum_scope.identity.type the type of account
  * @apiParam (Request Body Fields) {String} maximum_scope.identity.account-id the account ID
  * @apiParam (Request Body Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
+ * @apiParam (Request Body Fields) {String} name name for the credentials
+ * @apiParam (Request Body Fields) {String} description description for the credentials
  *
- * @apiParamExample {json} Create Video Example:
- *     {
- *         "name": "Moose Herd",
- *         "description": "Herd of moose grazing",
- *         "reference_id": "moose_2015_09_17",
- *         "tags": [
- *             "nature",
- *             "animals"
- *         ],
- *         "custom_fields": {
- *             "topic": "wildlife",
- *             "subtopic": "mammals"
- *         }
- *     }
+ * @apiParamExample {json} Create Credentials Example:
+ *    {"type":"credential",
+ *        "maximum_scope":[
+ *        {"identity":{
+ *            "type":"video-cloud-account",
+ *            "account-id":57838016001},
+ *            "operations":[
+ *                "video-cloud/playlist/all",
+ *                "video-cloud/video/all"
+ *            ],
+ *        "name":"SampleClient"
+ *    }
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
@@ -90,35 +90,36 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 201 Created
+ *    HTTP/1.1 201 Created
  *    {
- *        "account_id": "57838016001",
- *        "complete": false,
- *        "created_at": "2015-09-18T15:59:23.756Z",
- *        "cue_points": [],
- *        "custom_fields": {},
- *        "description": "Herd of moose grazing",
- *        "digital_master_id": null,
- *        "duration": null,
- *        "economics": "AD_SUPPORTED",
- *        "folder_id": null,
- *        "geo": null,
- *        "id": "4494811891001",
- *        "images": {},
- *        "link": null,
- *        "long_description": null,
- *        "name": "Moose Herd",
- *        "reference_id": "moose_2015_09_17",
- *        "schedule": null,
- *        "sharing": null,
- *        "state": "ACTIVE",
- *        "tags": [
- *            "animals",
- *            "nature"
- *        ],
- *        "text_tracks": [],
- *        "updated_at": "2015-09-18T15:59:23.764Z"
- *    } *
+ *      "redirect_url": null,
+ *      "maximum_scope": [
+ *        {
+ *          "identity": {
+ *            "type": "video-cloud-account",
+ *            "account-id": 57838016001
+ *          },
+ *          "operations": [
+ *            "video-cloud/playlist/all",
+ *            "video-cloud/video/all"
+ *          ]
+ *        }
+ *      ],
+ *      "name_html": "SampleClient",
+ *      "issued_to": "rcrooks@brightcove.com",
+ *      "trusted": null,
+ *      "expires_at": null,
+ *      "issued_at": "2015-10-02T13:59:07Z",
+ *      "name": "SampleClient",
+ *      "description_html": null,
+ *      "revoked": null,
+ *      "type": "credential",
+ *      "client_secret": "client_secret_removed_for_security_reasons",
+ *      "description": null,
+ *      "client_id": "b744071a-3dc6-4e2a-9a8a-50beca8cf53f",
+ *      "issued_user": 53255203001
+ *    }
+ *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
