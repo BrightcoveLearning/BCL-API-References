@@ -178,14 +178,9 @@
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} PROFILE 400: Unable to find profile by name
- * @apiError (Error 4xx) {json} NOT_SUBMITTED 400: Unable to submit job, please try again later
- * @apiError (Error 4xx) {json} NO_SUCH_VIDEO 400: Unable to find the referenced video
- * @apiError (Error 4xx) {json} BAD_ACCOUNT 400: Account ID was missing or invalid
- * @apiError (Error 4xx) {json} NO_SOURCE 400: Unable to find a source to use
- * @apiError (Error 4xx) {json} CDN_CREDENTIALS 400: Unable to fetch CDN credentials
- * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
- * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
+ * @apiError (Error 4xx) {json} INVALID_REQUEST 400: The following parameters of the request are missing, syntactically incorrect, or inconsistent with one another
+ * @apiError (Error 4xx) {json} ENDPOINT_NOT_ALLOWED 400: The following parameters of the request are missing, syntactically incorrect, or inconsistent with one another
+ * @apiError (Error 5xx) {json} SERVER_ERROR 500: Internal error, please try again later
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
