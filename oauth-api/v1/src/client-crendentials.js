@@ -214,11 +214,11 @@
  *
  */
 
-// get client-credential by ID
+// update client-credential
 
 /**
- * @api {get} /client_credentials/:client_id Get Client Credential by ID
- * @apiName Get Client Credential By ID
+ * @api {put} /client_credentials/:client_id Update Client Credential
+ * @apiName Update Client Credential
  * @apiGroup Credentials
  * @apiVersion 3.0.0
  *
