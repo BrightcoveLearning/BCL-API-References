@@ -15,7 +15,7 @@
  * @apiParam (URL Parameters) {Number} account_ids one or more Video Cloud account IDs separated by commas
  * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
  * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {String} [sort=video_view] field to sort results by
+ * @apiparam (URL Parameters) {String} [sort=video_view] field to sort results by (for video dimension reports, valid sort fields include the video metadata fields `video.name`, `video.tags`, `video.reference_id` and `video.custom_fields` - see ([Fields and Sort](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#fieldsAndSorting)))
  * @apiparam (URL Parameters) {String} [fields=video_view] fields to return for items; see [Dimensions and Fields](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#metrics) for the available fields for each dimension
  * @apiparam (URL Parameters) {String="account","city","country","region","date","date-time","device_os","device_type","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#reportDimensions) for which combined dimensions are supported
  * @apiparam (URL Parameters) {String="dimension==value"} [where] one or more dimension==value pairs to filter the results; see [Where Filters](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#filterValues) for details
