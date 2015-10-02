@@ -1,33 +1,23 @@
-// get client-credentials
+// create client-credentials
 
 /**
- * @api {post} /accounts/:account_id/videos Create Video Object
- * @apiName Create Video Object
- * @apiGroup Video
- * @apiVersion 1.0.0
+ * @api {post} /client_credentials Create Client Credentials
+ * @apiName Create Client Credentials
+ * @apiGroup Credentials
+ * @apiVersion 3.0.0
  *
- * @apiDescription Create a new video object in the account.
- * _Note: this request is made to the CMS API, and is required only if you are ingesting a new video; the URI for this request is `https://cms.api.brightcove.com/v1/accounts/{account_id}/videos`_
+ * @apiDescription Create client credentials to use in getting an access token for one or more APIs
+ * _Note: client credentials are permanent unless revoked, but you must save the client secret when you create it - it can never be retrieved again._
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- *
- * @apiParam (Request Body Fields) {String} name video title
- * @apiParam (Request Body Fields) {String} [description] video short description
- * @apiParam (Request Body Fields) {String} [long_description] video long description
- * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
- * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
- * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
- * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
- * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
- * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
- * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
- * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiParam (Request Body Fields) {String} type always equal to `credential`
+ * @apiParam (Request Body Fields) {Object[]} maximum_scope array of maps specifying the accounts and API operations for the credentials
+ * @apiParam (Request Body Fields) {Object} maximum_scope.identity map defining the account and operations
+ * @apiParam (Request Body Fields) {String="video-cloud-account","perform-account"} maximum_scope.identity.type the type of account
+ * @apiParam (Request Body Fields) {String} maximum_scope.identity.account-id the account ID
+ * @apiParam (Request Body Fields) {String[]} maximum_scope.identity.operations array of operations the credentials grant access to (see [Operations](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/api-operations.html))
  *
  * @apiParamExample {json} Create Video Example:
  *     {
