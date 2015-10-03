@@ -3,7 +3,7 @@
 /**
  * @api {post} /client_credentials Create Client Credential
  * @apiName Create Client Credential
- * @apiGroup Credentials
+ * @apiGroup Client Credential
  * @apiVersion 3.0.0
  *
  * @apiDescription Create client credential, consisting of a `client-id` and `client_secret` used in getting an access token for one or more APIs
@@ -108,7 +108,7 @@
 /**
  * @api {get} /client_credentials Get Client Credentials
  * @apiName Get Client Credentials
- * @apiGroup Credentials
+ * @apiGroup Client Credential
  * @apiVersion 3.0.0
  *
  * @apiDescription Get an array of client credentials for one or more accounts
@@ -219,7 +219,7 @@
 /**
  * @api {get} /client_credentials/:client_id Get Client Credential by ID
  * @apiName Get Client Credential By ID
- * @apiGroup Credentials
+ * @apiGroup Client Credential
  * @apiVersion 3.0.0
  *
  * @apiDescription Get a client credential
@@ -301,7 +301,7 @@
 /**
  * @api {put} /client_credentials/:client_id Update Client Credential
  * @apiName Update Client Credential
- * @apiGroup Credentials
+ * @apiGroup Client Credential
  * @apiVersion 3.0.0
  *
  * @apiDescription Update a client credential
@@ -396,7 +396,7 @@
 /**
  * @api {delete} /client_credentials/:client_id Update Client Credential
  * @apiName Update Client Credential
- * @apiGroup Credentials
+ * @apiGroup Client Credential
  * @apiVersion 3.0.0
  *
  * @apiDescription Update a client credential
