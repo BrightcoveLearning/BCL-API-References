@@ -309,7 +309,7 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
  *
- * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
+ * @apiParam (Path Parameters) {String} client_id client id for the credential
  *
  * @apiParamExample {json} Create Credentials Example:
  *    {"type":"credential",
@@ -376,6 +376,42 @@
  *        "client_id": "b744071a-3dc6-4e2a-9a8a-50beca8cf53f",
  *        "issued_user": 53255203001
  *    }
+ *
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; The request does not carry authentication credentials sufficient to authorize the requested access.
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ *
+ * @apiErrorExample {json} 409 Error Response
+ *    HTTP/1.1 401 Unauthorized
+ *    {
+ *      "error": "access_denied",
+ *      "error_description": "The request does not carry authentication credentials sufficient to authorize the requested access."
+ *    }
+ *
+ *
+ */
+
+// delete client-credential
+
+/**
+ * @api {delete} /client_credentials/:client_id Update Client Credential
+ * @apiName Update Client Credential
+ * @apiGroup Credentials
+ * @apiVersion 3.0.0
+ *
+ * @apiDescription Update a client credential
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: BC_TOKEN your_BC_TOKEN (see [Get BC_TOKEN](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-client-credentials.html#steps))
+ *
+ * @apiParam (Path Parameters) {String} client_id client id for the credential
+ *
+ * @apiParamExample {String} Create Credentials Example:
+ *    https://oauth.brightcove.com/v3/client_credentials/b744071a-3dc6-4e2a-9a8a-50beca8cf53f
+ *
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 204 NO CONTENT
  *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; The request does not carry authentication credentials sufficient to authorize the requested access.
