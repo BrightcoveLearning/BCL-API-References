@@ -28,17 +28,15 @@
  *        token_type: "Bearer"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} invalid_client 400: credential is not valid
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  *
- * @apiErrorExample {json} 409 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *            "error_code": "REFERENCE_ID_IN_USE",
- *            "message": "Reference id moose_2015_09_17 is already in use."
- *         }
- *     ]
+ * @apiErrorExample {json} 400 Error Response
+ *    HTTP/1.1 400 Not Found
+ *    {
+ *        "error": "invalid_client",
+ *        "error_description": "The &quot;client_id&quot; parameter is missing, does not name a client registration that is applicable for the requested call, or is not properly authenticated."
+ *    }
  *
  *
  */

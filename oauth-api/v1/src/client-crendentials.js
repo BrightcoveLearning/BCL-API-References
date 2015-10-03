@@ -394,8 +394,8 @@
 // delete client-credential
 
 /**
- * @api {delete} /client_credentials/:client_id Update Client Credential
- * @apiName Update Client Credential
+ * @api {delete} /client_credentials/:client_id Delete Client Credential
+ * @apiName Delete Client Credential
  * @apiGroup Client Credential
  * @apiVersion 3.0.0
  *
