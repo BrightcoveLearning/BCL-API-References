@@ -318,8 +318,9 @@
  *            "type":"video-cloud-account",
  *            "account-id":57838016001},
  *            "operations":[
- *                "video-cloud/playlist/read",
- *                "video-cloud/video/all"
+ *                "video-cloud/playlist/all",
+ *                "video-cloud/video/all",
+ *                "video-cloud/player/all"
  *            ],
  *        "name":"SampleClient"
  *    }
@@ -355,8 +356,9 @@
  *                    "account-id": 57838016001
  *                },
  *                "operations": [
+ *                    "video-cloud/playlist/all",
  *                    "video-cloud/video/all",
- *                    "video-cloud/playlist/read"
+ *                    "video-cloud/player/all"
  *                ]
  *            }
  *        ],
