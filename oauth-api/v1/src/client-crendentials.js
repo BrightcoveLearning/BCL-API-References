@@ -299,7 +299,7 @@
 // update client-credential
 
 /**
- * @api {get} /client_credentials/:client_id Update Client Credential
+ * @api {put} /client_credentials/:client_id Update Client Credential
  * @apiName Update Client Credential
  * @apiGroup Credentials
  * @apiVersion 3.0.0
@@ -311,8 +311,18 @@
  *
  * @apiParam (URL Parameters) {String} origin_account_ids list of account ids
  *
- * @apiParamExample {String} Create Credentials Example:
- *    https://oauth.brightcove.com/v3/client_credentials/e6b88c11-dfb1-4315-acd3-500d02a69292
+ * @apiParamExample {json} Create Credentials Example:
+ *    {"type":"credential",
+ *        "maximum_scope":[
+ *        {"identity":{
+ *            "type":"video-cloud-account",
+ *            "account-id":57838016001},
+ *            "operations":[
+ *                "video-cloud/playlist/read",
+ *                "video-cloud/video/all"
+ *            ],
+ *        "name":"SampleClient"
+ *    }
  *
  * @apiSuccess (Response Fields) {String} name credential name
  * @apiSuccess (Response Fields) {String} name_html html version of credential name
@@ -345,22 +355,23 @@
  *                    "account-id": 57838016001
  *                },
  *                "operations": [
- *                    "video-cloud/player/all"
+ *                    "video-cloud/video/all",
+ *                    "video-cloud/playlist/read"
  *                ]
  *            }
  *        ],
- *        "name_html": "Sample-Client",
+ *        "name_html": "SampleClient",
  *        "issued_to": "rcrooks@brightcove.com",
  *        "trusted": null,
  *        "expires_at": null,
- *        "issued_at": "2015-06-19T13:19:58Z",
- *        "name": "Sample-Client",
+ *        "issued_at": "2015-10-02T13:59:07Z",
+ *        "name": "SampleClient",
  *        "description_html": null,
  *        "revoked": null,
  *        "type": "credential",
  *        "client_secret": null,
  *        "description": null,
- *        "client_id": "1fa5f786-3418-4a69-8b78-6772f283d838",
+ *        "client_id": "b744071a-3dc6-4e2a-9a8a-50beca8cf53f",
  *        "issued_user": 53255203001
  *    }
  *
