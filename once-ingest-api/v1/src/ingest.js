@@ -31,9 +31,18 @@
  * @apiParam (Request Body Fields) {String="Equals","NotEquals","In","NotIn","Contains","NotContains","StartsWith","NotStartsWith","EndsWith","NotEndsWith"} publicationRules.clientFilters.filterType The type of filtering used to compare the value
  * @apiParam (Request Body Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
  * @apiParam (Request Body Fields) {Object[]} [publicationRules.countryRules] An array of Country Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.countryRules.countryCode The Country Code for the Country Rule (ISO 3166 2-letter code, such as "CA")
+ * @apiParam (Request Body Fields) {String} publicationRules.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
  * @apiParam (Request Body Fields) {Boolean} publicationRules.countryRules.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
  * @apiParam (Request Body Fields) {Object[]} [cuePoints] An array of Cue Points for the asset
+ * @apiParam (Request Body Fields) {Number} cuePoints.valueIn The time in which the Cue Point will be inserted (integer)
+ * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit The type of unit the time value
+ * @apiParam (Request Body Fields) {Object[]} [timedText] An array of Timed Text items for the asset
+ * @apiParam (Request Body Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
+ * @apiParam (Request Body Fields) {String} timedText.media.sourceURL The URL string to the source asset
+ * @apiParam (Request Body Fields) {String="Subtitle","Caption","Embedded"} timedText.timedTextType The type to categorize the timed text item
+ * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
+ * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
+ * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
  *
  * @apiParamExample {json} Ingest Request Body Example:
  *    {
