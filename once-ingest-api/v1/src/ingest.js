@@ -25,7 +25,11 @@
  * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
  * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
  * @apiParam (Request Body Fields) {Number} publicationRules.endDate The end date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Object[]} publicationRules.clientFilters An array of Client Filters for the Publication Rule
+ * @apiParam (Request Body Fields) {Object[]} [publicationRules.clientFilters] An array of Client Filters for the Publication Rule
+ * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} publicationRules.clientFilters.variableName The variable name that the Client Filter will key off of
+ * @apiParam (Request Body Fields) {String} publicationRules.clientFilters.value The value name that the Client Filter will key off of
+ * @apiParam (Request Body Fields) {String="Equals","NotEquals","In","NotIn","Contains","NotContains","StartsWith","NotStartsWith","EndsWith","NotEndsWith"} publicationRules.clientFilters.filterType The type of filtering used to compare the value
+ * @apiParam (Request Body Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
  *
  * @apiParamExample {json} Ingest Request Body Example:
  *    {
