@@ -29,6 +29,12 @@
  * @apiSuccess (Response Fields) {Object[]} input.notifications Array of notification maps
  * @apiSuccess (Response Fields) {Object[]} input.publicationRules Array of publication rule maps
  * @apiSuccess (Response Fields) {Object[]} input.cuePoints Array of cur point maps
+ * @apiSuccess (Response Fields) {Object} output The job output
+ * @apiSuccess (Response Fields) {String} output.mediaItemId The media item id
+ * @apiSuccess (Response Fields) {Boolean} output.hasChanged Whether the media item has been modified
+ * @apiSuccess (Response Fields) {Object} output.description Description object for the media item
+ * @apiSuccess (Response Fields) {String} output.description.url URL for the media item
+ * @apiSuccess (Response Fields) {DateString} output.description.lastModified Date/time the media item was last modified
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
