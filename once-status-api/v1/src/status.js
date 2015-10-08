@@ -43,6 +43,11 @@
  * @apiSuccess (Response Fields) {DateString} steps.output.description.lastModified Date/time the media item was last modified
  * @apiSuccess (Response Fields) {String} steps.output.description.etag Date/time the media item etag
  * @apiSuccess (Response Fields) {Number} steps.output.description.fileSize size of the output media item in bytes
+ * @apiSuccess (Response Fields) {Object} steps.transcode The transcode step
+ * @apiSuccess (Response Fields) {String} steps.transcode.name The name of the step
+ * @apiSuccess (Response Fields) {String} steps.transcode.status The status of transcode step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (Response Fields) {Number} steps.transcode.startTime The time when the transcode began in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Number} steps.transcode.completeTime The time when the transcode finished in epoch time (milliseconds)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
