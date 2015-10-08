@@ -13,11 +13,11 @@
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
- * @apiParam (Request Body Fields) {String} title The title of the asset (max length: 255 characters)
+ * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} foreignKey The unique identifier for the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} description A description of the asset
+ * @apiParam (Request Body Fields) {String} [description] A description of the asset
  * @apiParam (Request Body Fields) {String[]} [keywords] Array of keyword strings associated with the video
- * @apiParam (Request Body Fields) {Object} metadata A map of key value pairs for Extended Metadata
+ * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
  * @apiParam (Request Body Fields) {String} metadata.key The key of an Extended Metadata key value pair (see the example below for key/value pairs)
  * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
  * @apiParam (Request Body Fields) {String} media.sourceURL The URL string to the source asset
@@ -43,6 +43,9 @@
  * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
  * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
  * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
+ * @apiParam (Request Body Fields) {String} notifications.target The HTTP endpoint or sns target for your notification
+ * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
+ * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
  * @apiParamExample {json} Ingest Request Body Example:
  *    {
@@ -135,42 +138,29 @@
  *        ]
  *    }
  *
- * @apiSuccess (Response Fields) {String} key_string the policy key string
- * @apiSuccess (Response Fields) {Object[]} policies array of policy maps
- * @apiSuccess (Response Fields) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
- * @apiSuccess (Response Fields) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
- * @apiSuccess (Response Fields) {String} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
+ * @apiSuccess (Response Fields) {String} requestId The id for request
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "key-string": "BCpkADawqM0tR9WJhqqyg4t8NgSulRVnfHyh6cL_U0m7RaoIq19WWR-8EPiWY1ift8zHF6Z3sfTyuXv6LY8bfTAfvzVLb1TrwGTOBJGPwWJ9dJUkny7lUoN1ygk",
- *        "policies": [
- *            {
- *                "effect": "deny",
- *                "pattern": {
- *                    "!=": [
- *                        "[request.params.account-id],
- *                        "57838016001"
- *                    ]
- *                }
- *            }
- *        ]
+ *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7"
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {json} Validation Errors 404: The api couldn't find the resource you requested
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
- *     [
- *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
- *         }
- *     ]
+ * @apiErrorExample {json} 400 Error Response
+ *    HTTP/1.1 400 Validation Errors
+ *    {
+ *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7",
+ *        "error": "Validation Errors",
+ *        "fieldErrors": {
+ *            "publicationRule": [
+ *                "Publication rule with end date 0.0 is in the past.",
+ *                "Publication rule end date: 0.0 preceeds 1412025402"
+ *            ]
+ *        }
+ *    }
  *
  *
  */
