@@ -22,7 +22,10 @@
  * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
  * @apiParam (Request Body Fields) {String} media.sourceURL The URL string to the source asset
  * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules for the asset
- * @apiParam (Request Body Fields) {String} [publicationRules.channel] An array of Publication Rules for the asset
+ * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
+ * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
+ * @apiParam (Request Body Fields) {Number} publicationRules.endDate The end date for the Publication Rule (epoch time in seconds)
+ * @apiParam (Request Body Fields) {Object[]} publicationRules.clientFilters An array of Client Filters for the Publication Rule
  *
  * @apiParamExample {json} Ingest Request Body Example:
  *    {
@@ -34,8 +37,8 @@
  *        ],
  *        "description": "An overview of wildlife in northern Africa",
  *        "metadata": {
- *            "continent": "africa",
- *            "region": "north africa",
+ *            "continent": "Africa",
+ *            "region": "North",
  *            "PassThruMetadata": "Wildlife 07",
  *            "JobID": "8946-4bd4-b97c-a2b5dbc635c5"
  *        },
