@@ -24,23 +24,23 @@
  * @apiSuccess (Response Fields) {String} steps.ingest.status The status of ingest step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
  * @apiSuccess (Response Fields) {Number} steps.ingest.startTime The time when the ingest began in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Number} steps.ingest.completeTime The time when the ingest finished in epoch time (milliseconds)
- * @apiSuccess (Response Fields) {Object} input The request inputs
- * @apiSuccess (Response Fields) {String} input.foreign_key The unique identifier for the asset
- * @apiSuccess (Response Fields) {String} input.domainId The domain id
- * @apiSuccess (Response Fields) {String} input.catalog_id The catalog id
- * @apiSuccess (Response Fields) {String[]} input.keywords The keyword array for the asset
- * @apiSuccess (Response Fields) {Object} input.metadata The metadata map for the asset
- * @apiSuccess (Response Fields) {Object} input.media The media input
- * @apiSuccess (Response Fields) {String} input.media.sourceURL The media source URL
- * @apiSuccess (Response Fields) {Object[]} input.notifications Array of notification maps
- * @apiSuccess (Response Fields) {Object[]} input.publicationRules Array of publication rule maps
- * @apiSuccess (Response Fields) {Object[]} input.cuePoints Array of cur point maps
- * @apiSuccess (Response Fields) {Object} output The job output
- * @apiSuccess (Response Fields) {String} output.mediaItemId The media item id
- * @apiSuccess (Response Fields) {Boolean} output.hasChanged Whether the media item has been modified
- * @apiSuccess (Response Fields) {Object} output.description Description object for the media item
- * @apiSuccess (Response Fields) {String} output.description.url URL for the media item
- * @apiSuccess (Response Fields) {DateString} output.description.lastModified Date/time the media item was last modified
+ * @apiSuccess (Response Fields) {Object} steps.input The request inputs
+ * @apiSuccess (Response Fields) {String} steps.input.foreign_key The unique identifier for the asset
+ * @apiSuccess (Response Fields) {String} steps.input.domainId The domain id
+ * @apiSuccess (Response Fields) {String} steps.input.catalog_id The catalog id
+ * @apiSuccess (Response Fields) {String[]} steps.input.keywords The keyword array for the asset
+ * @apiSuccess (Response Fields) {Object} steps.input.metadata The metadata map for the asset
+ * @apiSuccess (Response Fields) {Object} steps.input.media The media input
+ * @apiSuccess (Response Fields) {String} steps.input.media.sourceURL The media source URL
+ * @apiSuccess (Response Fields) {Object[]} steps.input.notifications Array of notification maps
+ * @apiSuccess (Response Fields) {Object[]} steps.input.publicationRules Array of publication rule maps
+ * @apiSuccess (Response Fields) {Object[]} steps.input.cuePoints Array of cur point maps
+ * @apiSuccess (Response Fields) {Object} steps.output The job output
+ * @apiSuccess (Response Fields) {String} steps.output.mediaItemId The media item id
+ * @apiSuccess (Response Fields) {Boolean} steps.output.hasChanged Whether the media item has been modified
+ * @apiSuccess (Response Fields) {Object} steps.output.description Description object for the media item
+ * @apiSuccess (Response Fields) {String} steps.output.description.url URL for the media item
+ * @apiSuccess (Response Fields) {DateString} steps.output.description.lastModified Date/time the media item was last modified
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
