@@ -1,7 +1,7 @@
 {
     "name": "Once Ingest API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Policy API, used to create policy keys to access the Playback API. Note that policy keys are generated automatically for Brightcove Players. This API is used to generate keys to access the Playback API outside the context of a Brightcove Player.",
+    "description": "Reference for the Once Ingest API, used to ingest media assets into the Once system.",
     "title": "Once Ingest API Reference",
     "url" : "https://api.unicornmedia.com/ingest-api"
 }
