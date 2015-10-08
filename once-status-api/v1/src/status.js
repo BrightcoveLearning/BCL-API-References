@@ -15,9 +15,15 @@
  * @apiParamExample {String} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses/2796350e-2125-4f04-b33a-59488aaa76c7
  *
- * @apiSuccess (Response Fields) {String} status The status of the job: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (Response Fields) {String} status The overall status of the job: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
  * @apiSuccess (Response Fields) {Number} startTime The time when the job began in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Number} completeTime The time when the job finished in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Object} steps The steps of the job
+ * @apiSuccess (Response Fields) {Object} steps.ingest The ingest step
+ * @apiSuccess (Response Fields) {String} steps.ingest.name The name of the step
+ * @apiSuccess (Response Fields) {String} steps.ingest.status The status of ingest step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (Response Fields) {Number} steps.ingest.startTime The time when the ingest began in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Number} steps.ingest.completeTime The time when the ingest finished in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Object} input The request inputs
  * @apiSuccess (Response Fields) {String} input.foreign_key The unique identifier for the asset
  * @apiSuccess (Response Fields) {String} input.domainId The domain id
