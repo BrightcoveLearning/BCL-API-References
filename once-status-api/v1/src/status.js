@@ -26,7 +26,9 @@
  * @apiSuccess (Response Fields) {Object} input.metadata The metadata map for the asset
  * @apiSuccess (Response Fields) {Object} input.media The media input
  * @apiSuccess (Response Fields) {String} input.media.sourceURL The media source URL
- * @apiSuccess (Response Fields) {Object[]} input.notifications The media source URL
+ * @apiSuccess (Response Fields) {Object[]} input.notifications Array of notification maps
+ * @apiSuccess (Response Fields) {Object[]} input.publicationRules Array of publication rule maps
+ * @apiSuccess (Response Fields) {Object[]} input.cuePoints Array of cur point maps
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
