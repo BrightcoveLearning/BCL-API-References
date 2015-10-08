@@ -41,6 +41,8 @@
  * @apiSuccess (Response Fields) {Object} steps.output.description Description object for the media item
  * @apiSuccess (Response Fields) {String} steps.output.description.url URL for the media item
  * @apiSuccess (Response Fields) {DateString} steps.output.description.lastModified Date/time the media item was last modified
+ * @apiSuccess (Response Fields) {String} steps.output.description.etag Date/time the media item etag
+ * @apiSuccess (Response Fields) {Number} steps.output.description.fileSize size of the output media item in bytes
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
