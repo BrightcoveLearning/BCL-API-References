@@ -48,6 +48,14 @@
  * @apiSuccess (Response Fields) {String} steps.transcode.status The status of transcode step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
  * @apiSuccess (Response Fields) {Number} steps.transcode.startTime The time when the transcode began in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Number} steps.transcode.completeTime The time when the transcode finished in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Object} steps.transcode.output map of the transcode output
+ * @apiSuccess (Response Fields) {String[]} steps.transcode.output.renditions array of rendition ids
+ * @apiSuccess (Response Fields) {Object} steps.notification The notification step
+ * @apiSuccess (Response Fields) {String} steps.notification.name The name of the step
+ * @apiSuccess (Response Fields) {String} steps.notification.status The status of notification step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (Response Fields) {Number} steps.notification.startTime The time when the notification began in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Number} steps.notification.completeTime The time when the notification finished in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Object} steps.notification.output map of the notification output
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
