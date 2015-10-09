@@ -140,23 +140,10 @@
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Request Body Fields) {String} name Name for the catalog
- * @apiParam (Request Body Fields) {Object[]} [renditions] A collection of `rendition_ids` to be defined. If excluded, the catalog will acquire the defaulted domain renditions
- * @apiParam (Request Body Fields) {String} renditions.id id of the rendition to include &mdash; Only declared if you intent to define a subset of the renditions from the domain
+ * @apiParam (Path Parameters) {String} catalog_id The catalog id
  *
- * @apiParamExample {json} Create Catalog Request Body Example:
- *    {
- *        "name":"New-Test-Catalog",
- *        "renditions": [
- *            {
- *                "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
- *            },
- *            {
- *                "id": "ac2e7f0b-a345-11e4-bfdb-005056837bc7"
- *            }
- *            }
- *        ]
- *    }
+ * @apiParamExample {Url} Get Catalog Request Example:
+ *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
  * @apiSuccess (Response Fields) {String} id The id for the catalog
  * @apiSuccess (Response Fields) {String} name The name for the catalog
@@ -165,8 +152,44 @@
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
- *        "name": "New-Test-Catalog",
+ *        "id": "62191781-a933-49d6-831f-83bdf51a26ac",
+ *        "name": "New Catalog",
+ *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ *
+ *
+ */
+
+
+// get catalog renditions
+
+/**
+ * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Information
+ * @apiName Create Catalog
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Returns a collection of the transcode renditions available to the domain
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalog_id The catalog id
+ *
+ * @apiParamExample {Url} Get Catalog Request Example:
+ *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
+ *
+ * @apiSuccess (Response Fields) {String} id The id for the catalog
+ * @apiSuccess (Response Fields) {String} name The name for the catalog
+ * @apiSuccess (Response Fields) {Boolean} domain_id The domain id
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "62191781-a933-49d6-831f-83bdf51a26ac",
+ *        "name": "New Catalog",
  *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *    }
  *
