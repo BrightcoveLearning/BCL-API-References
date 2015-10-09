@@ -18,7 +18,7 @@
  * @apiSuccess (Response Fields) {Object[]} notifications Array of notifications objects for the request id
  * @apiSuccess (Response Fields) {Number} notifications.sentTime the time the notification was sent in epoch milliseconds
  * @apiSuccess (Response Fields) {String} notifications.event the event the notification was sent for
- * @apiSuccess (Response Fields) {String} notifications.id the id for the notification
+ * @apiSuccess (Response Fields) {String} notifications.id the id for job
  * @apiSuccess (Response Fields) {String} notifications.status the step status sent
  * @apiSuccess (Response Fields) {Object} notifications.notification details of the notification
  * @apiSuccess (Response Fields) {String} notifications.notification.notification the step type for the notification
