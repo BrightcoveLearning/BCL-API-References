@@ -421,7 +421,7 @@
  * @apiGroup Status
  * @apiVersion 1.0.0
  *
- * @apiDescription Provides a summary of notifications for the medium item
+ * @apiDescription Get the status of notifications for a request job
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
