@@ -228,6 +228,9 @@
  * @apiSuccess (Response Fields) {String} name The rendition name
  * @apiSuccess (Response Fields) {Number} width The frame width for the rendition in pixels
  * @apiSuccess (Response Fields) {Number} height The frame height for the rendition in pixels
+ * @apiSuccess (Response Fields) {Number} videoBitRate The video bitrate in kbps
+ * @apiSuccess (Response Fields) {Number} audioBitRate The audio bitrate in kbps
+ * @apiSuccess (Response Fields) {String} codecsValue The video and audio codecs
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
