@@ -12,7 +12,7 @@
  *
  * @apiParam (Path Parameters) {String} request_id The request_id for the job
  *
- * @apiParamExample {String} Status Request Example:
+ * @apiParamExample {Url} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses/bc6cb7d4-be99-471b-adf3-7c501172b317
  *
  * @apiSuccess (Response Fields) {Object[]} notifications Array of notifications objects for the request id

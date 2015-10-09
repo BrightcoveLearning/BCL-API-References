@@ -24,7 +24,7 @@
  * @apiparam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] format to return the results in
  * @apiparam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
  *
- * @apiParamExample {String} Video Dimension Report Example:
+ * @apiParamExample {Url} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/data?accounts=20318290001&dimensions=video&fields=video_view,video_impression&limit=1
  *
  * @apiSuccess (Response Fields) {String} account the Video Cloud account id

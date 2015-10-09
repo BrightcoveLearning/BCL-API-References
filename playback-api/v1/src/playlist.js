@@ -15,7 +15,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID
  *
- * @apiParamExample {String} Get Playlists Example:
+ * @apiParamExample {Url} Get Playlists Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -275,7 +275,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {Number} reference_id Video Cloud playlist reference ID
  *
- * @apiParamExample {String} Get Playlists Example:
+ * @apiParamExample {Url} Get Playlists Example:
  *     https://edge.api.brightcove.com/playback/v1/accounts/57838016001/playlists/ref:my-playlist-refID
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id

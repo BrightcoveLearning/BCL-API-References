@@ -19,7 +19,7 @@
  * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {String} Search for Playlists Example:
+ * @apiParamExample {Url} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=tags:nature
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -104,7 +104,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {String} Search for Playlists Example:
+ * @apiParamExample {Url} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -194,7 +194,7 @@
  * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {String} Search for Playlists Example:
+ * @apiParamExample {Url} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001/videos
  *
  * @apiSuccess (Response Fields) {String} id video id
@@ -707,7 +707,7 @@
  * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {String} Search Example:
+ * @apiParamExample {Url} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists
  *
  * @apiSuccess (Response Field) {Number} count count of playlists found
@@ -751,7 +751,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {String} Search Example:
+ * @apiParamExample {Url} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists/749117323001/videos
  *
  * @apiSuccess (Response Field) {Number} count count of videos
@@ -963,7 +963,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParamExample {String} Search for Playlists Example:
+ * @apiParamExample {Url} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001
  *
  * @apiSuccessExample {json} Success Response:

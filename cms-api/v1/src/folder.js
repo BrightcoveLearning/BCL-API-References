@@ -13,7 +13,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParamExample {String} Get Folders Example:
+ * @apiParamExample {Url} Get Folders Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
@@ -85,7 +85,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} folder_id Video Cloud folder ID.
  *
- * @apiParamExample {String} Get Folder Information Example:
+ * @apiParamExample {Url} Get Folder Information Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47
  *
  * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
@@ -139,7 +139,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} folder_id the folder ID.
  *
- * @apiParamExample {String} Get Videos in Folder Example:
+ * @apiParamExample {Url} Get Videos in Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos
  *
  * @apiSuccess (Response Fields) {String} id video id

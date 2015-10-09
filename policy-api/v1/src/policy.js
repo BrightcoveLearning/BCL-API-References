@@ -111,7 +111,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  * @apiParam (Path Parameters) {String} key_string the key string for the policy
  *
- * @apiParamExample {String} Get Policy Example:
+ * @apiParamExample {Url} Get Policy Example:
  *    https://policy.api.brightcove.com/v1/accounts/57838016001/policy_keys/BCpkADawqM0tR9WJhqqyg4t8NgSulRVnfHyh6cL_U0m7RaoIq19WWR-8EPiWY1ift8zHF6Z3sfTyuXv6LY8bfTAfvzVLb1TrwGTOBJGPwWJ9dJUkny7lUoN1ygk
  *
  * @apiSuccess (Response Fields) {String} key_string the policy key

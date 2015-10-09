@@ -18,7 +18,7 @@
  * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {String} Search Example:
+ * @apiParamExample {Url} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
  *
  * @apiSuccess (Response Fields) {String} id video id
@@ -180,7 +180,7 @@
  * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
- * @apiParamExample {String} Search Count Example:
+ * @apiParamExample {Url} Search Count Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/videos?q=tags:nature,name:nature
  *
  * @apiSuccess (Response Fields) {Number} count the count of videos found
@@ -377,7 +377,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
  *
- * @apiParamExample {String} Get Video Example:
+ * @apiParamExample {Url} Get Video Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *
  * @apiSuccess (Response Fields) {String} id video id
@@ -526,7 +526,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {String} Get Video Sources Example:
+ * @apiParamExample {Url} Get Video Sources Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/sources
  *
  * @apiSuccess (Response Field) {String} app_name address for RTMP stream
@@ -663,7 +663,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {String} Get Video Images Example:
+ * @apiParamExample {Url} Get Video Images Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/images
  *
  * @apiSuccess (Response Fields) {Object} images map of image maps
@@ -729,7 +729,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {String} Get Video Digital MasterExample:
+ * @apiParamExample {Url} Get Video Digital MasterExample:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/digital_master
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
@@ -823,7 +823,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {String} Get Video References Example:
+ * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
  * @apiSuccess (Response Field) {String[]} playlists array of EXPLICIT playlist ids that contain the video
@@ -867,7 +867,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
- * @apiParamExample {String} Get Video References Example:
+ * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/references
  *
  * @apiSuccessExample {json} Success Response:
@@ -1072,7 +1072,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
  *
- * @apiParamExample {String} Get Video References Example:
+ * @apiParamExample {Url} Get Video References Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *
  * @apiSuccessExample {json} Success Response:

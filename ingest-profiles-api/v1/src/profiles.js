@@ -254,7 +254,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  *
- * @apiParamExample {String} Get Profiles Example:
+ * @apiParamExample {Url} Get Profiles Example:
  *    https://ingestion.api.brightcove.com/v1/accounts/57838016001/profiles
  *
  * @apiSuccess (Response Fields) {String} id profile id
@@ -395,7 +395,7 @@
  * @apiParam (Path Parameters) {String} profile_id Video Cloud account ID.
  *
  *
- * @apiParamExample {String} Get Profiles Example:
+ * @apiParamExample {Url} Get Profiles Example:
  *    https://ingestion.api.brightcove.com/v1/accounts/57838016001/profiles/527d210ae4b0024db7acb05c
  *
  * @apiSuccess (Response Fields) {String} id profile id
@@ -775,7 +775,7 @@
  * @apiParam (Path Parameters) {String} profile_id Video Cloud account ID.
  *
  *
- * @apiParamExample {String} Get Profiles Example:
+ * @apiParamExample {Url} Get Profiles Example:
  *    https://ingestion.api.brightcove.com/v1/accounts/57838016001/profiles/527d210ae4b0024db7acb05c
  *
  *

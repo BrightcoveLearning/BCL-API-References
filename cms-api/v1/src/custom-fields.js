@@ -13,7 +13,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParamExample {String} Get Custom Fields Example:
+ * @apiParamExample {Url} Get Custom Fields Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/video_fields
  *
  * @apiSuccess (Response Fields) {Object[]} custom_fields array of custom field maps

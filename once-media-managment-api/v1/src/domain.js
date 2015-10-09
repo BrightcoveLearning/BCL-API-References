@@ -6,23 +6,41 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the essential information about the domain
+ * @apiDescription Returns a collection of all catalogs within the domain. This method fetches 20 catalogs per page, returns the totalResult to indicate the total number of catalogs and provides previous or next page requests within the body.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
- * @apiParamExample {String} Ingest Request Body Example:
- *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7
+ * @apiParamExample {Url} Ingest Request Body Example:
+ *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs
  *
- * @apiSuccess (Response Fields) {String} id The id for the domain
- * @apiSuccess (Response Fields) {String} name The name for the domain
+ * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
+ * @apiSuccess (Response Fields) {String} results.id The id for the domain
+ * @apiSuccess (Response Fields) {String} results.name The name for the domain
+ * @apiSuccess (Response Fields) {String} results.domain_id The domain id
+ * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Number} total number of results
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "id": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
- *        "name": "BrightcoveOnce"
+ *        "results": [
+ *            {
+ *                "id": "9482da98-4ad2-490d-983b-42c17fe06b81",
+ *                "name": "1-2-8",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            },
+ *            {
+ *                "id": "1cd8a599-13b6-45e4-8a94-7bad7a5c457e",
+ *                "name": "New catalog",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            }
+ *        ],
+ *        "prev": null,
+ *        "next": "https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs?page=2",
+ *        "totalResults": 27
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
@@ -30,11 +48,11 @@
  *
  */
 
-// get domain renditions
+// create catalog
 
 /**
- * @api {get} /domain/:domain_id/renditions Get Domain Renditions
- * @apiName Get Domain Renditions
+ * @api {post} /domain/:domain_id/catalogs Create Catalog
+ * @apiName Create Catalog
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
@@ -44,7 +62,7 @@
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
- * @apiParamExample {String} Ingest Request Body Example:
+ * @apiParamExample {Url} Ingest Request Body Example:
  *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
@@ -89,7 +107,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} rendition_id The id for the rendition
  *
- * @apiParamExample {String} Ingest Request Body Example:
+ * @apiParamExample {Url} Ingest Request Body Example:
  *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The id for the rendition

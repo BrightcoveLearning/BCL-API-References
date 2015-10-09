@@ -27,7 +27,7 @@
  * @apiparam (URL Parameters) {String} [region_name] Human readable region name (override in case the system can not detect geographic information from the IP address) **Not typically included**
  * @apiparam (URL Parameters) {String} [city] City name **Not typically included**
  *
- * @apiParamExample {String} Video Dimension Report Example:
+ * @apiParamExample {Url} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
  *
  * @apiSuccess (Response Fields) {Number} alltime_video_views all-time video views

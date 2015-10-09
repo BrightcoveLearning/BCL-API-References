@@ -14,7 +14,7 @@
  * @apiParam (Path Parameters) {String="ingest","update","transcode","timedtext","error","publish"} notification_type The notification type to be resent
  * @apiParam (Path Parameters) {String} [id] The id for a single job that you want notifications resent for
  *
- * @apiParamExample {String} Status Request Example:
+ * @apiParamExample {Url} Status Request Example:
  *     https://api.unicornmedia.com/status-api/notifications/bc6cb7d4-be99-471b-adf3-7c501172b317/transcode
  *
  * @apiSuccess (Response Fields) {Object[]} notication_type This will be the notification type you specified in the request &mdash; i.e. "transcode"

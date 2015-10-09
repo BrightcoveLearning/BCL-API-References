@@ -13,7 +13,7 @@
  *
  * @apiParam (URL Parameters) {String="client_credentials"} grant_type always equal to "client_credentials"
  *
- * @apiParamExample {String} Create Access Token Example:
+ * @apiParamExample {Url} Create Access Token Example:
  *     https://oauth.brightcove.com/v3/access_token?grant_type=client_credentials
  *
  * @apiSuccess (Response Fields) {String} access_token the access token
