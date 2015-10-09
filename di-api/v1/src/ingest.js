@@ -166,6 +166,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID; if this is a new video ingest, the ID will be the one returned by the _Create Video_ request
  * @apiParam (Request Body Fields) {Object} [master] the video master to be ingested
  * @apiParam (Request Body Fields) {String} [master.url] URL for the video source; required except for re-transcoding where a digital master has been archived, or you are adding images or text tracks to an existing video
+ * @apiParam (Request Body Fields) {Boolean} [master.use_archived_master] For retranscode requests, will use the archived master if set to `true`; if set to `false`, you must also include the `url` for the source video
  * @apiParam (Request Body Fields) {String} [profile] ingest profile to use for transcoding; if absent, account default profile will be used
  * @apiParam (Request Body Fields) {Object[]} [text_tracks] array of text_track maps
  * @apiParam (Request Body Fields) {String} text_tracks.url URL for a WebVTT file
