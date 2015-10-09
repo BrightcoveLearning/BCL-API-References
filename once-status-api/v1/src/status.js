@@ -76,7 +76,106 @@
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7"
+ *        "status": "COMPLETE",
+ *        "startTime": 1415648939000,
+ *        "completeTime": 1415649217000,
+ *        "steps": {
+ *            "ingest": {
+ *                "name": "ingest",
+ *                "status": "COMPLETE",
+ *                "startTime": 1415648939000,
+ *                "completeTime": 1415648942000,
+ *                "input": {
+ *                    "foreign_key": "brightcove-once",
+ *                    "domainId": "b207b479-c841-4095-8918-978be9e18dee",
+ *                    "catalog_id": "bc6cb7d4-be99-471b-adf3-7c501172b317",
+ *                    "keywords": {
+ *                        "brightcove",
+ *                        "once"
+ *                    },
+ *                    "metadata": {
+ *                        "accoundId": "12345",
+ *                        "company": "brightcove",
+ *                        "product": "once",
+ *                        "eventId": "321"
+ *                    },
+ *                    "media": {
+ *                        "sourceURL": "http://mirror.cessen.com/blender.org/peach/trailer/trailer_1080p.mov"
+ *                    },
+ *                    "notifications": [],
+ *                    "publicationRules": [],
+ *                    "cuePoints": [
+ *                        {
+ *                          "valueIn": 10,
+ *                          "unit": "Seconds"
+ *                        },
+ *                        {
+ *                          "valueIn": 25,
+ *                          "unit": "Seconds"
+ *                        }
+ *                    ]
+ *                },
+ *                "output": {
+ *                    "mediaItemId": "2d1d6fe7-6924-4d1d-ba06-d49b2d9f5f4b",
+ *                    "hasChanged": true,
+ *                    "description": {
+ *                        "url": "http://mirror.cessen.com/blender.org/peach/trailer/trailer_1080p.mov",
+ *                        "lastModified": "Wed, 07 May 2014 22:21:59 GMT",
+ *                        "etag": "\"b2f673c3426acf1:0\"",
+ *                        "fileSize": 60047891
+ *                    }
+ *                }
+ *            },
+ *            "transcode": {
+ *                "name": "transcode",
+ *                "status": "COMPLETE",
+ *                "startTime": 1415648968000,
+ *                "completeTime": 1415649216000,
+ *                "output": {
+ *                    "renditions": [
+ *                        "3345fa40-bbb6-11e3-87e6-005056835b09",
+ *                        "45dd911d-54ac-11e4-9f45-005056835b09",
+ *                        "8249c274-b49d-11e3-87e6-005056835b09",
+ *                        "824d3f86-b49d-11e3-87e6-005056835b09",
+ *                        "825072a0-b49d-11e3-87e6-005056835b09",
+ *                        "8253a884-b49d-11e3-87e6-005056835b09",
+ *                        "8256d34a-b49d-11e3-87e6-005056835b09",
+ *                        "825a2774-b49d-11e3-87e6-005056835b09",
+ *                        "825d7a04-b49d-11e3-87e6-005056835b09",
+ *                        "8260dd62-b49d-11e3-87e6-005056835b09",
+ *                        "d34d2cfb-3478-11e4-8b0b-005056835b09",
+ *                        "d34d2d07-3478-11e4-8b0b-005056835b09"
+ *                    ]
+ *                }
+ *            },
+ *            "notification": {
+ *                "name": "notification",
+ *                "status": "COMPLETE",
+ *                "startTime": 1415649020000,
+ *                "completeTime": 1415649217000,
+ *                "input": {
+ *                    "mediaItemId": "2d1d6fe7-6924-4d1d-ba06-d49b2d9f5f4b",
+ *                    "domainId": "b207b479-c841-4095-8918-978be9e18dee",
+ *                    "catalog_id": "bc6cb7d4-be99-471b-adf3-7c501172b317",
+ *                    "version": 0,
+ *                    "durationMS": 87754,
+ *                    "notificationOverrides": []
+ *                },
+ *                "output": {
+ *                    "sentNotification": false
+ *                }
+ *            },
+ *            "publish": {
+ *                "name": "publish",
+ *                "status": "COMPLETE",
+ *                "startTime": 1415649217000,
+ *                "completeTime": 1415649217000,
+ *                "output": {
+ *                    "version": 0,
+ *                    "duration": 87754
+ *                }
+ *            }
+ *        }
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
