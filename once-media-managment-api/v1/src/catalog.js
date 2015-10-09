@@ -131,11 +131,11 @@
 
 /**
  * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Information
- * @apiName Create Catalog
+ * @apiName Get Catalog Information
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of the transcode renditions available to the domain
+ * @apiDescription Returns the essential information of the catalog.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -166,12 +166,12 @@
 // get catalog renditions
 
 /**
- * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Information
- * @apiName Create Catalog
+ * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Renditions
+ * @apiName Get Catalog Renditions
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of the transcode renditions available to the domain
+ * @apiDescription Returns a collection of the transcode renditions available to the catalog.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -181,16 +181,23 @@
  * @apiParamExample {Url} Get Catalog Request Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
- * @apiSuccess (Response Fields) {String} id The id for the catalog
- * @apiSuccess (Response Fields) {String} name The name for the catalog
- * @apiSuccess (Response Fields) {Boolean} domain_id The domain id
+ * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
+ * @apiSuccess (Response Fields) {String} results.id The id for the rendition
+ * @apiSuccess (Response Fields) {String} results.name The rendition name
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "id": "62191781-a933-49d6-831f-83bdf51a26ac",
- *        "name": "New Catalog",
- *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *        "results": [
+ *            {
+ *                "id": "076ea1a2-a35b-11e4-bfdb-005056837bc7",
+ *                "name": "OV2 Once 1200 ZC 640x360 1104.96 29.97 B31"
+ *            },
+ *            {
+ *                "id": "225bd8bb-a577-11e4-bfdb-005056837bc7",
+ *                "name": "OV2 Once 2000 ZC 960x540 1872.128 29.97 M31"
+ *            }
+ *        ]
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
