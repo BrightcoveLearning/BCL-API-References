@@ -55,7 +55,10 @@
  * @apiSuccess (Response Fields) {String} steps.notification.status The status of notification step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
  * @apiSuccess (Response Fields) {Number} steps.notification.startTime The time when the notification began in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Number} steps.notification.completeTime The time when the notification finished in epoch time (milliseconds)
- * @apiSuccess (Response Fields) {Object} steps.notification.output map of the notification output
+ * @apiSuccess (Response Fields) {Object} steps.notification.input map of the notification inputs
+ * @apiSuccess (Response Fields) {String} steps.notification.input.mediaItemId The media item id
+ * @apiSuccess (Response Fields) {String} steps.notification.input.domainId The domain id
+ * @apiSuccess (Response Fields) {String} steps.notification.input.catalog_id The catalog id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
