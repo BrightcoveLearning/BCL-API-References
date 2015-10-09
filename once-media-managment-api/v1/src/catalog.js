@@ -1,141 +1,19 @@
-// make ingest request
+// get catalog list
 
 /**
- * @api {post} /:domain_id/catalogs/:catalog_id Make Ingest Request
- * @apiName Make Ingest Request
+ * @api {get} /:domain_id/catalogs/catalogs Get Catalog List
+ * @apiName Get Catalog List
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Allows you to ingest a new video into the Once system
+ * @apiDescription Get a list of catalogs for the domain
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
- * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} foreignKey The unique identifier for the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} [description] A description of the asset
- * @apiParam (Request Body Fields) {String[]} [keywords] Array of keyword strings associated with the video
- * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
- * @apiParam (Request Body Fields) {String} metadata.key The key of an Extended Metadata key value pair (see the example below for key/value pairs)
- * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
- * @apiParam (Request Body Fields) {String} media.sourceURL The URL string to the source asset
- * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
- * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Number} publicationRules.endDate The end date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Object[]} [publicationRules.clientFilters] An array of Client Filters for the Publication Rule
- * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} publicationRules.clientFilters.variableName The variable name that the Client Filter will key off of
- * @apiParam (Request Body Fields) {String} publicationRules.clientFilters.value The value name that the Client Filter will key off of
- * @apiParam (Request Body Fields) {String="Equals","NotEquals","In","NotIn","Contains","NotContains","StartsWith","NotStartsWith","EndsWith","NotEndsWith"} publicationRules.clientFilters.filterType The type of filtering used to compare the value
- * @apiParam (Request Body Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiParam (Request Body Fields) {Object[]} [publicationRules.countryRules] An array of Country Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
- * @apiParam (Request Body Fields) {Boolean} publicationRules.countryRules.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiParam (Request Body Fields) {Object[]} [cuePoints] An array of Cue Points for the asset
- * @apiParam (Request Body Fields) {Number} cuePoints.valueIn The time in which the Cue Point will be inserted (integer)
- * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit The type of unit the time value
- * @apiParam (Request Body Fields) {Object[]} [timedText] An array of Timed Text items for the asset
- * @apiParam (Request Body Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
- * @apiParam (Request Body Fields) {String} timedText.media.sourceURL The URL string to the source asset
- * @apiParam (Request Body Fields) {String="Subtitle","Caption","Embedded"} timedText.timedTextType The type to categorize the timed text item
- * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
- * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
- * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
- * @apiParam (Request Body Fields) {String} notifications.target The HTTP endpoint or sns target for your notification
- * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
- * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
- * @apiParamExample {json} Ingest Request Body Example:
- *    {
- *        "title": "Wildlife 07",
- *        "foreignKey": "wildlife07",
- *        "keywords": [
- *            "mammals",
- *            "wildlife"
- *        ],
- *        "description": "An overview of wildlife in northern Africa",
- *        "metadata": {
- *            "continent": "Africa",
- *            "region": "North",
- *            "PassThruMetadata": "Wildlife 07",
- *            "JobID": "8946-4bd4-b97c-a2b5dbc635c5"
- *        },
- *        "media": {
- *            "sourceURL": "http://demo.umedia.com/Lance/videos/Wildlife.wmv"
- *        },
- *        "publicationRules": [
- *            {
- *                "channel": "a8cf98a9-8946-4bd4-b97c-a2b5dbc635c5",
- *                "startDate": 1412025402,
- *                "endDate": 1601414189,
- *                "clientFilters": [
- *                    {
- *                        "variableName": "IpAddress",
- *                        "value": "127.0.0.1",
- *                        "filterType": "Equals",
- *                        "isDenied": true
- *                    }
- *                ],
- *                "countryRules": [
- *                    {
- *                        "countryCode": "UK",
- *                        "isDenied": true
- *                    }
- *                ]
- *            }
- *        ],
- *        "cuePoints": [
- *            {
- *                "valueIn": 10,
- *                "unit": "Seconds"
- *            },
- *            {
- *                "valueIn": 25,
- *                "unit": "Seconds"
- *            }
- *        ],
- *        "timedText": [
- *            {
- *                "media": {
- *                    "sourceURL": "http://umrss.com/jesseneedsspace/katy.xml"
- *                },
- *                "timedTextType": "SUBTITLE",
- *                "languages": [
- *                    "en"
- *                ]
- *            },
- *            {
- *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/caption.srt"
- *                },
- *                "timedTextType": "SUBTITLE",
- *                "languages": [
- *                    "fr"
- *                ]
- *            },
- *            {
- *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/caption.dfxp"
- *                },
- *                "timedTextType": "CAPTION",
- *                "languages": [
- *                    "en"
- *                ]
- *            },
- *            {
- *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/multi.xml"
- *                },
- *                "timedTextType": "SUBTITLE",
- *                "languages": [
- *                    "en",
- *                    "fr"
- *                ],
- *                "alternateId": "Bazinga"
- *            }
- *        ]
- *    }
+ * @apiParamExample {Url} Get Catalog List Example:
  *
  * @apiSuccess (Response Fields) {String} requestId The id for request
  *
@@ -160,6 +38,102 @@
  *            ]
  *        }
  *    }
+ *
+ *
+ */
+
+// create catalog
+
+/**
+ * @api {post} /domain/:domain_id/catalogs Create Catalog
+ * @apiName Create Catalog
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Returns a collection of the transcode renditions available to the domain
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Request Body Fields) {String} name Name for the catalog
+ * @apiParam (Request Body Fields) {Object[]} [renditions] A collection of `rendition_ids` to be defined. If excluded, the catalog will acquire the defaulted domain renditions
+ * @apiParam (Request Body Fields) {String} renditions.id id of the rendition to include &mdash; Only declared if you intent to define a subset of the renditions from the domain
+ *
+ * @apiParamExample {json} Create Catalog Request Body Example:
+ *    {
+ *        "name":"New-Test-Catalog",
+ *        "renditions": [
+ *            {
+ *                "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
+ *            },
+ *            {
+ *                "id": "ac2e7f0b-a345-11e4-bfdb-005056837bc7"
+ *            }
+ *            }
+ *        ]
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id The id for the catalog
+ * @apiSuccess (Response Fields) {String} name The name for the catalog
+ * @apiSuccess (Response Fields) {Boolean} domain_id The domain id
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
+ *        "name": "New-Test-Catalog",
+ *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ *
+ *
+ */
+
+// update catalog name
+
+/**
+ * @api {put} /domain/:domain_id/catalogs Update Catalog Name
+ * @apiName Update Catalog Name
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Updates the catalog name in the indicated catalogID by setting its catalog_id with the updated name in the request body.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Request Body Fields) {String} name Name for the catalog
+ * @apiParam (Request Body Fields) {Object[]} [renditions] A collection of `rendition_ids` to be defined. If excluded, the catalog will acquire the defaulted domain renditions
+ * @apiParam (Request Body Fields) {String} renditions.id id of the rendition to include &mdash; Only declared if you intent to define a subset of the renditions from the domain
+ *
+ * @apiParamExample {json} Create Catalog Request Body Example:
+ *    {
+ *        "name":"New-Test-Catalog",
+ *        "renditions": [
+ *            {
+ *                "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
+ *            },
+ *            {
+ *                "id": "ac2e7f0b-a345-11e4-bfdb-005056837bc7"
+ *            }
+ *            }
+ *        ]
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id The id for the catalog
+ * @apiSuccess (Response Fields) {String} name The name for the catalog
+ * @apiSuccess (Response Fields) {Boolean} domain_id The domain id
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
+ *        "name": "New-Test-Catalog",
+ *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
  *
  *
  */

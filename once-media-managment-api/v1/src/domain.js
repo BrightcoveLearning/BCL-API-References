@@ -48,11 +48,11 @@
  *
  */
 
-// create catalog
+// get domain renditions
 
 /**
- * @api {post} /domain/:domain_id/catalogs Create Catalog
- * @apiName Create Catalog
+ * @api {get} /domain/:domain_id/renditions Get Domain Renditions
+ * @apiName Get Domain Renditions
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
