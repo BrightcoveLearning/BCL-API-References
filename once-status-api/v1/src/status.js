@@ -60,9 +60,18 @@
  * @apiSuccess (Response Fields) {String} steps.notification.input.domainId The domain id
  * @apiSuccess (Response Fields) {String} steps.notification.input.catalog_id The catalog id
  * @apiSuccess (Response Fields) {Number} steps.notification.input.version The media item version
+ * @apiSuccess (Response Fields) {Number} steps.notification.input.durationMS Duration of the media item in milliseconds
  * @apiSuccess (Response Fields) {Object[]} steps.notification.input.notificationOverrides Array of notification overrides, if any
  * @apiSuccess (Response Fields) {Object} steps.notification.output map of the notification outputs
  * @apiSuccess (Response Fields) {Boolean} steps.notification.output.sentNotification whether notification was sent
+ * @apiSuccess (Response Fields) {Object} steps.publish The publish step
+ * @apiSuccess (Response Fields) {String} steps.publish.name The name of the step
+ * @apiSuccess (Response Fields) {String} steps.publish.status The status of publish step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
+ * @apiSuccess (Response Fields) {Number} steps.publish.startTime The time when the publish began in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Number} steps.publish.completeTime The time when the publish finished in epoch time (milliseconds)
+ * @apiSuccess (Response Fields) {Object} steps.publish.output map of the publish output
+ * @apiSuccess (Response Fields) {Number} steps.publish.output.version Version of the media item
+ * @apiSuccess (Response Fields) {Number} steps.publish.output.duration Duration of the media item in milliseconds
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
