@@ -96,6 +96,9 @@
  * @apiSuccess (Response Fields) {String} name The name for the domain
  * @apiSuccess (Response Fields) {Number} width The frame width in pixels
  * @apiSuccess (Response Fields) {Number} height The frame height in pixels
+ * @apiSuccess (Response Fields) {Number} videoBitRate The video bitrate in kbps
+ * @apiSuccess (Response Fields) {Number} audioBitRate The audio bitrate in kbps
+ * @apiSuccess (Response Fields) {Number} codecsValue The video and audio codecs
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
