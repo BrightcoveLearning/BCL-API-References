@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "Reference for the Brightcove CMS API, used to access and manage your media library.",
     "title": "CMS API Reference",
-    "url" : "https://cms.brightcove.com/v1",
+    "url" : "https://cms.api.brightcove.com/v1",
     "order": [
         "Video",
         "Playlist",
