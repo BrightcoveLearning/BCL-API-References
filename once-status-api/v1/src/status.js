@@ -442,6 +442,10 @@
  * @apiSuccess (Response Fields) {String} notifications.notification.catalog the catalog for the media item
  * @apiSuccess (Response Fields) {String} notifications.notification.title the media item title
  * @apiSuccess (Response Fields) {Number} notifications.notification.version the media item version
+ * @apiSuccess (Response Fields) {Object} notifications.notification.metadata the media item metadata
+ * @apiSuccess (Response Fields) {Object} notifications.details the notification details
+ * @apiSuccess (Response Fields) {String} notifications.details.message the notification message
+ * @apiSuccess (Response Fields) {String[]} notifications.targets array of target URLs for the notification
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
