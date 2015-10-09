@@ -103,6 +103,43 @@
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Request Body Fields) {String} name New name for the catalog
+ * @apiParam (Request Body Fields) {String} id The catalog id
+ *
+ * @apiParamExample {json} Update Catalog Request Body Example:
+ *    {
+ *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
+ *        "name": "New-Catalog-Name",
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id The id for the catalog
+ * @apiSuccess (Response Fields) {String} name The name for the catalog
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
+ *        "name": "New-Catalog-Name",
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ *
+ *
+ */
+
+// get catalog Information
+
+/**
+ * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Information
+ * @apiName Create Catalog
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Returns a collection of the transcode renditions available to the domain
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Request Body Fields) {String} name Name for the catalog
  * @apiParam (Request Body Fields) {Object[]} [renditions] A collection of `rendition_ids` to be defined. If excluded, the catalog will acquire the defaulted domain renditions
  * @apiParam (Request Body Fields) {String} renditions.id id of the rendition to include &mdash; Only declared if you intent to define a subset of the renditions from the domain
@@ -137,4 +174,5 @@
  *
  *
  */
+
 
