@@ -24,25 +24,25 @@
  * @apiSuccess (Response Fields) {String} steps.ingest.status The status of ingest step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
  * @apiSuccess (Response Fields) {Number} steps.ingest.startTime The time when the ingest began in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Number} steps.ingest.completeTime The time when the ingest finished in epoch time (milliseconds)
- * @apiSuccess (Response Fields) {Object} steps.input The request inputs
- * @apiSuccess (Response Fields) {String} steps.input.foreign_key The unique identifier for the asset
- * @apiSuccess (Response Fields) {String} steps.input.domainId The domain id
- * @apiSuccess (Response Fields) {String} steps.input.catalog_id The catalog id
- * @apiSuccess (Response Fields) {String[]} steps.input.keywords The keyword array for the asset
- * @apiSuccess (Response Fields) {Object} steps.input.metadata The metadata map for the asset
- * @apiSuccess (Response Fields) {Object} steps.input.media The media input
- * @apiSuccess (Response Fields) {String} steps.input.media.sourceURL The media source URL
- * @apiSuccess (Response Fields) {Object[]} steps.input.notifications Array of notification maps
- * @apiSuccess (Response Fields) {Object[]} steps.input.publicationRules Array of publication rule maps
- * @apiSuccess (Response Fields) {Object[]} steps.input.cuePoints Array of cur point maps
- * @apiSuccess (Response Fields) {Object} steps.output The job output
- * @apiSuccess (Response Fields) {String} steps.output.mediaItemId The media item id
- * @apiSuccess (Response Fields) {Boolean} steps.output.hasChanged Whether the media item has been modified
- * @apiSuccess (Response Fields) {Object} steps.output.description Description object for the media item
- * @apiSuccess (Response Fields) {String} steps.output.description.url URL for the media item
- * @apiSuccess (Response Fields) {DateString} steps.output.description.lastModified Date/time the media item was last modified
- * @apiSuccess (Response Fields) {String} steps.output.description.etag Date/time the media item etag
- * @apiSuccess (Response Fields) {Number} steps.output.description.fileSize size of the output media item in bytes
+ * @apiSuccess (Response Fields) {Object} steps.ingest.input The request inputs
+ * @apiSuccess (Response Fields) {String} steps.ingest.input.foreign_key The unique identifier for the asset
+ * @apiSuccess (Response Fields) {String} steps.ingest.input.domainId The domain id
+ * @apiSuccess (Response Fields) {String} steps.ingest.input.catalog_id The catalog id
+ * @apiSuccess (Response Fields) {String[]} steps.ingest.input.keywords The keyword array for the asset
+ * @apiSuccess (Response Fields) {Object} steps.ingest.input.metadata The metadata map for the asset
+ * @apiSuccess (Response Fields) {Object} steps.ingest.input.media The media input
+ * @apiSuccess (Response Fields) {String} steps.ingest.input.media.sourceURL The media source URL
+ * @apiSuccess (Response Fields) {Object[]} steps.ingest.input.notifications Array of notification maps
+ * @apiSuccess (Response Fields) {Object[]} steps.ingest.input.publicationRules Array of publication rule maps
+ * @apiSuccess (Response Fields) {Object[]} steps.ingest.input.cuePoints Array of cur point maps
+ * @apiSuccess (Response Fields) {Object} steps.ingest.output The job output
+ * @apiSuccess (Response Fields) {String} steps.ingest.output.mediaItemId The media item id
+ * @apiSuccess (Response Fields) {Boolean} steps.ingest.output.hasChanged Whether the media item has been modified
+ * @apiSuccess (Response Fields) {Object} steps.ingest.output.description Description object for the media item
+ * @apiSuccess (Response Fields) {String} steps.ingest.output.description.url URL for the media item
+ * @apiSuccess (Response Fields) {DateString} steps.ingest.output.description.lastModified Date/time the media item was last modified
+ * @apiSuccess (Response Fields) {String} steps.ingest.output.description.etag Date/time the media item etag
+ * @apiSuccess (Response Fields) {Number} steps.ingest.output.description.fileSize size of the output media item in bytes
  * @apiSuccess (Response Fields) {Object} steps.transcode The transcode step
  * @apiSuccess (Response Fields) {String} steps.transcode.name The name of the step
  * @apiSuccess (Response Fields) {String} steps.transcode.status The status of transcode step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
