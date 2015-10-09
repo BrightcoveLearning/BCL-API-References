@@ -3,7 +3,7 @@
 /**
  * @api {post} /:domain_id/catalogs/:catalog_id Make Ingest Request
  * @apiName Make Ingest Request
- * @apiGroup Ingest
+ * @apiGroup Media_Item
  * @apiVersion 1.0.0
  *
  * @apiDescription Allows you to ingest a new video into the Once system
