@@ -59,6 +59,10 @@
  * @apiSuccess (Response Fields) {String} steps.notification.input.mediaItemId The media item id
  * @apiSuccess (Response Fields) {String} steps.notification.input.domainId The domain id
  * @apiSuccess (Response Fields) {String} steps.notification.input.catalog_id The catalog id
+ * @apiSuccess (Response Fields) {Number} steps.notification.input.version The media item version
+ * @apiSuccess (Response Fields) {Object[]} steps.notification.input.notificationOverrides Array of notification overrides, if any
+ * @apiSuccess (Response Fields) {Object} steps.notification.output map of the notification outputs
+ * @apiSuccess (Response Fields) {Boolean} steps.notification.output.sentNotification whether notification was sent
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
