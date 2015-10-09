@@ -47,7 +47,7 @@
 /**
  * @api {post} /domain/:domain_id/catalogs Create Catalog
  * @apiName Create Catalog
- * @apiGroup Domain
+ * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
  * @apiDescription Returns a collection of the transcode renditions available to the domain
@@ -95,7 +95,7 @@
 /**
  * @api {put} /domain/:domain_id/catalogs Update Catalog Name
  * @apiName Update Catalog Name
- * @apiGroup Domain
+ * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the catalog name in the indicated catalogID by setting its catalog_id with the updated name in the request body.
@@ -132,7 +132,7 @@
 /**
  * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Information
  * @apiName Get Catalog Information
- * @apiGroup Domain
+ * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
  * @apiDescription Returns the essential information of the catalog.
@@ -168,7 +168,7 @@
 /**
  * @api {get} /domain/:domain_id/catalogs/:catalog_id/renditions Get Catalog Renditions
  * @apiName Get Catalog Renditions
- * @apiGroup Domain
+ * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
  * @apiDescription Returns a collection of the transcode renditions available to the catalog.
@@ -208,9 +208,9 @@
 // get catalog rendition setting
 
 /**
- * @api {get} /domain/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Get Catalog Renditions
- * @apiName Get Catalog Renditions
- * @apiGroup Domain
+ * @api {get} /domain/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Get Catalog Rendition Settings
+ * @apiName Get Catalog Rendition Settings
+ * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
  * @apiDescription Returns a collection of the transcode renditions available to the catalog.
