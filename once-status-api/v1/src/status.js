@@ -1,7 +1,7 @@
 // get status by request id
 
 /**
- * @api {post} /statuses/:reference_id Get Status by Reference ID
+ * @api {get} /statuses/:reference_id Get Status by Reference ID
  * @apiName Get Status by Reference ID
  * @apiGroup Ingest
  * @apiVersion 1.0.0
@@ -186,7 +186,7 @@
 // Get status by foreign key and catalog
 
 /**
- * @api {post} /statuses Status by Foreign Key/Catalog
+ * @api {get} /statuses Status by Foreign Key/Catalog
  * @apiName Status by Foreign Key/Catalog
  * @apiGroup Ingest
  * @apiVersion 1.0.0
