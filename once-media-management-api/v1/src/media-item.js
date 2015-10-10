@@ -212,8 +212,34 @@
  * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
  * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
- * @apiParamExample {Url} Ingest Request Body Example:
- *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
+ * @apiParamExample {json} Update Media Item Body Example:
+ *    {
+ *        "id": "efe70c1f-ebd2-4c5e-856a-a54a8e97415f",
+ *        "catalog_id": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
+ *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
+ *        "foreignKey": "Updated-fk",
+ *        "title": "28-feb-02",
+ *        "keywords": [ ],
+ *        "cuePoints": [
+ *            {
+ *                "unit": "Seconds",
+ *                "valueIn": 10
+ *            },
+ *            {
+ *                "unit": "Seconds",
+ *                "valueIn": 25
+ *            }
+ *        ],
+ *        "publicationRules": [
+ *            "6169df7e-d023-4daf-90ff-21e290f16162"
+ *        ],
+ *        "metadata": {
+ *            "JobID": "someJobId",
+ *            "PassThruMetadata": "hello world",
+ *            "foo": "bar",
+ *            "hello": "world"
+ *        }
+ *    }
  *
  * @apiSuccess (Response Fields) {String} catalog_id The id for the catalog
  * @apiSuccess (Response Fields) {String} name The name for the domain
@@ -286,6 +312,38 @@
  *            "foo": "bar",
  *            "hello": "world"
  *        }
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
+ *
+ *
+ */
+
+// delete media item
+
+/**
+ * @api {delete} /domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id Get Media Item
+ * @apiName Get Media Item
+ * @apiGroup Media_Item
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Returns the essential information of the media item.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} mediaitem_id The id for the  media item
+ *
+ * @apiParamExample {Url} Ingest Request Body Example:
+ *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
+ *
+ * @apiSuccess (Response Fields) {String} delete value will contain the media item id the message "scheduled for deletion"
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "delete": "MediaItem: 1eb36535-1105-440e-a722-381c9dcf504d scheduled for deletion"
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
