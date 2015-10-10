@@ -1,166 +1,121 @@
-// make ingest request
+// get applications
 
 /**
- * @api {post} /:domain_id/catalogs/:catalog_id Make Ingest Request
- * @apiName Make Ingest Request
+ * @api {get} /domains/:domain_id/applications Get Applications
+ * @apiName Get Applications
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Allows you to ingest a new video into the Once system
+ * @apiDescription Returns a collection of all applications within a domain. This method fetches 20 applications per page, returns the totalResult to indicate the total number of media items and provides the previous or next page requests within the body.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
- * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} foreignKey The unique identifier for the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} [description] A description of the asset
- * @apiParam (Request Body Fields) {String[]} [keywords] Array of keyword strings associated with the video
- * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
- * @apiParam (Request Body Fields) {String} metadata.key The key of an Extended Metadata key value pair (see the example below for key/value pairs)
- * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
- * @apiParam (Request Body Fields) {String} media.sourceURL The URL string to the source asset
- * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
- * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Number} publicationRules.endDate The end date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Object[]} [publicationRules.clientFilters] An array of Client Filters for the Publication Rule
- * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} publicationRules.clientFilters.variableName The variable name that the Client Filter will key off of
- * @apiParam (Request Body Fields) {String} publicationRules.clientFilters.value The value name that the Client Filter will key off of
- * @apiParam (Request Body Fields) {String="Equals","NotEquals","In","NotIn","Contains","NotContains","StartsWith","NotStartsWith","EndsWith","NotEndsWith"} publicationRules.clientFilters.filterType The type of filtering used to compare the value
- * @apiParam (Request Body Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiParam (Request Body Fields) {Object[]} [publicationRules.countryRules] An array of Country Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
- * @apiParam (Request Body Fields) {Boolean} publicationRules.countryRules.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiParam (Request Body Fields) {Object[]} [cuePoints] An array of Cue Points for the asset
- * @apiParam (Request Body Fields) {Number} cuePoints.valueIn The time in which the Cue Point will be inserted (integer)
- * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit The type of unit the time value
- * @apiParam (Request Body Fields) {Object[]} [timedText] An array of Timed Text items for the asset
- * @apiParam (Request Body Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
- * @apiParam (Request Body Fields) {String} timedText.media.sourceURL The URL string to the source asset
- * @apiParam (Request Body Fields) {String="Subtitle","Caption","Embedded"} timedText.timedTextType The type to categorize the timed text item
- * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
- * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
- * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
- * @apiParam (Request Body Fields) {String} notifications.target The HTTP endpoint or sns target for your notification
- * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
- * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
- * @apiParamExample {json} Ingest Request Body Example:
- *    {
- *        "title": "Wildlife 07",
- *        "foreignKey": "wildlife07",
- *        "keywords": [
- *            "mammals",
- *            "wildlife"
- *        ],
- *        "description": "An overview of wildlife in northern Africa",
- *        "metadata": {
- *            "continent": "Africa",
- *            "region": "North",
- *            "PassThruMetadata": "Wildlife 07",
- *            "JobID": "8946-4bd4-b97c-a2b5dbc635c5"
- *        },
- *        "media": {
- *            "sourceURL": "http://demo.umedia.com/Lance/videos/Wildlife.wmv"
- *        },
- *        "publicationRules": [
- *            {
- *                "channel": "a8cf98a9-8946-4bd4-b97c-a2b5dbc635c5",
- *                "startDate": 1412025402,
- *                "endDate": 1601414189,
- *                "clientFilters": [
- *                    {
- *                        "variableName": "IpAddress",
- *                        "value": "127.0.0.1",
- *                        "filterType": "Equals",
- *                        "isDenied": true
- *                    }
- *                ],
- *                "countryRules": [
- *                    {
- *                        "countryCode": "UK",
- *                        "isDenied": true
- *                    }
- *                ]
- *            }
- *        ],
- *        "cuePoints": [
- *            {
- *                "valueIn": 10,
- *                "unit": "Seconds"
- *            },
- *            {
- *                "valueIn": 25,
- *                "unit": "Seconds"
- *            }
- *        ],
- *        "timedText": [
- *            {
- *                "media": {
- *                    "sourceURL": "http://umrss.com/jesseneedsspace/katy.xml"
- *                },
- *                "timedTextType": "SUBTITLE",
- *                "languages": [
- *                    "en"
- *                ]
- *            },
- *            {
- *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/caption.srt"
- *                },
- *                "timedTextType": "SUBTITLE",
- *                "languages": [
- *                    "fr"
- *                ]
- *            },
- *            {
- *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/caption.dfxp"
- *                },
- *                "timedTextType": "CAPTION",
- *                "languages": [
- *                    "en"
- *                ]
- *            },
- *            {
- *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/multi.xml"
- *                },
- *                "timedTextType": "SUBTITLE",
- *                "languages": [
- *                    "en",
- *                    "fr"
- *                ],
- *                "alternateId": "Bazinga"
- *            }
- *        ]
- *    }
+ * @apiParamExample {Url} Ingest Request Body Example:
+ *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
- * @apiSuccess (Response Fields) {String} requestId The id for request
+ * @apiSuccess (Response Fields) {Object[]} results Array of results
+ * @apiSuccess (Response Fields) {String} results.id The application id
+ * @apiSuccess (Response Fields) {String} results.name The application name
+ * @apiSuccess (Response Fields) {String} results.domain_id The domain id
+ * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Number} total number of results
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7"
+ *        "results": [
+ *            {
+ *                "id": "79e36ed1-4f2d-4f03-9b49-23d19d34e971",
+ *                "name": "New Player Template",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            },
+ *            {
+ *                "id": "7aa9fcfe-ea9d-449c-80b6-fd5e7b7a4b72",
+ *                "name": "Player- Single and Multi Ads",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            },
+ *            {
+ *                "id": "fbfe16ab-0d11-4ca1-b944-1480970c4bf9",
+ *                "name": "Player- Multi Ads",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            }
+ *        ],
+ *        "prev": null,
+ *        "next": null,
+ *        "totalResults": 5
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
- * @apiError (Error 4xx) {json} Validation Errors 404: The api couldn't find the resource you requested
  *
- * @apiErrorExample {json} 400 Error Response
- *    HTTP/1.1 400 Validation Errors
- *    {
- *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7",
- *        "error": "Validation Errors",
- *        "fieldErrors": {
- *            "publicationRule": [
- *                "Publication rule with end date 0.0 is in the past.",
- *                "Publication rule end date: 0.0 preceeds 1412025402"
- *            ]
+ */
+
+// get application
+
+/**
+ * @api {get} /domains/:domain_id/applications/:application_id Get Application
+ * @apiName Get Application
+ * @apiGroup Applications
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Returns the essential information of the application including the ad configurations. The response will include individual ad slots "pre-roll", "mid-roll", and/or "post-roll" for direct VAST configurations and a single "ad" server configurations that have ad break information determined by the ad decisioning server (e.g. Freewheel SmartXML, DFP ad rules). **Note** that the `adConfig` returned in the response can be of type single or multi.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} application_id The application id
+ *
+ * @apiParamExample {Url} Ingest Request Body Example:
+ *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
+ *
+ * @apiSuccess (Response Fields) {Object[]} results Array of results
+ * @apiSuccess (Response Fields) {String} results.id The application id
+ * @apiSuccess (Response Fields) {String} results.name The application name
+ * @apiSuccess (Response Fields) {String} results.domain_id The domain id
+ * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Number} total number of results
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    // single ad config
+ *    "adConfig": {
+ *        "preRoll": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "prenewUpdated",
+ *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerName": "Fireworks waterfall",
+ *            "adPosition": "preroll"
+ *        },
+ *        "midRoll": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "Mid",
+ *            "adserver_id": "1111-2222-33333-4444-aaaabbbbccccddd",
+ *            "adServerName": "Test Ad Server",
+ *            "adPosition": "midroll"
+ *        },
+ *        "postRoll": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "Post",
+ *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerName": "Fireworks waterfall",
+ *            "adPosition": "postroll"
+ *        }
+ *    }
+ *    // multi adconfig example
+ *    "adConfig": {
+ *        "ad": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "DFP",
+ *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerName": "Fireworks waterfall",
+ *            "adPosition": "dfp"
  *        }
  *    }
  *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  */
 
