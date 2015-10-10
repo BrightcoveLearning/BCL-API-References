@@ -1,7 +1,7 @@
 // get catalog list
 
 /**
- * @api {get} /:domain_id/catalogs/catalogs Get Catalog List
+ * @api {get} /domains/:domain_id/catalogs/catalogs Get Catalog List
  * @apiName Get Catalog List
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -14,6 +14,7 @@
  * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
  *
  * @apiParamExample {Url} Get Catalog List Example:
+ *     https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs
  *
  * @apiSuccess (Response Fields) {String} requestId The id for request
  *
@@ -265,9 +266,17 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  * @apiParam (Path Parameters) {String} rendition_id The rendition id
+ * @apiParam (Request Body Fields) {String} id a rendition id
  *
- * @apiParamExample {Url} Get Catalog Rendition Request Example:
- *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
+ * @apiParamExample {json} Replace Catalog Rendition Request Body Example:
+ *    [
+ *      {
+ *        "id": "076ea1a2-a35b-11e4-bfdb-005056837bc7"
+ *      },
+ *      {
+ *        "id": "225bd8bb-a577-11e4-bfdb-005056837bc7"
+ *      }
+ *    ]
  *
  * @apiSuccess (Response Fields) {String} id The id for the rendition
  * @apiSuccess (Response Fields) {String} name The rendition name
