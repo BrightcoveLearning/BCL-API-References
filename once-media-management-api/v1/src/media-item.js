@@ -1,12 +1,12 @@
 // get media item collection
 
 /**
- * @api {get} /domain/:domain_id/catalogs/:catalog_id Make Ingest Request
- * @apiName Make Ingest Request
+ * @api {get} /domains/:domain_id/catalogs/:catalog_id/mediaItems Get Media Item Collection
+ * @apiName Get Media Item Collection
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
  *
- * @apiDescription Allows you to ingest a new video into the Once system
+ * @apiDescription Returns a collection of all media items within a catalog. This method fetches 20 media items per page, returns the totalResult to indicate the total number of media items and provides the previous or next page requests within the body.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
