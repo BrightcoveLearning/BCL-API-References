@@ -46,7 +46,7 @@
 // create catalog
 
 /**
- * @api {post} /domain/:domain_id/catalogs Create Catalog
+ * @api {post} /domains/:domain_id/catalogs Create Catalog
  * @apiName Create Catalog
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -94,7 +94,7 @@
 // update catalog name
 
 /**
- * @api {put} /domain/:domain_id/catalogs Update Catalog Name
+ * @api {put} /domains/:domain_id/catalogs Update Catalog Name
  * @apiName Update Catalog Name
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -131,7 +131,7 @@
 // get catalog Information
 
 /**
- * @api {get} /domain/:domain_id/catalogs/:catalog_id Get Catalog Information
+ * @api {get} /domains/:domain_id/catalogs/:catalog_id Get Catalog Information
  * @apiName Get Catalog Information
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -167,7 +167,7 @@
 // get catalog renditions
 
 /**
- * @api {get} /domain/:domain_id/catalogs/:catalog_id/renditions Get Catalog Renditions
+ * @api {get} /domains/:domain_id/catalogs/:catalog_id/renditions Get Catalog Renditions
  * @apiName Get Catalog Renditions
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -209,7 +209,7 @@
 // get catalog rendition setting
 
 /**
- * @api {get} /domain/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Get Catalog Rendition Settings
+ * @api {get} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Get Catalog Rendition Settings
  * @apiName Get Catalog Rendition Settings
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -254,7 +254,7 @@
 // replace catalog renditions
 
 /**
- * @api {put} /domain/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Replace Catalog Renditions
+ * @api {put} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Replace Catalog Renditions
  * @apiName Replace Catalog Renditions
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -300,7 +300,7 @@
 // add rendition to catalog
 
 /**
- * @api {post} /domain/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Add Catalog Rendition
+ * @api {post} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Add Catalog Rendition
  * @apiName Add Catalog Rendition
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -336,7 +336,7 @@
 // delete catalog rendition
 
 /**
- * @api {delete} /domain/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Delete Catalog Rendition
+ * @api {delete} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Delete Catalog Rendition
  * @apiName Delete Catalog Rendition
  * @apiGroup Catalog
  * @apiVersion 1.0.0
