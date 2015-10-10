@@ -1,7 +1,7 @@
 // get domain
 
 /**
- * @api {get} /domain/:domain_id Get Domain
+ * @api {get} /domains/:domain_id Get Domain
  * @apiName Get Domain
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -51,7 +51,7 @@
 // get domain renditions
 
 /**
- * @api {get} /domain/:domain_id/renditions Get Domain Renditions
+ * @api {get} /domains/:domain_id/renditions Get Domain Renditions
  * @apiName Get Domain Renditions
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -95,7 +95,7 @@
 // get rendition setting
 
 /**
- * @api {get} /domain/:domain_id/renditions/:rendition_id Get Rendition Settings
+ * @api {get} /domains/:domain_id/renditions/:rendition_id Get Rendition Settings
  * @apiName Get Rendition Settings
  * @apiGroup Domain
  * @apiVersion 1.0.0

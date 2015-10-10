@@ -1,7 +1,7 @@
-// make ingest request
+// get media item collection
 
 /**
- * @api {post} /:domain_id/catalogs/:catalog_id Make Ingest Request
+ * @api {get} /domain/:domain_id/catalogs/:catalog_id Make Ingest Request
  * @apiName Make Ingest Request
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
