@@ -13,34 +13,16 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
  * @apiParamExample {Url} Ingest Request Body Example:
- *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs
+ *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7
  *
- * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
- * @apiSuccess (Response Fields) {String} results.id The id for the domain
- * @apiSuccess (Response Fields) {String} results.name The name for the domain
- * @apiSuccess (Response Fields) {String} results.domain_id The domain id
- * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
- * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
- * @apiSuccess (Response Fields) {Number} total number of results
+ * @apiSuccess (Response Fields) {String} id The domain id
+ * @apiSuccess (Response Fields) {String} name The domain name
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "results": [
- *            {
- *                "id": "9482da98-4ad2-490d-983b-42c17fe06b81",
- *                "name": "1-2-8",
- *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
- *            },
- *            {
- *                "id": "1cd8a599-13b6-45e4-8a94-7bad7a5c457e",
- *                "name": "New catalog",
- *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
- *            }
- *        ],
- *        "prev": null,
- *        "next": "https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs?page=2",
- *        "totalResults": 27
+ *        "id": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
+ *        "name": "BrightcoveOnce"
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct

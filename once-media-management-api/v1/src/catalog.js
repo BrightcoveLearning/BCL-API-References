@@ -16,29 +16,36 @@
  * @apiParamExample {Url} Get Catalog List Example:
  *     https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs
  *
- * @apiSuccess (Response Fields) {String} requestId The id for request
+ * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
+ * @apiSuccess (Response Fields) {String} results.id The id for the domain
+ * @apiSuccess (Response Fields) {String} results.name The name for the domain
+ * @apiSuccess (Response Fields) {String} results.domain_id The domain id
+ * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
+ * @apiSuccess (Response Fields) {Number} total number of results
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7"
+ *        "results": [
+ *            {
+ *                "id": "9482da98-4ad2-490d-983b-42c17fe06b81",
+ *                "name": "1-2-8",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            },
+ *            {
+ *                "id": "1cd8a599-13b6-45e4-8a94-7bad7a5c457e",
+ *                "name": "New catalog",
+ *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *            }
+ *        ],
+ *        "prev": null,
+ *        "next": "https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs?page=2",
+ *        "totalResults": 27
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} Validation Errors 404: The api couldn't find the resource you requested
  *
- * @apiErrorExample {json} 400 Error Response
- *    HTTP/1.1 400 Validation Errors
- *    {
- *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7",
- *        "error": "Validation Errors",
- *        "fieldErrors": {
- *            "publicationRule": [
- *                "Publication rule with end date 0.0 is in the past.",
- *                "Publication rule end date: 0.0 preceeds 1412025402"
- *            ]
- *        }
- *    }
  *
  *
  */
