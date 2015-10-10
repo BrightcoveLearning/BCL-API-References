@@ -145,7 +145,7 @@
  *        "requestId": "2796350e-2125-4f04-b33a-59488aaa76c7"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  * @apiError (Error 4xx) {json} Validation Errors 404: The api couldn't find the resource you requested
  *
  * @apiErrorExample {json} 400 Error Response

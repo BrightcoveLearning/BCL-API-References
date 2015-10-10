@@ -17,7 +17,7 @@
  *     https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
- * @apiSuccess (Response Fields) {String} results.id The id for the domain
+ * @apiSuccess (Response Fields) {String} results.id The id for the catalog
  * @apiSuccess (Response Fields) {String} results.name The name for the domain
  * @apiSuccess (Response Fields) {String} results.domain_id The domain id
  * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
@@ -44,7 +44,7 @@
  *        "totalResults": 27
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  *
@@ -93,7 +93,7 @@
  *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -130,7 +130,7 @@
  *        "name": "New-Catalog-Name",
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -165,7 +165,7 @@
  *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -208,7 +208,7 @@
  *        ]
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -252,7 +252,7 @@
  *        "codecsValue": "mp4a.40.2,avc1.42001f"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -298,7 +298,7 @@
  *      }
  *    ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -334,7 +334,7 @@
  *      "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
@@ -367,7 +367,7 @@
  *      "id": "076ea1a2-a35b-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  *
  */
