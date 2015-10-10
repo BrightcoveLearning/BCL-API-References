@@ -37,12 +37,12 @@
  * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit The type of unit the time value
  * @apiParam (Request Body Fields) {Object[]} [timedText] An array of Timed Text items for the asset
  * @apiParam (Request Body Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
- * @apiParam (Request Body Fields) {String} timedText.media.sourceURL The URL string to the source asset
+ * @apiParam (Request Body Fields) {Url} timedText.media.sourceURL The URL string to the source asset
  * @apiParam (Request Body Fields) {String="Subtitle","Caption","Embedded"} timedText.timedTextType The type to categorize the timed text item
  * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
  * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
  * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
- * @apiParam (Request Body Fields) {String} notifications.target The HTTP endpoint or sns target for your notification
+ * @apiParam (Request Body Fields) {Url} notifications.target The HTTP endpoint or sns target for your notification
  * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
  * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
