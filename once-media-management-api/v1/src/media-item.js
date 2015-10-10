@@ -185,7 +185,7 @@
  * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
  * @apiParam (Request Body Fields) {String} metadata.key The key of an Extended Metadata key value pair (see the example below for key/value pairs)
  * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
- * @apiParam (Request Body Fields) {String} media.sourceURL The URL string to the source asset
+ * @apiParam (Request Body Fields) {Url} media.sourceURL The URL string to the source asset
  * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules for the asset
  * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
  * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
