@@ -93,9 +93,20 @@
  * @apiSuccess (Response Fields) {Number} publishedVersion The media item published version
  * @apiSuccess (Response Fields) {String[]} keywords Array of keywords for the media item
  * @apiSuccess (Response Fields) {Object[]} cuePoints Array of cue point objects
- * @apiSuccess (Response Fields) {String} cuePoints.unit unit of the time value for the cue point
+ * @apiSuccess (Response Fields) {String} cuePoints.unit unit of the `time` value for the cue point
  * @apiSuccess (Response Fields) {String} cuePoints.valueIn time of the cue point in seconds
  * @apiSuccess (Response Fields) {Object[]} publicationRules Array of publication rule objects
+ * @apiSuccess (Response Fields) {Number} publicationRules.startDate Date when publication rule becomes effective (epoch time in seconds)
+ * @apiSuccess (Response Fields) {Number} publicationRules.endDate Date when publication rule expires (epoch time in seconds)
+ * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters Array of client filter objects
+ * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.variableName The variable name that the Client Filter will key off of
+ * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.value The value name that the Client Filter will key off of
+ * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.filterType The type of filtering used to compare the value
+ * @apiSuccess (Response Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
+ * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters.countryRules An array of Country Rules for the asset
+ * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
+ * @apiSuccess (Response Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
+ * @apiSuccess (Response Fields) {Object[]} timedText An array of Timed Text items for the asset
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
