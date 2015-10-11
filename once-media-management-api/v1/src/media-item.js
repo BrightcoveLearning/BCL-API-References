@@ -13,7 +13,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Media Items Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
@@ -81,7 +81,7 @@
  * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
  * @apiParam (Path Parameters) {String} mediaitem_id The id for the  media item
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
  * @apiSuccess (Response Fields) {String} catalog_id The id for the catalog

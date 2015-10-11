@@ -58,7 +58,7 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of the transcode renditions available to the domain
+ * @apiDescription Creates a new catalog within the indicated domain_id. The catalog will acquire all transcode renditions set as default on the domain and the domain publication rules unless the renditions are defined in the input.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -186,7 +186,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  *
- * @apiParamExample {Url} Get Catalog Request Example:
+ * @apiParamExample {Url} Get Catalog Renditions Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
@@ -213,7 +213,7 @@
  *
  */
 
-// get catalog rendition setting
+// get catalog rendition settings
 
 /**
  * @api {get} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Get Catalog Rendition Settings
@@ -221,7 +221,7 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of the transcode renditions available to the catalog.
+ * @apiDescription Returns the settings of the selected transcode rendition indicated by the rendition_id.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -229,7 +229,7 @@
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  * @apiParam (Path Parameters) {String} rendition_id The rendition id
  *
- * @apiParamExample {Url} Get Catalog Rendition Request Example:
+ * @apiParamExample {Url} Get Catalog Rendition Settings Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The id for the rendition
@@ -321,7 +321,7 @@
  * @apiParam (Path Parameters) {String} rendition_id The rendition id
  * @apiParam (Request Body Fields) {String} id a rendition id to add
  *
- * @apiParamExample {json} Replace Catalog Rendition Request Body Example:
+ * @apiParamExample {json} Add Catalog Rendition Request Body Example:
  *    {
  *      "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
  *    }
@@ -356,7 +356,7 @@
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  * @apiParam (Path Parameters) {String} rendition_id The rendition id to delete
  *
- * @apiParamExample {Url} Replace Catalog Rendition Request Body Example:
+ * @apiParamExample {Url} Delete Catalog Rendition Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalog/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The id of the deleted rendition
