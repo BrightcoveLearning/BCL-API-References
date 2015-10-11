@@ -12,7 +12,7 @@
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Ad Decisioning Servers Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of results
@@ -53,7 +53,7 @@
 // create ad decisioning servers
 
 /**
- * @api {get} /domains/:domain_id/adServers Get Ad Decisioning Servers
+ * @api {post} /domains/:domain_id/adServers Get Ad Decisioning Servers
  * @apiName Get Ad Decisioning Servers
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
@@ -63,8 +63,60 @@
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Request Body Fields) {String} name A human-readable name for the ad decisioning server
+ * @apiParam (Request Body Fields) {String} baseURL The HTTP request URL of the ad decisioning server
+ * @apiParam (Request Body Fields) {Object} [variables] Key-value pair mappings for the ad server URL that can utilize page level parameters passed on the query string(see Parameters section) or Dynamic Ad Parameters (see Dynamic Ad Params section). Double curly bracket syntax in the "key" will not be used and defines a placeholder for the insertion of the key-value pair within the baseUrl. See the example below
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {json} Create Ad Decisioning Server Request Body Example:
+ *    {
+ *        "name" : "New-ad-server",
+ *        "baseUrl": "www.google.com"
+ *        "variables": {
+ *        "{{placeholder1}} key1": "value1",
+ *            "{{ph2}} key2": "value2",
+ *            "UMADPARAM key3": "value3",
+ *            "key4": "value4"
+ *            }
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id The ad decisioning server id
+ * @apiSuccess (Response Fields) {String} name The ad decisioning server name
+ * @apiSuccess (Response Fields) {Url} baseURL  server
+ * @apiSuccess (Response Fields) {String} domain_id The domain id
+ * @apiSuccess (Response Fields) {Object} variables map of key/value pairs
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "40c11e99-8878-4f17-81c8-ca7d16d9ebbe",
+ *        "name": "New-ad-server-updated-name",
+ *        "baseUrl": "www.test.com",
+ *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *        "variables": {
+ *            "key1": "value1",
+ *            "someKey": "someValue"
+ *            }
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
+ *
+ */
+
+// get ad decisioning server
+
+/**
+ * @api {get} /domains/:domain_id/adServers/:adserver_id Get Ad Decisioning Server
+ * @apiName Get Ad Decisioning Server
+ * @apiGroup Ad_Decisioning_Servers
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Allows you to ingest a new video into the Once system
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ *
+ * @apiParamExample {Url} Get Ad Decisioning Servers Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of results
@@ -101,4 +153,5 @@
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
  *
  */
+
 
