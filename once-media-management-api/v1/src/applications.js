@@ -70,13 +70,121 @@
  * @apiParamExample {Url} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
- * @apiSuccess (Response Fields) {Object[]} results Array of results
- * @apiSuccess (Response Fields) {String} results.id The application id
- * @apiSuccess (Response Fields) {String} results.name The application name
- * @apiSuccess (Response Fields) {String} results.domain_id The domain id
- * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
- * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
- * @apiSuccess (Response Fields) {Number} total number of results
+ * @apiSuccess (Response Fields) {Object} adConfig The ad configuration object
+ * @apiSuccess (Response Fields) {Object} adConfig.preroll The preroll ad configuration object (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.id The preroll ad configuration id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.name The preroll ad configuration name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.adserver_id The preroll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.adserverName The preroll ad configuration ad server name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.adPosition The preroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {Object} adConfig.midroll The midroll ad configuration object (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.id The midroll ad configuration id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.name The midroll ad configuration name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.adserver_id The midroll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.adserverName The midroll ad configuration ad server name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.adPosition The midroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {Object} adConfig.postroll The postroll ad configuration object (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.id The postroll ad configuration id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.name The postroll ad configuration name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.adserver_id The postroll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.adserverName The postroll ad configuration ad server name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.adPosition The postroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {Object} adConfig.ad The ad configuration ad object (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.id The ad configuration ad id (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.name The ad configuration ad name (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adserver_id The ad configuration ad ad server id (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adserverName The ad configuration ad ad server name (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adPosition The ad configuration ad ad position (multi ad config)
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    // single ad config
+ *    "adConfig": {
+ *        "preRoll": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "prenewUpdated",
+ *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerName": "Fireworks waterfall",
+ *            "adPosition": "preroll"
+ *        },
+ *        "midRoll": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "Mid",
+ *            "adserver_id": "1111-2222-33333-4444-aaaabbbbccccddd",
+ *            "adServerName": "Test Ad Server",
+ *            "adPosition": "midroll"
+ *        },
+ *        "postRoll": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "Post",
+ *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerName": "Fireworks waterfall",
+ *            "adPosition": "postroll"
+ *        }
+ *    }
+ *    // multi adconfig example
+ *    "adConfig": {
+ *        "ad": {
+ *            "id": "5840b954-5094-4e13-b49a-319115342011",
+ *            "name": "DFP",
+ *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerName": "Fireworks waterfall",
+ *            "adPosition": "dfp"
+ *        }
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
+ *
+ */
+
+// update application
+
+/**
+ * @api {get} /domains/:domain_id/applications/:application_id Update Application
+ * @apiName Update Application
+ * @apiGroup Applications
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Updates the standard settings of the application
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} application_id The application id
+ *
+ * @apiParamExample {json} Ingest Request Body Example:
+ *    {
+ *        "name":"New_Application",
+ *        "preRollAdCount":1,
+ *        "midRollAdCount":2,
+ *        "postRollAdCount":3
+ *    }
+ *
+ * @apiSuccess (Response Fields) {Object} adConfig The ad configuration object
+ * @apiSuccess (Response Fields) {Object} adConfig.preroll The preroll ad configuration object (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.id The preroll ad configuration id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.name The preroll ad configuration name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.adserver_id The preroll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.adserverName The preroll ad configuration ad server name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preroll.adPosition The preroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {Object} adConfig.midroll The midroll ad configuration object (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.id The midroll ad configuration id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.name The midroll ad configuration name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.adserver_id The midroll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.adserverName The midroll ad configuration ad server name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midroll.adPosition The midroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {Object} adConfig.postroll The postroll ad configuration object (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.id The postroll ad configuration id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.name The postroll ad configuration name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.adserver_id The postroll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.adserverName The postroll ad configuration ad server name (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postroll.adPosition The postroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {Object} adConfig.ad The ad configuration ad object (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.id The ad configuration ad id (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.name The ad configuration ad name (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adserver_id The ad configuration ad ad server id (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adserverName The ad configuration ad ad server name (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adPosition The ad configuration ad ad position (multi ad config)
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
