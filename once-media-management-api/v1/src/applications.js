@@ -394,50 +394,16 @@
  * @apiParamExample {Url} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
- * @apiSuccess (Response Fields) {Object} adConfig The ad configuration object
- * @apiSuccess (Response Fields) {Object} adConfig.preroll The preroll ad configuration object (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preroll.id The preroll ad configuration id (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preroll.name The preroll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preroll.adserver_id The preroll ad configuration ad server id (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preroll.adserverName The preroll ad configuration ad server name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preroll.adPosition The preroll ad configuration ad position (single ad config)
- * @apiSuccess (Response Fields) {Object} adConfig.midroll The midroll ad configuration object (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midroll.id The midroll ad configuration id (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midroll.name The midroll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midroll.adserver_id The midroll ad configuration ad server id (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midroll.adserverName The midroll ad configuration ad server name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midroll.adPosition The midroll ad configuration ad position (single ad config)
- * @apiSuccess (Response Fields) {Object} adConfig.postroll The postroll ad configuration object (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postroll.id The postroll ad configuration id (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postroll.name The postroll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postroll.adserver_id The postroll ad configuration ad server id (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postroll.adserverName The postroll ad configuration ad server name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postroll.adPosition The postroll ad configuration ad position (single ad config)
+ * @apiSuccess (Response Fields) {String[]} id Array of adconfig ids
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
- *    "adConfig": {
- *        "preRoll": {
- *            "id": "5840b954-5094-4e13-b49a-319115342011",
- *            "name": "prenewUpdated",
- *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
- *            "adServerName": "Fireworks waterfall",
- *            "adPosition": "preroll"
- *        },
- *        "midRoll": {
- *            "id": "5840b954-5094-4e13-b49a-319115342011",
- *            "name": "Mid",
- *            "adserver_id": "1111-2222-33333-4444-aaaabbbbccccddd",
- *            "adServerName": "Test Ad Server",
- *            "adPosition": "midroll"
- *        },
- *        "postRoll": {
- *            "id": "5840b954-5094-4e13-b49a-319115342011",
- *            "name": "Post",
- *            "adserver_id": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
- *            "adServerName": "Fireworks waterfall",
- *            "adPosition": "postroll"
- *        }
+ *    {
+ *        "id": [
+ *            "6a38cbc1-7257-4a9b-99fa-121d4f971768",
+ *            "9989ad10-62a6-4f82-828d-d63ed464a33e",
+ *            "c244fd41-7188-41a4-ba5f-2f6edd6a67fa"
+ *        ]
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
