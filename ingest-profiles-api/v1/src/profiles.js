@@ -382,7 +382,7 @@
 
 /**
  * @api {get} /accounts/:account_id/profiles/:profile_id Get Ingest Profile by ID
- * @apiName Get Ingest Profile By ID
+ * @apiName Get_Ingest_Profile_by_ID
  * @apiGroup Profile
  * @apiVersion 1.0.0
  *
