@@ -298,6 +298,7 @@
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} application_id The application id
+ * @apiParam (Request Body Fields) {Object} [preroll] The application id
  *
  * @apiParamExample {json} Add adconfir Request Body Example:
  *    // Sample input for direct VAST
