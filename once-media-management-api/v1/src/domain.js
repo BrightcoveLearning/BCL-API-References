@@ -6,13 +6,13 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of all catalogs within the domain. This method fetches 20 catalogs per page, returns the totalResult to indicate the total number of catalogs and provides previous or next page requests within the body.
+ * @apiDescription Returns the essential information of the domain.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Domain Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7
  *
  * @apiSuccess (Response Fields) {String} id The domain id
@@ -44,7 +44,7 @@
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Domain Renditions Example:
  *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
@@ -82,14 +82,14 @@
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of the transcode renditions available to the domain
+ * @apiDescription Returns the settings of the selected transcode rendition indicated by the rendition_id.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} rendition_id The id for the rendition
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Rendition Settings Example:
  *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The id for the rendition

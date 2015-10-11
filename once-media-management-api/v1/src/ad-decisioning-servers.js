@@ -53,8 +53,8 @@
 // create ad decisioning servers
 
 /**
- * @api {post} /domains/:domain_id/adServers Get Ad Decisioning Servers
- * @apiName Get Ad Decisioning Servers
+ * @api {post} /domains/:domain_id/adServers Create Ad Decisioning Server
+ * @apiName Create Ad Decisioning Server
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
