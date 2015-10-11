@@ -12,7 +12,7 @@
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Applications Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of results
@@ -67,7 +67,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} application_id The application id
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Application Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {Object} adConfig The ad configuration object
@@ -156,7 +156,7 @@
  * @apiParam (Request Body Fields) {Number} [midRollAdCount] The midroll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in each slot. By default  this value is set to 0, but is required when using direct VAST tags.
  * @apiParam (Request Body Fields) {Number} [postRollAdCount] The postroll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in the slot. By default  this value is set to 0, but is required when using direct VAST tags.
  *
- * @apiParamExample {json} Ingest Request Body Example:
+ * @apiParamExample {json} Update Application Request Body Example:
  *    {
  *        "name":"New_Application",
  *        "preRollAdCount":1,
@@ -201,7 +201,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} application_id The application id
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Delete Application Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {String} id The application id
@@ -231,7 +231,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} application_id The application id
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Get Application Ad Configuration Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {Object} adConfig The ad configuration object
@@ -311,7 +311,7 @@
  * @apiParam (Request Body Fields) {String} ad.adPosition The ad position
  * @apiParam (Request Body Fields) {String} ad.adserver_id The ad server id
  *
- * @apiParamExample {json} Add adconfir Request Body Example:
+ * @apiParamExample {json} Add Ad Configuration Request Body Example:
  *    // Sample input for direct VAST
  *    {
  *        "preRoll": {
@@ -391,7 +391,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} application_id The application id
  *
- * @apiParamExample {Url} Ingest Request Body Example:
+ * @apiParamExample {Url} Delete Ad Configurations Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
  * @apiSuccess (Response Fields) {String[]} id Array of adconfig ids

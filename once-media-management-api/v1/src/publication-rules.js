@@ -114,7 +114,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Get Domain Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
  *
  * @apiSuccess (Response Fields) {String} id the publication rule id
@@ -164,14 +164,14 @@
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the domain publication rule settings of the indicated publicationrule_id.
+ * @apiDescription Deletes the publication rule for the domain as indicated by the publicationrule_id.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Delete Domain Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
  *
  * @apiSuccess (Response Fields) {String} id the publication rule id
@@ -202,7 +202,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Get Catalog Publication Rules Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
  *
  * @apiSuccess (Response Fields) {String[]} [publicationRuleIds] The ids for the domain publication rules
@@ -250,7 +250,7 @@
  * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
  * @apiSuccess (Response Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
  *
- * @apiParamExample {json} Create Publication Rule Body Example:
+ * @apiParamExample {json} Create Catalog Publication Rule Request Body Example:
  *    {
  *        "startDate": 1412538800,
  *        "endDate": 1838635000,
@@ -306,7 +306,7 @@
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Get Catalog Publication RulesExample:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
  *
  * @apiSuccess (Response Fields) {String} id the publication rule id
@@ -364,7 +364,7 @@
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Delete Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
  *
  * @apiSuccess (Response Fields) {String} id the publication rule id
@@ -396,7 +396,7 @@
  * @apiParam (Path Parameters) {String} catalog_id The catalog id
  * @apiParam (Path Parameters) {String} mediaitem_id The media item id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Get Media Item Publication Rules Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
  *
  * @apiSuccess (Response Fields) {String[]} [publicationRuleIds] The ids for the domain publication rules
@@ -445,7 +445,7 @@
  * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
  * @apiSuccess (Response Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
  *
- * @apiParamExample {json} Create Publication Rule Body Example:
+ * @apiParamExample {json} Create Media Item Publication Rule Request Body Example:
  *    {
  *        "startDate": 1412538800,
  *        "endDate": 1838635000,
@@ -502,7 +502,7 @@
  * @apiParam (Path Parameters) {String} mediaitem_id The media item id
  * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Get Media Item Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
  *
  * @apiSuccess (Response Fields) {String} id the publication rule id
@@ -561,7 +561,7 @@
  * @apiParam (Path Parameters) {String} mediaitem_id The media item id
  * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
  *
- * @apiParamExample {Url} Get Publication Rules Example:
+ * @apiParamExample {Url} Delete Media Item Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
  *
  * @apiSuccess (Response Fields) {String} id the publication rule id

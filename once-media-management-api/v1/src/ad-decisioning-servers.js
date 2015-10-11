@@ -156,7 +156,7 @@
  * @apiParam (Request Body Fields) {String} baseURL The HTTP request URL of the ad decisioning server
  * @apiParam (Request Body Fields) {Object} [variables] Key-value pair mappings for the ad server URL that can utilize page level parameters passed on the query string(see Parameters section) or Dynamic Ad Parameters (see Dynamic Ad Params section). Double curly bracket syntax in the "key" will not be used and defines a placeholder for the insertion of the key-value pair within the baseUrl. See the example below
  *
- * @apiParamExample {json} Create Ad Decisioning Server Request Body Example:
+ * @apiParamExample {json} Update Ad Decisioning Server Request Body Example:
  *    {
  *        "name" : "New-ad-server",
  *        "baseUrl": "www.google.com"
@@ -207,7 +207,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Path Parameters) {String} adserver_id The ad decisioning server id
  *
- * @apiParamExample {Url} Create Ad Decisioning Server Request Body Example:
+ * @apiParamExample {Url} Delete Ad Decisioning Server Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers/4df36e4c-f418-403d-b17e-60c99dbe65b4
  *
  * @apiSuccess (Response Fields) {String} id The ad decisioning server id
