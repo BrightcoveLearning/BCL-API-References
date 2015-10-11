@@ -6,7 +6,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Allows you to ingest a new video into the Once system
+ * @apiDescription Returns a collection of ad decisioning servers configured for the domain_id. This method fetches 20 ad servers per page, returns the totalResult to indicate the total number of ad servers and provides the previous or next page requests within the body.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -58,7 +58,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Allows you to ingest a new video into the Once system
+ * @apiDescription Creates a new ad decisioning server in the indicated domain by providing an user-defined name and the URL of the server.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -110,7 +110,7 @@
  * @apiGroup Ad_Decisioning_Servers
  * @apiVersion 1.0.0
  *
- * @apiDescription Allows you to ingest a new video into the Once system
+ * @apiDescription Returns the essential information for the indicated adserver_id.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
