@@ -192,3 +192,34 @@
  */
 
 
+// delete ad decisioning server
+
+/**
+ * @api {delete} /domains/:domain_id/adServers/:adserver_id Delete Ad Decisioning Server
+ * @apiName Delete Ad Decisioning Server
+ * @apiGroup Ad_Decisioning_Servers
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Deletes an ad decisioning server in the indicated by the adserver_id.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} adserver_id The ad decisioning server id
+ *
+ * @apiParamExample {Url} Create Ad Decisioning Server Request Body Example:
+ *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/adServers/4df36e4c-f418-403d-b17e-60c99dbe65b4
+ *
+ * @apiSuccess (Response Fields) {String} id The ad decisioning server id
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "id": "4df36e4c-f418-403d-b17e-60c99dbe65b4",
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
+ *
+ */
+
+
