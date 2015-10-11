@@ -45,16 +45,16 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
@@ -70,7 +70,7 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
@@ -279,16 +279,16 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
@@ -303,7 +303,7 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
@@ -403,16 +403,16 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
@@ -427,7 +427,7 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
@@ -537,7 +537,7 @@
  * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in kbps
  * @apiSuccess (Response Field) {Number} height frame height in pixels
  * @apiSuccess (Response Field) {Number} size file size in bytes
- * @apiSuccess (Response Field) {String} src URL for HTTP rendition
+ * @apiSuccess (Response Field) {Url} src URL for HTTP rendition
  * @apiSuccess (Response Field) {String} steam_name the stream name on the CDN
  * @apiSuccess (Response Field) {String} type the type for segmented streams
  * @apiSuccess (Response Field) {DateString} uploaded_at date/time when the video was uploaded
@@ -670,13 +670,13 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -922,12 +922,12 @@
  * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
  * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
  * @apiParam (Request Body Fields) {String} [link.text] text for the link
- * @apiParam (Request Body Fields) {String} [link.url] URL for the link
+ * @apiParam (Request Body Fields) {Url} [link.url] URL for the link
  * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {Object[]} [text_tracks="[]"] array of text track maps
- * @apiParam (Request Body Fields) {String} text_tracks.src="" URL for the .vtt file
+ * @apiParam (Request Body Fields) {Url} text_tracks.src="" URL for the .vtt file
  * @apiParam (Request Body Fields) {String="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
  * @apiParam (Request Body Fields) {String} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
  * @apiParam (Request Body Fields) {String} [text_tracks.mime_type=""] mime-type for the track
@@ -973,16 +973,16 @@
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
  * @apiSuccess (Response Fields) {Object[]} images.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} images.poster.sources.src URL for a poster source image
- * @apiSuccess (Response Fields) {String} images.poster.src URL for the default poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Url} images.poster.src URL for the default poster source image
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
- * @apiSuccess (Response Fields) {String} images.thumbnail.src URL for the default thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
- * @apiSuccess (Response Fields) {String} link.url URL for the link
+ * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
@@ -997,7 +997,7 @@
  * @apiSuccess (Response Fields) {Boolean} sharing.by_reference whether the video is shared by reference
  * @apiSuccess (Response Fields) {String[]} tags array of tags
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
- * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {Url} text_tracks.src URL for the .vtt file
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
