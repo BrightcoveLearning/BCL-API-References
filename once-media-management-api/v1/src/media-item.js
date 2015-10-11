@@ -212,7 +212,7 @@
  * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
  * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
  *
- * @apiParamExample {json} Update Media Item Body Example:
+ * @apiParamExample {json} Update Media Item Request Body Example:
  *    {
  *        "id": "efe70c1f-ebd2-4c5e-856a-a54a8e97415f",
  *        "catalog_id": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
