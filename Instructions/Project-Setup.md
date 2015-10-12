@@ -4,7 +4,7 @@ To set up documentation for a new API, create the file structure below under the
 
 - api-name (e.g. cms-api)
     - apidoc.json
-    - v1
+    - v1 (or vX for other versions)
         + doc
         + src
 

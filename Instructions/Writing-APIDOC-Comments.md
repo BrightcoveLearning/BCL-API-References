@@ -135,6 +135,14 @@ Specify a path, URL, or request body parameter:
 
 ### @apisuccess
 
+Use to document response fields:
+```
+    @apiSuccess (group) {type} field description
+```
+* The only group I use is `Response Fields`
+* Types are the same as for params
+* enum values and default may *not* be included
+
 - set group (I'm using `Response Fields`)
 
 
