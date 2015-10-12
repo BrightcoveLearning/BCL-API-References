@@ -50,7 +50,7 @@ Should have the same value as the name of the operation you included at the end 
 
     @apiName Get Folders
 
-I think the template should be using apiName to populate the sidenav - will try to fix that at some point
+I think the template should be using @apiName to populate the sidenav - will try to fix that at some point
 
 ### @apiGroup
 
@@ -61,20 +61,20 @@ The api groups make up the main headings in the sidenav. For best results, use s
 ### @apiVersion
 
 The version of the API that first included this operation:
-
+```
     @apiVersion 1.0.0
-
+```
 APIDOC expects the x.x.x format.
 
 ### @apiParam
 
 Specify a path, URL, or request body parameter:
-
+```
     // syntax
     @apiParam (group_name) {type} param description
     // example
     @apiParam (URL Parameters) {Number} [limit=10] number of items to return
-
+```
 * be sure to include group by type - I'm using these groups:
     - `Path Parameters`
     - `URL Parameters`
@@ -136,13 +136,38 @@ Specify a path, URL, or request body parameter:
 ### @apisuccess
 
 Use to document response fields:
+
 ```
+    // syntax
     @apiSuccess (group) {type} field description
+    // example
+    @apiSuccess (Response Fields) {String} id video id
 ```
 * The only group I use is `Response Fields`
 * Types are the same as for params
 * enum values and default may *not* be included
 
-- set group (I'm using `Response Fields`)
+### @apiSuccessExample (only one allowed per operation)
 
 
+Use to show a real response:
+```
+    @apiSuccessExample {json} Success Response:
+        HTTP/1.1 200 OK
+        {
+            "count": 2678
+        }
+```
+
+### @apiError (optional, but use if you have info)
+
+Syntax:
+```
+    @apiError (Error range) {json} MESSAGE STATUS: Detailed message or explanation.
+```
+Example:
+```
+    @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+```
+
+### @apiErrorExample (optional, use if you have one)
