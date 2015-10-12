@@ -109,12 +109,13 @@ Specify a path, URL, or request body parameter:
 ### @apiParamExample (one allowed per operation)
 
 * For requests that send no data, use the type `{Url}` and just show a sample request:
-
+```
      @apiParamExample {Url} Search Example:
          https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+```
 
 * For requests that include data, show a sample request body:
-
+```
      @apiParamExample {json} Create Video Example:
          {
              "name": "Moose Herd",
@@ -129,6 +130,7 @@ Specify a path, URL, or request body parameter:
                  "subtopic": "mammals"
              }
          }
+```
 
 ### @apisuccess
 
