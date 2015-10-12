@@ -2,7 +2,7 @@
 
 The configuration file is `apidoc.json`. It looks like this:
 
-    ```json
+```json
     {
         "name": "CMS API",
         "version": "1.0.0",
@@ -18,7 +18,7 @@ The configuration file is `apidoc.json`. It looks like this:
             "Playlists"
         ]
     }
-    ```
+```
 
 ## Notes
 
