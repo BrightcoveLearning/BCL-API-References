@@ -66,17 +66,20 @@ The version of the API that first included this operation:
 
 APIDOC expects the x.x.x format.
 
-### @apiparam
+### @apiParam
 
 Specify a path, URL, or request body parameter:
 
-    @apiparam (URL Parameters) {Number} [limit=10] number of items to return
+    // syntax
+    @apiParam (group_name) {type} param description
+    // example
+    @apiParam (URL Parameters) {Number} [limit=10] number of items to return
 
-- be sure to include group by type - I'm using groups:
+* be sure to include group by type - I'm using these groups:
     - `Path Parameters`
     - `URL Parameters`
     - `Request Body Fields`
-- param types:
+* param types:
     - {String}
     - {Url}
     - {Number}
@@ -88,15 +91,34 @@ Specify a path, URL, or request body parameter:
     - {Number[]} array of numbers
     - {Object[]} array of objects
 
-For enum types, allowable values are included in the type specification like this
+* For enum types, allowable values are included in the type specification like this:
+
+    {String="Red","Green","Blue"}
+
+* [] around the param name indicate that it is optional
+* default values are added to the param name like this:
+
+    limit=10
+    or
+    [fields="video_view"]
+
+- param descriptions must not include: " - " either avoid it or use `&mdash;`
+- for default value of [] must enclose that in "[]"
+    - e.g. @apiparam (Request Body Fields) {String[]} video_ids="[]" array of video id
+
+### @apiParamExample
+
+* For requests that send no data, use the type `{Url}` and just show a sample request:
+
+     @apiParamExample {Url} Search Example:
+         https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
+
+*
 
 
-### @apisuccess
+    ### @apisuccess
 
 - set group (I'm using `Response Fields`)
 
 ## Gotchas
 
-- param descriptions must not include: " - "
-- for default value of [] must enclose that in "[]"
-    - e.g. @apiparam (Request Body Fields) {String[]} video_ids="[]" array of video id
