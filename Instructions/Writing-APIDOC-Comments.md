@@ -33,5 +33,60 @@ Each API operation requires a comment block that starts like this:
      * ...
      * /
 ```
+
 Every command to the parser begins with `@api` - below is a list of the essential parser commands, followed by a full example.
 
+### @api
+
+Sample:
+
+    @api {get} /accounts/:account_id/video_fields Get Folders
+
+"Get Folders" is the name that will appear in the sidenav
+
+### @apiName
+
+Should have the same value as the name of the operation you included at the end of the @api line:
+
+    @apiName Get Folders
+
+I think the template should be using apiName to populate the sidenav - will try to fix that at some point
+
+### @apiGroup
+
+The api groups make up the main headings in the sidenav. For best results, use snake_case for group names, not spaces:
+
+    @apiGroup Custom_Fields
+
+### @apiVersion
+
+The version of the API that first included this operation:
+
+    @apiVersion 1.0.0
+
+### @apiparam
+
+- be sure to include group by type - I'm using groups:
+    - `Path Parameters`
+    - `URL Parameters`
+    - `Request Body Fields`
+- param types:
+    - {String}
+    - {Number}
+    - {Boolean}
+    - {Array}
+    - {Object}
+    - {DateString}
+    - {String[]} array of strings
+    - {Number[]} array of numbers
+    - {Object[]} array of objects
+
+### @apisuccess
+
+- set group (I'm using `Response Fields`)
+
+## Gotchas
+
+- param descriptions must not include: " - "
+- for default value of [] must enclose that in "[]"
+    - e.g. @apiparam (Request Body Fields) {String[]} video_ids="[]" array of video id
