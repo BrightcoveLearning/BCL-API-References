@@ -18,4 +18,19 @@ The groups are also arbitrary - you can have a separate group for each endpoint 
 
 ## API Operation Comment Blocks
 
+Each API operation requires a comment block that starts like this:
+
+```js
+    // get videos (not required but I found this to be handy for locating blocks in longer files)
+
+    /**
+     * @api {get} /accounts/:account_id/videos Get Videos
+     * @apiName Get Videos
+     * @apiGroup Video
+     * @apiVersion 1.0.0
+     *
+     * @apiDescription Gets a page of video objects
+     * ...
+     * /
+```
 
