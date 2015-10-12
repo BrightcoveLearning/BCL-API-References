@@ -21,7 +21,7 @@ The groups are also arbitrary - you can have a separate group for each endpoint 
 Each API operation requires a comment block that starts like this:
 
 ```js
-    // get videos
+    // get videos (this kind of comment not parsed - I found it useful for finding blocks in long files)
 
     /**
      * @api {get} /accounts/:account_id/videos Get Videos
@@ -33,4 +33,5 @@ Each API operation requires a comment block that starts like this:
      * ...
      * /
 ```
+Every command to the parser begins with `@api` - below is a list of the essential parser commands, followed by a full example.
 
