@@ -92,20 +92,21 @@ Specify a path, URL, or request body parameter:
     - {Object[]} array of objects
 
 * For enum types, allowable values are included in the type specification like this:
-
+```
     {String="Red","Green","Blue"}
-
+```
 * [] around the param name indicate that it is optional
 * default values are added to the param name like this:
-
+```
     limit=10
-    or
+    // or
     [fields="video_view"]
-
+```
 - param descriptions must not include: `" - "` either avoid it or use `&mdash;`
 - for default value of [] must enclose that in "[]"
-    - e.g. @apiParam (Request Body Fields) {String[]} video_ids="[]" array of video id
-
+```
+    @apiParam (Request Body Fields) {String[]} video_ids="[]" array of video id
+```
 ### @apiParamExample (one allowed per operation)
 
 * For requests that send no data, use the type `{Url}` and just show a sample request:
