@@ -18,6 +18,7 @@ The configuration file is `apidoc.json`. It looks like this:
             "Playlists"
         ]
     }
+    ```
 
 ## Notes
 
