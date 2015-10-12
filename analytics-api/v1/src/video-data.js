@@ -17,8 +17,8 @@
  *
  * @apiParam (Path Parameters) {String} account_id a Video Cloud account ID
  * @apiParam (Path Parameters) {String} video_id a Video Cloud video ID
- * @apiparam (URL Parameters) {String} [from="(30 days before now)"] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
- * @apiparam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
+ * @apiParam (URL Parameters) {String} [from="(30 days before now)"] Start time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
+ * @apiParam (URL Parameters) {String} [to="now"] End time for the period covered by the report &mdash; epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
  *
  * @apiParamExample {Url} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001

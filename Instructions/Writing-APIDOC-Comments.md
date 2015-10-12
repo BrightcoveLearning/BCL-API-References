@@ -64,7 +64,13 @@ The version of the API that first included this operation:
 
     @apiVersion 1.0.0
 
+APIDOC expects the x.x.x format.
+
 ### @apiparam
+
+Specify a path, URL, or request body parameter:
+
+    @apiparam (URL Parameters) {Number} [limit=10] number of items to return
 
 - be sure to include group by type - I'm using groups:
     - `Path Parameters`
@@ -72,6 +78,7 @@ The version of the API that first included this operation:
     - `Request Body Fields`
 - param types:
     - {String}
+    - {Url}
     - {Number}
     - {Boolean}
     - {Array}
@@ -80,6 +87,9 @@ The version of the API that first included this operation:
     - {String[]} array of strings
     - {Number[]} array of numbers
     - {Object[]} array of objects
+
+For enum types, allowable values are included in the type specification like this
+
 
 ### @apisuccess
 

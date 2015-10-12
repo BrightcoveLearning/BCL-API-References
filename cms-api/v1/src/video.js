@@ -13,10 +13,10 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiparam (URL Parameters) {Number} [limit=10] number of videos to return
- * @apiparam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiparam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiParam (URL Parameters) {Number} [limit=10] number of videos to return
+ * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
+ * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiParam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {Url} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos?q=tags:nature,name:nature
@@ -177,8 +177,8 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiparam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiparam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiParam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+ * @apiParam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {Url} Search Count Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/videos?q=tags:nature,name:nature

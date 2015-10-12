@@ -8,24 +8,24 @@
  *
  * @apiDescription Send event information to the data collector for Brightcove Analytics
  *
- * @apiparam (URL Parameters) {String} account account id
- * @apiparam (URL Parameters) {String="videocloud"} domain always equal to `videocloud`
- * @apiparam (URL Parameters) {String="player_load","video_impression","video_view","video_engagement"} event the event type
- * @apiparam (URL Parameters) {String} [video] the video id
- * @apiparam (URL Parameters) {String} [video_name] the video name
- * @apiparam (URL Parameters) {Number} [time] the timestamp for the event in epoch time (milliseconds)
- * @apiparam (URL Parameters) {Number} [video_duration] the duration of the video in seconds
- * @apiparam (URL Parameters) {String} [range] the range of the video video viewed for `video_engagement` events in the format `StartSecond..EndSecond`
- * @apiparam (URL Parameters) {Number} [video_seconds_viewed] count of watched seconds since the last update for `video_engagement` events
- * @apiparam (URL Parameters) {String} [destination] URI that originated the event
- * @apiparam (URL Parameters) {String} [source] URI that sent the end-user to the `destination` URI
- * @apiparam (URL Parameters) {String="direct","mobile","tablet","tv","desktop","other"} [device_type] Override to specify the type of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. **Not typically included**)
- * @apiparam (URL Parameters) {String="direct","android","bada","ios","linux","mac","tv","os_x","rim","sybian","windows","other"} [device_os] Override to specify the OS of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. **Not typically included**)
- * @apiparam (URL Parameters) {String} [country] ISO-3166 (alpha 2) region cISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
- * @apiparam (URL Parameters) {String} [country_name] Human readable country name (override in case the system can not detect geographic information from the IP address) **Not typically included**
- * @apiparam (URL Parameters) {String} [region] ISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
- * @apiparam (URL Parameters) {String} [region_name] Human readable region name (override in case the system can not detect geographic information from the IP address) **Not typically included**
- * @apiparam (URL Parameters) {String} [city] City name **Not typically included**
+ * @apiParam (URL Parameters) {String} account account id
+ * @apiParam (URL Parameters) {String="videocloud"} domain always equal to `videocloud`
+ * @apiParam (URL Parameters) {String="player_load","video_impression","video_view","video_engagement"} event the event type
+ * @apiParam (URL Parameters) {String} [video] the video id
+ * @apiParam (URL Parameters) {String} [video_name] the video name
+ * @apiParam (URL Parameters) {Number} [time] the timestamp for the event in epoch time (milliseconds)
+ * @apiParam (URL Parameters) {Number} [video_duration] the duration of the video in seconds
+ * @apiParam (URL Parameters) {String} [range] the range of the video video viewed for `video_engagement` events in the format `StartSecond..EndSecond`
+ * @apiParam (URL Parameters) {Number} [video_seconds_viewed] count of watched seconds since the last update for `video_engagement` events
+ * @apiParam (URL Parameters) {String} [destination] URI that originated the event
+ * @apiParam (URL Parameters) {String} [source] URI that sent the end-user to the `destination` URI
+ * @apiParam (URL Parameters) {String="direct","mobile","tablet","tv","desktop","other"} [device_type] Override to specify the type of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. **Not typically included**)
+ * @apiParam (URL Parameters) {String="direct","android","bada","ios","linux","mac","tv","os_x","rim","sybian","windows","other"} [device_os] Override to specify the OS of the device that originated the event in cases where the User Agent is unreliable (ignored unless both device os and device type are included or if the value submitted is not in the list of values shown here. **Not typically included**)
+ * @apiParam (URL Parameters) {String} [country] ISO-3166 (alpha 2) region cISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiParam (URL Parameters) {String} [country_name] Human readable country name (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiParam (URL Parameters) {String} [region] ISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiParam (URL Parameters) {String} [region_name] Human readable region name (override in case the system can not detect geographic information from the IP address) **Not typically included**
+ * @apiParam (URL Parameters) {String} [city] City name **Not typically included**
  *
  * @apiParamExample {Url} Video Dimension Report Example:
  *     https://analytics.api.brightcove.com/v1/alltime/accounts/20318290001/videos/2660272749001
