@@ -171,3 +171,16 @@ Example:
 ```
 
 ### @apiErrorExample (optional, use if you have one)
+
+Example:
+
+```
+    @apiErrorExample {json} 404 Error Response
+        HTTP/1.1 404 Not Found
+        [
+            {
+                "error_code": "RESOURCE_NOT_FOUND"
+            }
+        ]
+```
+
