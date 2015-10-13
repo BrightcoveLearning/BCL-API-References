@@ -1,13 +1,12 @@
 # APIDOC - Installation
 
-<ul style="float:right;width:20%;font-size:small">
-<li><a href="Install-and-Setup.md">Installation</a></li>
-<li><a href="Project-Setup.md">Project Setup</a></li>
-<li><a href="JSON-package.md">The apidoc.json Package</a></li>
-<li><a href="Writing-APIDOC-Comments.md">Writing APIDOC Comments</a></li>
-<li><a href="Running-APIDOC.md">Running APIDPC</a></li>
-
-</ul>;
+<ul>
+    <li><a href="Install-and-Setup.md">Installation</a></li>
+    <li><a href="Project-Setup.md">Project Setup</a></li>
+    <li><a href="JSON-package.md">The apidoc.json Package</a></li>
+    <li><a href="Writing-APIDOC-Comments.md">Writing APIDOC Comments</a></li>
+    <li><a href="Running-APIDOC.md">Running APIDPC</a></li>
+</ul>
 
 See [APIDOC Site](http://apidocjs.com/) for full information and documentation.
 
