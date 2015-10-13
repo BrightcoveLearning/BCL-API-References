@@ -170,7 +170,7 @@
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
  *
- * @apiDescription Updates the media item metadata for the indicated mediaitem_id. Values defined on update will overwrite any existing values unless otherwise specified.
+ * @apiDescription Updates the media item metadata for the indicated mediaitem_id. **WARNING**: Values defined **OR** omitted on update will overwrite any existing values unless otherwise specified, **including** publication rules! Please be aware of this when making mediaItem updates. If you wish to do an additive/inline change, please make an ingest request and omit the source file URL.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
