@@ -13,4 +13,5 @@ For detailed information on using this project with APIDOC, see the instructions
 * [The apidoc.json Package](./instructions/JSON-package.md)
 * [Writing APIDOC Comments](./Instructions/Writing-APIDOC-Comments.md)
 * [Running APIDPC](./Instructions/Running-APIDOC.md)
+* [Deploying to Doc Site](./Instructions/Deploy-to-Public-Docs.md) - this page for Learning Services only
 * [API Versions](./Instructions/versions.md)
