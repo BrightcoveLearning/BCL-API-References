@@ -1,4 +1,4 @@
-# APIDOC - The JSON Package.
+# APIDOC - The JSON Package
 
 The configuration file is `apidoc.json`. It looks like this:
 
@@ -31,4 +31,4 @@ The configuration file is `apidoc.json`. It looks like this:
 
 In the `order` array, you can mix and match group names and operation names. Groups are kept together automatically, and any group or operation not included will be fall to the bottom and be ordered alphabetically.
 
-**Note: no spaces in group or operation names - replace them with underscores, as in the example above. It's probably easiest to put in the order after you have documented the groups and operations.** 
+**Note: no spaces in group or operation names - replace them with underscores, as in the example above. It's probably easiest to put in the order after you have documented the groups and operations.**
