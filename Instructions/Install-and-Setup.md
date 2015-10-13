@@ -14,7 +14,10 @@ See [APIDOC Site](http://apidocjs.com/) for full information and documentation.
 
 1. Install [node.js](https://nodejs.org/en/) if you don't have it
 2. [sudo] npm -g apidoc
-3. For public docs: clone [BCL-API-References](https://github.com/BrightcoveLearning/BCL-API-References)
-4. For internal docs: clone [api-references](https://bithub.brightcove.com/doc/api-references)
+3. **Learning Services**: For public docs: clone [BCL-API-References](https://github.com/BrightcoveLearning/BCL-API-References)
+4. **Development**: For public docs: fork [api-references](https://bithub.brightcove.com/doc/api-references) (gh-pages branch - that's the default)
 
-**Note:** Brightcove Learning: always work in the public repo and sync changes to the bithub repo, unless you are working on internal-only docs
+**Notes:**
+
+1. Brightcove Learning: always work in the public repo and sync changes to the bithub repo, unless you are working on internal-only docs
+2. Developers: your edits are welcome, and you can add internal-only APIs/operations - in pull requests, *specify whether you changes are for public docs or internal-only*.
