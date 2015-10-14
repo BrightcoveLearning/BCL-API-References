@@ -6,6 +6,9 @@
     "url" : "https://repos.api.brightcove.com",
     "order": [
         "Repositories",
-        "Single Repository"
+        "Single_Repository",
+        "Get_Repository",
+        "Create_Repository",
+        "Delete_Repository"
     ]
 }
