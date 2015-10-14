@@ -8,10 +8,10 @@ Other Brightcove employees (Development, Customer Support, SEs, etc.) have acces
 
 For detailed information on using this project with APIDOC, see the instructions:
 
-* [Installation](./Instructions/Install-and-Setup.md)
-* [Project Setup](./Instructions/Project-Setup.md)
+* [Installation](./Install-and-Setup.md)
+* [Project Setup](./Project-Setup.md)
 * [The apidoc.json Package](./instructions/JSON-package.md)
-* [Writing APIDOC Comments](./Instructions/Writing-APIDOC-Comments.md)
-* [Running APIDPC](./Instructions/Running-APIDOC.md)
-* [Deploying to Doc Site](./Instructions/Deploy-to-Public-Docs.md) - this page for Learning Services only
-* [API Versions](./Instructions/versions.md)
+* [Writing APIDOC Comments](./Writing-APIDOC-Comments.md)
+* [Running APIDPC](./Running-APIDOC.md)
+* [Deploying to Doc Site](./Deploy-to-Public-Docs.md) - this page for Learning Services only
+* [API Versions](./versions.md)
