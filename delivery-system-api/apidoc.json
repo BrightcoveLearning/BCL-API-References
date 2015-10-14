@@ -1,8 +1,8 @@
 {
-    "name": "Dynamic Ingest API",
+    "name": "Delivery System API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Dynamic Ingest API, used to add videos, images, and captions to your media library, and to replace existing media assets.",
-    "title": "Dynamic Ingest API Reference",
-    "url" : "https://ingest.api.brightcove.com/v1",
-    "order": ["Video","Ingest"]
+    "description": "Reference for the Delivery System API, used to manage and deploy a group of files, called a repository. These files are managed through REST APIs and through git. These files are delivered, on every 'git push', to players.brightcove.com.",
+    "title": "Delivery System API Reference",
+    "url" : "https://repos.api.brightcove.com",
+    "order": ["Repositories"]
 }
