@@ -1,0 +1,9 @@
+{
+    "name": "Player Management API",
+    "version": "1.0.0",
+    "description": "Reference for the Brightcove Player - Player Management API, used to manipulate players, player configurations and child players (embeds).",
+    "title": "Player Management API Reference",
+    "url" : "https://players.api.brightcove.com/v1",
+    "order": [
+      "Players"]
+}
