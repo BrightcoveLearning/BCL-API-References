@@ -13,6 +13,12 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * apiParamExample {curl}
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user :email \
+ *   --request GET \
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
  * @apiSuccess (Response Fields) {String} accountId account ID
  * @apiSuccess (Response Fields) {String} id video id
@@ -121,6 +127,13 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ *
+ * apiParamExample {curl}
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user :email \
+ *   --request GET \
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
  * @apiSuccess (Response Fields) {Object[]} items array of player objects
  * @apiSuccess (Response Fields) {Number} item_count number of player objects in array
@@ -280,6 +293,38 @@
  * @apiParam (Request Body Fields) {Object} [player.template] object containing information on the player template
  * @apiParam (Request Body Fields) {String} [player.template.version] version the player template to use when creating player; needed only when wishing to use an older or preview version of the current player template
  * @apiParam (Request Body Fields) {Boolean} [player.inactive=false] deactivates player
+ *
+ * apiParamExample {curl}
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request POST \
+ *   --data '{
+ *       "name": "MySamplePlayer - URL Source",
+ *       "configuration": {
+ *         "media": {
+ *           "sources": [{
+ *             "src":"http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+ *             "type":"video/mp4"
+ *           }]
+ *         }
+ *       }
+ *     }' \
+ *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+ *
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request POST \
+ *   --data '{
+ *       "name": "MySamplePlayer - Video Cloud source",
+ *       "configuration": {
+ *         "video_cloud": {
+ *           "video": "4443311217001"
+ *         }
+ *       }
+ *     }' \
+ *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
  */
 
 
