@@ -13,7 +13,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
- * apiParamExample {curl}
+ * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
@@ -128,7 +128,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
  *
- * apiParamExample {curl}
+ * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user :email \
@@ -294,7 +294,7 @@
  * @apiParam (Request Body Fields) {String} [player.template.version] version the player template to use when creating player; needed only when wishing to use an older or preview version of the current player template
  * @apiParam (Request Body Fields) {Boolean} [player.inactive=false] deactivates player
  *
- * apiParamExample {curl}
+ * @apiParamExample {curl} curl Statement:
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user $EMAIL \
@@ -325,6 +325,24 @@
  *       }
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+ *
+ * @apiSuccess (Response Fields) {String} id player ID
+ * @apiSuccess (Response Fields) {String} url URL to published player
+ * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
+ * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess (Response Fields) {String} preview_url URL to preview player
+ * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
+ *
+ * @apiSuccessExample {json} Success Response:
+ * {
+ *   "id": "11378869-bbbf-49bc-92df-2d3455c2d47a",
+ *   "url": "http://players.brightcove.net/1507807800001/11378869-bbbf-49bc-92df-2d3455c2d47a_default/index.html",
+ *   "embed_code": "<iframe src='//players.brightcove.net/1507807800001/11378869-bbbf-49bc-92df-2d3455c2d47a_default/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+ *   "embed_in_page": "http://players.brightcove.net/1507807800001/11378869-bbbf-49bc-92df-2d3455c2d47a_default/in_page.embed",
+ *   "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/11378869-bbbf-49bc-92df-2d3455c2d47a/preview/embeds/default/master/index.html",
+ *   "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/11378869-bbbf-49bc-92df-2d3455c2d47a/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+ * }
+
  */
 
 
