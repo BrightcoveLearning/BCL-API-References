@@ -20,7 +20,7 @@
  * @apiSuccess (Response Fields) {Object} branches contains objects for the preview and master (published) player
  * @apiSuccess (Response Fields) {Object} branches.preview contains preview player object
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration configuration of preview player
- * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advnace; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration.player.template specific template details
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.player.template.version version of player template
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.player.template.name name of player template
@@ -36,7 +36,7 @@
  * @apiSuccess (Response Fields) {String} branches.preview.preview_url URL of preview player
  * @apiSuccess (Response Fields) {Object} branches.master contains master (published) player object
  * @apiSuccess (Response Fields) {Object} branches.master.configuration configuration of master player
- * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advnace; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiSuccess (Response Fields) {Object} branches.master.configuration.player player template information for master player
  * @apiSuccess (Response Fields) {Object} branches.master.configuration.player.template specific template details
  * @apiSuccess (Response Fields) {String} branches.master.configuration.player.template.version version of player template
@@ -130,7 +130,7 @@
  * @apiSuccess (Response Fields) {Object} branches contains objects for the preview and master (published) player
  * @apiSuccess (Response Fields) {Object} branches.preview contains preview player object
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration configuration of preview player
- * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advnace; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration.player.template specific template details
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.player.template.version version of player template
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.player.template.name name of player template
@@ -146,7 +146,7 @@
  * @apiSuccess (Response Fields) {String} branches.preview.preview_url URL of preview player
  * @apiSuccess (Response Fields) {Object} branches.master contains master (published) player object
  * @apiSuccess (Response Fields) {Object} branches.master.configuration configuration of master player
- * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advnace; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiSuccess (Response Fields) {Object} branches.master.configuration.player player template information for master player
  * @apiSuccess (Response Fields) {Object} branches.master.configuration.player.template specific template details
  * @apiSuccess (Response Fields) {String} branches.master.configuration.player.template.version version of player template
@@ -251,19 +251,35 @@
  * @apiParam (Request Body Fields) {String} [media.poster.highres] file path to the poster image
  * @apiParam (Request Body Fields) {String} [media.height] height of the video
  * @apiParam (Request Body Fields) {String} [media.width] width of the video
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
- * @apiParam (Request Body Fields) {String}
+ * @apiParam (Request Body Fields) {Object[]} [media.tracks] array of track objects
+ * @apiParam (Request Body Fields) {Object} [video_cloud] Video Cloud configuration information
+ * @apiParam (Request Body Fields) {String} [video_cloud.video] Video Cloud video asset ID; can use a reference ID using the syntax `ref:1234refid`
+ * @apiParam (Request Body Fields) {Object[]} [plugins] array of objects
+ * @apiParam (Request Body Fields) {String} [plugsin.name] name of plugin, required if using a plugin information
+ * @apiParam (Request Body Fields) {String} [plugins.options] JSON object of data for corresponding plugin, optional for plugin
+ * @apiParam (Request Body Fields) {Object} [css] object containing 1-3 CSS color overrides
+ * @apiParam (Request Body Fields) {String} [css.controlColor] color of buttons and text in control bar
+ * @apiParam (Request Body Fields) {String} [css.controlBarColor background color of control bar]
+ * @apiParam (Request Body Fields) {String} [css.progressColor] color of the progress bar
+ * @apiParam (Request Body Fields) {Boolean} [playlist] indicates if a playlist should be used
+ * @apiParam (Request Body Fields) {Boolean} [playlist.playOnSelect] indicates if a video loaded from a playlist should play on load
+ * @apiParam (Request Body Fields) {String} [autoadvance] autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiParam (Request Body Fields) {Object} [studio_configuration] object containing playlist information normally set in Studio
+ * @apiParam (Request Body Fields) {Object} [studio_configuration.player] object containing playlist information
+ * @apiParam (Request Body Fields) {Boolean} [studio_configuration.player.adjusted] indicates if player dimensions should be adjusted for playlist
+ * @apiParam (Request Body Fields) {String} [studio_configuration.player.height] player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiParam (Request Body Fields) {String} [studio_configuration.player.width] player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiParam (Request Body Fields) {Boolean} [skin=true] if false, the default look-and-feel will not be applied to the player; set to false when creating a new, highly customized skin
+ * @apiParam (Request Body Fields) {Boolean} [errors] indicates if the error messages plugin should be excluded
+ * @apiParam (Request Body Fields) {Objects[]} [media.tracks] array of track objects
+ * @apiParam (Request Body Fields) {String} [media.tracks.src] URL to source of track, required in a track object
+ * @apiParam (Request Body Fields) {String} [media.tracks.srclang] 2 letter code (valid BCP 47 language tag) for the language of the text track, for example "en" for English; required in a track object
+ * @apiParam (Request Body Fields) {String} [media.tracks.label] text label for the track, for instance `English` for an English languare text track
+ * @apiParam (Request Body Fields) {Boolean} [hls=true] indicates whether to exclude the HLS fallback tech; making this value false will mean HLS will only be used if the browser supports the format natively
+ * @apiParam (Request Body Fields) {Object} [player] object containing information on the player
+ * @apiParam (Request Body Fields) {Object} [player.template] object containing information on the player template
+ * @apiParam (Request Body Fields) {String} [player.template.version] version the player template to use when creating player; needed only when wishing to use an older or preview version of the current player template
+ * @apiParam (Request Body Fields) {Boolean} [player.inactive=false] deactivates player
  */
 
 
