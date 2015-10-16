@@ -25,16 +25,39 @@
  *   }' \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/publish
  *
- * @apiSuccess (Response Fields) {String} id player ID
- * @apiSuccess (Response Fields) {String} url URL to published player
- * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
- * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess (Response Fields) {Object} autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Object} player.template specific template details
+ * @apiSuccess (Response Fields) {String} player.template.version version of player template
+ * @apiSuccess (Response Fields) {String} player.template.name name of player template
+ * @apiSuccess (Response Fields) {Object} video_cloud Video Cloud configuration information
+ * @apiSuccess (Response Fields) {String} video_cloud.policy_key policy key for Video Cloud account
+ * @apiSuccess (Response Fields) {String} video_cloud.video if using a Video Cloud video asset, that asset's ID
+ * @apiSuccess (Response Fields) {Object} media media information for non-Video Cloud media
+ * @apiSuccess (Response Fields) {Object[]} media.sources array of media source objects
+ * @apiSuccess (Response Fields) {String} media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
+ * @apiSuccess (Response Fields) {String} media.sources.src URL to media asset
+ * @apiSuccess (Response Fields) {String[]} [techOrder] order that playback technologies should be used; only visible if changed from default
  *
  * @apiSuccessExample {json} Success Response:
  * {
- *   "id": "49f70c8b-e16b-4fc9-b9ae-2cd361785e7a",
- *   "url": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html",
- *   "embed_code": "<iframe src='//players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html'  * allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
- *   "embed_in_page": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/in_page.embed"
+ *   "plugins": [{
+ *     "options": {
+ *      //options for FreeWheel plugin
+ *     },
+ *     "name": "FreeWheelPlugin"
+ *   }],
+ *   "stylesheets": ["//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.css"],
+ *   "scripts": ["//players.brightcove.net/videojs-freewheel/videojs-freewheel.min.js"],
+ *   "video_cloud": {
+ *     "policy_key": "BCpkADawqM2hW41DM2bNvmn2LE24Lqet7lfKzRB8Tv-FYlVtVijTGqAhjCEiLZmHO84vptg3hBAFVqXI4diQ-51q7fceX- * BY0GTcRoS9pv5HaOdh6F4nrCCapgmIzDNCvdYTqIh73BnZDSWh",
+ *     "video": null
+ *   },
+ *   "player": {
+ *     "template": {
+ *       "name": "single-video-template",
+ *       "version": "1.14.26"
+ *     }
+ *   },
+ *   "techOrder": ["html5", "hls", "flash"]
  * }
 */
