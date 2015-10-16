@@ -310,7 +310,7 @@
  *         }
  *       }
  *     }' \
- *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
  * curl \
  *   --header "Content-Type: application/json" \
@@ -324,7 +324,7 @@
  *         }
  *       }
  *     }' \
- *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
  * @apiSuccess (Response Fields) {String} id player ID
  * @apiSuccess (Response Fields) {String} url URL to published player
@@ -414,7 +414,7 @@
  *   --data '{
  *     "comment": "Comment for GitHub repo"
  *   }' \
- *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/publish
  *
  * @apiSuccess (Response Fields) {String} id player ID
  * @apiSuccess (Response Fields) {String} url URL to published player
@@ -433,7 +433,7 @@
 // Delete a player
 
 /**
- * @api {delete} accounts/:account_id/players/:player_id/publish Delete a Player
+ * @api {delete} accounts/:account_id/players/:player_id Delete a Player
  * @apiName Delete a Player
  * @apiGroup Players
  * @apiVersion 1.0.0
@@ -452,7 +452,7 @@
  *   --user $EMAIL \
  *   --request DELETE \
  *   --data '{}' \
- *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
  * @apiSuccess (Response Fields) {String} message report of player deletion
  *
