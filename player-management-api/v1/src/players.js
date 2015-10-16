@@ -21,25 +21,54 @@
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
  *
  * @apiSuccess (Response Fields) {String} accountId account ID
- * @apiSuccess (Response Fields) {String} id video id
- * @apiSuccess (Response Fields) {String} name name give to player
  * @apiSuccess (Response Fields) {Object} branches contains objects for the preview and master (published) player
  * @apiSuccess (Response Fields) {Object} branches.preview contains preview player object
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration configuration of preview player
- * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Boolean} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
+ * @apiSuccess (Response Fields) {Boolean} branches.preview.configuration.autoplay indicates player should play video immediately, on platforms that allow this
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.css object containing CSS color overrides
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.css.controlBarColor background color of control bar
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.css.controlColor color of buttons and text in control bar
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.css.progressColor color of progress bar
+ * @apiSuccess (Response Fields) {Boolean} branches.preview.configuration.fullscreenControl indicates whether the fullscreen control should be shown in the control bar
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.media media information for non-Video Cloud media
+ * @apiSuccess (Response Fields) {Object[]} branches.preview.configuration.media.sources array of media source objects
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.height height of the video
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.poster.highres URL to the poster image
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.src URL to media asset
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.title content of the &lt;title&gt; element of the page
+ * @apiSuccess (Response Fields) {Object[]} branches.preview.configuration.media.sources.tracks array of track objects
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.width width of the video
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.src URL to media asset
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration.player.template specific template details
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.player.template.version version of player template
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.player.template.name name of player template
+ * @apiSuccess (Response Fields) {Boolean} branches.preview.configuration.playlist indicates if a playlist should be used
+ * @apiSuccess (Response Fields) {Boolean} branches.preview.configuration.playlist.playOnSelect indicates if a video loaded from a playlist should play on load
+ * @apiSuccess (Response Fields) {Object[]} branches.preview.configuration.plugins array of plugin objects
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.plugins.name name of plugin
+ * @apiSuccess (Response Fields) {JSON} branches.preview.configuration.plugins.options configuration options for plugin
+ * @apiSuccess (Response Fields) {String[]} branches.preview.configuration.scripts URLs to JavaScript files that should be included with the player
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.studio_configuration object containing playlist information normally set in Studio
+ * @apiSuccess (Response Fields) {Object} branches.preview.configuration.studio_configuration.player object containing playlist information
+ * @apiSuccess (Response Fields) {Boolean} branches.preview.configuration.studio_configuration.player.adjusted indicates if player dimensions should be adjusted for playlist
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.studio_configuration.player.height player height when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (Response Fields) {String} branches.preview.configuration.studio_configuration.player.width player width when displayed with playlist; if the height and width are not assigned values, the sizes of the player and playlist are automatically adjusted
+ * @apiSuccess (Response Fields) {String[]} branches.preview.configuration.stylesheets URLs to CSS files that should be included with the player
+ * @apiSuccess (Response Fields) {String[]} branches.preview.configuration.techOrder order that playback technologies should be used; only visible if changed from default
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration.video_cloud Video Cloud configuration information
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.video_cloud.policy_key policy key for Video Cloud account
  * @apiSuccess (Response Fields) {String} branches.preview.configuration.video_cloud.video if using a Video Cloud video asset, that asset's ID
- * @apiSuccess (Response Fields) {Object} branches.preview.configuration.media media information for non-Video Cloud media
- * @apiSuccess (Response Fields) {Object[]} branches.preview.configuration.media.sources array of media source objects
- * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.type MIME type of the video, as specified in the HTML5 standard, for instance `video/mp4` form MP4 or `application/x-mpegURL` for HLS
- * @apiSuccess (Response Fields) {String} branches.preview.configuration.media.sources.src URL to media asset
- * @apiSuccess (Response Fields) {String} branches.preview.updated_at time of last update to preview player
- * @apiSuccess (Response Fields) {String} branches.preview.template_updated_at time of last update to player template
  * @apiSuccess (Response Fields) {String} branches.preview.preview_url URL of preview player
+ * @apiSuccess (Response Fields) {String} branches.preview.template_updated_at time of last update to player template
+ * @apiSuccess (Response Fields) {String} branches.preview.updated_at time of last update to preview player
+
+
+
+
+
+
  * @apiSuccess (Response Fields) {Object} branches.master contains master (published) player object
  * @apiSuccess (Response Fields) {Object} branches.master.configuration configuration of master player
  * @apiSuccess (Response Fields) {Object} branches.preview.configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
@@ -58,7 +87,10 @@
  * @apiSuccess (Response Fields) {String} branches.master.template_updated_at time of last update to player template
  * @apiSuccess (Response Fields) {String} branches.master.preview_url URL of master player
  * @apiSuccess (Response Fields) {String} created_at player creation time
+ * @apiSuccess (Response Fields) {String} description player description
  * @apiSuccess (Response Fields) {String} embed_count number of embeds, will always be at least 1
+ * @apiSuccess (Response Fields) {String} id video id
+ * @apiSuccess (Response Fields) {String} name name give to player
  * @apiSuccess (Response Fields) {String} url URL to player
  *
  * @apiSuccessExample {json} Success Response:
@@ -177,6 +209,7 @@
  * @apiSuccess (Response Fields) {String} created_at player creation time
  * @apiSuccess (Response Fields) {String} embed_count number of embeds, will always be at least 1
  * @apiSuccess (Response Fields) {String} url URL to player
+ * @apiSuccess (Response Fields) {String[]} [techOrder] order that playback technologies should be used; only visible if changed from default
  *
  * @apiSuccessExample {json} Success Response:
  *
@@ -293,8 +326,10 @@
  * @apiParam (Request Body Fields) {Object} [player.template] object containing information on the player template
  * @apiParam (Request Body Fields) {String} [player.template.version] version the player template to use when creating player; needed only when wishing to use an older or preview version of the current player template
  * @apiParam (Request Body Fields) {Boolean} [player.inactive=false] deactivates player
+ * @apiParam (Request Body Fields) {String[]} [techOrder] order that playback technologies should be used
  *
  * @apiParamExample {curl} curl Statement:
+ * //This curl statement creates a player that uses a video asset from a URL (Perform customer)
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user $EMAIL \
@@ -312,6 +347,7 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
+ * //This curl statement creates a player that uses a Video Cloud asset
  * curl \
  *   --header "Content-Type: application/json" \
  *   --user $EMAIL \
@@ -388,7 +424,7 @@
 
 */
 
-// Update a single player (not player configuration)
+// Publish a player
 
 /**
  * @api {post} accounts/:account_id/players/:player_id/publish Publish a Player
