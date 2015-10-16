@@ -235,7 +235,7 @@
 
  // Create a player
 /**
- * @api {get} /accounts/:account_id/players Create a Player
+ * @api {post} /accounts/:account_id/players Create a Player
  * @apiName Create a Player
  * @apiGroup Players
  * @apiVersion 1.0.0
@@ -345,4 +345,119 @@
 
  */
 
+// Update a single player (not player configuration)
 
+/**
+ * @api {patch} accounts/:account_id/players/:player_id Update a Player
+ * @apiName Update a Player
+ * @apiGroup Players
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Update a player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the configuration APIs, detailed below.
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ *
+ * @apiParam (Request Body Fields) {String} name player name
+ * @apiParam (Request Body Fields) {String} [description] player description
+ *
+ * @apiParamExample {curl} curl Statement:
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user :email \
+ *   --request PATCH \
+ *   --data '{
+ *     "name": "My New Player Name",
+ *     "description": "My new player description"
+ *   }' \
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id
+ *
+ * @apiSuccess (Response Fields) {String} id player ID
+ * @apiSuccess (Response Fields) {String} preview_url URL to preview player
+ * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
+ *
+ * @apiSuccessExample {json} Success Response: The response will contain links to preview player versions, so you will have to explicitly publish to get the optimized version of the player.
+ * {
+ *   "id": "49f70c8b-e16b-4fc9-b9ae-2cd361785e7a",
+ *   "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html",
+ *   "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
+ * }
+
+*/
+
+// Update a single player (not player configuration)
+
+/**
+ * @api {post} accounts/:account_id/players/:player_id/publish Publish a Player
+ * @apiName Publish a Player
+ * @apiGroup Players
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Publish a player for optimization and production use.
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ *
+ * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
+ *
+ * @apiParamExample {curl} curl Statement:
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request POST \
+ *   --data '{
+ *     "comment": "Comment for GitHub repo"
+ *   }' \
+ *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/publish
+ *
+ * @apiSuccess (Response Fields) {String} id player ID
+ * @apiSuccess (Response Fields) {String} url URL to published player
+ * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
+ * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
+ *
+ * @apiSuccessExample {json} Success Response:
+ * {
+ *   "id": "49f70c8b-e16b-4fc9-b9ae-2cd361785e7a",
+ *   "url": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html",
+ *   "embed_code": "<iframe src='//players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html'  * allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+ *   "embed_in_page": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/in_page.embed"
+ * }
+*/
+
+// Delete a player
+
+/**
+ * @api {delete} accounts/:account_id/players/:player_id/publish Delete a Player
+ * @apiName Delete a Player
+ * @apiGroup Players
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Delete a player
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ *
+ * @apiParamExample {curl} curl Statement:
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request DELETE \
+ *   --data '{}' \
+ *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID
+ *
+ * @apiSuccess (Response Fields) {String} message report of player deletion
+ *
+ * @apiSuccessExample {json} Success Response:
+ * {
+ *   "message": "Successfully deleted player with the id: 49f70c8b-e16b-4fc9-b9ae-2cd361785e7a"
+ * }
+*/
