@@ -276,7 +276,9 @@ pre.language-json .pun {
     top: 0;
     left: 0;
 }
-
+.top-bar {
+    background-color: #333;
+}
  #navMenuLeft {
      background-color: #333;
      max-height: 40px;
@@ -290,6 +292,11 @@ pre.language-json .pun {
      position: fixed;
      top: 0;
      right: 0;
+ }
+ section.top-bar-section {
+     position: absolute;
+     top: 0;
+     max-height: 40px;
  }
  .top-bar-section ul {
      position: relative;
@@ -306,6 +313,19 @@ pre.language-json .pun {
      top: 0;
      max-height: 40px;
  }
+ .breadcrumbs {
+    font-size: 11px;
+    margin-left: -1rem;
+    position: fixed;
+    top: 40px;
+    height: 26px;
+    width: 100%;
+    z-index: 6;
+}
+ .breadcrumbs a {
+    font-size: 11px;
+}
+
  /* ------------------------------------------------------------------------------------------
  * Sidenav
  * ------------------------------------------------------------------------------------------ */
