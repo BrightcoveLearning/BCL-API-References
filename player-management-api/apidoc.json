@@ -20,5 +20,7 @@
       "Get_All_Embeds",
       "Create_an_Embed",
       "Publish_an_Embed",
-      "Delete_an_Embed"]
+      "Delete_an_Embed",
+      "Embed_Configurations",
+      "Get_an_Embed_Configuration"]
 }
