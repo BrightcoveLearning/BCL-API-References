@@ -25,7 +25,7 @@
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/configuration/:branch
  *
- * @apiSuccess (Response Fields) {String} id embed ID
+ * @apiSuccess (Response Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -88,3 +88,86 @@
  *   "preview_embed_code": "<iframe src='//preview-players.brightcove.net/v1/accounts/1507807800001/players/6afea3cd-adfd-45ac-9e47-3242a7f46754/master/embeds/53c02fa5-6344-4c39-be04-b19cdcb69665/preview/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>"
  * }
 */
+
+
+// View Merged configurations
+
+/**
+ * @api {get} accounts/:account_id/players/:player_id/players/:embed_id/configuration Get Configuration Combinations
+ * @apiName Get Configuration Combinations
+ * @apiGroup Embed Configurations
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Retrieve the configuration for a parent/child combination of master and preview branches.
+
+ <strong>If you are using the second query parameter (and hence using the ampersand [&]), you MUST use quotes around the endpoint or the curl statement will fail at the ampersand.</strong> For example:
+
+ `"https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/merged?playerBranch=preview&embedBranch=master"`
+
+ Using this endpoint provides a way to view what the resulting configuration would be when combining different combinations of parent and child (also called embed) versions of players. You can fetch the resulting JSON configuration of any of these four combinations:
+
+- published parent - published child
+- published parent - preview child
+- preview parent - published child
+- preview parent - preview child
+
+Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
+
+For a longer discussion of the this endpoint, see <a href="http://docs.brightcove.com/en/video-cloud/player-management/guides/merged-configurations.html">Merged Configurations API</a>.
+
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam (Path Parameters) {String} embed_id embed ID
+ * @apiParam (Path Parameters) {String} playerBranch branch of the player to use, master or preview, for merged combination
+ * @apiParam (Path Parameters) {String} embedBranch branch of the embed to use, master or preview, for merged combination
+ *
+ * @apiParamExample {curl} curl Statement:
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request GET \
+ *   "https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embedID/configuration/merged?playerBranch=master&embedBranch=preview"
+ *
+ * @apiSuccess (Response Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ *
+ * @apiSuccessExample {JSON} Success Response:
+ * {
+ *   "media": {
+ *     "sources": [{
+ *       "src": "http://solutions.brightcove.com/bcls/assets/videos/Tiger.mp4",
+ *       "type": "video/mp4"
+ *     }]
+ *   },
+ *   "video_cloud": {
+ *     "policy_key": "BCpkADawqM2WNV-RrwVCqJKRQNuAmQbBm9xjFmUQxex81f_1xg40em1vNbmeMR-IUYpSFTgdrf0uxs4SU0SGUv6LdVQMtVvb9JMGq7_KVhaxGqx3x14DxCm0xQyHb9_zYKIhTLNZV5SmsVpy"
+ *   },
+ *   "player": {
+ *     "template": {
+ *       "name": "single-video-template",
+ *       "version": "1.14.26"
+ *     }
+ *   },
+ *   "configuration": {
+ *     "video_cloud": {
+ *       "video": "123456789"
+ *     },
+ *     "languages": ["de", "es"]
+ *   },
+ *   "name": "New Patched Embed Name",
+ *   "description": "New patched embed description",
+ *   "account_id": "1507807800001",
+ *   "player_id": "6afea3cd-adfd-45ac-9e47-3242a7f46754",
+ *   "embed_id": "53c02fa5-6344-4c39-be04-b19cdcb69665",
+ *   "player_name": "MySamplePlayer"
+}
+*/
+
+
+
+
+
+

@@ -23,5 +23,6 @@
       "Delete_an_Embed",
       "Embed_Configurations",
       "Get_an_Embed_Configuration",
-      "Update_an_Embed_Configuration"]
+      "Update_an_Embed_Configuration",
+      "Get_Configuration_Combinations"]
 }
