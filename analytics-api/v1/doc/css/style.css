@@ -266,6 +266,44 @@ pre.language-json .pun {
 */
 
  /* ------------------------------------------------------------------------------------------
+ * Topnav
+ * ------------------------------------------------------------------------------------------ */
+#navWrapper {background-color: #333;}
+.title-area {
+    max-height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+ #navMenuLeft {
+     max-height: 40px;
+     position: fixed;
+     top: 0;
+     left: 170px;
+ }
+ #navMenuRight {
+     max-height: 40px;
+     position: fixed;
+     top: 0;
+     right: 0;
+ }
+ .top-bar-section ul {
+     position: relative;
+     top: 0;
+     max-height: 40px;
+ }
+ .top-bar-section ul li {
+     position: relative;
+     top: 0;
+     max-height: 40px;
+ }
+ .top-bar-section ul li a {
+     position: relative;
+     top: 0;
+     max-height: 40px;
+ }
+ /* ------------------------------------------------------------------------------------------
  * Sidenav
  * ------------------------------------------------------------------------------------------ */
 .sidenav {
