@@ -1,7 +1,7 @@
 {
     "name": "Player Management API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Player - Player Management API, used to manipulate players, player configurations and child players (embeds).",
+    "description": "Reference for the Brightcove Player - Player Management API, used to manipulate players, player configurations and child players (embeds). To test API requests, you can use our [API Testing Tools](http://docs.brightcove.com/en/video-cloud/concepts/api-testing-tools/api-testing-tools.html)",
     "title": "Player Management API Reference",
     "url" : "https://players.api.brightcove.com/v1",
     "order": [
