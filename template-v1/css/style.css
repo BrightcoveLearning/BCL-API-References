@@ -36,8 +36,8 @@ h1 {
   line-height: 50px;
   margin: 0 0 10px 0;
   padding: 0;
-  padding-top: 120px;
-  margin-top: -80px;
+  padding-top: 140px;
+  margin-top: -1400px;
 }
 
 h2 {
@@ -63,7 +63,7 @@ section h1 {
   margin: 0 0 20px 0;
   padding: 0;
   padding-top: 120px;
-  margin-top: -80px;
+  margin-top: -60px;
 
 }
 
@@ -334,7 +334,7 @@ pre.language-json .pun {
   margin: 0;
   padding: 20px;
   position: fixed;
-  top: 80px;
+  top: 65px;
   left: 0;
   bottom: 0;
   overflow-x: hidden;
