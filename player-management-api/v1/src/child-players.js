@@ -1,12 +1,12 @@
 // Ger a player's embeds
 
 /**
- * @api {post} accounts/:account_id/players/:player_id/embeds Get a Player's Child Players (Embeds)
- * @apiName Get a Player's Child Players (Embeds)
- * @apiGroup Child Players
+ * @api {post} accounts/:account_id/players/:player_id/embeds Get a Player's Embeds
+ * @apiName Get a Player's Embeds
+ * @apiGroup Player Embeds
  * @apiVersion 1.0.0
  *
- * @apiDescription Get all the child players (embeds) for a player.
+ * @apiDescription Get all the embeds (child players) for a player.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))

@@ -5,5 +5,16 @@
     "title": "Player Management API Reference",
     "url" : "https://players.api.brightcove.com/v1",
     "order": [
-      "Players"]
+      "Players",
+      "Get_Single_Player",
+      "Get_All_Players",
+      "Create_a_Player",
+      "Update_a_Player",
+      "Publish_a_Player",
+      "Delete a Player",
+      "Player_Configurations",
+      "Get_a_Player_Configuration",
+      "Update_a_Player_Configuration",
+      "Player_Embeds",
+      "Get_a_Player's_Embeds"]
 }
