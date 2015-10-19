@@ -195,7 +195,7 @@
  * @apiParam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {Url} Search for Playlists Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001/videos
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/1403224824001/videos
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
@@ -256,168 +256,84 @@
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    [
  *        {
  *            "account_id": "57838016001",
  *            "complete": true,
- *            "created_at": "2015-02-27T19:10:55.425Z",
- *            "cue_points": [],
- *            "custom_fields": {},
- *            "description": "A small friendly bird...",
- *            "digital_master_id": null,
- *            "duration": 8240,
- *            "economics": "AD_SUPPORTED",
- *            "folder_id": null,
- *            "geo": null,
- *            "id": "4084164751001",
- *            "images": {
- *                "poster": {
- *                    "asset_id": "4084480075001",
- *                    "sources": [
- *                        {
- *                            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480075001_Bird- *    Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
- *                        }
- *                    ],
- *                    "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs. *    jpg?pubId=57838016001&videoId=4084164751001"
- *                },
- *                "thumbnail": {
- *                    "asset_id": "4084480007001",
- *                    "sources": [
- *                        {
- *                            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480007001_Bird- *    Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001"
- *                        }
- *                    ],
- *                    "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th. *    jpg?pubId=57838016001&videoId=4084164751001"
- *                }
- *            },
- *            "link": null,
- *            "long_description": null,
- *            "name": "Chickadee",
- *            "reference_id": "Bird_Chickadee.mp4_1425064251252",
- *            "schedule": null,
- *            "sharing": null,
- *            "state": "ACTIVE",
- *            "tags": [
- *                "bird",
- *                "nature",
- *                "air"
- *            ],
- *            "text_tracks": [],
- *            "updated_at": "2015-02-27T19:11:57.808Z"
- *        },
- *        {
- *            "account_id": "57838016001",
- *            "complete": true,
- *            "created_at": "2012-03-27T14:40:26.188Z",
+ *            "created_at": "2012-01-20T13:30:47.350Z",
  *            "cue_points": [],
  *            "custom_fields": {
+ *                "dfxppath": "http://files.brightcove.com/BCL_599562691001.xml",
  *                "purpose": "Training"
  *            },
- *            "description": "Bugs-Butterfly",
- *            "digital_master_id": "1532634103001",
- *            "duration": 27495,
+ *            "description": "BC440 Resizing Players",
+ *            "digital_master_id": "1403693402001",
+ *            "duration": 54591,
  *            "economics": "AD_SUPPORTED",
  *            "folder_id": null,
  *            "geo": null,
- *            "id": "1532562858001",
+ *            "id": "1403635561001",
  *            "images": {
  *                "poster": {
- *                    "asset_id": "1530823798001",
+ *                    "asset_id": "1403719702001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823798001_vs-4f71d15b7737b0e4346504a7. *    jpg?pubId=57838016001&videoId=1532562858001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403719702001_vs-1403716501001.jpg?pubId=57838016001&videoId=1403635561001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1403719702001_vs-1403716501001.jpg?pubId=57838016001&videoId=1403635561001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823798001_vs-4f71d15b7737b0e4346504a7. *    jpg?pubId=57838016001&videoId=1532562858001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403719702001_vs-1403716501001.jpg?pubId=57838016001&videoId=1403635561001"
  *                },
  *                "thumbnail": {
- *                    "asset_id": "1530823799001",
+ *                    "asset_id": "1403719703001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823799001_th-4f71d15b7737b0e4346504a7. *    jpg?pubId=57838016001&videoId=1532562858001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403719703001_th-1403716501001.jpg?pubId=57838016001&videoId=1403635561001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1403719703001_th-1403716501001.jpg?pubId=57838016001&videoId=1403635561001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823799001_th-4f71d15b7737b0e4346504a7. *    jpg?pubId=57838016001&videoId=1532562858001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403719703001_th-1403716501001.jpg?pubId=57838016001&videoId=1403635561001"
  *                }
  *            },
  *            "link": null,
- *            "long_description": null,
- *            "name": "Bugs-Butterfly",
- *            "reference_id": "1532562858001",
+ *            "long_description": "http://files.brightcove.com/BCL_599562691001.xml",
+ *            "name": "Resizing Players - captions - do not delete",
+ *            "original_filename": "BC440 Resizing Players.mp4",
+ *            "reference_id": "1403635561001",
  *            "schedule": null,
  *            "sharing": null,
  *            "state": "ACTIVE",
  *            "tags": [
+ *                "training",
+ *                "captions",
  *                "newtag"
  *            ],
  *            "text_tracks": [],
- *            "updated_at": "2015-09-07T06:27:58.071Z"
+ *            "updated_at": "2015-09-07T06:27:46.477Z"
  *        },
  *        {
  *            "account_id": "57838016001",
  *            "complete": true,
- *            "created_at": "2010-12-31T23:27:46.011Z",
- *            "cue_points": [],
- *            "custom_fields": {
- *                "purpose": "Training",
- *                "subject": "Birds"
- *            },
- *            "description": "O sibili, si ergo. Fortibuses en ero. Nobili, demis trucs. Si vadis  *    enem? Covsendux!",
- *            "digital_master_id": null,
- *            "duration": 27960,
- *            "economics": "AD_SUPPORTED",
- *            "folder_id": null,
- *            "geo": null,
- *            "id": "734484322001",
- *            "images": {
- *                "poster": {
- *                    "asset_id": "734246768001",
- *                    "sources": [
- *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734246768001_ari-origin29- *    arc-163-1293842599685.jpg?pubId=57838016001&videoId=734484322001"
- *                        }
- *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734246768001_ari-origin29-arc-163-1293842599685. *    jpg?pubId=57838016001&videoId=734484322001"
- *                },
- *                "thumbnail": {
- *                    "asset_id": "734246767001",
- *                    "sources": [
- *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734246767001_ari-origin29- *    arc-163-1293842599462.jpg?pubId=57838016001&videoId=734484322001"
- *                        }
- *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734246767001_ari-origin29-arc-163-1293842599462. *    jpg?pubId=57838016001&videoId=734484322001"
- *                }
- *            },
- *            "link": {
- *                "text": "Brightcove Learning",
- *                "url": "http://support.brightcove.com/en/training-videos"
- *            },
- *            "long_description": null,
- *            "name": "Bird_Seagulls",
- *            "reference_id": "734484322001",
- *            "schedule": {
- *                "ends_at": null,
- *                "starts_at": "2011-02-01T05:00:00.000Z"
- *            },
- *            "sharing": null,
- *            "state": "ACTIVE",
- *            "tags": [
- *                "bird",
- *                "newtag"
- *            ],
- *            "text_tracks": [],
- *            "updated_at": "2015-09-07T06:27:10.189Z"
- *        },
- *        {
- *            "account_id": "57838016001",
- *            "complete": true,
- *            "created_at": "2012-03-27T14:40:22.636Z",
+ *            "created_at": "2012-01-20T13:30:57.108Z",
  *            "cue_points": [
  *                {
  *                    "force_stop": false,
- *                    "id": "1716924153001",
+ *                    "id": "1404298843001",
  *                    "metadata": null,
  *                    "name": "Pre-roll",
  *                    "time": 0.0,
@@ -425,251 +341,211 @@
  *                },
  *                {
  *                    "force_stop": false,
- *                    "id": "1716924151001",
- *                    "metadata": "cue point @ 12",
- *                    "name": "cue point!",
- *                    "time": 12.472,
- *                    "type": "CODE"
- *                },
- *                {
- *                    "force_stop": false,
- *                    "id": "1716924152001",
- *                    "metadata": "cue point 1",
+ *                    "id": "1404298844001",
+ *                    "metadata": null,
  *                    "name": "Post-roll",
- *                    "time": 29.2,
+ *                    "time": 85.496,
  *                    "type": "AD"
  *                }
  *            ],
  *            "custom_fields": {
- *                "associated-topics": "wildlife, video, training, cuepoints",
- *                "duration": "long enough",
- *                "purpose": "Training",
- *                "rating": "perfect",
- *                "subject": "Birds",
- *                "textcolor": "#4C4D4F",
- *                "uploader-userid": "bclearning"
+ *                "dfxppath": "http://files.brightcove.com/BCL_129226712001.xml",
+ *                "purpose": "Training"
  *            },
- *            "description": "Seahorses range in size from 0.6 to 14 in (1.5 to 35.5 cm). They are  *    named for their equine appearance. Although they are bony fish, they do not have  *    scales but rather thin skin stretched over a series of bony plates, which are  *    arranged in rings",
- *            "digital_master_id": "1532627749001",
- *            "duration": 29200,
+ *            "description": "BC001 Quick Video Publishing",
+ *            "digital_master_id": "1403644262001",
+ *            "duration": 85496,
  *            "economics": "AD_SUPPORTED",
  *            "folder_id": null,
  *            "geo": null,
- *            "id": "1532530235001",
+ *            "id": "1403682587001",
  *            "images": {
  *                "poster": {
- *                    "asset_id": "1530823786001",
+ *                    "asset_id": "1403718080001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823786001_vs-4f71d1585359b0e486c86693. *    jpg?pubId=57838016001&videoId=1532530235001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718080001_vs-1403705347001.jpg?pubId=57838016001&videoId=1403682587001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1403718080001_vs-1403705347001.jpg?pubId=57838016001&videoId=1403682587001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823786001_vs-4f71d1585359b0e486c86693. *    jpg?pubId=57838016001&videoId=1532530235001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718080001_vs-1403705347001.jpg?pubId=57838016001&videoId=1403682587001"
  *                },
  *                "thumbnail": {
- *                    "asset_id": "1530823787001",
+ *                    "asset_id": "1403718081001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823787001_th-4f71d1585359b0e486c86693. *    jpg?pubId=57838016001&videoId=1532530235001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718081001_th-1403705347001.jpg?pubId=57838016001&videoId=1403682587001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1403718081001_th-1403705347001.jpg?pubId=57838016001&videoId=1403682587001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove.vo.llnwd.net/e1/ *    pd/57838016001/57838016001_1530823787001_th-4f71d1585359b0e486c86693. *    jpg?pubId=57838016001&videoId=1532530235001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718081001_th-1403705347001.jpg?pubId=57838016001&videoId=1403682587001"
  *                }
  *            },
- *            "link": {
- *                "text": "here we go",
- *                "url": "http://espn.go.com"
- *            },
- *            "long_description": "this is a long description",
- *            "name": "Sea_SeaHorse",
- *            "reference_id": "seaHORSE",
+ *            "link": null,
+ *            "long_description": "http://files.brightcove.com/BCL_129226712001.xml",
+ *            "name": "Quick Video Publishing - caption - do not delete",
+ *            "original_filename": "BC001 Quick Video Publishing.mp4",
+ *            "reference_id": "1403682587001",
  *            "schedule": null,
  *            "sharing": null,
  *            "state": "ACTIVE",
  *            "tags": [
- *                "demo",
- *                "stuff",
- *                "aquatic",
- *                "horse",
- *                "newtag",
- *                "wildlife",
- *                "sea",
- *                "fun",
- *                "animal"
+ *                "training",
+ *                "captions",
+ *                "newtag"
  *            ],
  *            "text_tracks": [],
- *            "updated_at": "2015-09-07T06:27:57.046Z"
+ *            "updated_at": "2015-09-07T06:27:47.283Z"
  *        },
  *        {
  *            "account_id": "57838016001",
  *            "complete": true,
- *            "created_at": "2010-12-31T23:27:49.361Z",
+ *            "created_at": "2012-01-20T13:30:37.798Z",
  *            "cue_points": [],
  *            "custom_fields": {
- *                "purpose": "Training",
- *                "subject": "wildlife"
+ *                "dfxppath": "http://files.brightcove.com/BCL_601401284001.xml",
+ *                "purpose": "Training"
  *            },
- *            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  *    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  *    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  *    Duis aute irure d",
- *            "digital_master_id": null,
- *            "duration": 26960,
+ *            "description": "BC161 Styling Players",
+ *            "digital_master_id": "1403714770001",
+ *            "duration": 71541,
  *            "economics": "AD_SUPPORTED",
  *            "folder_id": null,
  *            "geo": null,
- *            "id": "734462570001",
+ *            "id": "1403696109001",
  *            "images": {
  *                "poster": {
- *                    "asset_id": "734439525001",
+ *                    "asset_id": "1403718020001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734439525001_ari-origin06- *    arc-650-1293842569701.jpg?pubId=57838016001&videoId=734462570001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718020001_vs-1403698401001.jpg?pubId=57838016001&videoId=1403696109001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1403718020001_vs-1403698401001.jpg?pubId=57838016001&videoId=1403696109001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734439525001_ari-origin06-arc-650-1293842569701. *    jpg?pubId=57838016001&videoId=734462570001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718020001_vs-1403698401001.jpg?pubId=57838016001&videoId=1403696109001"
  *                },
  *                "thumbnail": {
- *                    "asset_id": "734439524001",
+ *                    "asset_id": "1403718021001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734439524001_ari-origin06- *    arc-650-1293842569466.jpg?pubId=57838016001&videoId=734462570001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718021001_th-1403698401001.jpg?pubId=57838016001&videoId=1403696109001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1403718021001_th-1403698401001.jpg?pubId=57838016001&videoId=1403696109001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734439524001_ari-origin06-arc-650-1293842569466. *    jpg?pubId=57838016001&videoId=734462570001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1403718021001_th-1403698401001.jpg?pubId=57838016001&videoId=1403696109001"
  *                }
  *            },
- *            "link": {
- *                "text": "Brightcove Learning",
- *                "url": "http://support.brightcove.com/en/training-videos"
- *            },
- *            "long_description": null,
- *            "name": "Bird_Robin",
- *            "reference_id": "734462570001",
- *            "schedule": {
- *                "ends_at": null,
- *                "starts_at": "2011-02-01T05:00:00.000Z"
- *            },
+ *            "link": null,
+ *            "long_description": "http://files.brightcove.com/BCL_601401284001.xml",
+ *            "name": "Styling Players - captions - do not delete",
+ *            "original_filename": "BC161 Styling Players.mp4",
+ *            "reference_id": "1403696109001",
+ *            "schedule": null,
  *            "sharing": null,
  *            "state": "ACTIVE",
  *            "tags": [
- *                "bird",
- *                "newtag",
- *                "wildlife"
+ *                "training",
+ *                "captions",
+ *                "newtag"
  *            ],
  *            "text_tracks": [],
- *            "updated_at": "2015-09-07T06:27:07.805Z"
+ *            "updated_at": "2015-09-07T06:27:48.122Z"
  *        },
  *        {
  *            "account_id": "57838016001",
  *            "complete": true,
- *            "created_at": "2010-12-31T23:27:40.758Z",
+ *            "created_at": "2012-01-20T13:30:26.559Z",
  *            "cue_points": [],
  *            "custom_fields": {
- *                "purpose": "Training",
- *                "subject": "Birds"
+ *                "dfxppath": "http://files.brightcove.com/BCL_641005959001.xml",
+ *                "purpose": "Training"
  *            },
- *            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  *    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  *    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  *    Duis aute irure d",
- *            "digital_master_id": "734462497001",
- *            "duration": 28733,
+ *            "description": "BC210 RestrictingVideoPlayback",
+ *            "digital_master_id": "1859666146001",
+ *            "duration": 167068,
  *            "economics": "AD_SUPPORTED",
  *            "folder_id": null,
  *            "geo": null,
- *            "id": "734462569001",
+ *            "id": "1403635560001",
  *            "images": {
  *                "poster": {
- *                    "asset_id": "749161276001",
+ *                    "asset_id": "1859675025001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_749161276001_ari-origin07- *    arc-194-1294941917207.jpg?pubId=57838016001&videoId=734462569001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1859675025001_vs-506196af2144b0e405ba0c39-1471893301001.jpg?pubId=57838016001&videoId=1403635560001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1859675025001_vs-506196af2144b0e405ba0c39-1471893301001.jpg?pubId=57838016001&videoId=1403635560001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_749161276001_ari-origin07-arc-194-1294941917207. *    jpg?pubId=57838016001&videoId=734462569001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1859675025001_vs-506196af2144b0e405ba0c39-1471893301001.jpg?pubId=57838016001&videoId=1403635560001"
  *                },
  *                "thumbnail": {
- *                    "asset_id": "749161275001",
+ *                    "asset_id": "1859675026001",
+ *                    "remote": false,
  *                    "sources": [
  *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_749161275001_ari-origin07- *    arc-194-1294941916323.jpg?pubId=57838016001&videoId=734462569001"
+ *                            "height": null,
+ *                            "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1859675026001_th-506196af2144b0e405ba0c39-1471893301001.jpg?pubId=57838016001&videoId=1403635560001",
+ *                            "width": null
+ *                        },
+ *                        {
+ *                            "height": null,
+ *                            "src": "https://brightcove.hs.llnwd.net/e1/pd/57838016001/57838016001_1859675026001_th-506196af2144b0e405ba0c39-1471893301001.jpg?pubId=57838016001&videoId=1403635560001",
+ *                            "width": null
  *                        }
  *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_749161275001_ari-origin07-arc-194-1294941916323. *    jpg?pubId=57838016001&videoId=734462569001"
+ *                    "src": "http://brightcove.vo.llnwd.net/e1/pd/57838016001/57838016001_1859675026001_th-506196af2144b0e405ba0c39-1471893301001.jpg?pubId=57838016001&videoId=1403635560001"
  *                }
  *            },
- *            "link": {
- *                "text": "Brightcove Learning",
- *                "url": "http://support.brightcove.com/en/training-videos"
- *            },
- *            "long_description": null,
- *            "name": "Bird_Peacock",
- *            "reference_id": "734462569001",
- *            "schedule": {
- *                "ends_at": null,
- *                "starts_at": "2011-02-01T05:00:00.000Z"
- *            },
+ *            "link": null,
+ *            "long_description": "http://files.brightcove.com/BCL_641005959001.xml",
+ *            "name": "RestrictingVideoPlayback - captions - do not delete",
+ *            "original_filename": "Restricting Video Playback.mp4",
+ *            "reference_id": "1403635560001",
+ *            "schedule": null,
  *            "sharing": null,
  *            "state": "ACTIVE",
  *            "tags": [
- *                "bird",
- *                "newtag",
- *                "wildlife"
+ *                "training",
+ *                "captions",
+ *                "newtag"
  *            ],
  *            "text_tracks": [],
- *            "updated_at": "2015-09-07T06:27:07.022Z"
- *        },
- *        {
- *            "account_id": "57838016001",
- *            "complete": true,
- *            "created_at": "2010-12-31T23:27:58.736Z",
- *            "cue_points": [],
- *            "custom_fields": {
- *                "purpose": "Training",
- *                "subject": "wildlife"
- *            },
- *            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do  *    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,  *    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.  *    Duis aute irure d",
- *            "digital_master_id": null,
- *            "duration": 29991,
- *            "economics": "AD_SUPPORTED",
- *            "folder_id": null,
- *            "geo": null,
- *            "id": "734451481001",
- *            "images": {
- *                "poster": {
- *                    "asset_id": "734431747001",
- *                    "sources": [
- *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734431747001_ari-origin07- *    arc-586-1293842557782.jpg?pubId=57838016001&videoId=734451481001"
- *                        }
- *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734431747001_ari-origin07-arc-586-1293842557782. *    jpg?pubId=57838016001&videoId=734451481001"
- *                },
- *                "thumbnail": {
- *                    "asset_id": "734431746001",
- *                    "sources": [
- *                        {
- *                            "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734431746001_ari-origin07- *    arc-586-1293842557551.jpg?pubId=57838016001&videoId=734451481001"
- *                        }
- *                    ],
- *                    "src": "http://brightcove04.o.brightcove. *    com/57838016001/57838016001_734431746001_ari-origin07-arc-586-1293842557551. *    jpg?pubId=57838016001&videoId=734451481001"
- *                }
- *            },
- *            "link": {
- *                "text": "Brightcove Learning",
- *                "url": "http://support.brightcove.com/en/training-videos"
- *            },
- *            "long_description": null,
- *            "name": "Bird_CommonRedpoll",
- *            "reference_id": "734451481001",
- *            "schedule": {
- *                "ends_at": null,
- *                "starts_at": "2011-02-01T05:00:00.000Z"
- *            },
- *            "sharing": null,
- *            "state": "ACTIVE",
- *            "tags": [
- *                "bird",
- *                "newtag",
- *                "wildlife"
- *            ],
- *            "text_tracks": [],
- *            "updated_at": "2015-09-07T06:27:01.808Z"
+ *            "updated_at": "2015-09-07T06:27:45.646Z"
  *        }
  *    ]
  *

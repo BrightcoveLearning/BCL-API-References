@@ -530,7 +530,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Sources Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/sources
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/sources
  *
  * @apiSuccess (Response Field) {String} app_name address for RTMP stream
  * @apiSuccess (Response Field) {String} asset_id system id for the rendition
@@ -547,93 +547,138 @@
  * @apiSuccess (Response Field) {Number} width frame width in pixels
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    [
  *        {
- *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
- *            "asset_id": "4492154718001",
+ *            "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/e1/uds/rtmp/ondemand",
+ *            "asset_id": "4541302443001",
  *            "codec": "H264",
  *            "container": "MP4",
- *            "duration": 155573,
- *            "encoding_rate": 454000,
+ *            "duration": 31487,
+ *            "encoding_rate": 983000,
+ *            "height": 360,
+ *            "remote": false,
+ *            "size": 3887659,
+ *            "stream_name": "mp4:57838016001/57838016001_4541302443001_4541288158001.mp4&1445288400000&3121d01e3ac4b1edb4f23509a627321b",
+ *            "uploaded_at": "2015-10-08T02:03:43.621Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "asset_id": "4541302443001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 31487,
+ *            "encoding_rate": 983000,
+ *            "height": 360,
+ *            "remote": false,
+ *            "size": 3887659,
+ *            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/57838016001/57838016001_4541302443001_4541288158001.mp4?pubId=57838016001&videoId=4541288158001",
+ *            "uploaded_at": "2015-10-08T02:03:43.621Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "asset_id": "4541302443001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 31487,
+ *            "encoding_rate": 983000,
+ *            "height": 360,
+ *            "remote": false,
+ *            "size": 3887659,
+ *            "src": "https://brightcove.hs.llnwd.net/e1/uds/pd/57838016001/57838016001_4541302443001_4541288158001.mp4?pubId=57838016001&videoId=4541288158001",
+ *            "uploaded_at": "2015-10-08T02:03:43.621Z",
+ *            "width": 640
+ *        },
+ *        {
+ *            "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/e1/uds/rtmp/ondemand",
+ *            "asset_id": "4541302445001",
+ *            "codec": "H264",
+ *            "container": "MP4",
+ *            "duration": 31487,
+ *            "encoding_rate": 510000,
  *            "height": 270,
- *            "size": 8897044,
- *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154718001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
- *            "uploaded_at": "2015-09-17T16:09:25.136Z",
+ *            "remote": false,
+ *            "size": 2023584,
+ *            "stream_name": "mp4:57838016001/57838016001_4541302445001_4541288158001.mp4&1445288400000&3121d01e3ac4b1edb4f23509a627321b",
+ *            "uploaded_at": "2015-10-08T02:03:44.173Z",
  *            "width": 480
  *        },
  *        {
- *            "asset_id": "4492154718001",
+ *            "asset_id": "4541302445001",
  *            "codec": "H264",
  *            "container": "MP4",
- *            "duration": 155573,
- *            "encoding_rate": 454000,
+ *            "duration": 31487,
+ *            "encoding_rate": 510000,
  *            "height": 270,
- *            "size": 8897044,
- *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154718001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
- *            "uploaded_at": "2015-09-17T16:09:25.136Z",
+ *            "remote": false,
+ *            "size": 2023584,
+ *            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/57838016001/57838016001_4541302445001_4541288158001.mp4?pubId=57838016001&videoId=4541288158001",
+ *            "uploaded_at": "2015-10-08T02:03:44.173Z",
  *            "width": 480
  *        },
  *        {
- *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
- *            "asset_id": "4492154738001",
+ *            "asset_id": "4541302445001",
  *            "codec": "H264",
  *            "container": "MP4",
- *            "duration": 155573,
- *            "encoding_rate": 907000,
- *            "height": 360,
- *            "size": 17723314,
- *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154738001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
- *            "uploaded_at": "2015-09-17T16:09:30.719Z",
- *            "width": 640
+ *            "duration": 31487,
+ *            "encoding_rate": 510000,
+ *            "height": 270,
+ *            "remote": false,
+ *            "size": 2023584,
+ *            "src": "https://brightcove.hs.llnwd.net/e1/uds/pd/57838016001/57838016001_4541302445001_4541288158001.mp4?pubId=57838016001&videoId=4541288158001",
+ *            "uploaded_at": "2015-10-08T02:03:44.173Z",
+ *            "width": 480
  *        },
  *        {
- *            "asset_id": "4492154738001",
+ *            "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/e1/uds/rtmp/ondemand",
+ *            "asset_id": "4541302453001",
  *            "codec": "H264",
  *            "container": "MP4",
- *            "duration": 155573,
- *            "encoding_rate": 907000,
- *            "height": 360,
- *            "size": 17723314,
- *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154738001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
- *            "uploaded_at": "2015-09-17T16:09:30.719Z",
- *            "width": 640
+ *            "duration": 31487,
+ *            "encoding_rate": 1802000,
+ *            "height": 540,
+ *            "remote": false,
+ *            "size": 7107391,
+ *            "stream_name": "mp4:57838016001/57838016001_4541302453001_4541288158001.mp4&1445288400000&3121d01e3ac4b1edb4f23509a627321b",
+ *            "uploaded_at": "2015-10-08T02:03:48.358Z",
+ *            "width": 960
  *        },
  *        {
- *            "app_name": "rtmp://cp101675.edgefcs.net/ondemand",
- *            "asset_id": "4492154767001",
+ *            "asset_id": "4541302453001",
  *            "codec": "H264",
  *            "container": "MP4",
- *            "duration": 155573,
- *            "encoding_rate": 1717000,
- *            "height": 360,
- *            "size": 33469559,
- *            "stream_name": "mp4:22/1752604059001/201509/3164/175260405 *    9001_4492154767001_4492075574001.mp4?__nn__=1545806547001& *    slist=22/1752604059001/201509/3164/&auth=daEagcrdndDbFd3bE *    bVaNafbiaNbScbdvbN-bv_vXq-bWG- *    ECEp_HGn_DHwy_KmK&aifp=rtmpeuds17",
- *            "uploaded_at": "2015-09-17T16:09:41.433Z",
- *            "width": 640
+ *            "duration": 31487,
+ *            "encoding_rate": 1802000,
+ *            "height": 540,
+ *            "remote": false,
+ *            "size": 7107391,
+ *            "src": "http://brightcove.vo.llnwd.net/e1/uds/pd/57838016001/57838016001_4541302453001_4541288158001.mp4?pubId=57838016001&videoId=4541288158001",
+ *            "uploaded_at": "2015-10-08T02:03:48.358Z",
+ *            "width": 960
  *        },
  *        {
- *            "asset_id": "4492154767001",
+ *            "asset_id": "4541302453001",
  *            "codec": "H264",
  *            "container": "MP4",
- *            "duration": 155573,
- *            "encoding_rate": 1717000,
- *            "height": 360,
- *            "size": 33469559,
- *            "src": "http://brightcove04.brightcove.com/22/175260405900 *    1/201509/3164/1752604059001_4492154767001_4492075574001. *    mp4?pubId=1752604059001&videoId=4492075574001",
- *            "uploaded_at": "2015-09-17T16:09:41.433Z",
- *            "width": 640
+ *            "duration": 31487,
+ *            "encoding_rate": 1802000,
+ *            "height": 540,
+ *            "remote": false,
+ *            "size": 7107391,
+ *            "src": "https://brightcove.hs.llnwd.net/e1/uds/pd/57838016001/57838016001_4541302453001_4541288158001.mp4?pubId=57838016001&videoId=4541288158001",
+ *            "uploaded_at": "2015-10-08T02:03:48.358Z",
+ *            "width": 960
  *        },
  *        {
  *            "codec": "H264",
  *            "container": "M2TS",
- *            "src": "http://c.brightcove.com/services/mobile/streaming/ *    index/master. *    m3u8?videoId=4492075574001&pubId=1752604059001",
+ *            "src": "http://c.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4541288158001&pubId=57838016001",
  *            "type": "application/x-mpegURL"
  *        },
  *        {
  *            "codec": "H264",
  *            "container": "M2TS",
- *            "src": "https://secure.brightcove.com/services/mobile/ *    streaming/index/master.m3u8?videoId=4492075574001&pubId=17 *    52604059001&secure=true",
+ *            "src": "https://secure.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4541288158001&pubId=57838016001&secure=true",
  *            "type": "application/x-mpegURL"
  *        }
  *    ]
