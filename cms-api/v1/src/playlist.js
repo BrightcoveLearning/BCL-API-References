@@ -70,7 +70,8 @@
  *            "type": "ACTIVATED_NEWEST_TO_OLDEST",
  *            "updated_at": "2012-12-10T19:58:26.738Z"
  *        }
- *    ] *
+ *    ]
+ *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
@@ -155,7 +156,8 @@
  *            "type": "ACTIVATED_NEWEST_TO_OLDEST",
  *            "updated_at": "2012-12-10T19:58:26.738Z"
  *        }
- *    ] *
+ *    ]
+ *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
@@ -775,7 +777,8 @@
  *            "734484322001",
  *            "734462570001"
  *        ]
- *    } *
+ *    }
+ *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
  * @apiSuccess (Response Field) {DateString} created_at date/time created
  * @apiSuccess (Response Field) {String} description playlist description

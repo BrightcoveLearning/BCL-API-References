@@ -310,7 +310,8 @@
  *            ],
  *            "updated_at": "2015-09-25T07:19:15.473Z"
  *        }
- *    ] *
+ *    ]
+ *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested

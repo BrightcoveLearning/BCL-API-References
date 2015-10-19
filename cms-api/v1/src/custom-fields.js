@@ -30,123 +30,122 @@
  * @apiSuccess (Response Fields) {Boolean} standard_fields.required whether field must have a value before video can be active
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    {
- *        "custom_fields": [
- *            {
- *                "description": "Add a topic",
- *                "display_name": "Subject",
- *                "enum_values": [
- *                    "Reptiles",
- *                    "Mammals",
- *                    "Other",
- *                    "wildlife",
- *                    "Fish",
- *                    "Birds",
- *                    "Insects"
- *                ],
- *                "id": "subject",
- *                "required": false,
- *                "type": "enum"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Uploader UserID",
- *                "id": "uploader-userid",
- *                "required": false,
- *                "type": "string"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Rating",
- *                "id": "rating",
- *                "required": false,
- *                "type": "string"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Duration",
- *                "id": "duration",
- *                "required": false,
- *                "type": "string"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Associatedtopics",
- *                "id": "associated-topics",
- *                "required": false,
- *                "type": "string"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Custom Theme Path",
- *                "enum_values": [
- *                    "http://files.brightcove.com/ *    BCL_customLabelTheme2.css",
- *                    "http://files.brightcove.com/ *    BCL_customLabelTheme.css"
- *                ],
- *                "id": "customthemepath",
- *                "required": false,
- *                "type": "enum"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Text Color",
- *                "enum_values": [
- *                    "#4C4D4F",
- *                    "#CF0050",
- *                    "#F4901E",
- *                    "#619FA8"
- *                ],
- *                "id": "textcolor",
- *                "required": false,
- *                "type": "enum"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Captions File URL",
- *                "id": "dfxppath",
- *                "required": false,
- *                "type": "string"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Purpose",
- *                "enum_values": [
- *                    "Training",
- *                    "Demo",
- *                    "Sample",
- *                    "Solution"
- *                ],
- *                "id": "purpose",
- *                "required": false,
- *                "type": "enum"
- *            },
- *            {
- *                "description": null,
- *                "display_name": "Downloadable",
- *                "enum_values": [
- *                    "yes",
- *                    "no"
- *                ],
- *                "id": "downloadable",
- *                "required": false,
- *                "type": "enum"
- *            }
- *        ],
- *        "max_custom_fields": 10,
- *        "standard_fields": [
- *            {
- *                "description": null,
- *                "id": "description",
- *                "required": false
- *            },
- *            {
- *                "description": null,
- *                "id": "tags",
- *                "required": false
- *            }
- *        ]
- *    }
+ *    "custom_fields": [
+ *        {
+ *            "description": "Add a topic",
+ *            "display_name": "Subject",
+ *            "enum_values": [
+ *                "Reptiles",
+ *                "Mammals",
+ *                "Other",
+ *                "wildlife",
+ *                "Fish",
+ *                "Birds",
+ *                "Insects"
+ *            ],
+ *            "id": "subject",
+ *            "required": false,
+ *            "type": "enum"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Uploader UserID",
+ *            "id": "uploader-userid",
+ *            "required": false,
+ *            "type": "string"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Rating",
+ *            "id": "rating",
+ *            "required": false,
+ *            "type": "string"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Duration",
+ *            "id": "duration",
+ *            "required": false,
+ *            "type": "string"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Associatedtopics",
+ *            "id": "associated-topics",
+ *            "required": false,
+ *            "type": "string"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Custom Theme Path",
+ *            "enum_values": [
+ *                "http://files.brightcove.com/BCL_customLabelTheme2.css",
+ *                "http://files.brightcove.com/BCL_customLabelTheme.css"
+ *            ],
+ *            "id": "customthemepath",
+ *            "required": false,
+ *            "type": "enum"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Text Color",
+ *            "enum_values": [
+ *                "#4C4D4F",
+ *                "#CF0050",
+ *                "#F4901E",
+ *                "#619FA8"
+ *            ],
+ *            "id": "textcolor",
+ *            "required": false,
+ *            "type": "enum"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Captions File URL",
+ *            "id": "dfxppath",
+ *            "required": false,
+ *            "type": "string"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Purpose",
+ *            "enum_values": [
+ *                "Training",
+ *                "Demo",
+ *                "Sample",
+ *                "Solution"
+ *            ],
+ *            "id": "purpose",
+ *            "required": false,
+ *            "type": "enum"
+ *        },
+ *        {
+ *            "description": null,
+ *            "display_name": "Downloadable",
+ *            "enum_values": [
+ *                "yes",
+ *                "no"
+ *            ],
+ *            "id": "downloadable",
+ *            "required": false,
+ *            "type": "enum"
+ *        }
+ *    ],
+ *    "max_custom_fields": 10,
+ *    "standard_fields": [
+ *        {
+ *            "description": null,
+ *            "id": "description",
+ *            "required": false
+ *        },
+ *        {
+ *            "description": null,
+ *            "id": "tags",
+ *            "required": false
+ *        }
+ *    ]
  *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token

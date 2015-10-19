@@ -94,7 +94,8 @@
  *      "name": "existingRepo",
  *      "public_url": "http://players.brightcove.net/1507807800001/existingRepo",
  *      "repo_url": "https://repos.api.brightcove.com/v1/accounts/1507807800001/repos/existingRepo"
- *    } *
+ *    }
+ *
  *
  * @apiSuccessExample {json} Success Response 201:
  *     HTTP/1.1 201
