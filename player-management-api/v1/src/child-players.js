@@ -23,49 +23,64 @@
  *
  * @apiSuccess (Response Fields) {Object[]} items array of embed objects
  * @apiSuccess (Response Fields) {Number} item_count number of items in items array, corresponds to number of embeds, plus one for parent player
-
-INFO FOR PARENT PLAYER
- * @apiSuccess (Response Fields) {Object} items.branches contains objects for the preview and master (published) embed
- * @apiSuccess (Response Fields) {Object} items.branches.master contains master (published) embed object
- * @apiSuccess (Response Fields) {Boolean} items.branches.master.video_cloud indicates if account is Video Cloud enabled
- * @apiSuccess (Response Fields) {String} items.branches.master.updated_at time embed was updated
- * @apiSuccess (Response Fields) {Object} items.branches.preview contains master (published) embed object
- * @apiSuccess (Response Fields) {Boolean} items.branches.preview.video_cloud indicates if account is Video Cloud enabled
- * @apiSuccess (Response Fields) {String} items.branches.preview.updated_at time embed was updated
- * @apiSuccess (Response Fields) {Object} items.publish_request publish request information
- * @apiSuccess (Response Fields) {String} items.publish_request.comment comment on action, e.g. `Player created`
- * @apiSuccess (Response Fields) {String} items.publish_request.author email address of person requesting embed creation
- * @apiSuccess (Response Fields) {String} items.publish_request.status status of request, for e.g. `COMPLETE`
- * @apiSuccess (Response Fields) {String} items.publish_request.requested_at time of embed creation request
- * @apiSuccess (Response Fields) {String} items.publish_request.queue_msg_id unique identifier of message
- * @apiSuccess (Response Fields) {String} items.publish_request.errorCode error code, if no error value is `null`
- * @apiSuccess (Response Fields) {String} items.publish_request.errorMessage error message, if no error value is `null`
- * @apiSuccess (Response Fields) {String} items.publish_request.buildLog URL to build information
- * @apiSuccess (Response Fields) {String} items.publish_request.retries number of retries to create embed
- * @apiSuccess (Response Fields) {String} items.publish_request.elapsed_time time in milliseconds of embed creation
- * @apiSuccess (Response Fields) {String} items.name name of player
- * @apiSuccess (Response Fields) {String} items.id id of parent, value of `default` when embed is referring to player itself
- * @apiSuccess (Response Fields) {String} items.url URL to published player
- * @apiSuccess (Response Fields) {String} items.embed_code published player iframe tag
- * @apiSuccess (Response Fields) {String} items.embed_in_page URL to browse to retrieve the in-page embed code for published player
- * @apiSuccess (Response Fields) {String} items.repository_url URL to repository of player
- * @apiSuccess (Response Fields) {String} items.preview_url URL to preview player
- * @apiSuccess (Response Fields) {String} items.preview_embed_code preview player iframe tag
-
- INFO FOR EACH EMBED
- * @apiSuccess (Response Fields) {Object} items.branches contains objects for the preview and master (published) player
- * @apiSuccess (Response Fields) {Object} items.branches.master contains master (published) player object
- * @apiSuccess (Response Fields) {Object} items.branches.master.configuration configuration of master player
- * @apiSuccess (Response Fields) {Object} items.branches.master.configuration.configuration configuration repeated for embed, CONTAINS ALL CONFIGURATION OPTIONS SHOWN ...
- * @apiSuccess (Response Fields) {String} items.branches.master.name name of master (published) version of embed
- * @apiSuccess (Response Fields) {String} items.branches.master.updated_at last update time for master (published) version of embed
- * @apiSuccess (Response Fields) {Object} items.branches.preview contains preview player object
- * @apiSuccess (Response Fields) {Object} items.branches.preview.configuration configuration of preview player
- * @apiSuccess (Response Fields) {Object} items.branches.preview.configuration.configuration configuration repeated for embed, CONTAINS ALL CONFIGURATION OPTIONS SHOWN ...
- * @apiSuccess (Response Fields) {String} items.branches.preview.name name of preview version of the embed
- * @apiSuccess (Response Fields) {String} items.branches.preview.updated_at last update time of preview version of embed
-
-
+ *
+ * @apiSuccess (Response Fields for Parent Player) {Object} items.branches contains objects for the preview and master (published) embed
+ * @apiSuccess (Response Fields for Parent Player) {Object} items.branches.master contains master (published) embed object
+ * @apiSuccess (Response Fields for Parent Player) {String} items.branches.master.updated_at time embed was updated
+ * @apiSuccess (Response Fields for Parent Player) {Boolean} items.branches.master.video_cloud indicates if account is Video Cloud enabled
+ * @apiSuccess (Response Fields for Parent Player) {Object} items.branches.preview contains master (published) embed object
+ * @apiSuccess (Response Fields for Parent Player) {String} items.branches.preview.updated_at time embed was updated
+ * @apiSuccess (Response Fields for Parent Player) {Boolean} items.branches.preview.video_cloud indicates if account is Video Cloud enabled
+ * @apiSuccess (Response Fields for Parent Player) {String} items.embed_code published player iframe tag
+ * @apiSuccess (Response Fields for Parent Player) {String} items.embed_in_page URL to browse to retrieve the in-page embed code for published player
+ * @apiSuccess (Response Fields for Parent Player) {String} items.id for parent player value of `default`
+ * @apiSuccess (Response Fields for Parent Player) {String} items.name name of player
+ * @apiSuccess (Response Fields for Parent Player) {String} items.preview_embed_code preview player iframe tag
+ * @apiSuccess (Response Fields for Parent Player) {String} items.preview_url URL to preview player
+ * @apiSuccess (Response Fields for Parent Player) {Object} items.publish_request publish request information
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.author email address of person requesting embed creation
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.buildLog URL to build information
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.comment comment on action, e.g. `Player created`
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.elapsed_time time in milliseconds of embed creation
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.errorCode error code, if no error value is `null`
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.errorMessage error message, if no error value is `null`
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.queue_msg_id unique identifier of message
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.requested_at time of embed creation request
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.retries number of retries to create embed
+ * @apiSuccess (Response Fields for Parent Player) {String} items.publish_request.status status of request, for e.g. `COMPLETE`
+ * @apiSuccess (Response Fields for Parent Player) {String} items.repository_url URL to repository of player
+ * @apiSuccess (Response Fields for Parent Player) {String} items.url URL to published player
+ *
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches contains objects for the preview and master (published) player
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches.master contains master (published) player object
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches.master.configuration configuration of master player
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches.master.configuration.configuration configuration repeated for embed, CONTAINS ALL CONFIGURATION OPTIONS SHOWN ...
+ * @apiSuccess (Response Fields for Each Embed) {String} items.branches.master.name name of master (published) version of embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.branches.master.updated_at last update time for master (published) version of embed
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches.preview contains preview player object
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches.preview.configuration configuration of preview player
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.branches.preview.configuration.configuration configuration repeated for embed, CONTAINS ALL CONFIGURATION OPTIONS SHOWN ...
+ * @apiSuccess (Response Fields for Each Embed) {String} items.branches.preview.name name of preview version of the embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.branches.preview.updated_at last update time of preview version of embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.embed_code published embed iframe tag
+ * @apiSuccess (Response Fields for Each Embed) {String} items.embed_in_page URL to browse to retrieve the in-page embed code for embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.id id embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.name name of embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.preview_embed_code preview iframe tag for embed
+ * @apiSuccess (Response Fields for Each Embed) {Object} items.publish_request publish request information
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.author email address of person requesting embed creation
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.buildLog URL to build information
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.comment comment on action, e.g. `Player created`
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.elapsed_time time in milliseconds of embed creation
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.errorCode error code, if no error value is `null`
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.errorMessage error message, if no error value is `null`
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.queue_msg_id unique identifier of message
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.requested_at time of embed creation request
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.retries number of retries to create embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.publish_request.status status of request, for e.g. `COMPLETE`
+ * @apiSuccess (Response Fields for Each Embed) {String} items.preview_url URL to preview embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.repository_url URL to repository of embed
+ * @apiSuccess (Response Fields for Each Embed) {String} items.url URL to embed
  *
  * @apiSuccessExample {json} Success Response:
  * {
