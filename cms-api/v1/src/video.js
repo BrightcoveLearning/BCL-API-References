@@ -712,7 +712,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Images Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/images
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/images
  *
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
@@ -727,25 +727,41 @@
  * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    {
  *        "poster": {
- *            "asset_id": "4492153571001",
+ *            "asset_id": "4564811454001",
+ *            "remote": false,
  *            "sources": [
  *                {
- *                    "src": "https://bcsecure01-a.akamaihd.net/6/175260 *    4059001/201509/3164/1752604059001_4492153571001_44 *    92075574001-vs. *    jpg?pubId=1752604059001&videoId=4492075574001"
+ *                    "height": 540,
+ *                    "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201510/826/57838016001_4564811454001_3931368155001-vs.jpg?pubId=57838016001&videoId=3931368155001",
+ *                    "width": 960
+ *                },
+ *                {
+ *                    "height": 540,
+ *                    "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201510/826/57838016001_4564811454001_3931368155001-vs.jpg?pubId=57838016001&videoId=3931368155001",
+ *                    "width": 960
  *                }
  *            ],
- *            "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/ *    201509/3164/1752604059001_4492153571001_4492075574001-vs. *    jpg?pubId=1752604059001&videoId=4492075574001"
+ *            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201510/826/57838016001_4564811454001_3931368155001-vs.jpg?pubId=57838016001&videoId=3931368155001"
  *        },
  *        "thumbnail": {
- *            "asset_id": "4492154714001",
+ *            "asset_id": "4564811464001",
+ *            "remote": false,
  *            "sources": [
  *                {
- *                    "src": "https://bcsecure01-a.akamaihd.net/6/175260 *    4059001/201509/3164/1752604059001_4492154714001_44 *    92075574001-th. *    jpg?pubId=1752604059001&videoId=4492075574001"
+ *                    "height": 90,
+ *                    "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201510/826/57838016001_4564811464001_3931368155001-th.jpg?pubId=57838016001&videoId=3931368155001",
+ *                    "width": 160
+ *                },
+ *                {
+ *                    "height": 90,
+ *                    "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201510/826/57838016001_4564811464001_3931368155001-th.jpg?pubId=57838016001&videoId=3931368155001",
+ *                    "width": 160
  *                }
  *            ],
- *            "src": "https://bcsecure01-a.akamaihd.net/6/1752604059001/ *    201509/3164/1752604059001_4492154714001_4492075574001-th. *    jpg?pubId=1752604059001&videoId=4492075574001"
+ *            "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201510/826/57838016001_4564811464001_3931368155001-th.jpg?pubId=57838016001&videoId=3931368155001"
  *        }
  *    }
  *
@@ -778,7 +794,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`).
  *
  * @apiParamExample {Url} Get Video Digital MasterExample:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001/digital_master
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/3931368155001/digital_master
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
  * @apiSuccess (Response Field) {Boolean} audio_only whether this assest has an audio track only
@@ -810,36 +826,36 @@
  * @apiSuccess (Response Field) {Number} video_duration in milliseconds
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    {
- *        "account_id": "1752604059001",
+ *        "account_id": "57838016001",
  *        "audio_only": false,
  *        "cdn_origin_id": "",
  *        "complete": true,
  *        "controller_type": "DEFAULT",
- *        "current_filename": "1752604059001_4492154733001_4492075574001 *    .mp4",
+ *        "current_filename": "57838016001_4554429917001_3931368155001.mp4",
  *        "drm": null,
- *        "encoding_rate": 10130000,
- *        "frame_height": 360,
- *        "frame_width": 640,
+ *        "encoding_rate": 25370000,
+ *        "frame_height": 1080,
+ *        "frame_width": 1920,
  *        "hds": null,
  *        "hls": null,
- *        "id": "4492154733001",
- *        "name": "sea_marvels.mp4",
+ *        "id": "4554429917001",
+ *        "name": "greathornedowl.mp4",
  *        "preview_thumbnail_asset_id": "",
  *        "progressive_download": true,
  *        "reference_id": "",
  *        "remote_stream_name": "",
  *        "remote_url": "",
  *        "sharded_directory": "",
- *        "size": 398423279,
+ *        "size": 130609265,
  *        "type": "DIGITAL_MASTER",
- *        "updated_at": "2015-09-17T16:09:53.122Z",
- *        "uploaded_at": "2015-09-17T16:09:29.867Z",
+ *        "updated_at": "2015-10-13T08:15:09.055Z",
+ *        "uploaded_at": "2015-10-13T08:15:02.151Z",
  *        "version": 1,
  *        "video_codec": "H264",
  *        "video_container": "MP4",
- *        "video_duration": 155500
+ *        "video_duration": 41174
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
