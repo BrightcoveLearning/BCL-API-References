@@ -256,7 +256,7 @@
  * @apiSuccess (Response Fields) {String} repository_url URL to repository of embed
  * @apiSuccess (Response Fields) {String} url URL to embed
  *
- * @apiParamExample {JSON} Success Response:
+ * @apiSuccessExample {JSON} Success Response:
  * {
  *   "branches": {
  *     "master": {
@@ -313,7 +313,7 @@
  * @apiGroup Player Embeds
  * @apiVersion 1.0.0
  *
- * @apiDescription Get all the embeds (child players) for a player.
+ * @apiDescription Create an embed (child player) for a player. Note that the initial creation of the embed is automatically published. Any changes to the embed thereafter will need to be published.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -366,7 +366,7 @@
  * @apiSuccess (Response Fields) {String} preview_url URL to preview embed
  * @apiSuccess (Response Fields) {String} preview_embed_code preview embed iframe tag
  *
- * @apiParamExample {JSON} Success Response:
+ * @apiSuccessExample {JSON} Success Response:
  * {
  *   "id": "5835c089-1eec-4360-bf3a-959b2e4fa0d5",
  *   "url": "http://players.brightcove.net/1507807800001/6d2dee37-0612-4ab9-a4ca-18ae7e39c6d5_5835c089-1eec-4360-bf3a-959b2e4fa0d5/index.html",
@@ -378,6 +378,81 @@
  */
 
 
+
+
+// Publish an Embed
+/**
+ * @api {post} accounts/:account_id/players/:player_id/embeds/:embed_id/publish Publish an Embed
+ * @apiName Publish an Embed
+ * @apiGroup Player Embeds
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Publish an updated embed.
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam (Path Parameters) {String} embed_id embed ID
+ *
+ * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
+ *
+ * @apiParamExample {curl} curl Statement:
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request POST \
+ *   --data '{
+ *     "comment": "Comment for GitHub repo"
+ *   }' \
+ *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/publish
+ *
+ * @apiSuccess (Response Fields) {String} id embed ID
+ * @apiSuccess (Response Fields) {String} url URL to published embed
+ * @apiSuccess (Response Fields) {String} embed_code published embed iframe tag
+ * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published embed
+ *
+ * @apiSuccessExample {JSON} Success Response:
+ * {
+ *   "id": "b3588e3f-1f67-4879-802d-339deb7dc939",
+ *   "url": "http://players.brightcove.net/1507807800001/6d2dee37-0612-4ab9-a4ca-18ae7e39c6d5_b3588e3f-1f67-4879-802d-339deb7dc939/index.html",
+ *   "embed_code": "<iframe src='//players.brightcove.net/1507807800001/6d2dee37-0612-4ab9-a4ca-18ae7e39c6d5_b3588e3f-1f67-4879-802d-339deb7dc939/index.html' allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>",
+ *   "embed_in_page": "http://players.brightcove.net/1507807800001/6d2dee37-0612-4ab9-a4ca-18ae7e39c6d5_b3588e3f-1f67-4879-802d-339deb7dc939/in_page.embed"
+ * }
+ */
+
+// Delete an Embed
+/**
+ * @api {delete} accounts/:account_id/players/:player_id/embeds/:embed_id Delete an Embed
+ * @apiName Delete an Embed
+ * @apiGroup Player Embeds
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Delete an embed.
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
+ * @apiParam (Path Parameters) {String} embed_id embed ID
+ *
+ * @apiParamExample {curl} curl Statement:
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request DELETE \
+ *   --data '{}' \
+ *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
+ *
+ * @apiSuccess (Response Fields) {String} message report of embed deletion
+ *
+ * @apiSuccessExample {JSON} Success Response:
+ * {
+ *   "message": "Successfully deleted embed with the id: b3588e3f-1f67-4879-802d-339deb7dc939"
+ * }
+ */
 
 
 

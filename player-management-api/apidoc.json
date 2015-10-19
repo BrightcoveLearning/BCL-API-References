@@ -18,5 +18,7 @@
       "Player_Embeds",
       "Get_Single_Embed",
       "Get_All_Embeds",
-      "Create_an_Embed"]
+      "Create_an_Embed",
+      "Publish_an_Embed",
+      "Delete_an_Embed"]
 }
