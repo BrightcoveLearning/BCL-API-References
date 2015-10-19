@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -130,7 +130,7 @@
  * @apiSuccess (Response Fields) {String} name name give to player
  * @apiSuccess (Response Fields) {String} url URL to player
  *
- * @apiParamExample {json} Success Response:
+ * @apiParamExample {JSON} Success Response:
  * {
  *   "accountId": "1507807800001",
  *   "id": "03b7c3de-bebf-46ee-aaac-10877e4d9c4d",
@@ -194,8 +194,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -315,7 +315,7 @@
  * @apiSuccess (Response Fields) {String} items.url URL to player
  * @apiSuccess (Response Fields) {Number} item_count number of player objects in array
  *
- * @apiParamExample {json} Success Response:
+ * @apiParamExample {JSON} Success Response:
  *
  * "items": [{
  *   "accountId": "1507807800001",
@@ -382,11 +382,9 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
-
-
  * @apiParam (Request Body Fields) {Object} configuration configuration of preview player
  * @apiParam (Request Body Fields) {Boolean} configuration.autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiParam (Request Body Fields) {Boolean} configuration.autoplay indicates player should play video immediately, on platforms that allow this
@@ -437,6 +435,21 @@
  * @apiParam (Request Body Fields) {String} name name give to player
  *
  * @apiParamExample {curl} curl Statement:
+ * //This curl statement creates a player that uses a Video Cloud asset
+ * curl \
+ *   --header "Content-Type: application/json" \
+ *   --user $EMAIL \
+ *   --request POST \
+ *   --data '{
+ *       "name": "MySamplePlayer - Video Cloud source",
+ *       "configuration": {
+ *         "video_cloud": {
+ *           "video": "4443311217001"
+ *         }
+ *       }
+ *     }' \
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players
+ *
  * //This curl statement creates a player that uses a video asset from a URL (Perform customer)
  * curl \
  *   --header "Content-Type: application/json" \
@@ -455,21 +468,6 @@
  *     }' \
  *     https://players.api.brightcove.com/v1/accounts/:account_id/players
  *
- * //This curl statement creates a player that uses a Video Cloud asset
- * curl \
- *   --header "Content-Type: application/json" \
- *   --user $EMAIL \
- *   --request POST \
- *   --data '{
- *       "name": "MySamplePlayer - Video Cloud source",
- *       "configuration": {
- *         "video_cloud": {
- *           "video": "4443311217001"
- *         }
- *       }
- *     }' \
- *     https://players.api.brightcove.com/v1/accounts/:account_id/players
- *
  * @apiSuccess (Response Fields) {String} id player ID
  * @apiSuccess (Response Fields) {String} url URL to published player
  * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
@@ -477,7 +475,7 @@
  * @apiSuccess (Response Fields) {String} preview_url URL to preview player
  * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
  *
- * @apiParamExample {json} Success Response:
+ * @apiParamExample {JSON} Success Response:
  * {
  *   "id": "11378869-bbbf-49bc-92df-2d3455c2d47a",
  *   "url": "http://players.brightcove.net/1507807800001/11378869-bbbf-49bc-92df-2d3455c2d47a_default/index.html",
@@ -502,8 +500,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
  * @apiParam (Request Body Fields) {String} name player name
  * @apiParam (Request Body Fields) {String} [description] player description
@@ -523,7 +521,7 @@
  * @apiSuccess (Response Fields) {String} preview_url URL to preview player
  * @apiSuccess (Response Fields) {String} preview_embed_code preview player iframe tag
  *
- * @apiParamExample {json} Success Response: The response will contain links to preview player versions, so you will have to explicitly publish to get the optimized version of the player.
+ * @apiParamExample {JSON} Success Response: The response will contain links to preview player versions, so you will have to explicitly publish to get the optimized version of the player.
  * {
  *   "id": "49f70c8b-e16b-4fc9-b9ae-2cd361785e7a",
  *   "preview_url": "http://preview-players.brightcove.net/v1/accounts/1507807800001/players/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a/preview/embeds/default/master/index.html",
@@ -545,8 +543,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
  * @apiParam (Request Body Fields) {String} [comment] parameter which will be placed in the GitHub repo of the player
  *
@@ -565,7 +563,7 @@
  * @apiSuccess (Response Fields) {String} embed_code published player iframe tag
  * @apiSuccess (Response Fields) {String} embed_in_page URL to browse to retrieve the in-page embed code for published player
  *
- * @apiParamExample {json} Success Response:
+ * @apiParamExample {JSON} Success Response:
  * {
  *   "id": "49f70c8b-e16b-4fc9-b9ae-2cd361785e7a",
  *   "url": "http://players.brightcove.net/1507807800001/49f70c8b-e16b-4fc9-b9ae-2cd361785e7a_default/index.html",
@@ -587,8 +585,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -600,7 +598,7 @@
  *
  * @apiSuccess (Response Fields) {String} message report of player deletion
  *
- * @apiParamExample {json} Success Response:
+ * @apiParamExample {JSON} Success Response:
  * {
  *   "message": "Successfully deleted player with the id: 49f70c8b-e16b-4fc9-b9ae-2cd361785e7a"
  * }

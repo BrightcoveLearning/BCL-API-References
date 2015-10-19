@@ -16,5 +16,7 @@
       "Get_a_Player_Configuration",
       "Update_a_Player_Configuration",
       "Player_Embeds",
-      "Get_a_Player's_Embeds"]
+      "Get_Single_Embed",
+      "Get_All_Embeds",
+      "Create_an_Embed"]
 }

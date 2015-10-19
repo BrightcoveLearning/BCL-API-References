@@ -11,8 +11,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  * @apiParam (Path Parameters) {String} branch Which branch to act upon, master (published) or preview.
  *
  * @apiParamExample {curl} curl Statement:
@@ -68,7 +68,7 @@
  * @apiSuccess (Response Fields) {String} video_cloud.policy_key policy key for Video Cloud account
  * @apiSuccess (Response Fields) {String} video_cloud.video if using a Video Cloud video asset, that asset's ID
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {JSON} Success Response:
  * {
  *   "plugins": [{
  *     "options": {
@@ -105,8 +105,8 @@
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
- * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {String} player_id Video Cloud player ID.
+ * @apiParam (Path Parameters) {String} account_id account ID
+ * @apiParam (Path Parameters) {String} player_id player ID
  *
  * @apiParam (Request Body Fields) {Boolean}autoadvance autoadvance setting if using playlists: 0 for no wait; a number for seconds between advance; null to cancel autoadvance
  * @apiParam (Request Body Fields) {Boolean}autoplay indicates player should play video immediately, on platforms that allow this
@@ -276,7 +276,7 @@
  * @apiSuccess (Response Fields) {String} name name give to player
  * @apiSuccess (Response Fields) {String} url URL to player
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {JSON} Success Response:
  * //Note that the preview branch will contain the new/changed information. The master branch will not contain the new/changed information until the player has been published.
  * {
  *   "accountId": "1507807800001",
