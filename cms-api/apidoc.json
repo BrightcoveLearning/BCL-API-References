@@ -1,7 +1,7 @@
 {
     "name": "CMS API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove CMS API, used to access and manage your media library.",
+    "description": "Reference for the Brightcove CMS API, used to access and manage your media library. To test API requests, you can use our [API Testing Tools](http://docs.brightcove.com/en/video-cloud/concepts/api-testing-tools/api-testing-tools.html)",
     "title": "CMS API Reference",
     "url" : "https://cms.api.brightcove.com/v1",
     "order": [
