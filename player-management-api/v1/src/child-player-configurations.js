@@ -25,7 +25,7 @@
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration/$BRANCH
  *
- * @apiSuccess (Response Fields) {String}
+ * @apiSuccess (Response Fields) {String} id embed ID
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -41,8 +41,8 @@
 // Update an Embed Configuration
 
 /**
- * @api {patch} accounts/:account_id/players/:player_id/players/:embed_id/:branch Get an Embed Configuration
- * @apiName Get an Embed Configuration
+ * @api {patch} accounts/:account_id/players/:player_id/players/:embed_id/configuration Update an Embed Configuration
+ * @apiName Update an Embed Configuration
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
  *
@@ -76,7 +76,7 @@
  *     }' \
  *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/configuration
  *
- * @apiSuccess (Response Fields) {String}
+ * @apiSuccess (Response Fields) {String} id embed ID
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
