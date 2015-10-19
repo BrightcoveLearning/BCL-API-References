@@ -165,7 +165,7 @@
  *         "es"
  *       ]
  *     }' \
- *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/configuration
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/configuration
  *
  * @apiSuccess (Response Fields) {String} accountId account ID
  * @apiSuccess (Response Fields) {Object} branches contains objects for the preview and master (published) player

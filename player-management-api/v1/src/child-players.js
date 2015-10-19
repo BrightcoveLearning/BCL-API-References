@@ -19,7 +19,7 @@
  *   --header "Content-Type: application/json" \
  *   --user $EMAIL \
  *   --request GET \
- *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
  * @apiSuccess (Response Fields) {Object[]} items array of embed objects
  * @apiSuccess (Response Fields) {Number} item_count number of items in items array, corresponds to number of embeds, plus one for parent player
@@ -205,7 +205,7 @@
  *         }
  *       }
  *     }' \
- *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
  * //This curl statement creates an embed that uses a video asset from a URL (Perform customer)
  * curl \
@@ -223,7 +223,7 @@
  *         }
  *       }
  *     }' \
- *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
  * @apiSuccess (Response Fields) {Object} branches contains objects for the preview and master (published) embed
  * @apiSuccess (Response Fields) {Object} branches.master contains master (published) embed object
@@ -339,7 +339,7 @@
  *         }
  *       }
  *     }' \
- *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
  * //This curl statement creates an embed that uses a video asset from a URL (Perform customer)
  * curl \
@@ -357,7 +357,7 @@
  *         }
  *       }
  *     }' \
- *     https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds
+ *     https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds
  *
  * @apiSuccess (Response Fields) {String} id embed ID
  * @apiSuccess (Response Fields) {String} url URL to published embed
@@ -406,7 +406,7 @@
  *   --data '{
  *     "comment": "Comment for GitHub repo"
  *   }' \
- *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID/publish
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/publish
  *
  * @apiSuccess (Response Fields) {String} id embed ID
  * @apiSuccess (Response Fields) {String} url URL to published embed
@@ -444,7 +444,7 @@
  *   --user $EMAIL \
  *   --request DELETE \
  *   --data '{}' \
- *   https://players.api.brightcove.com/v1/accounts/$ACCOUNT_ID/players/$PLAYER_ID/embeds/$EMBED_ID
+ *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id
  *
  * @apiSuccess (Response Fields) {String} message report of embed deletion
  *
