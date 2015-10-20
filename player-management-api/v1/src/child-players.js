@@ -285,6 +285,16 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Create an embed (child player) for a player. Note that the initial creation of the embed is automatically published. Any changes to the embed thereafter will need to be published.
+
+ When creating the embed, the body must be an object representing configuration settings for the new embed. By default when you create an embed, data in the embed overrides like data that would otherwise be inherited from the common player. This situation is different for fields that contain arrays. When the data type of the field is an array, you can choose the inheritance behavior to be overwrite, prepend or append. The fields whose data type is an array, and for which you can control inheritance behavior are:
+ - scripts
+ - stylesheets
+ - plugins
+ - sources
+
+ You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called `array_prepend` or `array_append` the data will be correspondingly prepended or appended to the common player's data for the like field.
+
+ See the **Array fields** section of the <a href="http://docs.brightcove.com/en/video-cloud/player-management/guides/embeds.html#arrayfields">Embeds Guide</a> for a complete discussion.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))

@@ -189,7 +189,7 @@
  * @apiGroup Players
  * @apiVersion 1.0.0
  *
- * @apiDescription Get all players in an account. The `items` array contains a player object for each player in the account.
+ * @apiDescription Get all players in an account. The response will list all the players associated with a particular account ID. The player information returns the full details regarding each of the players. Amid this data is a set of branches. Branches distinguish between published (master) and unpublished (preview) changes.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -377,7 +377,7 @@
  * @apiGroup Players
  * @apiVersion 1.0.0
  *
- * @apiDescription Create a player
+ * @apiDescription Create a player. The POST method creates a player by submitting a player configuration. The properties of Brightcove Player you can manipulate with player management are detailed in the **Request Body Fields** section below. To create a player, a publisher must decide what properties the final player will have. If no properites are given at creation, a "blank" player will be created with only the base player skin applied to the player. A user may then use an HTTP PATCH method to update properties after the player has been created.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -495,7 +495,7 @@
  * @apiGroup Players
  * @apiVersion 1.0.0
  *
- * @apiDescription Update a player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the configuration APIs, detailed below.
+ * @apiDescription Update a player. The PATCH method can be used on a single player to do a VERY limited update. The only fields you can update in this manner are the `name` and `description` properties. All other player configuration must be done via the **PLAYER CONFIGURATIONS** APIs, detailed below.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -580,7 +580,7 @@
  * @apiGroup Players
  * @apiVersion 1.0.0
  *
- * @apiDescription Delete a player
+ * @apiDescription Delete a player and all embeds associated with it.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
