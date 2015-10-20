@@ -96,6 +96,16 @@ echo copying ingest-profiles-api docs
 cp -R ingest-profiles-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/ingest-profiles-api/reference/versions/v1
 echo copying oauth-api docs
 cp -R oauth-api-dev-docs/v3/doc/ ../BCL-developer-docs/en/video-cloud/oauth-api/reference/versions/v3
+echo copying oauth-api docs to perform
+cp -R oauth-api-dev-docs/v3/doc/ ../BCL-developer-docs/en/perform/oauth-api/reference/versions/v3
+echo copying delivery-system-api docs
+cp -R delivery-system-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/concepts/delivery-system-api/references/v1
+echo copying delivery-system-api docs to perform
+cp -R delivery-system-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/perform/concepts/delivery-system-api/references/v1
+echo copying player-management-api docs
+cp -R player-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/player-management/reference/versions/v1
+echo copying player-management-api docs to perform
+cp -R player-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/perform/player-management/reference/versions/v1
 echo copying playback-api docs
 cp -R playback-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/playback-api/references/versions/v1
 echo copying policy-api docs
@@ -106,4 +116,4 @@ echo copying once-media-management-api docs
 cp -R once-media-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/media-management-api/versions/v1
 echo copying once-status-api docs
 cp -R once-status-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/status-api/versions/v1
-
+echo Finished!

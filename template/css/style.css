@@ -14,7 +14,7 @@ body, p, a, div, th, td {
 
 td.code {
   font-size: 14px;
-  font-family: "Source Code Pro";
+  font-family: "Hack";
   font-style: normal;
   font-weight: 400;
 }
@@ -30,7 +30,7 @@ p {
 }
 
 h1 {
-  font-family: "Source Sans Pro Semibold", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: normal;
   font-size: 44px;
   line-height: 50px;
@@ -72,7 +72,7 @@ article {
 }
 
 article h1 {
-  font-family: "Source Sans Pro Bold", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 26px;
@@ -158,7 +158,7 @@ td {
 }
 
 #apidoc h2 {
-  font-family: "Source Sans Pro Bold", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 22px;
   line-height: 26px;
@@ -233,7 +233,7 @@ pre.language-api .pun {
 pre code {
   display: block;
   font-size: 14px;
-  font-family: "Source Code Pro";
+  font-family: "Hack";
   font-style: normal;
   font-weight: 400;
   word-wrap: normal;

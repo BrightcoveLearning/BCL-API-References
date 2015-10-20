@@ -46,7 +46,9 @@
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
  *
- * @apiDescription Update the configuration for an embed. Note that you will need to publish the altered embed for optimization and production use.<br><br>You can also use a `PUT` HTTP Method instead of the `PATCH` shown here. When using `PUT` it replaces embed information so you must supply all embed configuration information, where as `PATCH` appends or modifies. Using `PUT` is such are rate use case it is not detailed in this reference.
+ * @apiDescription Update the configuration for an embed. Note that you will need to publish the altered embed for optimization and production use.
+
+You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When using `PUT` it replaces all embed configuration information, so you must supply all embed configuration information when using `PUT`. In contrast, `PATCH` appends or modifies existing configuration information. Using `PUT` is such rare use case it is not detailed in this reference.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
