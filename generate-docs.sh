@@ -79,3 +79,31 @@ apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../player-management-api-dev-docs
 echo generating docs for player-management-api-dev-docs
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
+echo finished generating docs
+echo copying docs to Developer Docs directories....
+cd ..
+echo copying analytics-api docs
+cp -R analytics-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/versions/v1
+echo copying data-dollection-api docs
+cp -R data-collection-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/data-collection/v1
+echo copying cms-api docs
+cp -R cms-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/cms-api/references/cms-api/versions/v1
+echo copying cms-api docs
+cp -R cms-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/cms-api/references/cms-api/versions/v1
+echo copying di-api docs
+cp -R di-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/di-api/reference/versions/v1
+echo copying ingest-profiles-api docs
+cp -R ingest-profiles-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/ingest-profiles-api/reference/versions/v1
+echo copying oauth-api docs
+cp -R oauth-api-dev-docs/v3/doc/ ../BCL-developer-docs/en/video-cloud/oauth-api/reference/versions/v3
+echo copying playback-api docs
+cp -R playback-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/playback-api/references/versions/v1
+echo copying policy-api docs
+cp -R policy-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/policy-api/references/versions/v1
+echo copying once-ingest-api docs
+cp -R once-ingest-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/ingest-api/versions/v1
+echo copying once-media-management-api docs
+cp -R once-media-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/media-management-api/versions/v1
+echo copying once-status-api docs
+cp -R once-status-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/status-api/versions/v1
+
