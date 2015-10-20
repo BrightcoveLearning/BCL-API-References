@@ -1,7 +1,7 @@
 {
     "name": "Ingest Profiles API",
     "version": "1.0.0",
-    "description": "Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters. To test API requests, you can use our [API Testing Tools](http://docs.brightcove.com/en/video-cloud/concepts/api-testing-tools/api-testing-tools.html)",
+    "description": "Reference for the Brightcove Ingest Profiles API, used to create and manage ingest profiles that specify video and image renditions to be created, along with instructions for archiving masters. To test API requests, you can use our <a href="http://docs.brightcove.com/en/video-cloud/concepts/api-testing-tools/api-testing-tools.html" target="_blank">API Testing Tools</a>",
     "title": "Ingest Profiles API Reference",
     "url" : "https://ingestion.api.brightcove.com/v1",
     "order": [
