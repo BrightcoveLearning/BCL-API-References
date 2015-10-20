@@ -191,11 +191,6 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
  *
- * @apiParam (URL Parameters) {Number} [limit=10] number of videos to return
- * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
- * @apiParam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
- *
  * @apiParamExample {Url} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/1403224824001/videos
  *
@@ -584,7 +579,6 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiParam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
- * @apiParam (URL Parameters) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {Url} Search Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/counts/playlists
@@ -762,10 +756,8 @@
  * @apiParam (Request Body Fields) {String} [description] playlist description
  * @apiParam (Request Body Fields) {String} [reference_id] playlist reference id
  * @apiParam (Request Body Fields) {String="EXPLICIT", "ACTIVATEDOLDESTTONEWEST", "ACTIVATEDNEWESTTOOLDEST", "ALPHABETICAL", "PLAYSTOTAL", "PLAYSTRAILINGWEEK", "STARTDATEOLDESTTONEWEST", "STARTDATENEWESTTO_OLDEST"} [type] of playlist
- * @apiParam (Request Body Fields) {Number} [limit] maximum number of videos to include (smart playlists only)
- * @apiParam (Request Body Fields) {Number} [offset=0] number of videos to skip in the response
- * @apiParam (Request Body Fields) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details. Only _search by tags_ is available for playlists.
- * @apiParam (Request Body Fields) {String} [sort] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
+ * @apiParam (Request Body Fields) {String[]} [video_ids] array of video ids for EXPLICIT type only &mdash; note that you must replace the whole array
+ * @apiParam (Request Body Fields) {String} [search] the search string to generate the list of videos &mdash; only for smart playlist types
  *
  * @apiParamExample {json} Create Playlist Example:
  *    {

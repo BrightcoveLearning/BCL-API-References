@@ -66,12 +66,15 @@
  * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    {
  *      "description": "A small friendly bird...",
  *      "poster_sources": [
  *        {
- *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs. *    jpg?pubId=57838016001&videoId=4084164751001"
+ *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
+ *        },
+ *        {
+ *          "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
  *        }
  *      ],
  *      "tags": [
@@ -88,7 +91,7 @@
  *          "width": 640,
  *          "duration": 8240,
  *          "size": 1141597,
- *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee. *    mp4&1442937600000&9b6865b5469c425d6ae0e8329aee4295",
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
  *          "codec": "H264",
  *          "asset_id": "4084480003001",
  *          "container": "MP4",
@@ -98,7 +101,7 @@
  *        {
  *          "avg_bitrate": 1108347,
  *          "width": 640,
- *          "src": "http://brightcove.vo.llnwd.net/v1/uds/ *    pd/57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee. *    mp4?pubId=57838016001&videoId=4084164751001",
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
  *          "size": 1141597,
  *          "height": 344,
  *          "duration": 8240,
@@ -107,8 +110,152 @@
  *          "asset_id": "4084480003001"
  *        },
  *        {
+ *          "avg_bitrate": 502409,
+ *          "width": 400,
+ *          "duration": 8240,
+ *          "size": 517481,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480008001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480008001",
+ *          "container": "MP4",
+ *          "height": 214,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 502409,
+ *          "width": 400,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480008001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 517481,
+ *          "height": 214,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480008001"
+ *        },
+ *        {
+ *          "avg_bitrate": 297015,
+ *          "width": 320,
+ *          "duration": 8240,
+ *          "size": 305925,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480009001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480009001",
+ *          "container": "MP4",
+ *          "height": 172,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 297015,
+ *          "width": 320,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480009001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 305925,
+ *          "height": 172,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480009001"
+ *        },
+ *        {
+ *          "avg_bitrate": 1685090,
+ *          "width": 640,
+ *          "duration": 8240,
+ *          "size": 1735643,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480012001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480012001",
+ *          "container": "MP4",
+ *          "height": 344,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 1685090,
+ *          "width": 640,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480012001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 1735643,
+ *          "height": 344,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480012001"
+ *        },
+ *        {
+ *          "avg_bitrate": 3949531,
+ *          "width": 640,
+ *          "duration": 8240,
+ *          "size": 4068017,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480014001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480014001",
+ *          "container": "MP4",
+ *          "height": 344,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 3949531,
+ *          "width": 640,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480014001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 4068017,
+ *          "height": 344,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480014001"
+ *        },
+ *        {
+ *          "avg_bitrate": 704771,
+ *          "width": 480,
+ *          "duration": 8240,
+ *          "size": 725914,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480079001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480079001",
+ *          "container": "MP4",
+ *          "height": 258,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 704771,
+ *          "width": 480,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480079001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 725914,
+ *          "height": 258,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480079001"
+ *        },
+ *        {
+ *          "avg_bitrate": 2446959,
+ *          "width": 640,
+ *          "duration": 8240,
+ *          "size": 2520368,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480703001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480703001",
+ *          "container": "MP4",
+ *          "height": 344,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 2446959,
+ *          "width": 640,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480703001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 2520368,
+ *          "height": 344,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480703001"
+ *        },
+ *        {
  *          "type": "application/x-mpegURL",
- *          "src": "https://secure.brightcove.com/services/mobile/streaming/index/master. *    m3u8?videoId=4084164751001&pubId=57838016001&secure=true",
+ *          "src": "http://c.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4084164751001&pubId=57838016001",
+ *          "container": "M2TS",
+ *          "codec": "H264"
+ *        },
+ *        {
+ *          "type": "application/x-mpegURL",
+ *          "src": "https://secure.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4084164751001&pubId=57838016001&secure=true",
  *          "container": "M2TS",
  *          "codec": "H264"
  *        }
@@ -120,14 +267,17 @@
  *      "published_at": "2015-02-27T19:10:55.425Z",
  *      "text_tracks": [],
  *      "updated_at": "2015-02-27T19:11:57.808Z",
- *      "thumbnail": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th. *    jpg?pubId=57838016001&videoId=4084164751001",
- *      "poster": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs. *    jpg?pubId=57838016001&videoId=4084164751001",
+ *      "thumbnail": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001",
+ *      "poster": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001",
  *      "link": null,
  *      "id": "4084164751001",
  *      "ad_keys": null,
  *      "thumbnail_sources": [
  *        {
- *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th. *    jpg?pubId=57838016001&videoId=4084164751001"
+ *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001"
+ *        },
+ *        {
+ *          "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001"
  *        }
  *      ],
  *      "created_at": "2015-02-27T19:10:55.425Z"
@@ -217,12 +367,15 @@
  * @apiSuccess (Response Fields) {Object} ad_keys=null map of key/value pairs for ad requests
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 200 OK
+ *    HTTP/1.1 200 OK
  *    {
  *      "description": "A small friendly bird...",
  *      "poster_sources": [
  *        {
- *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs. *    jpg?pubId=57838016001&videoId=4084164751001"
+ *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
+ *        },
+ *        {
+ *          "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
  *        }
  *      ],
  *      "tags": [
@@ -239,7 +392,7 @@
  *          "width": 640,
  *          "duration": 8240,
  *          "size": 1141597,
- *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee. *    mp4&1442937600000&9b6865b5469c425d6ae0e8329aee4295",
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
  *          "codec": "H264",
  *          "asset_id": "4084480003001",
  *          "container": "MP4",
@@ -249,7 +402,7 @@
  *        {
  *          "avg_bitrate": 1108347,
  *          "width": 640,
- *          "src": "http://brightcove.vo.llnwd.net/v1/uds/ *    pd/57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee. *    mp4?pubId=57838016001&videoId=4084164751001",
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480003001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
  *          "size": 1141597,
  *          "height": 344,
  *          "duration": 8240,
@@ -258,8 +411,152 @@
  *          "asset_id": "4084480003001"
  *        },
  *        {
+ *          "avg_bitrate": 502409,
+ *          "width": 400,
+ *          "duration": 8240,
+ *          "size": 517481,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480008001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480008001",
+ *          "container": "MP4",
+ *          "height": 214,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 502409,
+ *          "width": 400,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480008001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 517481,
+ *          "height": 214,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480008001"
+ *        },
+ *        {
+ *          "avg_bitrate": 297015,
+ *          "width": 320,
+ *          "duration": 8240,
+ *          "size": 305925,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480009001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480009001",
+ *          "container": "MP4",
+ *          "height": 172,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 297015,
+ *          "width": 320,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480009001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 305925,
+ *          "height": 172,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480009001"
+ *        },
+ *        {
+ *          "avg_bitrate": 1685090,
+ *          "width": 640,
+ *          "duration": 8240,
+ *          "size": 1735643,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480012001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480012001",
+ *          "container": "MP4",
+ *          "height": 344,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 1685090,
+ *          "width": 640,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480012001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 1735643,
+ *          "height": 344,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480012001"
+ *        },
+ *        {
+ *          "avg_bitrate": 3949531,
+ *          "width": 640,
+ *          "duration": 8240,
+ *          "size": 4068017,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480014001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480014001",
+ *          "container": "MP4",
+ *          "height": 344,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 3949531,
+ *          "width": 640,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480014001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 4068017,
+ *          "height": 344,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480014001"
+ *        },
+ *        {
+ *          "avg_bitrate": 704771,
+ *          "width": 480,
+ *          "duration": 8240,
+ *          "size": 725914,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480079001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480079001",
+ *          "container": "MP4",
+ *          "height": 258,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 704771,
+ *          "width": 480,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480079001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 725914,
+ *          "height": 258,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480079001"
+ *        },
+ *        {
+ *          "avg_bitrate": 2446959,
+ *          "width": 640,
+ *          "duration": 8240,
+ *          "size": 2520368,
+ *          "stream_name": "mp4:57838016001/201502/1437/57838016001_4084480703001_Bird-Chickadee.mp4&1445382000000&5183d52cee025d9f8d0bd3730ac158ae",
+ *          "codec": "H264",
+ *          "asset_id": "4084480703001",
+ *          "container": "MP4",
+ *          "height": 344,
+ *          "app_name": "rtmp://brightcove.fcod.llnwd.net/a500/v1/uds/rtmp"
+ *        },
+ *        {
+ *          "avg_bitrate": 2446959,
+ *          "width": 640,
+ *          "src": "http://brightcove.vo.llnwd.net/v1/uds/pd/57838016001/201502/1437/57838016001_4084480703001_Bird-Chickadee.mp4?pubId=57838016001&videoId=4084164751001",
+ *          "size": 2520368,
+ *          "height": 344,
+ *          "duration": 8240,
+ *          "container": "MP4",
+ *          "codec": "H264",
+ *          "asset_id": "4084480703001"
+ *        },
+ *        {
  *          "type": "application/x-mpegURL",
- *          "src": "https://secure.brightcove.com/services/mobile/streaming/index/master. *    m3u8?videoId=4084164751001&pubId=57838016001&secure=true",
+ *          "src": "http://c.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4084164751001&pubId=57838016001",
+ *          "container": "M2TS",
+ *          "codec": "H264"
+ *        },
+ *        {
+ *          "type": "application/x-mpegURL",
+ *          "src": "https://secure.brightcove.com/services/mobile/streaming/index/master.m3u8?videoId=4084164751001&pubId=57838016001&secure=true",
  *          "container": "M2TS",
  *          "codec": "H264"
  *        }
@@ -271,14 +568,17 @@
  *      "published_at": "2015-02-27T19:10:55.425Z",
  *      "text_tracks": [],
  *      "updated_at": "2015-02-27T19:11:57.808Z",
- *      "thumbnail": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th. *    jpg?pubId=57838016001&videoId=4084164751001",
- *      "poster": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs. *    jpg?pubId=57838016001&videoId=4084164751001",
+ *      "thumbnail": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001",
+ *      "poster": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001",
  *      "link": null,
  *      "id": "4084164751001",
  *      "ad_keys": null,
  *      "thumbnail_sources": [
  *        {
- *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/ *    media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th. *    jpg?pubId=57838016001&videoId=4084164751001"
+ *          "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001"
+ *        },
+ *        {
+ *          "src": "https://brightcove.hs.llnwd.net/v2/unsecured/media/57838016001/201502/1437/57838016001_4084480007001_Bird-Chickadee-th.jpg?pubId=57838016001&videoId=4084164751001"
  *        }
  *      ],
  *      "created_at": "2015-02-27T19:10:55.425Z"
