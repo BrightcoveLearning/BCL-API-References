@@ -354,8 +354,8 @@ pre.language-json .pun {
   font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 12px;
-  padding-left: 6px;
-  text-indent: -6px
+  padding-left: 16px;
+  text-indent: -12px;;
 }
 
 .sidenav > li.nav-header > a {
