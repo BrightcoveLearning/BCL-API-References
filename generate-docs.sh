@@ -85,7 +85,7 @@ echo ${txtyel}generating docs for once-ingest-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../once-ingest-api-dev-docs
 echo ${txtyel}generating docs for once-ingest-api-dev-docs
-apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
 cd ../once-media-management-api
 echo ${txtyel}generating docs for once-media-management-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
