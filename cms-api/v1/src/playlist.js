@@ -92,7 +92,7 @@
 
 /**
  * @api {get} /accounts/:account_id/playlists/:playlist_id Get Playlist by ID
- * @apiName Get Playlists by ID
+ * @apiName Get Playlist by ID
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
