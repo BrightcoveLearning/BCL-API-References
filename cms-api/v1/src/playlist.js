@@ -182,7 +182,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a page of playlist objects
+ * @apiDescription Gets the video objects for videos in a playlist
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
@@ -570,7 +570,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a page of video objects
+ * @apiDescription Gets a count of playlists in the account
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
@@ -615,7 +615,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets a page of video objects
+ * @apiDescription Gets a count of the videos in a playlist
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
@@ -659,7 +659,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Update a new playlist
+ * @apiDescription Creates a new playlist
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -744,7 +744,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Update a new playlist
+ * @apiDescription Updates a playlist
  * for the account
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
@@ -827,7 +827,7 @@
  * @apiGroup Playlist
  * @apiVersion 1.0.0
  *
- * @apiDescription Delete a playlist
+ * @apiDescription Deletes a playlist
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
