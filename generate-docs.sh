@@ -1,7 +1,7 @@
 txtrst=$(tput sgr0) # Text reset
 txtyel=$(tput setaf 4) # Yellow
 txtgrn=$(tput setaf 2) # Green
-echo ${txtyel}Copying src files to the -dev-docs folders
+echo ${txtgrn}Copying src files to the -dev-docs folders
 echo ${txtyel}copying analytics-api src
 cp -R analytics-api/ analytics-api-dev-docs/
 echo ${txtyel}copying data-dollection-api src
