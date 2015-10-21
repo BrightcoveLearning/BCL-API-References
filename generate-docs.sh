@@ -3,31 +3,31 @@ txtyel=$(tput setaf 4) # Yellow
 txtgrn=$(tput setaf 2) # Green
 echo ${txtyel}Copying src files to the -dev-docs folders
 echo ${txtyel}copying analytics-api src
-cp -R analytics-api/v1/src/ analytics-api-dev-docs/v1/src/
+cp -R analytics-api/ analytics-api-dev-docs/
 echo ${txtyel}copying data-dollection-api src
-cp -R data-collection-api/v1/src/ data-collection-api-dev-docs/v1/src/
+cp -R data-collection-api/ data-collection-api-dev-docs/
 echo ${txtyel}copying cms-api src
-cp -R cms-api/v1/src/ cms-api-dev-docs/v1/src/
+cp -R cms-api/ cms-api-dev-docs/
 echo ${txtyel}copying di-api src
-cp -R di-api/v1/src/ di-api-dev-docs/v1/src/
+cp -R di-api/ di-api-dev-docs/
 echo ${txtyel}copying ingest-profiles-api src
-cp -R ingest-profiles-api/v1/src/ ingest-profiles-api-dev-docs/v1/src/
+cp -R ingest-profiles-api/ ingest-profiles-api-dev-docs/
 echo ${txtyel}copying oauth-api src
-cp -R oauth-api/v3/src/ oauth-api-dev-docs/v3/src/
+cp -R oauth-api/ oauth-api-dev-docs/
 echo ${txtyel}copying delivery-system-api src
-cp -R delivery-system-api/v1/src/ delivery-system-api-dev-docs/v1/src/
+cp -R delivery-system-api/ delivery-system-api-dev-docs/
 echo ${txtyel}copying player-management-api src
-cp -R player-management-api/v1/src/ player-management-api-dev-docs/v1/src/
+cp -R player-management-api/ player-management-api-dev-docs/
 echo ${txtyel}copying playback-api src
-cp -R playback-api/v1/src/ playback-api-dev-docs/v1/src/
+cp -R playback-api/ playback-api-dev-docs/
 echo ${txtyel}copying policy-api src
-cp -R policy-api/v1/src/ policy-api-dev-docs/v1/src/
+cp -R policy-api/ policy-api-dev-docs/
 echo ${txtyel}copying once-ingest-api src
-cp -R once-ingest-api/v1/src/ once-ingest-api-dev-docs/v1/src/
+cp -R once-ingest-api/ once-ingest-api-dev-docs/
 echo ${txtyel}copying once-media-management-api src
-cp -R once-media-management-api/v1/src/ once-media-management-api-dev-docs/v1/src/
+cp -R once-media-management-api/ once-media-management-api-dev-docs/
 echo ${txtyel}copying once-status-api src
-cp -R once-status-api/v1/src/ once-status-api-dev-docs/v1/src/
+cp -R once-status-api/ once-status-api-dev-docs/
 echo ${txtyel}Finished copying src files
 echo ${txtgrn}Generating API docs...
 cd analytics-api
@@ -146,3 +146,4 @@ cp -R once-media-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/r
 echo ${txtyel}copying once-status-api docs
 cp -R once-status-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/status-api/versions/v1
 echo ${txtgrn}Finished!
+echo ${txtrst}
