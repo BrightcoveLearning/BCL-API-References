@@ -1,3 +1,31 @@
+echo Copying src files to the -dev-docs folders
+echo copying analytics-api src
+cp -R analytics-api/v1/src/ analytics-api-dev-docs/v1/src/
+echo copying data-dollection-api src
+cp -R data-collection-api/v1/src/ data-collection-api-dev-docs/v1/src/
+echo copying cms-api src
+cp -R cms-api/v1/src/ cms-api-dev-docs/v1/src/
+echo copying di-api src
+cp -R di-api/v1/src/ di-api-dev-docs/v1/src/
+echo copying ingest-profiles-api src
+cp -R ingest-profiles-api/v1/src/ ingest-profiles-api-dev-docs/v1/src/
+echo copying oauth-api src
+cp -R oauth-api/v3/src/ oauth-api-dev-docs/v3/src/
+echo copying delivery-system-api src
+cp -R delivery-system-api/v1/src/ delivery-system-api-dev-docs/v1/src/
+echo copying player-management-api src
+cp -R player-management-api/v1/src/ player-management-api-dev-docs/v1/src/
+echo copying playback-api src
+cp -R playback-api/v1/src/ playback-api-dev-docs/v1/src/
+echo copying policy-api src
+cp -R policy-api/v1/src/ policy-api-dev-docs/v1/src/
+echo copying once-ingest-api src
+cp -R once-ingest-api/v1/src/ once-ingest-api-dev-docs/v1/src/
+echo copying once-media-management-api src
+cp -R once-media-management-api/v1/src/ once-media-management-api-dev-docs/v1/src/
+echo copying once-status-api src
+cp -R once-status-api/v1/src/ once-status-api-dev-docs/v1/src/
+echo Finished copying src files
 echo Generating API docs...
 cd analytics-api
 echo generating docs for analytics-api
@@ -86,8 +114,6 @@ echo copying analytics-api docs
 cp -R analytics-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/versions/v1
 echo copying data-dollection-api docs
 cp -R data-collection-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/data-collection/v1
-echo copying cms-api docs
-cp -R cms-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/cms-api/references/cms-api/versions/v1
 echo copying cms-api docs
 cp -R cms-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/cms-api/references/cms-api/versions/v1
 echo copying di-api docs

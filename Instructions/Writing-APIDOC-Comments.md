@@ -2,6 +2,8 @@
 
 **Note: Since we are not running APIDOC on the actual API code files, the APIDOC comments are independent of the language used to create the API. It is recommended that you use `.js` files in all cases, but that is not required. See the [APIDOC Reference](http://apidocjs.com/) for information on the structure of comments in other languages. These instructions assume you will use JavaScript comments.**
 
+**Note to Learning Services:** Work in ...api directories, then sync the src directory to the companion ...api-dev-docs directory. Then go to [Deploy to Public Docs](https://github.com/BrightcoveLearning/BCL-API-References/blob/master/Instructions/Deploy-to-Public-Docs.md)
+
 ## Files
 
 You can use as many or as few `.js` files for the comments as you wish. You can use separate files for each API operation if you prefer. After some experimentation, I found that using a file for each operation group was most convenient.

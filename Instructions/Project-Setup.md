@@ -13,3 +13,5 @@ The simplest thing to do is copy an existing directory and edit.
 Your files to parse will go in `src`.
 
 Generated references will be in `doc`.
+
+**Note to Learning Services only:** you need to duplicate the ...api directory and name the copy ...api-dev-docs

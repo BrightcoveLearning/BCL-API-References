@@ -25,7 +25,7 @@
  *   --request GET \
  *   https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embed_id/configuration/:branch
  *
- * @apiSuccess (Response Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
@@ -57,9 +57,9 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
  * @apiParam (Path Parameters) {String} player_id player ID
  * @apiParam (Path Parameters) {String} embed_id embed ID
  *
- * @apiParam (Request Body Fields) {String} [name] player name
- * @apiParam (Request Body Fields) {String} [description] player description
- * @apiParam (Request Body Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
+ * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} name player name
+ * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} description player description
+ * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Update a Player Configuration** above for all player options.
  *
  * @apiParamExample {curl} curl Statement:
  * curl \
@@ -134,7 +134,7 @@ For a longer discussion of the this endpoint, see <a href="http://docs.brightcov
  *   --request GET \
  *   "https://players.api.brightcove.com/v1/accounts/:account_id/players/:player_id/embeds/:embedID/configuration/merged?playerBranch=master&embedBranch=preview"
  *
- * @apiSuccess (Response Fields) {Object} [configuration] configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
+ * @apiSuccess (Response Fields - Note: Fields in configuration objects will be displayed in the response only if explicitly set) {Object} configuration configuration object, refer to the **PLAYER CONFIGURATIONS > Get a Player Configuration** above for all player options.
  *
  * @apiSuccessExample {JSON} Success Response:
  * {
