@@ -201,24 +201,24 @@ pre.language-html:before {
   padding: 2px 5px;
   border-radius: 6px;
   text-transform: uppercase;
-  background-color: #3387CC;
+  background-color: #3387CC !important;
   color: #ffffff;
 }
 
 pre.language-html[data-type="get"]:before {
-  background-color: green;
+  background-color: green !important;
 }
 
 pre.language-html[data-type="put"]:before {
-  background-color: #e5c500;
+  background-color: #e5c500 !important;
 }
 
 pre.language-html[data-type="post"]:before {
-  background-color: #4070ec;
+  background-color: #4070ec !important;
 }
 
 pre.language-html[data-type="delete"]:before {
-  background-color: #ed0039;
+  background-color: #ed0039 !important;
 }
 
 pre.language-api .str {
