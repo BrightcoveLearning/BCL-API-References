@@ -65,7 +65,7 @@
  * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
  * @apiParam (Request Body Fields) {String} name A human-readable name for the ad decisioning server
  * @apiParam (Request Body Fields) {String} baseURL The HTTP request URL of the ad decisioning server
- * @apiParam (Request Body Fields) {Object} [variables] Key-value pair mappings for the ad server URL that can utilize page level parameters passed on the query string(see Parameters section) or Dynamic Ad Parameters (see Dynamic Ad Params section). Double curly bracket syntax in the "key" will not be used and defines a placeholder for the insertion of the key-value pair within the baseUrl. See the example below
+ * @apiParam (Request Body Fields) {Object} variables Key-value pair mappings for the ad server URL that can utilize page level parameters passed on the query string(see Parameters section) or Dynamic Ad Parameters (see Dynamic Ad Params section). Double curly bracket syntax in the "key" will not be used and defines a placeholder for the insertion of the key-value pair within the baseUrl. See the example below
  *
  * @apiParamExample {json} Create Ad Decisioning Server Request Body Example:
  *    {
