@@ -211,7 +211,16 @@ code.method[data-type="get"] {
   padding: 4px;
   border-radius: 4px;
   font-weight: bold;
-  margin-bottom: -1em;
+  margin-bottom: -2em;
+}
+
+code.method[data-type="patch"] {
+  background-color: #6687CC !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -2em;
 }
 
 code.method[data-type="put"] {
@@ -220,7 +229,7 @@ code.method[data-type="put"] {
   padding: 4px;
   border-radius: 4px;
   font-weight: bold;
-  margin-bottom: -1em;
+  margin-bottom: -2em;
 }
 
 code.method[data-type="post"] {
@@ -229,7 +238,7 @@ code.method[data-type="post"] {
   padding: 4px;
   border-radius: 4px;
   font-weight: bold;
-  margin-bottom: -1em;
+  margin-bottom: -2em;
 }
 
 code.method[data-type="delete"] {
@@ -238,7 +247,7 @@ code.method[data-type="delete"] {
   padding: 4px;
   border-radius: 4px;
   font-weight: bold;
-  margin-bottom: -1em;
+  margin-bottom: -2em;
 }
 
 pre.language-html[data-type="get"]:before {
