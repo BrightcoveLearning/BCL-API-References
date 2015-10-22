@@ -205,6 +205,10 @@ pre.language-html:before {
   color: #ffffff;
 }
 
+p>code.method {
+  margin-bottom: -2em;
+}
+
 code.method[data-type="get"] {
   background-color: green !important;
   color: #FFF;
