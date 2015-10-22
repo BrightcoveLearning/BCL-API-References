@@ -382,6 +382,8 @@
  *
  * @apiParamExample {Url} Get Video Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
+ *     // or
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/ref:my_reference_id
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
