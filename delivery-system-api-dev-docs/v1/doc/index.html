@@ -143,6 +143,7 @@ ga('send', 'pageview');
       <p>{{{nl2br article.description}}}</p>
     {{/if}}
 
+    <p><code class="method" data-type="{{toLowerCase article.type}}">{{toUpperCase article.type}}</code></p>
     <pre class="prettyprint language-html" data-type="{{toLowerCase article.type}}"><code>{{article.url}}</code></pre>
 
     {{#if article.permission}}
@@ -671,7 +672,7 @@ ga('send', 'pageview');
     <div class="spinner-container container3">
       <div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div>
     </div>
-    
+
   </div>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

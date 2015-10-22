@@ -205,20 +205,65 @@ pre.language-html:before {
   color: #ffffff;
 }
 
+code.method[data-type="get"] {
+  background-color: green !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -1em;
+}
+
+code.method[data-type="put"] {
+  background-color: #e5c500 !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -1em;
+}
+
+code.method[data-type="post"] {
+  background-color: #4070ec !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -1em;
+}
+
+code.method[data-type="delete"] {
+  background-color: #ed0039 !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -1em;
+}
+
 pre.language-html[data-type="get"]:before {
   background-color: green !important;
+  height: 0;
+}
+
+pre.language-html[data-type="patch"]:before {
+  background-color: #3387CC !important;
+  height: 0;
 }
 
 pre.language-html[data-type="put"]:before {
   background-color: #e5c500 !important;
+  height: 0;
 }
 
 pre.language-html[data-type="post"]:before {
   background-color: #4070ec !important;
+  height: 0;
 }
 
 pre.language-html[data-type="delete"]:before {
   background-color: #ed0039 !important;
+  height: 0;
 }
 
 pre.language-api .str {
