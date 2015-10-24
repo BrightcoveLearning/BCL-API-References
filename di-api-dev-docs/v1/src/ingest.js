@@ -177,12 +177,12 @@
  * @apiParam (Request Body Fields) {Boolean} [text_tracks.default] sets the default language for captions/subtitles
  * @apiParam (Request Body Fields) {Object} [poster] the video master to be ingested
  * @apiParam (Request Body Fields) {Url} poster.url URL for the video poster image
- * @apiParam (Request Body Fields) {String} [poster.height] pixel height of the image
- * @apiParam (Request Body Fields) {String} [poster.width] pixel width of the image
+ * @apiParam (Request Body Fields) {Number} [poster.height] pixel height of the image
+ * @apiParam (Request Body Fields) {Number} [poster.width] pixel width of the image
  * @apiParam (Request Body Fields) {Object} [thumbnail] the video master to be ingested
  * @apiParam (Request Body Fields) {Url} thumbnail.url URL for the video thumbnail image
- * @apiParam (Request Body Fields) {String} [thumbnail.height] pixel height of the image
- * @apiParam (Request Body Fields) {String} [thumbnail.width] pixel width of the image
+ * @apiParam (Request Body Fields) {Number} [thumbnail.height] pixel height of the image
+ * @apiParam (Request Body Fields) {Number} [thumbnail.width] pixel width of the image
  * @apiParam (Request Body Fields) {Boolean} [capture-images] whether poster and thumbnail should be captured during transcoding; defaults to `true` if the the profile has image renditions, `false` if it does not
  * @apiParam (Request Body Fields) {String[]} [callbacks] array of URLs that [notifications](http://docs.brightcove.com/en/video-cloud/media-management/guides/notifications.html) should be sent to
  *
@@ -194,14 +194,14 @@
  *      "profile": "high-resolution",
  *      "capture-images": "false",
  *      "poster": {
- *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png"
- *            "width": "640",
- *            "height": "360"
+ *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-poster.png",
+ *            "width": 640,
+ *            "height": 360
  *        },
  *        "thumbnail": {
- *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-thumbnail.png"
- *            "width": "160",
- *            "height": "90"
+ *            "url": "http://learning-services-media.brightcove.com/images/for_video/Water-In-Motion-thumbnail.png",
+ *            "width": 160,
+ *            "height": 90
  *        },
  *        "capture-images": false,
  *        "text_tracks": [
