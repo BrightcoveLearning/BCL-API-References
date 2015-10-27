@@ -861,7 +861,7 @@
  *        "video_duration": 41174
  *    }
  *
- * @apiSuccessExample {} Success Response no digital master
+ * @apiSuccessExample {String} Success Response no digital master
  *     HTTP/1.1 204 No Content
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
