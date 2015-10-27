@@ -828,7 +828,7 @@
  * @apiSuccess (Response Field) {String} video_container the video container
  * @apiSuccess (Response Field) {Number} video_duration in milliseconds
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {json} Success Response video has digital master:
  *    HTTP/1.1 200 OK
  *    {
  *        "account_id": "57838016001",
@@ -860,6 +860,9 @@
  *        "video_container": "MP4",
  *        "video_duration": 41174
  *    }
+ *
+ * @apiSuccessExample {} Success Response no digital master
+ *     HTTP/1.1 204 No Content
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
