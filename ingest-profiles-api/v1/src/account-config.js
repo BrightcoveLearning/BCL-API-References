@@ -13,7 +13,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID
  *
- * @apiParamExample {json} Create Video Example:
+ * @apiParamExample {json} Get Default Profile Example:
  *     https://ingestion.api.brightcove.com/v1/accounts/57838016001/configuration
  *
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account id
@@ -141,7 +141,7 @@
  * @apiParam (Request Body Fields) {String} default_profile_id The id or name of the profile you want to set as the default
  * @apiParam (Request Body Fields) {String} [default_live_profile_id] The id or name of the live profile you want to set as the default
  *
- * @apiParamExample {json} Create Video Example:
+ * @apiParamExample {json} Update Default Profile Example:
  *     {
  *         "account_id": 57838016001,
  *         "default_profile_id": "high-resolution"

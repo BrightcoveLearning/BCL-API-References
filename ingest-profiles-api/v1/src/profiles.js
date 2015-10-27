@@ -68,7 +68,7 @@
  * @apiParam (Request Body Fields) {Mixed} packages.renditions for MPEG-DASH, the renditions will be set to the `reference_id` for a single rendition; for other formats, `renditions` is set equal to an array of rendition `reference_id`'s
  *
  *
- * @apiParamExample {json} Create Video Example:
+ * @apiParamExample {json} Create Profile Example:
  *    {
  *      "account_id": "57838016001",
  *      "name": "Protected",
