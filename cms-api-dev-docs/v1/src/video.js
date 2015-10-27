@@ -790,7 +790,7 @@
  *
  * @apiDescription Gets the stored digital master for a video, if any
  *
- * @apiHeader cms-api.js} Content-Type Content-Type: application/json
+ * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
