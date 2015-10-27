@@ -160,7 +160,7 @@
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster

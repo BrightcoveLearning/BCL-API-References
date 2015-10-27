@@ -40,7 +40,7 @@
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
@@ -237,7 +237,7 @@
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
+ * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
  * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
@@ -275,7 +275,7 @@
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
@@ -403,7 +403,7 @@
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
@@ -986,7 +986,7 @@
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
  * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
- * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for thie video
+ * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
  * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
  * @apiParam (Request Body Fields) {String} [link.text] text for the link
  * @apiParam (Request Body Fields) {Url} [link.url] URL for the link
@@ -1035,7 +1035,7 @@
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
- * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for thie video
+ * @apiSuccess (Response Fields) {Boolean} geo.restricted=false whether geo-restriction is enabled for this video
  * @apiSuccess (Response Fields) {Object} images map of image maps
  * @apiSuccess (Response Fields) {Object} images.poster map of poster properties
  * @apiSuccess (Response Fields) {String} images.poster.asset_id asset id for the poster
