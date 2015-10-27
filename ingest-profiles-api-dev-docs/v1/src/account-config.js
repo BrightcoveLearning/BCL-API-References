@@ -75,7 +75,7 @@
  * @apiParam (Request Body Fields) {String} default_profile_id The id or name of the profile you want to set as the default
  * @apiParam (Request Body Fields) {String} [default_live_profile_id] The id or name of the live profile you want to set as the default
  *
- * @apiParamExample {json} Create Video Example:
+ * @apiParamExample {json} Set Default Profile Example:
  *     {
  *         "account_id": 57838016001,
  *         "default_profile_id": "high-resolution"
