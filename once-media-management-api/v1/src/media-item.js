@@ -1,7 +1,7 @@
 // get media item collection
 
 /**
- * @api {get} /domains/:domain_id/catalogs/:catalog_id/mediaItems Get Media Item Collection
+ * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems Get Media Item Collection
  * @apiName Get Media Item Collection
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
@@ -10,16 +10,16 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId TThe id for the digital media catalog for your domain
  *
  * @apiParamExample {Url} Get Media Items Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
- * @apiSuccess (Response Fields) {String} results.catalog_id The id for the catalog
+ * @apiSuccess (Response Fields) {String} results.catalogId The id for the catalog
  * @apiSuccess (Response Fields) {String} results.name The name for the domain
- * @apiSuccess (Response Fields) {String} results.domain_id The domain id
+ * @apiSuccess (Response Fields) {String} results.domainId The domain id
  * @apiSuccess (Response Fields) {Boolean} results.isAd Whether the media item is an ad
  * @apiSuccess (Response Fields) {String} results.foreignKey The media item foreign key
  * @apiSuccess (Response Fields) {String} results.title The media item title
@@ -35,8 +35,8 @@
  *      "results": [
  *        {
  *          "id": "efe70c1f-ebd2-4c5e-856a-a54a8e97415f",
- *          "catalog_id": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
- *          "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
+ *          "catalogId": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
+ *          "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
  *          "isAd": false,
  *          "foreignKey": "28-feb-02-updated",
  *          "title": "28-feb-02",
@@ -45,8 +45,8 @@
  *        },
  *        {
  *          "id": "bd0e9dd6-45a2-4f55-95d7-c6ca887a3c9c",
- *          "catalog_id": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
- *          "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
+ *          "catalogId": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
+ *          "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
  *          "isAd": false,
  *          "foreignKey": "28-feb-01",
  *          "title": "28-feb-01",
@@ -68,7 +68,7 @@
 // get media item
 
 /**
- * @api {get} /domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id Get Media Item
+ * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId Get Media Item
  * @apiName Get Media Item
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
@@ -77,16 +77,16 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
- * @apiParam (Path Parameters) {String} mediaitem_id The id for the  media item
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} mediaitemId The id for the  media item
  *
  * @apiParamExample {Url} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
- * @apiSuccess (Response Fields) {String} catalog_id The id for the catalog
+ * @apiSuccess (Response Fields) {String} catalogId The id for the catalog
  * @apiSuccess (Response Fields) {String} name The name for the domain
- * @apiSuccess (Response Fields) {String} domain_id The domain id
+ * @apiSuccess (Response Fields) {String} domainId The domain id
  * @apiSuccess (Response Fields) {Boolean} isAd Whether the media item is an ad
  * @apiSuccess (Response Fields) {String} foreignKey The media item foreign key
  * @apiSuccess (Response Fields) {String} title The media item title
@@ -124,8 +124,8 @@
  *    HTTP/1.1 200 OK
  *    {
  *        "id": "9ad78fdb-5f6b-4999-916e-e5461139daf3",
- *        "catalog_id": "23ef978e-d5ca-434a-b8b4-d4c2185f018e",
- *        "domain_id": "4236fac6-f0df-4f9a-b9c7-159cfb257618",
+ *        "catalogId": "23ef978e-d5ca-434a-b8b4-d4c2185f018e",
+ *        "domainId": "4236fac6-f0df-4f9a-b9c7-159cfb257618",
  *        "foreignKey": "Cascada",
  *        "title": "Cascada",
  *        "draftVersion": 0,
@@ -165,19 +165,19 @@
 // update media item
 
 /**
- * @api {post} /domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id Update Media Item
+ * @api {post} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId Update Media Item
  * @apiName Update Media Item
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
  *
- * @apiDescription Updates the media item metadata for the indicated mediaitem_id. **WARNING**: Values defined **OR** omitted on update will overwrite any existing values unless otherwise specified, **including** publication rules! Please be aware of this when making mediaItem updates. If you wish to do an additive/inline change, please make an ingest request and omit the source file URL.
+ * @apiDescription Updates the media item metadata for the indicated mediaitemId. **WARNING**: Values defined **OR** omitted on update will overwrite any existing values unless otherwise specified, **including** publication rules! Please be aware of this when making mediaItem updates. If you wish to do an additive/inline change, please make an ingest request and omit the source file URL.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} id The media item id (this value cannot be changed)
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
- * @apiParam (Path Parameters) {String} mediaitem_id The id for the media item
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} mediaitemId The id for the media item
  * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} foreignKey The unique identifier for the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} [description] A description of the asset
@@ -215,8 +215,8 @@
  * @apiParamExample {json} Update Media Item Request Body Example:
  *    {
  *        "id": "efe70c1f-ebd2-4c5e-856a-a54a8e97415f",
- *        "catalog_id": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
- *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
+ *        "catalogId": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
+ *        "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
  *        "foreignKey": "Updated-fk",
  *        "title": "28-feb-02",
  *        "keywords": [ ],
@@ -241,9 +241,9 @@
  *        }
  *    }
  *
- * @apiSuccess (Response Fields) {String} catalog_id The id for the catalog
+ * @apiSuccess (Response Fields) {String} catalogId The id for the catalog
  * @apiSuccess (Response Fields) {String} name The name for the domain
- * @apiSuccess (Response Fields) {String} domain_id The domain id
+ * @apiSuccess (Response Fields) {String} domainId The domain id
  * @apiSuccess (Response Fields) {Boolean} isAd Whether the media item is an ad
  * @apiSuccess (Response Fields) {String} foreignKey The media item foreign key
  * @apiSuccess (Response Fields) {String} title The media item title
@@ -281,8 +281,8 @@
  *    HTTP/1.1 200 OK
  *    {
  *        "id": "9ad78fdb-5f6b-4999-916e-e5461139daf3",
- *        "catalog_id": "23ef978e-d5ca-434a-b8b4-d4c2185f018e",
- *        "domain_id": "4236fac6-f0df-4f9a-b9c7-159cfb257618",
+ *        "catalogId": "23ef978e-d5ca-434a-b8b4-d4c2185f018e",
+ *        "domainId": "4236fac6-f0df-4f9a-b9c7-159cfb257618",
  *        "foreignKey": "Cascada",
  *        "title": "Cascada",
  *        "draftVersion": 0,
@@ -322,7 +322,7 @@
 // delete media item
 
 /**
- * @api {delete} /domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id Get Media Item
+ * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId Get Media Item
  * @apiName Get Media Item
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
@@ -331,9 +331,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The id for the digital media catalog for your domain
- * @apiParam (Path Parameters) {String} mediaitem_id The id for the  media item
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} mediaitemId The id for the  media item
  *
  * @apiParamExample {Url} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
@@ -350,4 +350,3 @@
  *
  *
  */
-

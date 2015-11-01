@@ -1,7 +1,7 @@
 // get catalog list
 
 /**
- * @api {get} /domains/:domain_id/catalogs/catalogs Get Catalog List
+ * @api {get} /domains/:domainId/catalogs/catalogs Get Catalog List
  * @apiName Get Catalog List
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -10,8 +10,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id TThe id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId TThe id for the digital media catalog for your domain
  *
  * @apiParamExample {Url} Get Catalog List Example:
  *     https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs
@@ -19,7 +19,7 @@
  * @apiSuccess (Response Fields) {Object[]} results Array of catalog items
  * @apiSuccess (Response Fields) {String} results.id The id for the catalog
  * @apiSuccess (Response Fields) {String} results.name The name for the domain
- * @apiSuccess (Response Fields) {String} results.domain_id The domain id
+ * @apiSuccess (Response Fields) {String} results.domainId The domain id
  * @apiSuccess (Response Fields) {Url} prev URL to get the previous result set (`null` if there is none)
  * @apiSuccess (Response Fields) {Url} next URL to get the next result set (`null` if there is none)
  * @apiSuccess (Response Fields) {Number} total number of results
@@ -31,12 +31,12 @@
  *            {
  *                "id": "9482da98-4ad2-490d-983b-42c17fe06b81",
  *                "name": "1-2-8",
- *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *                "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *            },
  *            {
  *                "id": "1cd8a599-13b6-45e4-8a94-7bad7a5c457e",
  *                "name": "New catalog",
- *                "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *                "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *            }
  *        ],
  *        "prev": null,
@@ -53,18 +53,18 @@
 // create catalog
 
 /**
- * @api {post} /domains/:domain_id/catalogs Create Catalog
+ * @api {post} /domains/:domainId/catalogs Create Catalog
  * @apiName Create Catalog
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Creates a new catalog within the indicated domain_id. The catalog will acquire all transcode renditions set as default on the domain and the domain publication rules unless the renditions are defined in the input.
+ * @apiDescription Creates a new catalog within the indicated domainId. The catalog will acquire all transcode renditions set as default on the domain and the domain publication rules unless the renditions are defined in the input.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Request Body Fields) {String} name Name for the catalog
- * @apiParam (Request Body Fields) {Object[]} [renditions] A collection of `rendition_ids` to be defined. If excluded, the catalog will acquire the defaulted domain renditions
+ * @apiParam (Request Body Fields) {Object[]} [renditions] A collection of `renditionIds` to be defined. If excluded, the catalog will acquire the defaulted domain renditions
  * @apiParam (Request Body Fields) {String} renditions.id id of the rendition to include &mdash; Only declared if you intent to define a subset of the renditions from the domain
  *
  * @apiParamExample {json} Create Catalog Request Body Example:
@@ -83,14 +83,14 @@
  *
  * @apiSuccess (Response Fields) {String} id The id for the catalog
  * @apiSuccess (Response Fields) {String} name The name for the catalog
- * @apiSuccess (Response Fields) {Boolean} domain_id The domain id
+ * @apiSuccess (Response Fields) {Boolean} domainId The domain id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
  *        "name": "New-Test-Catalog",
- *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *        "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
@@ -101,16 +101,16 @@
 // update catalog name
 
 /**
- * @api {put} /domains/:domain_id/catalogs Update Catalog Name
+ * @api {put} /domains/:domainId/catalogs Update Catalog Name
  * @apiName Update Catalog Name
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Updates the catalog name in the indicated catalogID by setting its catalog_id with the updated name in the request body.
+ * @apiDescription Updates the catalog name in the indicated catalogID by setting its catalogId with the updated name in the request body.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Request Body Fields) {String} name New name for the catalog
  * @apiParam (Request Body Fields) {String} id The catalog id
  *
@@ -138,7 +138,7 @@
 // get catalog Information
 
 /**
- * @api {get} /domains/:domain_id/catalogs/:catalog_id Get Catalog Information
+ * @api {get} /domains/:domainId/catalogs/:catalogId Get Catalog Information
  * @apiName Get Catalog Information
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -147,22 +147,22 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Request Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
  * @apiSuccess (Response Fields) {String} id The id for the catalog
  * @apiSuccess (Response Fields) {String} name The name for the catalog
- * @apiSuccess (Response Fields) {Boolean} domain_id The domain id
+ * @apiSuccess (Response Fields) {Boolean} domainId The domain id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
  *        "id": "62191781-a933-49d6-831f-83bdf51a26ac",
  *        "name": "New Catalog",
- *        "domain_id": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
+ *        "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
@@ -174,7 +174,7 @@
 // get catalog renditions
 
 /**
- * @api {get} /domains/:domain_id/catalogs/:catalog_id/renditions Get Catalog Renditions
+ * @api {get} /domains/:domainId/catalogs/:catalogId/renditions Get Catalog Renditions
  * @apiName Get Catalog Renditions
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -183,8 +183,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Renditions Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
@@ -216,18 +216,18 @@
 // get catalog rendition settings
 
 /**
- * @api {get} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Get Catalog Rendition Settings
+ * @api {get} /domains/:domainId/catalogs/:catalogId/renditions/:renditionId Get Catalog Rendition Settings
  * @apiName Get Catalog Rendition Settings
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the settings of the selected transcode rendition indicated by the rendition_id.
+ * @apiDescription Returns the settings of the selected transcode rendition indicated by the renditionId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} rendition_id The rendition id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} renditionId The rendition id
  *
  * @apiParamExample {Url} Get Catalog Rendition Settings Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
@@ -261,7 +261,7 @@
 // replace catalog renditions
 
 /**
- * @api {put} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Replace Catalog Renditions
+ * @api {put} /domains/:domainId/catalogs/:catalogId/renditions/:renditionId Replace Catalog Renditions
  * @apiName Replace Catalog Renditions
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -270,9 +270,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} rendition_id The rendition id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} renditionId The rendition id
  * @apiParam (Request Body Fields) {String} id a rendition id
  *
  * @apiParamExample {json} Replace Catalog Rendition Request Body Example:
@@ -307,18 +307,18 @@
 // add rendition to catalog
 
 /**
- * @api {post} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Add Catalog Rendition
+ * @api {post} /domains/:domainId/catalogs/:catalogId/renditions/:renditionId Add Catalog Rendition
  * @apiName Add Catalog Rendition
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Adds the selected rendition as indicated by the rendition_id to the catalog.
+ * @apiDescription Adds the selected rendition as indicated by the renditionId to the catalog.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} rendition_id The rendition id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} renditionId The rendition id
  * @apiParam (Request Body Fields) {String} id a rendition id to add
  *
  * @apiParamExample {json} Add Catalog Rendition Request Body Example:
@@ -343,18 +343,18 @@
 // delete catalog rendition
 
 /**
- * @api {delete} /domains/:domain_id/catalogs/:catalog_id/renditions/:rendition_id Delete Catalog Rendition
+ * @api {delete} /domains/:domainId/catalogs/:catalogId/renditions/:renditionId Delete Catalog Rendition
  * @apiName Delete Catalog Rendition
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes rendition as indicated by the rendition_id from the catalog.
+ * @apiDescription Deletes rendition as indicated by the renditionId from the catalog.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} rendition_id The rendition id to delete
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} renditionId The rendition id to delete
  *
  * @apiParamExample {Url} Delete Catalog Rendition Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalog/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
@@ -371,5 +371,3 @@
  *
  *
  */
-
-

@@ -1,16 +1,16 @@
 // get domain publication rules
 
 /**
- * @api {get} domains/:domain_id/publicationRules Get Domain Publication Rules
+ * @api {get} domains/:domainId/publicationRules Get Domain Publication Rules
  * @apiName Get Domain Publication Rules
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of domain publicationrule_ids.
+ * @apiDescription Returns a collection of domain publicationruleIds.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
  * @apiParamExample {Url} Get Publication Rules Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -38,16 +38,16 @@
 // create domain publication rules
 
 /**
- * @api {post} domains/:domain_id/publicationRules Create Domain Publication Rule
+ * @api {post} domains/:domainId/publicationRules Create Domain Publication Rule
  * @apiName Create Domain Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Creates a new domain publication rule within the indicated domain_id.
+ * @apiDescription Creates a new domain publication rule within the indicated domainId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiSuccess (Response Fields) {Number} publicationRules.startDate Date when publication rule becomes effective (epoch time in seconds)
  * @apiSuccess (Response Fields) {Number} publicationRules.endDate Date when publication rule expires (epoch time in seconds)
  * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters Array of client filter objects
@@ -102,17 +102,17 @@
 // get domain publication rule
 
 /**
- * @api {get} domains/:domain_id/publicationRules/:publicationrule_id Get Domain Publication Rule
+ * @api {get} domains/:domainId/publicationRules/:publicationruleId Get Domain Publication Rule
  * @apiName Get Domain Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the domain publication rule settings of the indicated publicationrule_id.
+ * @apiDescription Returns the domain publication rule settings of the indicated publicationruleId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
  *
  * @apiParamExample {Url} Get Domain Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -159,17 +159,17 @@
 // delete domain publication rule
 
 /**
- * @api {delete} domains/:domain_id/publicationRules/:publicationrule_id Delete Domain Publication Rule
+ * @api {delete} domains/:domainId/publicationRules/:publicationruleId Delete Domain Publication Rule
  * @apiName Delete Domain Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes the publication rule for the domain as indicated by the publicationrule_id.
+ * @apiDescription Deletes the publication rule for the domain as indicated by the publicationruleId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
  *
  * @apiParamExample {Url} Delete Domain Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -190,17 +190,17 @@
 // get catalog publication rules
 
 /**
- * @api {get} domains/:domain_id/catalogs/:catalog_id/publicationRules Get Catalog Publication Rules
+ * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules Get Catalog Publication Rules
  * @apiName Get Catalog Publication Rules
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of catalog publicationrule_ids.
+ * @apiDescription Returns a collection of catalog publicationruleIds.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Publication Rules Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -228,17 +228,17 @@
 // create catalog publication rules
 
 /**
- * @api {post} domains/:domain_id/catalog/:catalog_id/publicationRules Create Catalog Publication Rule
+ * @api {post} domains/:domainId/catalog/:catalogId/publicationRules Create Catalog Publication Rule
  * @apiName Create Catalog Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Creates a new catalog publication rule within the indicated catalog_id.
+ * @apiDescription Creates a new catalog publication rule within the indicated catalogId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiSuccess (Response Fields) {Number} publicationRules.startDate Date when publication rule becomes effective (epoch time in seconds)
  * @apiSuccess (Response Fields) {Number} publicationRules.endDate Date when publication rule expires (epoch time in seconds)
  * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters Array of client filter objects
@@ -293,18 +293,18 @@
 // get catalog publication rule
 
 /**
- * @api {get} domains/:domain_id/catalogs/:catalog_id/publicationRules/:publicationrule_id Get Catalog Publication Rule
+ * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationruleId Get Catalog Publication Rule
  * @apiName Get Catalog Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the catalog publication rule settings of the indicated publicationrule_id.
+ * @apiDescription Returns the catalog publication rule settings of the indicated publicationruleId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
  *
  * @apiParamExample {Url} Get Catalog Publication RulesExample:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -351,18 +351,18 @@
 // delete catalog publication rule
 
 /**
- * @api {delete} domains/:domain_id/catalogs/:catalog_id/publicationRules/:publicationrule_id Delete Catalog Publication Rule
+ * @api {delete} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationruleId Delete Catalog Publication Rule
  * @apiName Delete Catalog Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes the catalog publication rule settings of the indicated publicationrule_id.
+ * @apiDescription Deletes the catalog publication rule settings of the indicated publicationruleId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
  *
  * @apiParamExample {Url} Delete Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -383,18 +383,18 @@
 // get media item publication rules
 
 /**
- * @api {get} domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id/publicationRules Get Media Item Publication Rules
+ * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId/publicationRules Get Media Item Publication Rules
  * @apiName Get Media Item Publication Rules
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns a collection of media item publicationrule_ids.
+ * @apiDescription Returns a collection of media item publicationruleIds.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} mediaitem_id The media item id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} mediaitemId The media item id
  *
  * @apiParamExample {Url} Get Media Item Publication Rules Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -422,18 +422,18 @@
 // create media item publication rules
 
 /**
- * @api {post} domains/:domain_id/catalog/:catalog_id/mediaItems/:mediaitem_id/publicationRules Create Media Item Publication Rule
+ * @api {post} domains/:domainId/catalog/:catalogId/mediaItems/:mediaitemId/publicationRules Create Media Item Publication Rule
  * @apiName Create Media Item Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Creates a new media item publication rule within the indicated catalog_id.
+ * @apiDescription Creates a new media item publication rule within the indicated catalogId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} mediaitem_id The media item id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} mediaitemId The media item id
  * @apiSuccess (Response Fields) {Number} publicationRules.startDate Date when publication rule becomes effective (epoch time in seconds)
  * @apiSuccess (Response Fields) {Number} publicationRules.endDate Date when publication rule expires (epoch time in seconds)
  * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters Array of client filter objects
@@ -488,19 +488,19 @@
 // get media item publication rule
 
 /**
- * @api {get} domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id/publicationRules/:publicationrule_id Get Media Item Publication Rule
+ * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId/publicationRules/:publicationruleId Get Media Item Publication Rule
  * @apiName Get Media Item Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the media item publication rule settings of the indicated publicationrule_id.
+ * @apiDescription Returns the media item publication rule settings of the indicated publicationruleId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} mediaitem_id The media item id
- * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} mediaitemId The media item id
+ * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
  *
  * @apiParamExample {Url} Get Media Item Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -547,19 +547,19 @@
 // delete media item publication rule
 
 /**
- * @api {delete} domains/:domain_id/catalogs/:catalog_id/mediaItems/:mediaitem_id/publicationRules/:publicationrule_id Delete Media Item Publication Rule
+ * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId/publicationRules/:publicationruleId Delete Media Item Publication Rule
  * @apiName Delete Media Item Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes the media item publication rule settings of the indicated publicationrule_id.
+ * @apiDescription Deletes the media item publication rule settings of the indicated publicationruleId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalog_id The catalog id
- * @apiParam (Path Parameters) {String} mediaitem_id The media item id
- * @apiParam (Path Parameters) {String} publicationrule_id The publication rule id
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalog id
+ * @apiParam (Path Parameters) {String} mediaitemId The media item id
+ * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
  *
  * @apiParamExample {Url} Delete Media Item Publication Rule Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -576,4 +576,3 @@
  *
  *
  */
-

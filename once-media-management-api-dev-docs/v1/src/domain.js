@@ -1,7 +1,7 @@
 // get domain
 
 /**
- * @api {get} /domains/:domain_id Get Domain
+ * @api {get} /domains/:domainId Get Domain
  * @apiName Get Domain
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
  * @apiParamExample {Url} Get Domain Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7
@@ -33,7 +33,7 @@
 // get domain renditions
 
 /**
- * @api {get} /domains/:domain_id/renditions Get Domain Renditions
+ * @api {get} /domains/:domainId/renditions Get Domain Renditions
  * @apiName Get Domain Renditions
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -42,7 +42,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
  * @apiParamExample {Url} Get Domain Renditions Example:
  *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
@@ -77,17 +77,17 @@
 // get rendition setting
 
 /**
- * @api {get} /domains/:domain_id/renditions/:rendition_id Get Rendition Settings
+ * @api {get} /domains/:domainId/renditions/:renditionId Get Rendition Settings
  * @apiName Get Rendition Settings
  * @apiGroup Domain
  * @apiVersion 1.0.0
  *
- * @apiDescription Returns the settings of the selected transcode rendition indicated by the rendition_id.
+ * @apiDescription Returns the settings of the selected transcode rendition indicated by the renditionId.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domain_id The domain id for your Once account
- * @apiParam (Path Parameters) {String} rendition_id The id for the rendition
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} renditionId The id for the rendition
  *
  * @apiParamExample {Url} Get Rendition Settings Example:
  *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
@@ -116,4 +116,3 @@
  *
  *
  */
-
