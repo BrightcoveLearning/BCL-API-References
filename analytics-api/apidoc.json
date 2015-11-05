@@ -6,6 +6,7 @@
     "url": "https://analytics.api.brightcove.com/v1",
     "order": [
         "Report",
+        "Status",
         "Engagement",
         "Video Data"
     ]
