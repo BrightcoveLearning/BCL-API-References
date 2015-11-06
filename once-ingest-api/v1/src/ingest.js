@@ -134,6 +134,15 @@
  *                ],
  *                "alternateId": "Bazinga"
  *            }
+ *        ],
+ *        "notifications" : [
+ *            {
+ *              "target" : "http://simply-qa.unicornmedia.com/notification-spy/record/JessePublish"
+ *            },
+ *            {
+ *              "target" : "http://simply-qa.unicornmedia.com/notification-spy/record/JesseError",
+ *              "notificationType" : "error"
+ *            }
  *        ]
  *    }
  *
