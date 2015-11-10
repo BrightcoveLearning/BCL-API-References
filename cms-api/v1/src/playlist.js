@@ -671,8 +671,10 @@
  * @apiParam (Request Body Fields) {String} [reference_id] playlist reference id
  * @apiParam (Request Body Fields) {String="EXPLICIT", "ACTIVATED_OLDEST_TO_NEWEST", "ACTIVATED_NEWEST_TO_OLDEST", "ALPHABETICAL", "PLAYS_TOTAL", "PLAYS_TRAILING_WEEK", "START_DATE_OLDEST_TO_NEWEST", "START_DATE_NEWEST_TO_OLDEST"} [type] of playlist
  * @apiParam (Request Body Fields) {Number} [limit] maximum number of videos to include (smart playlists only)
+ * @apiParam (Request Body Fields) {String[]} [video_ids] array of video ids (EXPLICIT playlists only)
+ * @apiParam (Request Body Fields) {String} [search] search string to get the videos (smart playlists only)
  *
- * @apiParamExample {json} Create Playlist Example:
+ * @apiParamExample {json} Create Explicit Playlist Example:
  *    {
  *        "description": "My new bird playlist",
  *        "name": "Bird Videos",
@@ -681,6 +683,15 @@
  *            "4084164751001",
  *            "734484322001",
  *            "734462570001"
+ *        ]
+ *    }
+ * @apiParamExample {json} Create Smart Playlist Example:
+ *    {
+ *        "description": "My new sea playlist",
+ *        "name": "Sea Videos",
+ *        "type": "ACTIVATED_NEWEST_TO_OLDEST",
+ *        "limit": 20
+ *        "search": "tags:\"sealife\",\"water\""
  *        ]
  *    }
  *
