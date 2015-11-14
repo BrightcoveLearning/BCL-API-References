@@ -1147,12 +1147,12 @@
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
  *
  * @apiSuccessExample {json} Success Response:
- *     HTTP/1.1 204 No Content
+ *     HTTP/1.1 204 No Content **returned if video is deleted or not found**
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} REFERENCES_EXIST 400: This video is referenced by at least one playlist
- * @apiError (Error 4xx) {json} SHARED_VIDEO 400: Delete of shared video failed
+ * @apiError (Error 4xx) {json} REFERENCES_EXIST 409: The video is in one or more manual playlists
+ * @apiError (Error 4xx) {json} PRE_CONDITION_FAILED 412: usually this means the caller provided an ETag that didn't match the version of the video
+ * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Erroe in the backend
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
