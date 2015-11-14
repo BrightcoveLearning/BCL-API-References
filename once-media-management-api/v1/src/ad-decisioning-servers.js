@@ -70,7 +70,7 @@
  * @apiParamExample {json} Create Ad Decisioning Server Request Body Example:
  *    {
  *        "name" : "New-ad-server",
- *        "baseUrl": "www.google.com"
+ *        "baseUrl": "www.ads.com"
  *        "variables": {
  *        "{{placeholder1}} key1": "value1",
  *            "{{ph2}} key2": "value2",
@@ -90,7 +90,7 @@
  *    {
  *        "id": "40c11e99-8878-4f17-81c8-ca7d16d9ebbe",
  *        "name": "New-ad-server-updated-name",
- *        "baseUrl": "www.test.com",
+ *        "baseUrl": "test.com",
  *        "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a"
  *        "variables": {
  *            "key1": "value1",
@@ -159,7 +159,7 @@
  * @apiParamExample {json} Update Ad Decisioning Server Request Body Example:
  *    {
  *        "name" : "New-ad-server",
- *        "baseUrl": "www.google.com"
+ *        "baseUrl": "www.ads.com"
  *        "variables": {
  *        "{{placeholder1}} key1": "value1",
  *            "{{ph2}} key2": "value2",

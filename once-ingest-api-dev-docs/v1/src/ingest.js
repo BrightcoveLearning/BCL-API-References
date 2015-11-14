@@ -98,7 +98,7 @@
  *        "timedText": [
  *            {
  *                "media": {
- *                    "sourceURL": "http://umrss.com/jesseneedsspace/katy.xml"
+ *                    "sourceURL": "http://fileserver.tld/Subtitles/filenameEN.xml"
  *                },
  *                "timedTextType": "SUBTITLE",
  *                "languages": [
@@ -107,7 +107,7 @@
  *            },
  *            {
  *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/caption.srt"
+ *                    "sourceURL": "hhttp://fileserver.tld/Subtitles/filenameFR.srt"
  *                },
  *                "timedTextType": "SUBTITLE",
  *                "languages": [
@@ -116,7 +116,7 @@
  *            },
  *            {
  *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/caption.dfxp"
+ *                    "sourceURL": "http://fileserver.tld/Subtitles/filenameEN.dfxp"
  *                },
  *                "timedTextType": "CAPTION",
  *                "languages": [
@@ -125,7 +125,7 @@
  *            },
  *            {
  *                "media": {
- *                    "sourceURL": "https://s3.amazonaws.com/unicornjessetest/multi.xml"
+ *                    "sourceURL": "http://fileserver.tld/Subtitles/filenamemulti.xml"
  *                },
  *                "timedTextType": "SUBTITLE",
  *                "languages": [
@@ -137,10 +137,10 @@
  *        ],
  *        "notifications" : [
  *            {
- *              "target" : "http://simply-qa.unicornmedia.com/notification-spy/record/JessePublish"
+ *              "target" : "http://fileserver.tld/notification-spy/record/Publish"
  *            },
  *            {
- *              "target" : "http://simply-qa.unicornmedia.com/notification-spy/record/JesseError",
+ *              "target" : "http://fileserver.tld//notification-spy/record/Error",
  *              "notificationType" : "error"
  *            }
  *        ]

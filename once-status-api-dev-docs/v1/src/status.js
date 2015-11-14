@@ -100,7 +100,7 @@
  *                        "eventId": "321"
  *                    },
  *                    "media": {
- *                        "sourceURL": "http://mirror.cessen.com/blender.org/peach/trailer/trailer_1080p.mov"
+ *                        "sourceURL": "http://fileserver.org/trailer/trailer_1080p.mov"
  *                    },
  *                    "notifications": [],
  *                    "publicationRules": [],
@@ -119,7 +119,7 @@
  *                    "mediaItemId": "2d1d6fe7-6924-4d1d-ba06-d49b2d9f5f4b",
  *                    "hasChanged": true,
  *                    "description": {
- *                        "url": "http://mirror.cessen.com/blender.org/peach/trailer/trailer_1080p.mov",
+ *                        "url": "http://fileserver.org/trailer/trailer_1080p.mov",
  *                        "lastModified": "Wed, 07 May 2014 22:21:59 GMT",
  *                        "etag": "\"b2f673c3426acf1:0\"",
  *                        "fileSize": 60047891
