@@ -219,7 +219,7 @@
 // get ad configuration
 
 /**
- * @api {get} /domains/:domainId/applications/:applicationId /adconfig Get Application Ad Configuration
+ * @api {get} /domains/:domainId/applications/:applicationId/adconfig Get Application Ad Configuration
  * @apiName Get Application Ad Configuration
  * @apiGroup Applications
  * @apiVersion 1.0.0
@@ -287,7 +287,7 @@
 // add ad configuration
 
 /**
- * @api {post} /domains/:domainId/applications/:applicationId /adconfig Add Application Ad Configuration
+ * @api {post} /domains/:domainId/applications/:applicationId/adconfig Add Application Ad Configuration
  * @apiName Add Application Ad Configuration
  * @apiGroup Applications
  * @apiVersion 1.0.0
@@ -379,7 +379,7 @@
 // delete ad configurations
 
 /**
- * @api {delete} /domains/:domainId/applications/:applicationId /adconfig Delete Application Ad Configurations
+ * @api {delete} /domains/:domainId/applications/:applicationId/adconfig Delete Application Ad Configurations
  * @apiName Delete Application Ad Configurations
  * @apiGroup Applications
  * @apiVersion 1.0.0
