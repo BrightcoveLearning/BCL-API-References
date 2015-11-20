@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 define({  "name": "Data Collection API",  "version": "1.0.0",  "description": "Reference for the Brightcove Data Collection API, used to send analytics data to the Brightcove analytics system.",  "title": "Data Collection API Reference",  "url": "http://metrics.brightcove.com",  "order": [    "Tracker"  ],  "sampleUrl": false,  "apidoc": "0.2.0",  "generator": {    "name": "apidoc",    "time": "2015-11-20T12:01:00.718Z",    "url": "http://apidocjs.com",    "version": "0.13.1"  }});
+=======
+define({  "name": "Data Collection API",  "version": "1.0.0",  "description": "Reference for the Brightcove Data Collection API, used to send analytics data to the Brightcove analytics system.",  "title": "Data Collection API Reference",  "url": "http://metrics.brightcove.com",  "order": [    "Tracker"  ],  "sampleUrl": false,  "apidoc": "0.2.0",  "generator": {    "name": "apidoc",    "time": "2015-11-18T18:04:35.266Z",    "url": "http://apidocjs.com",    "version": "0.13.1"  }});
+>>>>>>> origin/master
