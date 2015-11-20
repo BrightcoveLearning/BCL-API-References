@@ -19,12 +19,10 @@
  *        "events":["video-change"]
  *    }
  *
- * @apiSuccess (Response Fields) {String} account_id Video Cloud account id
- * @apiSuccess (Response Fields) {DateString} created_at date/time folder created
- * @apiSuccess (Response Fields) {DateString} updated_at date/time folder last modified
- * @apiSuccess (Response Fields) {String} id system id for the folder
- * @apiSuccess (Response Fields) {String} name folder name
- * @apiSuccess (Response Fields) {String} video_count number of videos in the folder
+ * @apiSuccess (Response Fields) {String} endpoint the notifications endpoint
+ * @apiSuccess (Response Fields) {String[]} events array of events subscribed to
+ * @apiSuccess (Response Fields) {String} id system id for the subscription
+ * @apiSuccess (Response Fields) {String} service_account the Video Cloud account id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 201 Created
