@@ -74,25 +74,25 @@
  * @apiSuccess (Response Fields) {Object} adConfig.preRoll The preRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.id The preRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.name The preRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preRoll.adserverId The preRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preRoll.adServerId The preRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.adserverName The preRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.adPosition The preRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.midRoll The midRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.id The midRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.name The midRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midRoll.adserverId The midRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midRoll.adServerId The midRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.adserverName The midRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.adPosition The midRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.postRoll The postRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.id The postRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.name The postRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postRoll.adserverId The postRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postRoll.adServerId The postRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.adserverName The postRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.adPosition The postRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.ad The ad configuration ad object (multi ad config)
  * @apiSuccess (Response Fields) {String} adConfig.ad.id The ad configuration ad id (multi ad config)
  * @apiSuccess (Response Fields) {String} adConfig.ad.name The ad configuration ad name (multi ad config)
- * @apiSuccess (Response Fields) {String} adConfig.ad.adserverId The ad configuration ad ad server id (multi ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.ad.adServerId The ad configuration ad ad server id (multi ad config)
  * @apiSuccess (Response Fields) {String} adConfig.ad.adserverName The ad configuration ad ad server name (multi ad config)
  * @apiSuccess (Response Fields) {String} adConfig.ad.adPosition The ad configuration ad ad position (multi ad config)
  *
@@ -103,21 +103,21 @@
  *        "preRoll": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "prenewUpdated",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "preRoll"
  *        },
  *        "midRoll": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "Mid",
- *            "adserverId": "1111-2222-33333-4444-aaaabbbbccccddd",
+ *            "adServerId": "1111-2222-33333-4444-aaaabbbbccccddd",
  *            "adServerName": "Test Ad Server",
  *            "adPosition": "midRoll"
  *        },
  *        "postRoll": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "Post",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "postRoll"
  *        }
@@ -127,7 +127,7 @@
  *        "ad": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "DFP",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "dfp"
  *        }
@@ -145,7 +145,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Updates the standard settings of the application
+ * @apiDescription Creates a new application in the indicated domainId
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -155,7 +155,7 @@
  * @apiParam (Request Body Fields) {Number} [midRollAdCount] The midRoll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in each slot. By default  this value is set to 0, but is required when using direct VAST tags.
  * @apiParam (Request Body Fields) {Number} [postRollAdCount] The postRoll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in the slot. By default  this value is set to 0, but is required when using direct VAST tags.
  *
- * @apiParamExample {json} Update Application Request Body Example:
+ * @apiParamExample {json} Create Application Request Body Example:
  *    {
  *        "name":"New_Application",
  *        "preRollAdCount":1,
@@ -286,19 +286,19 @@
  * @apiSuccess (Response Fields) {Object} adConfig.preRoll The preRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.id The preRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.name The preRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preRoll.adserverId The preRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preRoll.adServerId The preRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.adserverName The preRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.adPosition The preRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.midRoll The midRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.id The midRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.name The midRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midRoll.adserverId The midRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midRoll.adServerId The midRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.adserverName The midRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.adPosition The midRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.postRoll The postRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.id The postRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.name The postRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postRoll.adserverId The postRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postRoll.adServerId The postRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.adserverName The postRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.adPosition The postRoll ad configuration ad position (single ad config)
  *
@@ -308,21 +308,21 @@
  *        "preRoll": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "prenewUpdated",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "preRoll"
  *        },
  *        "midRoll": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "Mid",
- *            "adserverId": "1111-2222-33333-4444-aaaabbbbccccddd",
+ *            "adServerId": "1111-2222-33333-4444-aaaabbbbccccddd",
  *            "adServerName": "Test Ad Server",
  *            "adPosition": "midRoll"
  *        },
  *        "postRoll": {
  *            "id": "5840b954-5094-4e13-b49a-319115342011",
  *            "name": "Post",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "postRoll"
  *        }
@@ -348,35 +348,37 @@
  * @apiParam (Path Parameters) {String} applicationId The application id
  * @apiParam (Request Body Fields) {Object} [preRoll] The ad slot intended to be updated or replaced. This should only be used with direct VAST campaigns
  * @apiParam (Request Body Fields) {String} preRoll.name The name for the ad event
- * @apiParam (Request Body Fields) {String} preRoll.adserverId The ad server id
+ * @apiParam (Request Body Fields) {String} preRoll.adServerId The ad server id
  * @apiParam (Request Body Fields) {Object} [midRoll] The ad slot intended to be updated or replaced. This should only be used with direct VAST campaigns
  * @apiParam (Request Body Fields) {String} midRoll.name The name for the ad event
- * @apiParam (Request Body Fields) {String} midRoll.adserverId The ad server id
+ * @apiParam (Request Body Fields) {String} midRoll.adServerId The ad server id
  * @apiParam (Request Body Fields) {Object} [postRoll] The ad slot intended to be updated or replaced. This should only be used with direct VAST campaigns
  * @apiParam (Request Body Fields) {String} postRoll.name The name for the ad event
- * @apiParam (Request Body Fields) {String} postRoll.adserverId The ad server id
+ * @apiParam (Request Body Fields) {String} postRoll.adServerId The ad server id
  * @apiParam (Request Body Fields) {Object} [ad] Only used for Freewheel SmartXML or DFP ad rules where ad slots are defined by the ad decisioning server. Can not be used with defined preRolls, midRolls, and/or postRolls
+ * @apiParam (Request Body Fields) {String} ad.name An arbitrary name for user readability purposes only
  * @apiParam (Request Body Fields) {String="smartxml","dfp"} ad.adPosition The ad position
- * @apiParam (Request Body Fields) {String} ad.adserverId The ad server id
+ * @apiParam (Request Body Fields) {String} ad.adServerId The ad server id
  *
- * @apiParamExample {json} Add Ad Configuration Request Body Example:
+ * @apiParamExample {json} Request Body Example: direct VAST
  *    // Sample input for direct VAST
  *    {
  *        "preRoll": {
  *            "name": "preRollUpdated",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d"
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d"
  *        },
  *        "postRoll": {
  *            "name": "postRollUpdated",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d"
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d"
  *        }
  *    }
+ * @apiParamExample {json} Request Body Example: smartxml or dfp
  *    // Sample input for smartxml or dfp
  *    {
  *        "ad": {
  *            "name": "Example adConfig Name",
  *            "adPosition": "smartxml",
- *            "adserverId": "72b453a5-37b5-5fa1-6deb-2958363ade2"
+ *            "adServerId": "72b453a5-37b5-5fa1-6deb-2958363ade2"
  *        }
  *    }
  *
@@ -387,19 +389,19 @@
  * @apiSuccess (Response Fields) {Object} adConfig.preRoll The preRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.id The preRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.name The preRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.preRoll.adserverId The preRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.preRoll.adServerId The preRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.adserverName The preRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.preRoll.adPosition The preRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.midRoll The midRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.id The midRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.name The midRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.midRoll.adserverId The midRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.midRoll.adServerId The midRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.adserverName The midRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.midRoll.adPosition The midRoll ad configuration ad position (single ad config)
  * @apiSuccess (Response Fields) {Object} adConfig.postRoll The postRoll ad configuration object (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.id The postRoll ad configuration id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.name The postRoll ad configuration name (single ad config)
- * @apiSuccess (Response Fields) {String} adConfig.postRoll.adserverId The postRoll ad configuration ad server id (single ad config)
+ * @apiSuccess (Response Fields) {String} adConfig.postRoll.adServerId The postRoll ad configuration ad server id (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.adserverName The postRoll ad configuration ad server name (single ad config)
  * @apiSuccess (Response Fields) {String} adConfig.postRoll.adPosition The postRoll ad configuration ad position (single ad config)
  *
@@ -413,7 +415,7 @@
  *            "postRoll": {
  *            "id": "b04116aa-5656-45e3-adc3-c2eda4c6127e",
  *            "name": "prenewUpdated",
- *            "adserverId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
+ *            "adServerId": "34b353d8-f7d5-4fa1-9dea-49183236df8d",
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "postRoll"
  *            }
