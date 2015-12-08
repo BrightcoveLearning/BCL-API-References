@@ -1,8 +1,8 @@
 // get applications
 
 /**
- * @api {get} /domains/:domainId/applications Get Applications
- * @apiName Get Applications
+ * @api {get} /domains/:domainId/applications Get All Applications
+ * @apiName Get All Applications
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
@@ -52,11 +52,11 @@
  *
  */
 
-// get application
+// get application details
 
 /**
- * @api {get} /domains/:domainId/applications/:applicationId Get Application
- * @apiName Get Application
+ * @api {get} /domains/:domainId/applications/:applicationId Get Application Details
+ * @apiName Get Application Details
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
@@ -131,6 +131,54 @@
  *            "adServerName": "Fireworks waterfall",
  *            "adPosition": "dfp"
  *        }
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
+ *
+ */
+
+// create application
+
+/**
+ * @api {post} /domains/:domainId/applications/ Create Application
+ * @apiName Create Application
+ * @apiGroup Applications
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Updates the standard settings of the application
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Request Body Fields) {String} name The application name
+ * @apiParam (Request Body Fields) {Number} [preRollAdCount] The preRoll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in the slot. By default  this value is set to 0, but is required when using direct VAST tags.
+ * @apiParam (Request Body Fields) {Number} [midRollAdCount] The midRoll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in each slot. By default  this value is set to 0, but is required when using direct VAST tags.
+ * @apiParam (Request Body Fields) {Number} [postRollAdCount] The postRoll ad count. Only used for direct VAST campaigns. Its value will set the number of ads to be returned in the slot. By default  this value is set to 0, but is required when using direct VAST tags.
+ *
+ * @apiParamExample {json} Update Application Request Body Example:
+ *    {
+ *        "name":"New_Application",
+ *        "preRollAdCount":1,
+ *        "midRollAdCount":2,
+ *        "postRollAdCount":3
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id The application id
+ * @apiSuccess (Response Fields) {String} name The application name
+ * @apiSuccess (Response Fields) {String} domainId The domain id
+ * @apiSuccess (Response Fields) {Number} preRollAdCoung The preRoll ad count
+ * @apiSuccess (Response Fields) {Number} midRollAdCoung The midRoll ad count
+ * @apiSuccess (Response Fields) {Number} postRollAdCoung The postRoll ad count
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "id": "a0f7465b-6357-469f-98cc-3f9d8cb7987f",
+ *      "name": "New_Application",
+ *      "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
+ *      "preRollAdCount": 1,
+ *      "midRollAdCount": 2,
+ *      "postRollAdCount": 3
  *    }
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your api key is correct
@@ -292,7 +340,7 @@
  * @apiGroup Applications
  * @apiVersion 1.0.0
  *
- * @apiDescription Adds or Replaces the currently configured adConfigs. The input adConfig can be individual slots "pre-roll", "mid-roll", and/or "post-roll" for direct VAST campaigns OR a single "ad" campaign to indicate the ad decisioning server will determine the ads breaks (e.g. Freewheel SmartXML, DFP ad rules).
+ * @apiDescription Adds or replaces the currently configured adConfigs. The input adConfig can be individual slots "pre-roll", "mid-roll", and/or "post-roll" for direct VAST campaigns OR a single "ad" campaign to indicate the ad decisioning server will determine the ads breaks (e.g. Freewheel SmartXML, DFP ad rules).
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -308,7 +356,7 @@
  * @apiParam (Request Body Fields) {String} postRoll.name The name for the ad event
  * @apiParam (Request Body Fields) {String} postRoll.adserverId The ad server id
  * @apiParam (Request Body Fields) {Object} [ad] Only used for Freewheel SmartXML or DFP ad rules where ad slots are defined by the ad decisioning server. Can not be used with defined preRolls, midRolls, and/or postRolls
- * @apiParam (Request Body Fields) {String} ad.adPosition The ad position
+ * @apiParam (Request Body Fields) {String="smartxml","dfp"} ad.adPosition The ad position
  * @apiParam (Request Body Fields) {String} ad.adserverId The ad server id
  *
  * @apiParamExample {json} Add Ad Configuration Request Body Example:
@@ -326,8 +374,8 @@
  *    // Sample input for smartxml or dfp
  *    {
  *        "ad": {
- *            "name": "postRollUpdated",
- *            “adPosition”: “smartxml”,
+ *            "name": "Example adConfig Name",
+ *            "adPosition": "smartxml",
  *            "adserverId": "72b453a5-37b5-5fa1-6deb-2958363ade2"
  *        }
  *    }
