@@ -12,6 +12,12 @@
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalogId TThe id for the digital media catalog for your domain
+ * @apiParam (URL Parameters) {Number(1-100)} [pageSize] The number of items to return for the request
+ * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
+ * @apiParam (URL Parameters) {String} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String} [foreignKey] Filter to media items that have foreign key substring. E.g. foreignKey=foo could return media items with foreign key "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String="acs","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
  * @apiParamExample {Url} Get Media Items Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems

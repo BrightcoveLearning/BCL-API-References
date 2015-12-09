@@ -12,6 +12,11 @@
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalogId TThe id for the digital media catalog for your domain
+ * @apiParam (URL Parameters) {Number(1-100)} [pageSize] The number of items to return for the request
+ * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
+ * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String="acs","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
  * @apiParamExample {Url} Get Catalog List Example:
  *     https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs
