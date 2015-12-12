@@ -35,7 +35,7 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
  * @apiSuccess (Response Fields) {String} folder_id id for the folder the video belongs to
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
@@ -271,7 +271,7 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
@@ -399,7 +399,7 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
@@ -978,6 +978,7 @@
  * @apiParam (Request Body Fields) {String} [long_description] video long description
  * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
  * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
+ * @apiParam (Request Body Fields) {String="AD_SUPPORTED","FREE"} [economics="AD_SUPPORTED"] whether the video supports ads (used by the Smart Player, but not by the Brightcove Player)
  * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
  * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
@@ -1034,7 +1035,7 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
