@@ -2540,7 +2540,7 @@
  *
  * @apiParamExample {json} Add HLS Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.m3u8"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2621,7 +2621,7 @@
  *
  * @apiParamExample {json} Add HLS Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.m3u8"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2893,7 +2893,7 @@
  *
  * @apiParamExample {json} Add HDS Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.f4v"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2974,7 +2974,7 @@
  *
  * @apiParamExample {json} Add HDS Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.f4v"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3247,7 +3247,7 @@
  *
  * @apiParamExample {json} Add ISM Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ism"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3328,7 +3328,7 @@
  *
  * @apiParamExample {json} Add ISM Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ism"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3601,7 +3601,7 @@
  *
  * @apiParamExample {json} Add ISMC Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ismc"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3682,7 +3682,7 @@
  *
  * @apiParamExample {json} Add ISMC Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.ismc"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -3955,7 +3955,7 @@
  *
  * @apiParamExample {json} Add DASH Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.mpd"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -4036,7 +4036,7 @@
  *
  * @apiParamExample {json} Add DASH Manifest Request Data Example:
  *    {
- *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *        "remote_url": "http://learning-services-media.brightcove.com/avideo/hls/chickadee/chickadee.mpd"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id the asset id
