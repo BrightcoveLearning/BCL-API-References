@@ -15,8 +15,8 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} Thumbnail list Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/thumbnail
+ * @apiParamExample {Url} Rendition list Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/renditions
  *
  * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -121,99 +121,99 @@
  *
  */
 
- // get rendition
+// get rendition
 
- /**
-  * @api {get} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Get Rendition
-  * @apiName Get Rendition
-  * @apiGroup Remote_Assets
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Gets a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
-  *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-  * @apiParam (Path Parameters) {String} asset_id the asset id
-  *
-  *
-  * @apiParamExample {Url} Thumbnail Example:
-  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/thumbnail/77874616001
-  *
-  * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
-  * @apiSuccess (Response Fields) {String} id the asset id
-  * @apiSuccess (Response Fields) {Boolean} audio_only whether this is only an audio track
-  * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
-  * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
-  * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
-  * @apiSuccess (Response Fields) {Object} drm not applicable to remote assets
-  * @apiSuccess (Response Fields) {Number} encoding_rate average encoding_rate in kbps
-  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
-  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
-  * @apiSuccess (Response Fields) {String} name asset name
-  * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
-  * @apiSuccess (Response Fields) {String} remote_url the url for the asset
-  * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} type the type of the asset
-  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
-  * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
-  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
-  *
-  * @apiSuccessExample {json} Success Response:
-  *    HTTP/1.1 200 OK
-  *    {
-  *        "account_id": "57838016001",
-  *        "audio_only": false,
-  *        "cdn_origin_id": "",
-  *        "complete": true,
-  *        "controller_type": "DEFAULT",
-  *        "created_at": null,
-  *        "current_filename": "",
-  *        "drm": null,
-  *        "encoding_rate": 983000,
-  *        "frame_height": 360,
-  *        "frame_width": 640,
-  *        "hds": null,
-  *        "hls": null,
-  *        "id": "4665726463001",
-  *        "name": "RA - Great Blue Heron",
-  *        "progressive_download": false,
-  *        "reference_id": "",
-  *        "remote_stream_name": "",
-  *        "remote_url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",
-  *        "size": 3887659,
-  *        "type": "FULL_LENGTH",
-  *        "updated_at": "2015-12-18T18:02:33.808Z",
-  *        "uploaded_at": "2015-12-18T18:02:33.807Z",
-  *        "video_codec": "NONE",
-  *        "video_container": "UNKNOWN",
-  *        "video_duration": 31487
-  *    }
-  *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
-  *
-  * @apiErrorExample {json} 404 Error Response
-  *     HTTP/1.1 404 Not Found
-  *     [
-  *         {
-  *             "error_code": "RESOURCE_NOT_FOUND"
-  *         }
-  *     ]
-  *
-  *
-  */
+/**
+ * @api {get} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Get Rendition
+ * @apiName Get Rendition
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam (Path Parameters) {String} asset_id the asset id
+ *
+ *
+ * @apiParamExample {Url} Get Rendition Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/rendition/77874616001
+ *
+ * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only whether this is only an audio track
+ * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
+ * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
+ * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
+ * @apiSuccess (Response Fields) {Object} drm not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} encoding_rate average encoding_rate in kbps
+ * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
+ * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for the asset
+ * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "account_id": "57838016001",
+ *        "audio_only": false,
+ *        "cdn_origin_id": "",
+ *        "complete": true,
+ *        "controller_type": "DEFAULT",
+ *        "created_at": null,
+ *        "current_filename": "",
+ *        "drm": null,
+ *        "encoding_rate": 983000,
+ *        "frame_height": 360,
+ *        "frame_width": 640,
+ *        "hds": null,
+ *        "hls": null,
+ *        "id": "4665726463001",
+ *        "name": "RA - Great Blue Heron",
+ *        "progressive_download": false,
+ *        "reference_id": "",
+ *        "remote_stream_name": "",
+ *        "remote_url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",
+ *        "size": 3887659,
+ *        "type": "FULL_LENGTH",
+ *        "updated_at": "2015-12-18T18:02:33.808Z",
+ *        "uploaded_at": "2015-12-18T18:02:33.807Z",
+ *        "video_codec": "NONE",
+ *        "video_container": "UNKNOWN",
+ *        "video_duration": 31487
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
 
 // post renditions
 
@@ -436,198 +436,238 @@
  *
  */
 
- // get digital masters
+// delete rendition
 
- /**
-  * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master Get Renditions List
-  * @apiName Get Renditions List
-  * @apiGroup Remote_Assets
-  * @apiVersion 1.0.0
-  *
-  * @apiDescription Gets a list of digital masters for a remote asset. Note that there is only one digital master per video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
-  *
-  * @apiHeader {String} Content-Type Content-Type: application/json
-  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
-  *
-  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-  *
-  *
-  * @apiParamExample {Url} Thumbnail list Example:
-  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/thumbnail
-  *
-  * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
-  * @apiSuccess (Response Fields) {String} id the asset id
-  * @apiSuccess (Response Fields) {Boolean} audio_only whether this is only an audio track
-  * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
-  * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
-  * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
-  * @apiSuccess (Response Fields) {Object} drm not applicable to remote assets
-  * @apiSuccess (Response Fields) {Number} encoding_rate average encoding_rate in kbps
-  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
-  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
-  * @apiSuccess (Response Fields) {String} name asset name
-  * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
-  * @apiSuccess (Response Fields) {String} remote_url the url for the asset
-  * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
-  * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-  * @apiSuccess (Response Fields) {String} type the type of the asset
-  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
-  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
-  * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
-  * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
-  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
-  *
-  * @apiSuccessExample {json} Success Response:
-  *    HTTP/1.1 200 OK
-  *    {
-  *        "account_id": "57838016001",
-  *        "audio_only": false,
-  *        "cdn_origin_id": "",
-  *        "complete": true,
-  *        "controller_type": "DEFAULT",
-  *        "created_at": null,
-  *        "current_filename": "",
-  *        "drm": null,
-  *        "encoding_rate": 983000,
-  *        "frame_height": 360,
-  *        "frame_width": 640,
-  *        "hds": null,
-  *        "hls": null,
-  *        "id": "4665726465001",
-  *        "name": "RA - Great Blue Heron",
-  *        "progressive_download": false,
-  *        "reference_id": "",
-  *        "remote_stream_name": "",
-  *        "remote_url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",
-  *        "size": 3887659,
-  *        "type": "DIGITAL_MASTER",
-  *        "updated_at": "2015-12-19T15:46:44.234Z",
-  *        "uploaded_at": "2015-12-19T15:46:44.230Z",
-  *        "video_codec": "NONE",
-  *        "video_container": "UNKNOWN",
-  *        "video_duration": 31487
-  *    }
-  *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
-  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
-  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
-  *
-  * @apiErrorExample {json} 404 Error Response
-  *     HTTP/1.1 404 Not Found
-  *     [
-  *         {
-  *             "error_code": "RESOURCE_NOT_FOUND"
-  *         }
-  *     ]
-  *
-  *
-  */
+/**
+ * @api {delete} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Delete Rendition
+ * @apiName Delete Rendition
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Deletes a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam (Path Parameters) {String} asset_id the asset id
+ *
+ *
+ * @apiParamExample {Url} Delete Rendition Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/rendition/77874616001
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 204 NO CONTENT
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
 
-  // get digital master
+// get digital masters
+/**
+ * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master Get Digital Master List
+ * @apiName Get Digital Master List
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a list of digital masters for a remote asset. Note that there is only one digital master per video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ *
+ *
+ * @apiParamExample {Url} Digital Master list Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/digital_master
+ *
+ * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only whether this is only an audio track
+ * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
+ * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
+ * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
+ * @apiSuccess (Response Fields) {Object} drm not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} encoding_rate average encoding_rate in kbps
+ * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
+ * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for the asset
+ * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "account_id": "57838016001",
+ *        "audio_only": false,
+ *        "cdn_origin_id": "",
+ *        "complete": true,
+ *        "controller_type": "DEFAULT",
+ *        "created_at": null,
+ *        "current_filename": "",
+ *        "drm": null,
+ *        "encoding_rate": 983000,
+ *        "frame_height": 360,
+ *        "frame_width": 640,
+ *        "hds": null,
+ *        "hls": null,
+ *        "id": "4665726465001",
+ *        "name": "RA - Great Blue Heron",
+ *        "progressive_download": false,
+ *        "reference_id": "",
+ *        "remote_stream_name": "",
+ *        "remote_url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",
+ *        "size": 3887659,
+ *        "type": "DIGITAL_MASTER",
+ *        "updated_at": "2015-12-19T15:46:44.234Z",
+ *        "uploaded_at": "2015-12-19T15:46:44.230Z",
+ *        "video_codec": "NONE",
+ *        "video_container": "UNKNOWN",
+ *        "video_duration": 31487
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
 
-  /**
-   * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Get Rendition
-   * @apiName Get Rendition
-   * @apiGroup Remote_Assets
-   * @apiVersion 1.0.0
-   *
-   * @apiDescription Gets a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
-   *
-   * @apiHeader {String} Content-Type Content-Type: application/json
-   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
-   *
-   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
-   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
-   * @apiParam (Path Parameters) {String} asset_id the asset id
-   *
-   *
-   * @apiParamExample {Url} Thumbnail Example:
-   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/thumbnail/77874616001
-   *
-   * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
-   * @apiSuccess (Response Fields) {String} id the asset id
-   * @apiSuccess (Response Fields) {Boolean} audio_only whether this is only an audio track
-   * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
-   * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
-   * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
-   * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
-   * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
-   * @apiSuccess (Response Fields) {Object} drm not applicable to remote assets
-   * @apiSuccess (Response Fields) {Number} encoding_rate average encoding_rate in kbps
-   * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
-   * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
-   * @apiSuccess (Response Fields) {String} name asset name
-   * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
-   * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
-   * @apiSuccess (Response Fields) {String} remote_url the url for the asset
-   * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
-   * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
-   * @apiSuccess (Response Fields) {String} type the type of the asset
-   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
-   * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
-   * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
-   * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
-   * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
-   *
-   * @apiSuccessExample {json} Success Response:
-   *    HTTP/1.1 200 OK
-   *    {
-   *        "account_id": "57838016001",
-   *        "audio_only": false,
-   *        "cdn_origin_id": "",
-   *        "complete": true,
-   *        "controller_type": "DEFAULT",
-   *        "created_at": null,
-   *        "current_filename": "",
-   *        "drm": null,
-   *        "encoding_rate": 983000,
-   *        "frame_height": 360,
-   *        "frame_width": 640,
-   *        "hds": null,
-   *        "hls": null,
-   *        "id": "4665726465001",
-   *        "name": "RA - Great Blue Heron",
-   *        "progressive_download": false,
-   *        "reference_id": "",
-   *        "remote_stream_name": "",
-   *        "remote_url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",
-   *        "size": 3887659,
-   *        "type": "DIGITAL_MASTER",
-   *        "updated_at": "2015-12-19T15:46:44.234Z",
-   *        "uploaded_at": "2015-12-19T15:46:44.230Z",
-   *        "video_codec": "NONE",
-   *        "video_container": "UNKNOWN",
-   *        "video_duration": 31487
-   *    }
-   *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
-   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
-   * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
-   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
-   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
-   *
-   * @apiErrorExample {json} 404 Error Response
-   *     HTTP/1.1 404 Not Found
-   *     [
-   *         {
-   *             "error_code": "RESOURCE_NOT_FOUND"
-   *         }
-   *     ]
-   *
-   *
-   */
+// get digital master
+
+/**
+ * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Get Digital Master
+ * @apiName Get Digital Master
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam (Path Parameters) {String} asset_id the asset id
+ *
+ *
+ * @apiParamExample {Url} Get Digital Master Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/digital_master/77874616001
+ *
+ * @apiSuccess (Response Fields) {String} account_id the Video Cloud account id
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only whether this is only an audio track
+ * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
+ * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
+ * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
+ * @apiSuccess (Response Fields) {Object} drm not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} encoding_rate average encoding_rate in kbps
+ * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
+ * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for the asset
+ * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "account_id": "57838016001",
+ *        "audio_only": false,
+ *        "cdn_origin_id": "",
+ *        "complete": true,
+ *        "controller_type": "DEFAULT",
+ *        "created_at": null,
+ *        "current_filename": "",
+ *        "drm": null,
+ *        "encoding_rate": 983000,
+ *        "frame_height": 360,
+ *        "frame_width": 640,
+ *        "hds": null,
+ *        "hls": null,
+ *        "id": "4665726465001",
+ *        "name": "RA - Great Blue Heron",
+ *        "progressive_download": false,
+ *        "reference_id": "",
+ *        "remote_stream_name": "",
+ *        "remote_url": "http://learning-services-media.brightcove.com/videos/mp4/greatblueheron.mp4",
+ *        "size": 3887659,
+ *        "type": "DIGITAL_MASTER",
+ *        "updated_at": "2015-12-19T15:46:44.234Z",
+ *        "uploaded_at": "2015-12-19T15:46:44.230Z",
+ *        "video_codec": "NONE",
+ *        "video_container": "UNKNOWN",
+ *        "video_duration": 31487
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
 
  // post digital masters
 
  /**
-  * @api {post} /accounts/:account_id/videos/:video_id/assets/digital_master Add Rendition
-  * @apiName Add Rendition
+  * @api {post} /accounts/:account_id/videos/:video_id/assets/digital_master Add Digital Master
+  * @apiName Add Digital Master
   * @apiGroup Remote_Assets
   * @apiVersion 1.0.0
   *
@@ -736,8 +776,8 @@
  // patch digital masters
 
  /**
-  * @api {patch} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Update Rendition
-  * @apiName Update Rendition
+  * @api {patch} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Update Digital Master
+  * @apiName Update Digital Master
   * @apiGroup Remote_Assets
   * @apiVersion 1.0.0
   *
@@ -843,6 +883,50 @@
   *
   *
   */
+
+  // delete digital master
+
+  /**
+   * @api {delete} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Delete Digital Master
+   * @apiName Delete Digital Master
+   * @apiGroup Remote_Assets
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Deletes a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+   *
+   * @apiHeader {String} Content-Type Content-Type: application/json
+   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+   *
+   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam (Path Parameters) {String} asset_id the asset id
+   *
+   *
+   * @apiParamExample {Url} Delete Example:
+   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/digidigital_master/77874616001
+   *
+   *
+   * @apiSuccessExample {json} Success Response:
+   *    HTTP/1.1 204 NO CONTENT
+   *
+   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+   * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   *
+   * @apiErrorExample {json} 404 Error Response
+   *     HTTP/1.1 404 Not Found
+   *     [
+   *         {
+   *             "error_code": "RESOURCE_NOT_FOUND"
+   *         }
+   *     ]
+   *
+   *
+   */
+
+
 
  // get captions
 
@@ -1158,6 +1242,50 @@
   *
   */
 
+  // delete caption
+
+  /**
+   * @api {delete} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Delete Caption
+   * @apiName Delete Caption
+   * @apiGroup Remote_Assets
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Deletes a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+   *
+   * @apiHeader {String} Content-Type Content-Type: application/json
+   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+   *
+   * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+   * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+   * @apiParam (Path Parameters) {String} asset_id the asset id
+   *
+   *
+   * @apiParamExample {Url} Delete Caption Example:
+   *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/caption/77874616001
+   *
+   *
+   * @apiSuccessExample {json} Success Response:
+   *    HTTP/1.1 204 NO CONTENT
+   *
+   * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+   * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   *
+   * @apiErrorExample {json} 404 Error Response
+   *     HTTP/1.1 404 Not Found
+   *     [
+   *         {
+   *             "error_code": "RESOURCE_NOT_FOUND"
+   *         }
+   *     ]
+   *
+   *
+   */
+
+
+
   // get posters
 
   /**
@@ -1397,7 +1525,7 @@
    *
    */
 
-  // patch posters
+  // patch poster
 
   /**
    * @api {patch} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Update Posters
@@ -1478,6 +1606,49 @@
    *     ]
    *
    */
+
+   // delete poster
+
+   /**
+    * @api {delete} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Delete Poster
+    * @apiName Delete Poster
+    * @apiGroup Remote_Assets
+    * @apiVersion 1.0.0
+    *
+    * @apiDescription Deletes a poster file for a remote asset. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+    *
+    * @apiHeader {String} Content-Type Content-Type: application/json
+    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+    *
+    * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+    * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+    * @apiParam (Path Parameters) {String} asset_id the asset id
+    *
+    *
+    * @apiParamExample {Url} Delete Poster Example:
+    *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/poster/77874616001
+    *
+    *
+    * @apiSuccessExample {json} Success Response:
+    *    HTTP/1.1 204 NO CONTENT
+    *
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+    * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+    * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+    *
+    * @apiErrorExample {json} 404 Error Response
+    *     HTTP/1.1 404 Not Found
+    *     [
+    *         {
+    *             "error_code": "RESOURCE_NOT_FOUND"
+    *         }
+    *     ]
+    *
+    *
+    */
+
 
 // get thumbnails
 
@@ -1800,6 +1971,49 @@
  *
  */
 
+ // delete thumbnail
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Delete Thumbnail
+  * @apiName Delete Thumbnail
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes a thumbnail file for a remote asset. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  * @apiParam (Path Parameters) {String} asset_id the asset id
+  *
+  *
+  * @apiParamExample {Url} Delete Thumbnail Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/thumbnail/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
+
 // get text_tracks
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks Get Text Tracks List
@@ -1876,7 +2090,9 @@
  *
  *
  */
+
 // get text_track
+
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Get Text Track
  * @apiName Get Text Track
@@ -1950,7 +2166,9 @@
  *
  *
  */
+
 // post text_trackss
+
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/text_tracks Add Text Tracks
  * @apiName Add Text Tracks
@@ -2106,7 +2324,51 @@
  *     ]
  *
  */
+
+ // delete text_track
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Delete Text Track
+  * @apiName Delete Text Track
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes a text_track file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete Text Track Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/text_tracks/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
+
 // get hls_manifest
+
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hls_manifest Get HLS Manifest List
  * @apiName Get HLS Manifest List
@@ -2179,8 +2441,10 @@
  *     ]
  *
  *
- *
-// get hls_manifes
+ */
+
+// get hls_manifest
+
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Get HLS Manifest
  * @apiName Get HLS Manifest
@@ -2196,7 +2460,7 @@
  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
  *
  *
- * @apiParamExample {Url} HLS Manifest list Example:
+ * @apiParamExample {Url} HLS Manifest Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/hls_manifest/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
@@ -2253,8 +2517,10 @@
  *     ]
  *
  *
- *
+ */
+
 // post hls_manifest
+
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/hls_manifest Add HLS Manifest
  * @apiName Add HLS Manifest
@@ -2331,8 +2597,10 @@
  *         }
  *     ]
  *
- *
+ */
+
 // patch hls_manifest
+
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Update HLS Manifest
  * @apiName Update HLS Manifest
@@ -2410,6 +2678,47 @@
  *     ]
  *
  */
+
+ // delete hls_manifest
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Delete HLS Manifest
+  * @apiName Delete HLS Manifest
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes an hls_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete HLS Manifest Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/hls_manifest/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  *
 
 // get hds_manifests
 
@@ -2723,6 +3032,48 @@
  *
  */
 
+ // delete hds_manifest
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Delete HDS Manifest
+  * @apiName Delete HDS Manifest
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes an hds_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete HDS Manifest list Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/hds_manifest/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
+
 // get ism_manifests
 
 /**
@@ -2954,6 +3305,7 @@
  *     ]
  *
  */
+
 // patch ism_manifests
 
 /**
@@ -3033,6 +3385,49 @@
  *     ]
  *
  */
+
+ // delete ism_manifest
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Delete ISM Manifest
+  * @apiName Get ISM Manifest
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes an ism_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete ISM Manifest list Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/ism_manifest/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
+
  // get ismc_manifests
 
 /**
@@ -3345,6 +3740,48 @@
  *
  */
 
+ // delete ismc_manifest
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Delete ISMC Manifest
+  * @apiName Delete ISMC Manifest
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes an ismc_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete ISMC Manifest list Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/ismc_manifest/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */
+
+
 // get dash_manifests
 
 /**
@@ -3576,7 +4013,9 @@
  *     ]
  *
  */
+
 // patch dash_manifests
+
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Update DASH Manifest
  * @apiName Update DASH Manifest
@@ -3654,3 +4093,44 @@
  *     ]
  *
  */
+
+ // delete dash_manifest
+
+ /**
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Delete DASH Manifest
+  * @apiName Delete DASH Manifest
+  * @apiGroup Remote_Assets
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Deletes an dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+  *
+  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+  * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+  *
+  *
+  * @apiParamExample {Url} Delete DASH Manifest list Example:
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/dash_manifest/77874616001
+  *
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 204 NO CONTENT
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 404 Error Response
+  *     HTTP/1.1 404 Not Found
+  *     [
+  *         {
+  *             "error_code": "RESOURCE_NOT_FOUND"
+  *         }
+  *     ]
+  *
+  *
+  */

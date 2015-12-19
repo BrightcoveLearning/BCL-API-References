@@ -26,6 +26,17 @@
         "Create_Playlist",
         "Update_Playlist",
         "Delete_Playlist",
+        "Remote_Assets",
+        "Get_Renditions_List",
+        "Get_Rendition",
+        "Add Rendition",
+        "Update_Rendition",
+        "Delete_Rendition"
+        "Get_Digital_Master_List",
+        "Get_Digital_Master",
+        "Add_Digital_Master",
+        "Update_Digital_Master",
+        "Delete_Digital_Master"
         "Custom_Fields",
         "Folders",
         "Get_Folders",
