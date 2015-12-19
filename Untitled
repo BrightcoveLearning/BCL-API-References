@@ -1,0 +1,237 @@
+// get text_tracks
+
+/**
+ * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks Get Text Tracks List
+ * @apiName Get Text Tracks List
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Gets a list of text_tracks files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ *
+ *
+ * @apiParamExample {Url} Text Tracks list Example:
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/text_tracks
+ *
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to text_trackss
+ * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
+ * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for the asset
+ * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    [
+ *        {
+ *            "account_id": null,
+ *            "audio_only": false,
+ *            "cdn_origin_id": "",
+ *            "complete": true,
+ *            "controller_type": "",
+ *            "created_at": null,
+ *            "current_filename": "",
+ *            "id": "0d664950-7efd-43b5-bba4-a9dd0d8c4a1b",
+ *            "name": "",
+ *            "progressive_download": false,
+ *            "reference_id": null,
+ *            "remote_stream_name": null,
+ *            "remote_url": null,
+ *            "size": null,
+ *            "type": "TEXT_TRACK",
+ *            "updated_at": "2015-12-18T15:11:18.990Z",
+ *            "uploaded_at": "2015-12-18T15:11:18.990Z"
+ *        }
+ *    ]
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ *
+ */
+
+// post text_trackss
+
+/**
+ * @api {post} /accounts/:account_id/videos/:video_id/assets/text_tracks Add Text Tracks
+ * @apiName Add Text Tracks
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Adds a text_tracks file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ *
+ * @apiParam (Request Body Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} remote_url the url for the asset
+ *
+ * @apiParamExample {json} Add Text Tracks Request Data Example:
+ *    {
+ *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to text_trackss
+ * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
+ * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for the asset
+ * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "account_id": null,
+ *        "audio_only": false,
+ *        "cdn_origin_id": "",
+ *        "complete": true,
+ *        "controller_type": "",
+ *        "created_at": null,
+ *        "current_filename": "",
+ *        "id": "0d664950-7efd-43b5-bba4-a9dd0d8c4a1b",
+ *        "name": "",
+ *        "progressive_download": false,
+ *        "reference_id": null,
+ *        "remote_stream_name": null,
+ *        "remote_url": null,
+ *        "size": null,
+ *        "type": "TEXT_TRACK",
+ *        "updated_at": "2015-12-18T15:11:18.990Z",
+ *        "uploaded_at": "2015-12-18T15:11:18.990Z"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 4xx) {json} CONFLICT 409: TEXT_TRACK already exists on Video
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
+
+// patch text_trackss
+
+/**
+ * @api {patch} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Update Text Tracks
+ * @apiName Update Text Tracks
+ * @apiGroup Remote_Assets
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Updates a text_tracks file for a remote asset (DFXP text_trackss for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ *
+ * @apiHeader {String} Content-Type Content-Type: application/json
+ * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
+ *
+ * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (Path Parameters) {String} video_id Video Cloud video ID. You can also use `ref:reference_id`
+ * @apiParam (Path Parameters) {String} asset_id id for the asset
+ *
+ * @apiParam (Request Body Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String} remote_url the url for the asset
+ *
+ * @apiParamExample {json} Add Text Tracks Request Data Example:
+ *    {
+ *        "remote_url": "http://learning-services-media.brightcove.com/captions/intro-vcs.vtt"
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id the asset id
+ * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to text_trackss
+ * @apiSuccess (Response Fields) {Boolean} complete not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} controller_type not applicable to remote assets
+ * @apiSuccess (Response Fields) {DateString} created_at not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} current_filename not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} cdn_origin_id not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} name asset name
+ * @apiSuccess (Response Fields) {Boolean} progressive_download not applicable to remote assets
+ * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
+ * @apiSuccess (Response Fields) {String} remote_url the url for the asset
+ * @apiSuccess (Response Fields) {String} remote_stream_name not applicable to remote assets
+ * @apiSuccess (Response Fields) {Number} size the size of the asset in bytes (integer)
+ * @apiSuccess (Response Fields) {String} type the type of the asset
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "account_id": null,
+ *        "audio_only": false,
+ *        "cdn_origin_id": "",
+ *        "complete": true,
+ *        "controller_type": "",
+ *        "created_at": null,
+ *        "current_filename": "",
+ *        "id": "0d664950-7efd-43b5-bba4-a9dd0d8c4a1b",
+ *        "name": "",
+ *        "progressive_download": false,
+ *        "reference_id": null,
+ *        "remote_stream_name": null,
+ *        "remote_url": null,
+ *        "size": null,
+ *        "type": "TEXT_TRACK",
+ *        "updated_at": "2015-12-18T15:11:18.990Z",
+ *        "uploaded_at": "2015-12-18T15:11:18.990Z"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
+ * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
+ * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 404 Error Response
+ *     HTTP/1.1 404 Not Found
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ */
