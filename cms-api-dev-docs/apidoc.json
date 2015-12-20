@@ -11,7 +11,7 @@
         "Get_Video_by_ID_or_Reference_ID",
         "Get_Video_Sources",
         "Get_Video_Images",
-        "Get_Digital_Master",
+        "Get_Digital_Master_Info",
         "Get_Playlists_for_Video",
         "Create_Video",
         "Update_Video",
@@ -92,6 +92,10 @@
         "Create_Folder",
         "Update_Folder_Name",
         "Delete_Folder",
-        "Notifications"
+        "Notifications",
+        "Get_Subscriptions_List",
+        "Create_Subscription",
+        "Get_Subscription",
+        "Delete_Subscription"
     ]
 }

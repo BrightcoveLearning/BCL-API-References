@@ -780,11 +780,11 @@
  *     ]
  */
 
-// get digital master
+// get digital master info
 
  /**
- * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master
- * @apiName Get Digital Master
+ * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master Info
+ * @apiName Get Digital Master Info
  * @apiGroup Video
  * @apiVersion 1.0.0
  *
