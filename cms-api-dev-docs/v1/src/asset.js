@@ -1,9 +1,19 @@
+/**
+* @apiDefine assetGroup Assets
+* Asset operations allow you to manage assets including renditions,
+* manifests, images, and text tracks. To ingest assets, you must
+* use the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) &mdash; the POST and PATCH operations shown here can be used to add and
+* update remote assets. GET operations will work for both ingested and remote
+* assets.
+*/
+
 // get renditions
 
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/renditions Get Rendition List
  * @apiName Get Rendition List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets
+ * @apiUse assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of renditions for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -126,7 +136,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Get Rendition
  * @apiName Get Rendition
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -220,7 +230,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/renditions Add Rendition
  * @apiName Add Rendition
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Add a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -330,7 +340,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Update Rendition
  * @apiName Update Rendition
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Update a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -441,7 +451,7 @@
 /**
  * @api {delete} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Delete Rendition
  * @apiName Delete Rendition
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Deletes a rendition for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -481,7 +491,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master Get Digital Master List
  * @apiName Get Digital Master List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of digital masters for a remote asset. Note that there is only one digital master per video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -574,7 +584,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Get Digital Master
  * @apiName Get Digital Master
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -668,7 +678,7 @@
  /**
   * @api {post} /accounts/:account_id/videos/:video_id/assets/digital_master Add Digital Master
   * @apiName Add Digital Master
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Add a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -778,7 +788,7 @@
  /**
   * @api {patch} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Update Digital Master
   * @apiName Update Digital Master
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Update a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -889,7 +899,7 @@
   /**
    * @api {delete} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Delete Digital Master
    * @apiName Delete Digital Master
-   * @apiGroup Remote_Assets
+   * @apiGroup Assets assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Deletes a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -933,7 +943,7 @@
  /**
   * @api {get} /accounts/:account_id/videos/:video_id/assets/caption Get Caption List
   * @apiName Get Caption List
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Gets a list of caption files for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1009,7 +1019,7 @@
  /**
   * @api {get} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Get Caption
   * @apiName Get Caption
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Gets a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1086,7 +1096,7 @@
  /**
   * @api {post} /accounts/:account_id/videos/:video_id/assets/caption Add Caption
   * @apiName Add Caption
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Adds a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1166,7 +1176,7 @@
  /**
   * @api {patch} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Update Caption
   * @apiName Update Caption
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Updates a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1247,7 +1257,7 @@
   /**
    * @api {delete} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Delete Caption
    * @apiName Delete Caption
-   * @apiGroup Remote_Assets
+   * @apiGroup Assets assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Deletes a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1291,7 +1301,7 @@
   /**
    * @api {get} /accounts/:account_id/videos/:video_id/assets/poster Get Poster List
    * @apiName Get Poster List
-   * @apiGroup Remote_Assets
+   * @apiGroup Assets assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Gets a list of poster files for a remote asset. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1369,7 +1379,7 @@
   /**
    * @api {get} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Get Poster
    * @apiName Get Poster
-   * @apiGroup Remote_Assets
+   * @apiGroup Assets assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Gets a poster file for a remote asset. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1448,7 +1458,7 @@
   /**
    * @api {post} /accounts/:account_id/videos/:video_id/assets/poster Add Poster
    * @apiName Add Poster
-   * @apiGroup Remote_Assets
+   * @apiGroup Assets assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Adds a poster file for a remote asset (DFXP posters for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1530,7 +1540,7 @@
   /**
    * @api {patch} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Update Poster
    * @apiName Update Poster
-   * @apiGroup Remote_Assets
+   * @apiGroup Assets assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Updates a poster file for a remote asset (DFXP posters for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1612,7 +1622,7 @@
    /**
     * @api {delete} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Delete Poster
     * @apiName Delete Poster
-    * @apiGroup Remote_Assets
+    * @apiGroup Assets assetGroup
     * @apiVersion 1.0.0
     *
     * @apiDescription Deletes a poster file for a remote asset. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1655,7 +1665,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/thumbnail Get Thumbnail List
  * @apiName Get Thumbnail List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of thumbnail files for a remote asset. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1733,7 +1743,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Get Thumbnail
  * @apiName Get Thumbnail
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a thumbnail file for a remote asset. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1812,7 +1822,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/thumbnail Add Thumbnail
  * @apiName Add Thumbnail
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a thumbnail file for a remote asset (DFXP thumbnails for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1894,7 +1904,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Update Thumbnail
  * @apiName Update Thumbnail
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a thumbnail file for a remote asset (DFXP thumbnails for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1976,7 +1986,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Delete Thumbnail
   * @apiName Delete Thumbnail
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes a thumbnail file for a remote asset. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2018,7 +2028,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks Get Text Track List
  * @apiName Get Text Track List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of text_tracks files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2096,7 +2106,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Get Text Track
  * @apiName Get Text Track
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a text_track file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2172,7 +2182,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/text_tracks Add Text Track
  * @apiName Add Text Track
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a text_tracks file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2250,7 +2260,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Update Text Track
  * @apiName Update Text Track
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a text_tracks file for a remote asset (DFXP text_trackss for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2330,7 +2340,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Delete Text Track
   * @apiName Delete Text Track
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes a text_track file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2372,7 +2382,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hls_manifest Get HLS Manifest List
  * @apiName Get HLS Manifest List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of hls_manifest files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2448,7 +2458,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Get HLS Manifest
  * @apiName Get HLS Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an hls_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2524,7 +2534,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/hls_manifest Add HLS Manifest
  * @apiName Add HLS Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a hls_manifest file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2604,7 +2614,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Update HLS Manifest
  * @apiName Update HLS Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a hls_manifest file for a remote asset (DFXP hls_manifests for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2684,7 +2694,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Delete HLS Manifest
   * @apiName Delete HLS Manifest
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an hls_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2725,7 +2735,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hds_manifest Get HDS Manifest List
  * @apiName Get HDS Manifest List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of hds_manifest files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2801,7 +2811,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Get HDS Manifest
  * @apiName Get HDS Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an hds_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2877,7 +2887,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/hds_manifest Add HDS Manifest
  * @apiName Add HDS Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a hds_manifest file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2957,7 +2967,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Update HDS Manifest
  * @apiName Update HDS Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a hds_manifest file for a remote asset (DFXP hds_manifests for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3037,7 +3047,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Delete HDS Manifest
   * @apiName Delete HDS Manifest
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an hds_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3079,7 +3089,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ism_manifest Get ISM Manifest List
  * @apiName Get ISM Manifest List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of ism_manifest files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3155,7 +3165,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Get ISM Manifest
  * @apiName Get ISM Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an ism_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3231,7 +3241,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/ism_manifest Add ISM Manifest
  * @apiName Add ISM Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a ism_manifest file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3311,7 +3321,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Update ISM Manifest
  * @apiName Update ISM Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a ism_manifest file for a remote asset (DFXP ism_manifests for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3391,7 +3401,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Delete ISM Manifest
   * @apiName Get ISM Manifest
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an ism_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3433,7 +3443,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ismc_manifest Get ISMC Manifest List
  * @apiName Get ISMC Manifest List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of ismc_manifest files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3509,7 +3519,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Get ISMC Manifest
  * @apiName Get ISMC Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an ismc_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3585,7 +3595,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/ismc_manifest Add ISMC Manifest
  * @apiName Add ISMC Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a ismc_manifest file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3665,7 +3675,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Update ISMC Manifest
  * @apiName Update ISMC Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a ismc_manifest file for a remote asset (DFXP ismc_manifests for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3745,7 +3755,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Delete ISMC Manifest
   * @apiName Delete ISMC Manifest
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an ismc_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3787,7 +3797,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifest Get DASH Manifest List
  * @apiName Get DASH Manifest List
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of dash_manifest files for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3863,7 +3873,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Get DASH Manifest
  * @apiName Get DASH Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3939,7 +3949,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/dash_manifest Add DASH Manifest
  * @apiName Add DASH Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a dash_manifest file for a remote asset. **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -4019,7 +4029,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Update DASH Manifest
  * @apiName Update DASH Manifest
- * @apiGroup Remote_Assets
+ * @apiGroup Assets assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a dash_manifest file for a remote asset (DFXP dash_manifests for the Smart Player). **Note that you can also add and update the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -4099,7 +4109,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Delete DASH Manifest
   * @apiName Delete DASH Manifest
-  * @apiGroup Remote_Assets
+  * @apiGroup Assets assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`

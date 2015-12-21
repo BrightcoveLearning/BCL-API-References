@@ -26,7 +26,7 @@
         "Create_Playlist",
         "Update_Playlist",
         "Delete_Playlist",
-        "Remote_Assets",
+        "Assets",
         "Get_Rendition_List",
         "Get_Rendition",
         "Add_Rendition",
