@@ -3,8 +3,7 @@
 * Asset operations allow you to manage assets including renditions,
 * manifests, images, and text tracks. To ingest assets, you must
 * use the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) &mdash; the POST and PATCH operations shown here can be used to add and
-* update remote assets. GET operations will work for both ingested and remote
-* assets.
+* update remote assets. GET operations will work for both ingested and remote assets.
 */
 
 // get renditions
@@ -12,7 +11,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/renditions Get Rendition List
  * @apiName Get Rendition List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of renditions for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -132,7 +131,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Get Rendition
  * @apiName Get Rendition
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a specified rendition for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -224,7 +223,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/renditions Add Rendition
  * @apiName Add Rendition
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Add a rendition to the given video. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -333,7 +332,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Update Rendition
  * @apiName Update Rendition
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Update the location for a remote rendition. Ingested renditions must be updated by retranscoding the video via [Dynamic Ingest](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) or Studio. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -443,7 +442,7 @@
 /**
  * @api {delete} /accounts/:account_id/videos/:video_id/assets/renditions/:asset_id Delete Rendition
  * @apiName Delete Rendition
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Deletes a rendition for the given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -483,7 +482,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master Get Digital Master List
  * @apiName Get Digital Master List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the digital master for a given video. Note that there is only one digital master per video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -574,7 +573,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Get Digital Master
  * @apiName Get Digital Master
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the digital master for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -666,7 +665,7 @@
  /**
   * @api {post} /accounts/:account_id/videos/:video_id/assets/digital_master Add Digital Master
   * @apiName Add Digital Master
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Add information about the digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -775,7 +774,7 @@
  /**
   * @api {patch} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Update Digital Master
   * @apiName Update Digital Master
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Update information about a digital master for a remote asset. For ingested videos, a new digital master must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -885,7 +884,7 @@
   /**
    * @api {delete} /accounts/:account_id/videos/:video_id/assets/digital_master/:asset_id Delete Digital Master
    * @apiName Delete Digital Master
-   * @apiGroup Assets
+   * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Deletes a digital master for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -929,7 +928,7 @@
  /**
   * @api {get} /accounts/:account_id/videos/:video_id/assets/caption Get Caption List
   * @apiName Get Caption List
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Gets the caption file for a given video (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1003,7 +1002,7 @@
  /**
   * @api {get} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Get Caption
   * @apiName Get Caption
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Gets a caption file for a given video (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1078,7 +1077,7 @@
  /**
   * @api {post} /accounts/:account_id/videos/:video_id/assets/caption Add Caption
   * @apiName Add Caption
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Adds a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1156,7 +1155,7 @@
  /**
   * @api {patch} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Update Caption
   * @apiName Update Caption
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Updates the location of a remote caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1236,7 +1235,7 @@
   /**
    * @api {delete} /accounts/:account_id/videos/:video_id/assets/caption/:asset_id Delete Caption
    * @apiName Delete Caption
-   * @apiGroup Assets
+   * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Deletes a caption file for a remote asset (DFXP captions for the Smart Player). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1280,7 +1279,7 @@
   /**
    * @api {get} /accounts/:account_id/videos/:video_id/assets/poster Get Poster List
    * @apiName Get Poster List
-   * @apiGroup Assets
+   * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Gets the poster file for a given video. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1356,7 +1355,7 @@
   /**
    * @api {get} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Get Poster
    * @apiName Get Poster
-   * @apiGroup Assets
+   * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Gets a poster file for a given video. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1433,7 +1432,7 @@
   /**
    * @api {post} /accounts/:account_id/videos/:video_id/assets/poster Add Poster
    * @apiName Add Poster
-   * @apiGroup Assets
+   * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Adds a poster file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1514,7 +1513,7 @@
   /**
    * @api {patch} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Update Poster
    * @apiName Update Poster
-   * @apiGroup Assets
+   * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Updates the location of a remote poster file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1595,7 +1594,7 @@
    /**
     * @api {delete} /accounts/:account_id/videos/:video_id/assets/poster/:asset_id Delete Poster
     * @apiName Delete Poster
-    * @apiGroup Assets
+    * @apiGroup assetGroup
     * @apiVersion 1.0.0
     *
     * @apiDescription Deletes a poster file for a remote asset. Note that you can only add one poster for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1638,7 +1637,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/thumbnail Get Thumbnail List
  * @apiName Get Thumbnail List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the thumbnail for a given video. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1714,7 +1713,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Get Thumbnail
  * @apiName Get Thumbnail
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a thumbnail file for a given video. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1791,7 +1790,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/thumbnail Add Thumbnail
  * @apiName Add Thumbnail
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a thumbnail file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1872,7 +1871,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Update Thumbnail
  * @apiName Update Thumbnail
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the location of a remote thumbnail file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1953,7 +1952,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/thumbnail/:asset_id Delete Thumbnail
   * @apiName Delete Thumbnail
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes a thumbnail file for a remote asset. Note that you can only add one thumbnail for a video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -1995,7 +1994,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks Get Text Track List
  * @apiName Get Text Track List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a list of text_tracks files for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2071,7 +2070,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Get Text Track
  * @apiName Get Text Track
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a text_track file for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2145,7 +2144,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/text_tracks Add Text Track
  * @apiName Add Text Track
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds a text_tracks file location for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note that you will need to make an additional [Update Video Request](#api-Video-Update_Video) to associate the text tracks with the video, so it's more efficient just to add the text tracks via [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2222,7 +2221,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Update Text Track
  * @apiName Update Text Track
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a text_tracks file for a remote asset. **Note that you must also update the text tracks via [Update Video](#api-Video-Update_Video) or just use [Update Video](#api-Video-Update_Video) and skip this operation.** **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2301,7 +2300,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/text_tracks/:asset_id Delete Text Track
   * @apiName Delete Text Track
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes a text_track file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2343,7 +2342,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hls_manifest Get HLS Manifest List
  * @apiName Get HLS Manifest List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the hls_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2417,7 +2416,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Get HLS Manifest
  * @apiName Get HLS Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an hls_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2491,7 +2490,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/hls_manifest Add HLS Manifest
  * @apiName Add HLS Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds the location of an hls_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2570,7 +2569,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Update HLS Manifest
  * @apiName Update HLS Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the location of a remote hls_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2649,7 +2648,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/hls_manifest/:asset_id Delete HLS Manifest
   * @apiName Delete HLS Manifest
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an hls_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2690,7 +2689,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hds_manifest Get HDS Manifest List
  * @apiName Get HDS Manifest List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the hds_manifest file for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2764,7 +2763,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Get HDS Manifest
  * @apiName Get HDS Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the hds_manifest file for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2838,7 +2837,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/hds_manifest Add HDS Manifest
  * @apiName Add HDS Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds the location of an hds_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2917,7 +2916,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Update HDS Manifest
  * @apiName Update HDS Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the location of a remote hds_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -2996,7 +2995,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/hds_manifest/:asset_id Delete HDS Manifest
   * @apiName Delete HDS Manifest
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an hds_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3038,7 +3037,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ism_manifest Get ISM Manifest List
  * @apiName Get ISM Manifest List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the ism_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3112,7 +3111,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Get ISM Manifest
  * @apiName Get ISM Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an ism_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3186,7 +3185,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/ism_manifest Add ISM Manifest
  * @apiName Add ISM Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds the location of an ism_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3265,7 +3264,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Update ISM Manifest
  * @apiName Update ISM Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the location of a remote ism_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3344,7 +3343,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/ism_manifest/:asset_id Delete ISM Manifest
   * @apiName Get ISM Manifest
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an ism_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3386,7 +3385,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ismc_manifest Get ISMC Manifest List
  * @apiName Get ISMC Manifest List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the ismc_manifest files for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3460,7 +3459,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Get ISMC Manifest
  * @apiName Get ISMC Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the ismc_manifest file for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3534,7 +3533,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/ismc_manifest Add ISMC Manifest
  * @apiName Add ISMC Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds the location of an ismc_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3613,7 +3612,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Update ISMC Manifest
  * @apiName Update ISMC Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the location of a remote ismc_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3692,7 +3691,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/ismc_manifest/:asset_id Delete ISMC Manifest
   * @apiName Delete ISMC Manifest
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an ismc_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3734,7 +3733,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifest Get DASH Manifest List
  * @apiName Get DASH Manifest List
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the dash_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3808,7 +3807,7 @@
 /**
  * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Get DASH Manifest
  * @apiName Get DASH Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the dash_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3882,7 +3881,7 @@
 /**
  * @api {post} /accounts/:account_id/videos/:video_id/assets/dash_manifest Add DASH Manifest
  * @apiName Add DASH Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Adds the location of a dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -3961,7 +3960,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Update DASH Manifest
  * @apiName Update DASH Manifest
- * @apiGroup Assets
+ * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the location of a remote dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
@@ -4040,7 +4039,7 @@
  /**
   * @api {delete} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Delete DASH Manifest
   * @apiName Delete DASH Manifest
-  * @apiGroup Assets
+  * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
   * @apiDescription Deletes an dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`

@@ -5,7 +5,7 @@
     "title": "CMS API Reference",
     "url" : "https://cms.api.brightcove.com/v1",
     "order": [
-        "Video",
+        "videoGroup",
         "Get_Videos",
         "Get_Video_Count",
         "Get_Video_by_ID_or_Reference_ID",
@@ -26,7 +26,7 @@
         "Create_Playlist",
         "Update_Playlist",
         "Delete_Playlist",
-        "Assets",
+        "assetGroup",
         "Get_Rendition_List",
         "Get_Rendition",
         "Add_Rendition",

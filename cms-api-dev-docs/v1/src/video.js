@@ -1,9 +1,17 @@
+/**
+ * @apiDefine videoGroup Video
+ * The video operations allow you to create, retrieve, update, and delete video objects in Video Cloud. (You cannot ingest any assets with the CMS API &mdash;
+ * to add actual asset files, including videos, use the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html).) You
+ * can also search for videos, get a count of all your videos or of search results, get the sources, images, and digital master for a video, get the playlists
+ * the video belongs to, and remove it from all playlists.
+ */
+
 // get videos
 
 /**
  * @api {get} /accounts/:account_id/videos Get Videos
  * @apiName Get Videos
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a page of video objects
@@ -168,7 +176,7 @@
 /**
  * @api {get} /accounts/:account_id/counts/videos Get Video Count
  * @apiName Get Video Count
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets count of videos for the account or a search
@@ -216,7 +224,7 @@
 /**
  * @api {post} /accounts/:account_id/videos Create Video
  * @apiName Create Video
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Create a new video object in the account.
@@ -369,7 +377,7 @@
  /**
  * @api {get} /accounts/:account_id/videos/:video_id Get Video by ID or Reference ID
  * @apiName Get Video by ID or Reference ID
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a video object
@@ -521,7 +529,7 @@
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/sources Get Video Sources
  * @apiName Get Video Sources
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an array of sources (renditions) for a video
@@ -703,7 +711,7 @@
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/images Get Video Images
  * @apiName Get Video Images
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the images for a video
@@ -785,7 +793,7 @@
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/digital_master Get Digital Master Info
  * @apiName Get Digital Master Info
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the stored digital master for a video, if any
@@ -881,7 +889,7 @@
  /**
  * @api {get} /accounts/:account_id/videos/:video_id/references Get Playlists for Video
  * @apiName Get Playlists for Video
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets an array of Manual (EXPLICIT) playlists that contain a video object
@@ -925,7 +933,7 @@
  /**
  * @api {delete} /accounts/:account_id/videos/:video_id/references Remove Video from all Playlists
  * @apiName Remove Video from all Playlists
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Removes the video from all EXPLICIT playlists
@@ -961,7 +969,7 @@
 /**
  * @api {patch} /accounts/:account_id/videos/:video_id Update Video
  * @apiName Update Video
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Update a video's metadata
@@ -1133,7 +1141,7 @@
  /**
  * @api {delete} /accounts/:account_id/videos/:video_id Delete Video
  * @apiName Delete Video
- * @apiGroup Video
+ * @apiGroup videoGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Deletes a video
