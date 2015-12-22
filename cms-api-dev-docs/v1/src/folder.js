@@ -1,9 +1,14 @@
+/**
+ * @apiDefine folderGroup Folders
+ * Folder operations allow you to create, retrieve, update, and delete folders, as well as add videos to or remove them from a folder.
+ */
+
 // get folders
 
 /**
  * @api {get} /accounts/:account_id/folders Get Folders
  * @apiName Get Folders
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets list of folders for the account
@@ -74,7 +79,7 @@
 /**
  * @api {get} /accounts/:account_id/folders/:folder_id Get Folder Information
  * @apiName Get FolderInformation
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets information about a folder
@@ -128,7 +133,7 @@
 /**
  * @api {get} /accounts/:account_id/folders/:folder_id/videos Get Videos in Folder
  * @apiName Get Videos in Folder
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets list of video objects in a folder
@@ -334,7 +339,7 @@
 /**
  * @api {post} /accounts/:account_id/folders Create Folder
  * @apiName Create Folder
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Create a new folder for the account
@@ -390,7 +395,7 @@
 /**
  * @api {patch} /accounts/:account_id/folders/:folder_id Update Folder Name
  * @apiName Update Folder Name
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Update the folder name
@@ -447,7 +452,7 @@
 /**
  * @api {put} /accounts/:account_id/folders/:folder_id/videos/:video_id Add Video to Folder
  * @apiName Add Video to Folder
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Add a video to a folder
@@ -494,7 +499,7 @@
 /**
  * @api {delete} /accounts/:account_id/folders/:folder_id/videos/:video_id Remove Video from Folder
  * @apiName Remove Video from Folder
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Remove a video from a folder
@@ -541,7 +546,7 @@
 /**
  * @api {delete} /accounts/:account_id/folders/:folder_id Delete Folder
  * @apiName Delete Folder
- * @apiGroup Folders
+ * @apiGroup folderGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Delete a folder
@@ -581,4 +586,3 @@
  *     ]
  *
  */
-

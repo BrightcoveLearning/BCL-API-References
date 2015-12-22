@@ -1,9 +1,14 @@
+/**
+ * @apiDefine notificationGroup Notifications
+ * Notification operations allow you to add subscriptions to video change events, as well as get all subscriptions and get or delete a specific subscription.
+ */
+
 // get Notification Subscriptions
 
 /**
  * @api {get} /accounts/:account_id/subscriptions Get Subscriptions List
  * @apiName Get Subscriptions List
- * @apiGroup Notifications
+ * @apiGroup notificationGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Get a list of all notification subscriptions for the account
@@ -55,7 +60,7 @@
 /**
  * @api {post} /accounts/:account_id/subscriptions Create Subscription
  * @apiName Create Subscription
- * @apiGroup Notifications
+ * @apiGroup notificationGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Establishes up to 10 endpoints that video change s should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will <strong>not</strong> trigger change events.
@@ -112,7 +117,7 @@
 /**
  * @api {get} /accounts/:account_id/subscriptions/:subscription_id Get Subscription
  * @apiName Get Subscription
- * @apiGroup Notifications
+ * @apiGroup notificationGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Get a notification subscription for the account
@@ -163,7 +168,7 @@
 /**
  * @api {delete} /accounts/:account_id/subscriptions/:subscription_id Delete Subscription
  * @apiName Delete Subscription
- * @apiGroup Notifications
+ * @apiGroup notificationGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Delete a notification subscription for the account

@@ -1,9 +1,15 @@
+/**
+ * @apiDefine playlistGroup Playlist
+ * Playlist operations allow you to create, retrieve, update, and delete playlists. You can also get a count of playlists and search for playlists by tags.
+ * There are also operations for getting the videos or the count of videos in the playlist, and for adding videos to and removing them from a playlist.
+ */
+
 // get playlists
 
 /**
  * @api {get} /accounts/:account_id/playlists Get Playlists
  * @apiName Get Playlists
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a page of playlist objects
@@ -93,7 +99,7 @@
 /**
  * @api {get} /accounts/:account_id/playlists/:playlist_id Get Playlist by ID
  * @apiName Get Playlist by ID
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a playlist object
@@ -179,7 +185,7 @@
 /**
  * @api {get} /accounts/:account_id/playlists/:playlist_id/videos Get Videos in Playlist
  * @apiName Get Videos in Playlist
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets the video objects for videos in a playlist
@@ -567,7 +573,7 @@
 /**
  * @api {get} /accounts/:account_id/counts/playlists Get Playlist Count
  * @apiName Get Playlist Count
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a count of playlists in the account
@@ -612,7 +618,7 @@
 /**
  * @api {get} /accounts/:account_id/counts/playlists/:playlist_id/videos Get Video Count in Playlist
  * @apiName Get Video Count in Playlist
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Gets a count of the videos in a playlist
@@ -656,7 +662,7 @@
 /**
  * @api {post} /accounts/:account_id/playlists Create Playlist
  * @apiName Create Playlist
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Creates a new playlist
@@ -749,7 +755,7 @@
 /**
  * @api {patch} /accounts/:account_id/playlists/:playlist_id Update Playlist
  * @apiName Update Playlist
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates a playlist
@@ -832,7 +838,7 @@
 /**
  * @api {delete} /accounts/:account_id/playlists/:playlist_id Delete Playlist
  * @apiName Delete Playlists
- * @apiGroup Playlist
+ * @apiGroup playlistGroup
  * @apiVersion 1.0.0
  *
  * @apiDescription Deletes a playlist
@@ -864,5 +870,3 @@
  *
  *
  */
-
-
