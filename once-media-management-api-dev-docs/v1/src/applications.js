@@ -145,7 +145,7 @@
 // create application
 
 /**
- * @api {post} /domains/:domainId/applications/ Create Application
+ * @api {post} /domains/:domainId/applications Create Application
  * @apiName Create Application
  * @apiGroup Applications
  * @apiVersion 1.0.0
