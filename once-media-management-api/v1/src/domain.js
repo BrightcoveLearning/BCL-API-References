@@ -45,7 +45,7 @@
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  *
  * @apiParamExample {Url} Get Domain Renditions Example:
- *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
+ *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
  * @apiSuccess (Response Fields) {String} results.id The id for the rendition
@@ -90,7 +90,7 @@
  * @apiParam (Path Parameters) {String} renditionId The id for the rendition
  *
  * @apiParamExample {Url} Get Rendition Settings Example:
- *     https://api.unicornmedia.com/media-management-api/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
+ *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
  * @apiSuccess (Response Fields) {String} id The id for the rendition
  * @apiSuccess (Response Fields) {String} name The name for the domain
