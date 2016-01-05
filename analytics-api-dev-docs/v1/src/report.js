@@ -6,7 +6,7 @@
  * @apiGroup Report
  * @apiVersion 1.0.0
  *
- * @apiDescription Get an analytics report on one or more dimensions
+ * @apiDescription Get an analytics report on one or more dimensions. Note that the fields returned in the response will vary according to the dimension(s) requested and the fields specified in the `fields` parameter
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -31,6 +31,7 @@
  * @apiSuccess (Response Fields) {String} account.name the name of the Video Cloud account id
  * @apiSuccess (Response Fields) {Number} item_count the total number of items matching the request
  * @apiSuccess (Response Fields) {Object[]} items array of analytics objects for the videos returned
+ * @apiSuccess (Response Fields) {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
  * @apiSuccess (Response Fields) {Number} items.engagement_score the calculated engagement score for the video
  * @apiSuccess (Response Fields) {Number} items.play_rate video views divided by video impressions
  * @apiSuccess (Response Fields) {String} items.video the video id
@@ -112,4 +113,3 @@
  *
  *
  */
-
