@@ -81,7 +81,6 @@
  *            {
  *                "id": "ac2e7f0b-a345-11e4-bfdb-005056837bc7"
  *            }
- *            }
  *        ]
  *    }
  *
@@ -121,7 +120,7 @@
  * @apiParamExample {json} Update Catalog Request Body Example:
  *    {
  *        "id": "59dec118-562b-4bc6-b39f-66d2920a913a",
- *        "name": "New-Catalog-Name",
+ *        "name": "New-Catalog-Name"
  *    }
  *
  * @apiSuccess (Response Fields) {String} id The id for the catalog
