@@ -310,7 +310,7 @@
 // add rendition to catalog
 
 /**
- * @api {post} /domains/:domainId/catalogs/:catalogId/renditions/:renditionId Add Catalog Rendition
+ * @api {post} /domains/:domainId/catalogs/:catalogId/renditions/ Add Catalog Rendition
  * @apiName Add Catalog Rendition
  * @apiGroup Catalog
  * @apiVersion 1.0.0
@@ -321,7 +321,6 @@
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalogId The catalog id
- * @apiParam (Path Parameters) {String} renditionId The rendition id
  * @apiParam (Request Body Fields) {String} id a rendition id to add
  *
  * @apiParamExample {json} Add Catalog Rendition Request Body Example:
