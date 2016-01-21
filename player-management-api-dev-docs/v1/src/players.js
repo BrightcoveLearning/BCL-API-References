@@ -543,7 +543,7 @@
 // Publish a player
 
 /**
- * @api {post} accounts/:account_id/players/:player_id/publish Publish a Player
+ * @api {post} /accounts/:account_id/players/:player_id/publish Publish a Player
  * @apiName Publish a Player
  * @apiGroup Players
  * @apiVersion 1.0.0
