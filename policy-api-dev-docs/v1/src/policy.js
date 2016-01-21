@@ -56,6 +56,8 @@
  *      }
  *
  * @apiSuccess (Response Fields) {String} key_string the policy key string
+ * @apiSuccess (Response Fields) {Object} key-data map of key data prescribing the policy
+ * @apiSuccess (Response Fields) {String} account-id the Video Cloud account id
  * @apiSuccess (Response Fields) {Object[]} policies array of policy maps
  * @apiSuccess (Response Fields) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
  * @apiSuccess (Response Fields) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
@@ -153,4 +155,3 @@
  *
  *
  */
-
