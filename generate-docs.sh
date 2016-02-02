@@ -75,12 +75,6 @@ apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../playback-api-dev-docs
 echo ${txtyel}generating docs for playback-api-dev-docs
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
-cd ../player-management-api
-echo ${txtyel}generating docs for player-management-api
-apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
-cd ../player-management-api-dev-docs
-echo ${txtyel}generating docs for player-management-api-dev-docs
-apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
 cd ../policy-api
 echo ${txtyel}generating docs for policy-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
