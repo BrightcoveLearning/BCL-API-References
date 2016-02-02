@@ -12,7 +12,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
  *
- * @apiParam (URL Parameters) {Number} account_ids one or more Video Cloud account IDs separated by commas
+ * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas
  * @apiParam (URL Parameters) {Number} [limit=10] number of videos to return
  * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
  * @apiParam (URL Parameters) {String} [sort=video_view] field to sort results by (for video dimension reports, valid sort fields include the video metadata fields `video.name`, `video.tags`, `video.reference_id` and `video.custom_fields` - see ([Fields and Sort](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#fieldsAndSorting)))
