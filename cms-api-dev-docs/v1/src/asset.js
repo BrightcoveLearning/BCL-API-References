@@ -245,6 +245,8 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [size] the size of the asset in bytes (integer)
  * @apiParam (Request Body Fields) {Number} [video_duration] duration in milliseconds
+ * @apiParam (Request Body Fields) {String} [video_codec] the video codec &mdash; support for video formats varies across browsers and devices; for the broadest support use `h264`
+ * @apiParam (Request Body Fields) {String} [video_container] the video container such as `MP4` or `MT2S`
  *
  * @apiParamExample {json} Add Rendition Request Body Example:
  *    {
@@ -356,6 +358,8 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [size] the size of the asset in bytes (integer)
  * @apiParam (Request Body Fields) {Number} [video_duration] duration in milliseconds
+ * @apiParam (Request Body Fields) {String} [video_codec] the video codec &mdash; support for video formats varies across browsers and devices; for the broadest support use `h264`
+ * @apiParam (Request Body Fields) {String} [video_container] the video container such as `MP4` or `MT2S`
  *
  * @apiParamExample {json} Add Rendition Request Body Example:
  *    {
