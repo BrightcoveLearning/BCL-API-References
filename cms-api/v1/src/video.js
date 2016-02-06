@@ -238,6 +238,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
  * @apiParam (Request Body Fields) {String} name video title
+ * @apiParam (Request Body Fields) {Boolean} [complete] include (with value `true`) __ONLY__ for remote assets
  * @apiParam (Request Body Fields) {String} [description] video short description
  * @apiParam (Request Body Fields) {String} [long_description] video long description
  * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
@@ -989,6 +990,7 @@
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
  *
  * @apiParam (Request Body Fields) {String} name video title
+ * @apiParam (Request Body Fields) {Boolean} [complete] include (with value `true`) __ONLY__ for remote assets
  * @apiParam (Request Body Fields) {String} [description] video short description
  * @apiParam (Request Body Fields) {String} [long_description] video long description
  * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
