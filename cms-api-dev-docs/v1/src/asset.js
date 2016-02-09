@@ -245,8 +245,8 @@
  * @apiParam (Request Body Fields) {String {1-250}} remote_url the url for a remote asset (not applicable to ingested assets)
  * @apiParam (Request Body Fields) {Number} [size] the size of the asset in bytes (integer)
  * @apiParam (Request Body Fields) {Number} [video_duration] duration in milliseconds
- * @apiParam (Request Body Fields) {String} [video_codec] the video codec &mdash; support for video formats varies across browsers and devices; for the broadest support use `h264`
- * @apiParam (Request Body Fields) {String} [video_container] the video container such as `MP4` or `MT2S`
+ * @apiParam (Request Body Fields) {String} video_codec the video codec &mdash; support for video formats -  varies across browsers and devices; for the broadest support use `h264` &mdash; __remote assets will not work properly without this field__
+ * @apiParam (Request Body Fields) {String} video_container the video container such as `MP4` or `MT2S` &mdash; __remote assets will not work properly without this field__
  *
  * @apiParamExample {json} Add Rendition Request Body Example:
  *    {
@@ -279,8 +279,8 @@
  * @apiSuccess (Response Fields) {String} type the type of the asset
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  * @apiSuccess (Response Fields) {DateString} uploaded_at when the asset was added to the video in Video Cloud
- * @apiSuccess (Response Fields) {String} video_codec not applicable to remote assets
- * @apiSuccess (Response Fields) {String} video_container not applicable to remote assets
+ * @apiParam (Request Body Fields) {String} video_codec the video codec &mdash; support for video formats -  varies across browsers and devices; for the broadest support use `h264` &mdash; __remote assets will not work properly without this field__
+ * @apiParam (Request Body Fields) {String} video_container the video container such as `MP4` or `MT2S` &mdash; __remote assets will not work properly without this field__
  * @apiSuccess (Response Fields) {Number} video_duration duration in milliseconds
  *
  * @apiSuccessExample {json} Success Response:
