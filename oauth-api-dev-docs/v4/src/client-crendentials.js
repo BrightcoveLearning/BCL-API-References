@@ -22,16 +22,19 @@
  * @apiParam (Request Body Fields) {String} description description for the credentials
  *
  * @apiParamExample {json} Create Credentials Example:
- *    {"type":"credential",
- *        "maximum_scope":[
- *        {"identity":{
- *            "type":"video-cloud-account",
- *            "account-id":57838016001},
- *            "operations":[
- *                "video-cloud/playlist/all",
- *                "video-cloud/video/all"
- *            ],
- *        "name":"SampleClient"
+ *    {
+ *    	"type": "credential",
+ *    	"maximum_scope": [{
+ *    		"identity": {
+ *    			"type": "video-cloud-account",
+ *    			"account-id": 57838016001
+ *    		},
+ *    		"operations": [
+ *    			"video-cloud/playlist/all",
+ *    			"video-cloud/video/all"
+ *    		]
+ *    	}],
+ *    	"name": "SampleClient"
  *    }
  *
  * @apiSuccess (Response Fields) {String} name credential name
@@ -426,4 +429,3 @@
  *
  *
  */
-
