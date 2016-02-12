@@ -86,7 +86,13 @@
  *          "max_frame_rate": 30,
  *          "width": 1280,
  *          "height": 720,
- *          "h264_profile": "main"
+ *          "h264_profile": "main",
+ *          "watermarks": [
+ *            {
+ *              "width": "20%",
+ *              "url": "http://learning-services-media.brightcove.com/images/bc_logo.png"
+ *            }
+ *          ]
  *        },
  *        {
  *          "media_type": "image",
@@ -840,4 +846,3 @@
  *
  *
  */
-
