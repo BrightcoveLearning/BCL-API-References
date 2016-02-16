@@ -31,6 +31,7 @@
  * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
  * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} poster URL for the default poster source image
@@ -84,6 +85,7 @@
  *      ],
  *      "cue_points": [],
  *      "custom_fields": {},
+ *      "economics": "AD_SUPPORTED",
  *      "account_id": "57838016001",
  *      "sources": [
  *        {
@@ -332,6 +334,7 @@
  * @apiSuccess (Response Fields) {Boolean} cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
  * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} poster URL for the default poster source image
@@ -385,6 +388,7 @@
  *      ],
  *      "cue_points": [],
  *      "custom_fields": {},
+ *      "economics": "AD_SUPPORTED",
  *      "account_id": "57838016001",
  *      "sources": [
  *        {
@@ -601,4 +605,3 @@
  *
  *
  */
-

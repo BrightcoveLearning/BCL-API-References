@@ -41,6 +41,7 @@
  * @apiSuccess (Response Fields) {Boolean} videos.cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} videos.description video short description
  * @apiSuccess (Response Fields) {Number} videos.duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} videos.economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object[]} videos.poster.sources array of poster source maps
  * @apiSuccess (Response Fields) {String} videos.poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} videos.poster URL for the default poster source image
@@ -81,6 +82,7 @@
  *        "videos": [
  *            {
  *                "description": "A small friendly bird...",
+ *                "economics": "AD_SUPPORTED",
  *                "poster_sources": [
  *                    {
  *                        "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
@@ -139,6 +141,7 @@
  *                "reference_id": "Bird_Chickadee.mp4_1425064251252",
  *                "long_description": null,
  *                "duration": 8240,
+ *                "economics": "AD_SUPPORTED",
  *                "published_at": "2015-02-27T19:10:55.425Z",
  *                "text_tracks": [
  *
@@ -214,6 +217,7 @@
  *                "reference_id": "1532562858001",
  *                "long_description": null,
  *                "duration": 27495,
+ *                "economics": "AD_SUPPORTED",
  *                "published_at": "2012-03-27T14:40:26.188Z",
  *                "text_tracks": [
  *
@@ -301,6 +305,7 @@
  * @apiSuccess (Response Fields) {Boolean} videos.cue_points.force-stop=false whether video is force-stopped at the cue point
  * @apiSuccess (Response Fields) {String} videos.description video short description
  * @apiSuccess (Response Fields) {Number} videos.duration video duration in milliseconds
+ * @apiSuccess (Response Fields) {String} videos.economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object[]} videos.poster.sources array of poster source maps
  * @apiSuccess (Response Fields) {String} videos.poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} videos.poster URL for the default poster source image
@@ -341,6 +346,7 @@
  *        "videos": [
  *            {
  *                "description": "A small friendly bird...",
+ *                "economics": "AD_SUPPORTED",
  *                "poster_sources": [
  *                    {
  *                        "src": "http://brightcove.vo.llnwd.net/v1/unsecured/media/57838016001/201502/1437/57838016001_4084480075001_Bird-Chickadee-vs.jpg?pubId=57838016001&videoId=4084164751001"
@@ -537,6 +543,7 @@
  *                "reference_id": "Bird_Chickadee.mp4_1425064251252",
  *                "long_description": null,
  *                "duration": 8240,
+ *                "economics": "AD_SUPPORTED",
  *                "published_at": "2015-02-27T19:10:55.425Z",
  *                "text_tracks": [
  *
@@ -681,6 +688,7 @@
  *                "reference_id": "1532562858001",
  *                "long_description": null,
  *                "duration": 27495,
+ *                "economics": "AD_SUPPORTED",
  *                "published_at": "2012-03-27T14:40:26.188Z",
  *                "text_tracks": [
  *
@@ -724,4 +732,3 @@
  *
  *
  */
-
