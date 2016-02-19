@@ -21,6 +21,7 @@
  * @apiParam (Request Body Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
  * @apiParam (Request Body Fields) {Number=1,2} [renditions.audio_channels] number of audio channels
  * @apiParam (Request Body Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
+ * @apiParam (Request Body Fields) {String="aac-lc", "he-aac", "he-aac-v2"} renditions.max_aac_profile max aaic profile - `aac-lc` is the recommended value
  * @apiParam (Request Body Fields) {Boolean} [renditions.constant_bitrate=false] whether to use constant bitrate for encoding
  * @apiParam (Request Body Fields) {Number} [renditions.crf] 1-51, not used by default. Overrides `quality`
  * @apiParam (Request Body Fields) {Number} [renditions.decoder_bitrate_cap] In kbps, the max bitrate fed to the decoder
