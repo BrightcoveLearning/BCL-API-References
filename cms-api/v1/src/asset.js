@@ -1887,7 +1887,7 @@
   * @apiGroup assetGroup
   * @apiVersion 1.0.0
   *
-  * @apiDescription Deletes a text_track file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+  * @apiDescription Deletes a text_track file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`. **Also note**: only text tracks added using the [Add Text Tracks](#api-assetGroup-Add_Text_Track) endpoint can be deleted.
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
