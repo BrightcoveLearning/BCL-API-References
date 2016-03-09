@@ -3336,12 +3336,12 @@
 // get dash_manifests
 
 /**
- * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifest Get DASH Manifest List
+ * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifests Get DASH Manifest List
  * @apiName Get DASH Manifest List
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets the dash_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Gets the dash_manifests for a given video. **Notes**: 1. you can multiple dash manifests with profiles; you can have only one dash manifest without a profile; 2. you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -3351,7 +3351,7 @@
  *
  *
  * @apiParamExample {Url} DASH Manifest list Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifest
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests
  *
  * @apiSuccess (Response Fields) {String} id the asset id
  * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to dash_manifests
@@ -3371,7 +3371,7 @@
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
- *    {
+ *    [{
  *        "account_id": "57838016001",
  *        "audio_only": false,
  *        "cdn_origin_id": "",
@@ -3388,7 +3388,7 @@
  *        "type": "MPD_MANIFEST",
  *        "updated_at": "2015-12-18T17:02:08.167Z",
  *        "uploaded_at": "2015-12-18T17:02:08.165Z"
- *    }
+ *    }]
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
@@ -3411,12 +3411,12 @@
 // get dash_manifest
 
 /**
- * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Get DASH Manifest
+ * @api {get} /accounts/:account_id/videos/:video_id/assets/dash_manifests/:asset_id Get DASH Manifest
  * @apiName Get DASH Manifest
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets the dash_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Gets a dash_manifest for a given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -3426,7 +3426,7 @@
  *
  *
  * @apiParamExample {Url} DASH Manifest list Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifest/77874616001
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests/77874616001
  *
  * @apiSuccess (Response Fields) {String} id the asset id
  * @apiSuccess (Response Fields) {Boolean} audio_only not applicable to dash_manifests
@@ -3486,12 +3486,12 @@
 // post dash_manifests
 
 /**
- * @api {post} /accounts/:account_id/videos/:video_id/assets/dash_manifest Add DASH Manifest
+ * @api {post} /accounts/:account_id/videos/:video_id/assets/dash_manifests Add DASH Manifest
  * @apiName Add DASH Manifest
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Adds the location of a dash_manifest file for a remote asset. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Adds the location of a dash_manifest file for a remote asset. **Notes**: 1. you can multiple dash manifests with profiles, but only one without a profile; 2. you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -3566,7 +3566,7 @@
 // patch dash_manifests
 
 /**
- * @api {patch} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Update DASH Manifest
+ * @api {patch} /accounts/:account_id/videos/:video_id/assets/dash_manifests/:asset_id Update DASH Manifest
  * @apiName Update DASH Manifest
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
@@ -3646,7 +3646,7 @@
  // delete dash_manifest
 
  /**
-  * @api {delete} /accounts/:account_id/videos/:video_id/assets/dash_manifest/:asset_id Delete DASH Manifest
+  * @api {delete} /accounts/:account_id/videos/:video_id/assets/dash_manifests/:asset_id Delete DASH Manifest
   * @apiName Delete DASH Manifest
   * @apiGroup assetGroup
   * @apiVersion 1.0.0
@@ -3661,7 +3661,7 @@
   *
   *
   * @apiParamExample {Url} Delete DASH Manifest list Example:
-  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifest/77874616001
+  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4077874616001/assets/dash_manifests/77874616001
   *
   *
  * @apiSuccessExample {json} Success Response:
