@@ -188,8 +188,8 @@
  *
  * @apiParamExample {json} Ingest Request Example:
  *    {
- *      "master": {"
- *          url": "http://host/master.mp4"
+ *      "master": {
+ *          "url": "http://host/master.mp4"
  *      },
  *      "profile": "high-resolution",
  *      "capture-images": "false",
@@ -245,4 +245,3 @@
  *         }
  *     ]
  */
-
