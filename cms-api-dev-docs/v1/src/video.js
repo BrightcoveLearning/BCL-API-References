@@ -31,7 +31,7 @@
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
@@ -270,7 +270,7 @@
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
@@ -398,7 +398,7 @@
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
@@ -815,7 +815,7 @@
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
  * @apiSuccess (Response Field) {Boolean} audio_only whether this assest has an audio track only
  * @apiSuccess (Response Field) {String} cdn_origin_id id on the origin CDN if any
- * @apiSuccess (Response Field) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Field) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Field) {String} controller_type video controller type
  * @apiSuccess (Response Field) {String} current_filename the file name
  * @apiSuccess (Response Field) {Object} drm DRM licensing information
@@ -1040,7 +1040,7 @@
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
