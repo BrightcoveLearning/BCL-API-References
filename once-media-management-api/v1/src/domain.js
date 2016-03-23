@@ -179,6 +179,13 @@
  * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters
  * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
  * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered
+ * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
+ * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
+ * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+ * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {String} id The publicationRuleId
+ * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -209,3 +216,236 @@
  * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
  *
  */
+
+
+// Create Domain Publication Rule
+
+/**
+ * @api {post} /domains/{domainId}/publicationRules Create Domain Publication Rule
+ * @apiName Create Domain Publication Rule
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](//docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ *
+ * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+ * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
+ * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} clientFilters.variableName The type of client variable being filtered
+ * @apiParam (Request Body Fields) {String} clientFilters.value A string against which requests will be filtered
+ * @apiParam (Request Body Fields) {String="Equals", "NotEquals", "In", "NotIn", "Contains", "NotContains", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith"} clientFilters.filterType The method of filtering against the value string
+ * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
+ * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+ * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ *
+ * @apiParamExample {json} Get Domain Publication Rule Request Body Example:
+ *    {
+ *        "startDate": 1436384287,
+ *        "endDate": 1952003487,
+ *        "clientFilters": [
+ *            {
+ *                "variableName": "IpAddress",
+ *                "value": "127.0.0.1",
+ *                "filterType": "Equals",
+ *                "isDenied": true
+ *            }
+ *        ],
+ *        "countryRules": [
+ *            {
+ *                "countryCode": "FI",
+ *                "isDenied": true
+ *            }
+ *        ]
+ *    }
+ *  https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
+ *
+ * @apiSuccess (Response Fields) {String} channel (internal use only)
+ * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+ * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters
+ * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
+ * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered
+ * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
+ * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
+ * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+ * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {String} id The publicationRuleId
+ * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+ *        "startDate": 1436384287,
+ *        "endDate": 1752003487,
+ *        "clientFilters": [
+ *            {
+ *                "variableName": "IpAddress",
+ *                "value": "127.0.0.1",
+ *                "filterType": "Equals",
+ *                "isDenied": true
+ *            }
+ *        ],
+ *        "countryRules": [
+ *            {
+ *                "countryCode": "FI",
+ *                "isDenied": true
+ *            }
+ *        ],
+ *        "id": "602de576-68c3-403a-87f6-56108c6b1d1c",
+ *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ *
+ */
+
+
+// Update Domain Publication Rule
+
+/**
+ * @api {put} /domains/{domainId}/publicationRules/:publicationRuleId Update Domain Publication Rule
+ * @apiName Update Domain Publication Rule
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](//docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+ *
+ * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+ * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
+ * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} clientFilters.variableName The type of client variable being filtered
+ * @apiParam (Request Body Fields) {String} clientFilters.value A string against which requests will be filtered
+ * @apiParam (Request Body Fields) {String="Equals", "NotEquals", "In", "NotIn", "Contains", "NotContains", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith"} clientFilters.filterType The method of filtering against the value string
+ * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
+ * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+ * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ *
+ * @apiParamExample {json} Get Domain Publication Rule Request Body Example:
+ *    {
+ *        "startDate": 1436384287,
+ *        "endDate": 1952003487,
+ *        "clientFilters": [
+ *            {
+ *                "variableName": "IpAddress",
+ *                "value": "127.0.0.1",
+ *                "filterType": "Equals",
+ *                "isDenied": true
+ *            }
+ *        ],
+ *        "countryRules": [
+ *            {
+ *                "countryCode": "FI",
+ *                "isDenied": true
+ *            }
+ *        ]
+ *    }
+ *  https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
+ *
+ * @apiSuccess (Response Fields) {String} channel (internal use only)
+ * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+ * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters
+ * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
+ * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered
+ * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
+ * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
+ * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+ * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {String} id The publicationRuleId
+ * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+ *        "startDate": 1436384287,
+ *        "endDate": 1752003487,
+ *        "clientFilters": [
+ *            {
+ *                "variableName": "IpAddress",
+ *                "value": "127.0.0.1",
+ *                "filterType": "Equals",
+ *                "isDenied": true
+ *            }
+ *        ],
+ *        "countryRules": [
+ *            {
+ *                "countryCode": "FI",
+ *                "isDenied": true
+ *            }
+ *        ],
+ *        "id": "602de576-68c3-403a-87f6-56108c6b1d1c",
+ *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ *
+ */
+
+ // Delete Domain Publication Rule
+
+ /**
+  * @api {delete} /domains/{domainId}/publicationRules/:publicationRuleId Delete Domain Publication Rule
+  * @apiName Delete Domain Publication Rule
+  * @apiGroup Domain
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](//docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+  *
+  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+  *
+  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+  *
+  * @apiParamExample {Url} Delete Domain Publication Rule Example:
+  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
+  *
+  * @apiSuccess (Response Fields) {String} id id of the publication rule that was deleted
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 200 OK
+  *    {
+  *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+  *        "startDate": 1436384287,
+  *        "endDate": 1752003487,
+  *        "clientFilters": [
+  *            {
+  *                "variableName": "IpAddress",
+  *                "value": "127.0.0.1",
+  *                "filterType": "Equals",
+  *                "isDenied": true
+  *            }
+  *        ],
+  *        "countryRules": [
+  *            {
+  *                "countryCode": "FI",
+  *                "isDenied": true
+  *            }
+  *        ],
+  *        "id": "602de576-68c3-403a-87f6-56108c6b1d1c",
+  *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
+  *    }
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+  *
+  */
