@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
@@ -48,9 +48,9 @@
  *        "totalResults": 2
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  *
@@ -68,7 +68,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Request Example:
@@ -86,9 +86,9 @@
  *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -105,7 +105,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Request Body Fields) {String} name The new catalog name
  * @apiParam (Request Body Fields) {Object[]} [renditions] An array of renditions to be assigned to the catalog. If omitted, catalog will be assigned default domain renditions.
  * @apiParam (Request Body Fields) {String} renditions.id Each renditionId to be assigned to the catalog
@@ -135,9 +135,9 @@
  *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -154,7 +154,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Request Body Fields) {String} id The catalogId to be updated
  * @apiParam (Request Body Fields) {String} name The new catalog name
  *
@@ -174,9 +174,9 @@
  *        "name": "ExampleCatalog001",
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -194,7 +194,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Renditions Example:
@@ -219,9 +219,9 @@
  *        ]
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -238,7 +238,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id
  *
@@ -265,9 +265,9 @@
  *        "codecsValue": "mp4a.40.2,avc1.42001f"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -285,7 +285,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id
  * @apiParam (Request Body Fields) {String} id a renditionId
@@ -313,9 +313,9 @@
  *      }
  *    ]
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -333,7 +333,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Request Body Fields) {String} id a rendition id to add
  *
@@ -350,9 +350,9 @@
  *      "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -370,7 +370,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id to remove from the catalog set
  *
@@ -385,9 +385,9 @@
  *      "id": "076ea1a2-a35b-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -405,7 +405,7 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+  * @apiParam (Path Parameters) {String} domainId The domainId
   * @apiParam (Path Parameters) {String} catalogId The catalog id
   *
   * @apiParamExample {Url} Get Catalog Publication Rules Example:
@@ -426,9 +426,9 @@
   *        "a9ff5331-9eb8-45b3-8fc5-2a00bfb84642"
   *    ]
   *
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
-  * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+  * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
   *
   *
   */
@@ -436,7 +436,7 @@
   // Get Catalog Publication Rule Details
 
   /**
-   * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationruleId Get Catalog Publication Rule Details
+   * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationRuleId Get Catalog Publication Rule Details
    * @apiName Get Catalog Publication Rule Details
    * @apiGroup Publication_Rules
    * @apiVersion 1.0.0
@@ -445,9 +445,9 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+   * @apiParam (Path Parameters) {String} domainId The domainId
    * @apiParam (Path Parameters) {String} catalogId The catalog id
-   * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
+   * @apiParam (Path Parameters) {String} publicationRuleId The publication rule id
    *
    * @apiParamExample {Url} Get Catalog Publication RulesExample:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -490,9 +490,9 @@
    *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba"
    *    }
    *
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
-   * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+   * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
    *
    *
    */
@@ -509,7 +509,7 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+    * @apiParam (Path Parameters) {String} domainId The domainId
     * @apiParam (Path Parameters) {String} catalogId The catalog id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
@@ -520,7 +520,7 @@
     * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
     * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
     * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
-    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiParam (Request Body Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
     *
     * @apiParamExample {json} Create Catalog Publication Rule Request Body Example:
     *    {
@@ -554,6 +554,7 @@
     * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
     * @apiSuccess (Response Fields) {String} id The publicationRuleId
     * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
     * @apiSuccessExample {json} Success Response:
     *    HTTP/1.1 200 OK
@@ -583,9 +584,9 @@
     *
     * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+    * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
     *
     *
     */
@@ -603,7 +604,7 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+    * @apiParam (Path Parameters) {String} domainId The domainId
     * @apiParam (Path Parameters) {String} catalogId The catalog id
     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
@@ -615,7 +616,7 @@
     * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
     * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
     * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
-    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiParam (Request Body Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
     *
     * @apiParamExample {json} Create Catalog Publication Rule Request Body Example:
     *    {
@@ -649,6 +650,7 @@
     * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
     * @apiSuccess (Response Fields) {String} id The publicationRuleId
     * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
     * @apiSuccessExample {json} Success Response:
     *    HTTP/1.1 200 OK
@@ -678,9 +680,9 @@
     *
     * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
-    * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+    * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
     *
     *
     */
@@ -697,7 +699,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} domainId The domainId
  * @apiParam (Path Parameters) {String} catalogId The catalogId
  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
  *
@@ -712,8 +714,8 @@
  *    "id": "8c9cdb48-90ac-450f-bc5d-0bb2cbe3a206"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  */

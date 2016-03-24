@@ -10,8 +10,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalogId TThe id for the digital media catalog for your domain
+ * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} catalogId TThe catalogId
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
@@ -65,9 +65,9 @@
  *        "totalResults": 2
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  *
@@ -76,7 +76,7 @@
 // Get MediaItem Details
 
 /**
- * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId Get MediaItem Details
+ * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Get MediaItem Details
  * @apiName Get MediaItem Details
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
@@ -85,9 +85,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalogId The id for the digital media catalog for your domain
- * @apiParam (Path Parameters) {String} mediaitemId The id for the  media item
+ * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} catalogId The catalogId
+ * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
  *
  * @apiParamExample {Url} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
@@ -102,7 +102,8 @@
  * @apiSuccess (Response Fields) {Number} description Text description of the video
  * @apiSuccess (Response Fields) {String[]} keywords Array of video keywords
  * @apiSuccess (Response Fields) {Object[]} Array of cue point objects
- * @apiSuccess (Response Fields) {String} cuePoints.unit Unit of time
+ * @apiSuccess (Response Fields) {String} cuePoints.unit Unit of time (currently only seconds are supported)
+
  * @apiSuccess (Response Fields) {String} cuePoints.valueIn Time of cue point
  * @apiSuccess (Response Fields) {Object[]} publicationRules Array of Publication Rules
  * @apiSuccess (Response Fields) {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
@@ -169,71 +170,64 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
 
-// update media item
+// Update MediaItem
 
 /**
- * @api {post} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId Update Media Item
- * @apiName Update Media Item
+ * @api {post} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Update MediaItem
+ * @apiName Update MediaItem
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
  *
- * @apiDescription Updates the media item metadata for the indicated mediaitemId. **WARNING**: Values defined **OR** omitted on update will overwrite any existing values unless otherwise specified, **including** publication rules! Please be aware of this when making mediaItem updates. If you wish to do an additive/inline change, please make an ingest request and omit the source file URL.
+ * @apiDescription Updates the mediaItem to reflect the request body. NOTE: All mediaItem fields must be present in your request, not just those you wish to update. Existing fields with missing values in the update request will be overwritten with null values.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} id The media item id (this value cannot be changed)
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalogId The id for the digital media catalog for your domain
- * @apiParam (Path Parameters) {String} mediaitemId The id for the media item
+ * @apiParam (Path Parameters) {String} id The mediaItemId (this value cannot be changed)
+ * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} catalogId The catalogId
+ *
+ * @apiParam (Request Body Fields) {String} id The mediaItemId
+ * @apiParam (Request Body Fields) {String} catalogId The catalogId
+ * @apiParam (Request Body Fields) {String} domainId The domainId
+ * @apiParam (Request Body Fields) {String} [foreignKey] The unique identifier for the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} foreignKey The unique identifier for the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} [description] A description of the asset
- * @apiParam (Request Body Fields) {String[]} [keywords] Array of keyword strings associated with the video
- * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
- * @apiParam (Request Body Fields) {String} metadata.key The key of an Extended Metadata key value pair (see the example below for key/value pairs)
- * @apiParam (Request Body Fields) {Object} media Container for the source URL of the asset being ingested
- * @apiParam (Request Body Fields) {Url} media.sourceURL The URL string to the source asset
- * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.channel The Channel Guid for the Publication Rule
- * @apiParam (Request Body Fields) {Number} publicationRules.startDate The start date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Number} publicationRules.endDate The end date for the Publication Rule (epoch time in seconds)
- * @apiParam (Request Body Fields) {Object[]} [publicationRules.clientFilters] An array of Client Filters for the Publication Rule
+ * @apiParam (Request Body Fields) {String} [description] Text description of the video
+ * @apiParam (Request Body Fields) {String[]} [keywords] Array of video keywords
+ * @apiParam (Request Body Fields) {Object[]} [cuePoints] An array of Cue Points objects
+ * @apiParam (Request Body Fields) {Number} cuePoints.valueIn Unit of time
+ * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit Time of cue point
+ * @apiParam (Request Body Fields) {Object[]} [publicationRules] An array of Publication Rules
+ * @apiParam (Request Body Fields) {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiParam (Request Body Fields) {Number} publicationRules.endDate Epoch time (in seconds) when publication rule expires
+ * @apiParam (Request Body Fields) {Object[]} [publicationRules.clientFilters] Array of client-based filters
  * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} publicationRules.clientFilters.variableName The variable name that the Client Filter will key off of
- * @apiParam (Request Body Fields) {String} publicationRules.clientFilters.value The value name that the Client Filter will key off of
- * @apiParam (Request Body Fields) {String="Equals","NotEquals","In","NotIn","Contains","NotContains","StartsWith","NotStartsWith","EndsWith","NotEndsWith"} publicationRules.clientFilters.filterType The type of filtering used to compare the value
- * @apiParam (Request Body Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiParam (Request Body Fields) {Object[]} [publicationRules.countryRules] An array of Country Rules for the asset
- * @apiParam (Request Body Fields) {String} publicationRules.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
- * @apiParam (Request Body Fields) {Boolean} publicationRules.countryRules.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiParam (Request Body Fields) {Object[]} [cuePoints] An array of Cue Points for the asset
- * @apiParam (Request Body Fields) {Number} cuePoints.valueIn The time in which the Cue Point will be inserted (integer)
- * @apiParam (Request Body Fields) {String="Seconds"} cuePoints.unit The type of unit the time value
- * @apiParam (Request Body Fields) {Object[]} [timedText] An array of Timed Text items for the asset
- * @apiParam (Request Body Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
- * @apiParam (Request Body Fields) {Url} timedText.media.sourceURL The URL string to the source asset
- * @apiParam (Request Body Fields) {String="Subtitle","Caption","Embedded"} timedText.timedTextType The type to categorize the timed text item
- * @apiParam (Request Body Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
- * @apiParam (Request Body Fields) {String} [timedText.alternateId] The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
- * @apiParam (Request Body Fields) {Object[]} [notifications] An array of Notifications to be fired during ingest
- * @apiParam (Request Body Fields) {Url} notifications.target The HTTP endpoint or sns target for your notification
- * @apiParam (Request Body Fields) {String="publish","transcode","ingest","update","error","any"} [notifications.notificationType] The type of notification to be associated with, defaults to publish
- * @apiParam (Request Body Fields) {String="POST","PUT","GET"} [notifications.notificationType="POST"] The HTTP verb to use when sending an HTTP notification, defaults to POST
+ * @apiParam (Request Body Fields) {String} publicationRules.clientFilters.value A string against which requests will be filtered
+ * @apiParam (Request Body Fields) {String="Equals","NotEquals","In","NotIn","Contains","NotContains","StartsWith","NotStartsWith","EndsWith","NotEndsWith"} publicationRules.clientFilters.filterType The method of filtering against the value string
+ * @apiParam (Request Body Fields) {Boolean} publicationRules.clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiParam (Request Body Fields) {Object[]} [publicationRules.countryRules] Array of country-based filters
+ * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+ * @apiParam (Request Body Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiParam (Request Body Fields) {Object} [metadata] A map of key value pairs for Extended Metadata
  *
  * @apiParamExample {json} Update Media Item Request Body Example:
  *    {
- *        "id": "efe70c1f-ebd2-4c5e-856a-a54a8e97415f",
- *        "catalogId": "991d5ec7-8eb2-41c9-850c-e5c3411bebd9",
- *        "domainId": "4eca7ac5-3954-416d-bb23-e65aa511b85a",
- *        "foreignKey": "Updated-fk",
- *        "title": "28-feb-02",
- *        "keywords": [ ],
+ *        "id": "fd2572c7-8d27-4813-af58-81b287f4e2e9",
+ *        "catalogId": "4321abcd-4321-dcba-fe65-567890fedcba",
+ *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba",
+ *        "foreignKey": "mediaItemExample01",
+ *        "title": "mediaItemExample001",
+ *        "description": "An example mediaItem for documentation",
+ *        "keywords": [
+ *            "Example",
+ *            "Test"
+ *        ],
  *        "cuePoints": [
  *            {
  *                "unit": "Seconds",
@@ -245,92 +239,113 @@
  *            }
  *        ],
  *        "publicationRules": [
- *            "6169df7e-d023-4daf-90ff-21e290f16162"
+ *            {
+ *                "startDate": 1436384287,
+ *                "endDate": 1752003487,
+ *                "clientFilters": [
+ *                    {
+ *                        "variableName": "IpAddress",
+ *                        "value": "127.0.0.1",
+ *                        "filterType": "Equals",
+ *                        "isDenied": true
+ *                    }
+ *                ],
+ *                "countryRules": [
+ *                    {
+ *                        "countryCode": "FI",
+ *                        "isDenied": true
+ *                    }
+ *                ]
+ *            }
  *        ],
  *        "metadata": {
- *            "JobID": "someJobId",
- *            "PassThruMetadata": "hello world",
- *            "foo": "bar",
- *            "hello": "world"
+ *            "JobId": "JobIdValue",
+ *            "AdvertisingId": "AdvertisingIdValue",
+ *            "OtherKey": "OtherValue"
  *        }
  *    }
  *
- * @apiSuccess (Response Fields) {String} catalogId The id for the catalog
- * @apiSuccess (Response Fields) {String} name The name for the domain
- * @apiSuccess (Response Fields) {String} domainId The domain id
- * @apiSuccess (Response Fields) {Boolean} isAd Whether the media item is an ad
- * @apiSuccess (Response Fields) {String} foreignKey The media item foreign key
- * @apiSuccess (Response Fields) {String} title The media item title
- * @apiSuccess (Response Fields) {Number} draftVersion The media item draft version
- * @apiSuccess (Response Fields) {Number} publishedVersion The media item published version
- * @apiSuccess (Response Fields) {String[]} keywords Array of keywords for the media item
- * @apiSuccess (Response Fields) {Object[]} cuePoints Array of cue point objects
- * @apiSuccess (Response Fields) {String} cuePoints.unit unit of the `time` value for the cue point
- * @apiSuccess (Response Fields) {String} cuePoints.valueIn time of the cue point in seconds
- * @apiSuccess (Response Fields) {Object[]} publicationRules Array of publication rule objects
- * @apiSuccess (Response Fields) {Number} publicationRules.startDate Date when publication rule becomes effective (epoch time in seconds)
- * @apiSuccess (Response Fields) {Number} publicationRules.endDate Date when publication rule expires (epoch time in seconds)
- * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters Array of client filter objects
- * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.variableName The variable name that the Client Filter will key off of
- * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.value The value name that the Client Filter will key off of
- * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.filterType The type of filtering used to compare the value
- * @apiSuccess (Response Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters.countryRules An array of Country Rules for the asset
- * @apiSuccess (Response Fields) {String} publicationRules.clientFilters.countryRules.countryCode The Country Code for the Country Rule (ISO 639 2-letter code, such as "CA")
- * @apiSuccess (Response Fields) {Boolean} publicationRules.clientFilters.isDenied Denotes whether a successful comparison of the Client Filter is denied or allowed
- * @apiSuccess (Response Fields) {Object[]} timedText An array of Timed Text items for the asset
- * @apiSuccess (Response Fields) {Object} timedText.media Container for the source URL of the timed text file being ingested
- * @apiSuccess (Response Fields) {Url} timedText.media.sourceURL The URL string to the source asset
- * @apiSuccess (Response Fields) {String} timedText.timedTextType The type to categorize the timed text item
- * @apiSuccess (Response Fields) {String[]} timedText.languages An array of languages contained in the timed text asset (ISO-639 language codes)
- * @apiSuccess (Response Fields) {String[]} timedText.alternateId The optional id to associate with the timed text item, used as a descriptor or to create uniqueness
- * @apiSuccess (Response Fields) {Object} metadata A map of key value pairs for Extended Metadata
- * @apiSuccess (Response Fields) {String} metadata.key The key of an Extended Metadata key value pair
- * @apiSuccess (Response Fields) {Object[]} notifications An array of Notifications to be fired during ingest
- * @apiSuccess (Response Fields) {Url} notifications.target The HTTP endpoint or sns target for your notification
- * @apiSuccess (Response Fields) {Url} notifications.notificationType The type of notification to be associated with, defaults to publish
- * @apiSuccess (Response Fields) {String} notifications.notificationType The HTTP verb to use when sending an HTTP notification, defaults to POST
+ * @apiSuccess (Response Fields) {String} id The mediaItemId
+ * @apiSuccess (Response Fields) {String} catalogId The mediaItem’s parent catalogId
+ * @apiSuccess (Response Fields) {String} domainId The mediaItem’s parent domainId
+ * @apiSuccess (Response Fields) {String} foreignKey The mediaItem’s foreignKey
+ * @apiSuccess (Response Fields) {String} title The mediaItem’s title
+ * @apiSuccess (Response Fields) {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (Response Fields) {Number} publishedVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
+ * @apiSuccess (Response Fields) {Number} description Text description of the video
+ * @apiSuccess (Response Fields) {String[]} keywords Array of video keywords
+ * @apiSuccess (Response Fields) {Object[]} Array of cue point objects
+ * @apiSuccess (Response Fields) {String} cuePoints.unit Unit of time (currently only seconds are supported)
+
+ * @apiSuccess (Response Fields) {String} cuePoints.valueIn Time of cue point
+ * @apiSuccess (Response Fields) {Object[]} publicationRules Array of Publication Rules
+ * @apiSuccess (Response Fields) {Number} publicationRules.startDate Epoch time (in seconds) when publication rule becomes effective
+ * @apiSuccess (Response Fields) {Number} publicationRules.endDate Epoch time (in seconds) when publication rule expires
+ * @apiSuccess (Response Fields) {Object[]} publicationRules.clientFilters Array of client-based filters
+ * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+ * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered,
+ * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+ * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted,
+ * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
+ * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+ * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+ * @apiSuccess (Response Fields) {Object[]} metadata Array of Extended Metadata key-value pairs
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
  *    {
- *        "id": "9ad78fdb-5f6b-4999-916e-e5461139daf3",
- *        "catalogId": "23ef978e-d5ca-434a-b8b4-d4c2185f018e",
- *        "domainId": "4236fac6-f0df-4f9a-b9c7-159cfb257618",
- *        "foreignKey": "Cascada",
- *        "title": "Cascada",
+ *        "id": "fd2572c7-8d27-4813-af58-81b287f4e2e9",
+ *        "catalogId": "4321abcd-4321-dcba-fe65-567890fedcba",
+ *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba",
+ *        "foreignKey": "mediaItemExample01",
+ *        "title": "mediaItemExample001",
  *        "draftVersion": 0,
  *        "publishedVersion": 0,
- *        "keywords": [],
+ *        "description": "An example mediaItem for documentation",
+ *        "keywords": [
+ *            "Different",
+ *            "Words"
+ *        ],
  *        "cuePoints": [
  *            {
  *                "unit": "Seconds",
- *                "valueIn": 362
+ *                "valueIn": 30
  *            },
  *            {
  *                "unit": "Seconds",
- *                "valueIn": 721
+ *                "valueIn": 12
  *            }
  *        ],
  *        "publicationRules": [
  *            {
- *                "startDate": 1417472170,
- *                "endDate": 1733091370,
- *                "clientFilters": [],
- *                "countryRules": []
+ *                "startDate": 1436384287,
+ *                "endDate": 1752003487,
+ *                "clientFilters": [
+ *                    {
+ *                        "variableName": "IpAddress",
+ *                        "value": "127.0.0.1",
+ *                        "filterType": "Equals",
+ *                        "isDenied": true
+ *                    }
+ *                ],
+ *                "countryRules": [
+ *                    {
+ *                        "countryCode": "UK",
+ *                        "isDenied": true
+ *                    }
+ *                ]
  *            }
  *        ],
  *        "metadata": {
- *            "JobID": "someJobId",
- *            "PassThruMetadata": "hello world",
- *            "foo": "bar",
- *            "hello": "world"
+ *            "OtherKey": "OtherValue",
+ *            "AdvertisingId": "AdvertisingIdValue",
+ *            "JobId": "JobIdValue"
  *        }
  *    }
- *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ *    *
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
@@ -338,7 +353,7 @@
 // delete media item
 
 /**
- * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaitemId Get Media Item
+ * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Get Media Item
  * @apiName Get Media Item
  * @apiGroup Media_Item
  * @apiVersion 1.0.0
@@ -347,14 +362,14 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} catalogId The id for the digital media catalog for your domain
- * @apiParam (Path Parameters) {String} mediaitemId The id for the  media item
+ * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} catalogId The catalogId
+ * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
  *
  * @apiParamExample {Url} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
- * @apiSuccess (Response Fields) {String} delete value will contain the media item id the message "scheduled for deletion"
+ * @apiSuccess (Response Fields) {String} delete value will contain the mediaItemId the message "scheduled for deletion"
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -362,9 +377,371 @@
  *      "delete": "MediaItem: 1eb36535-1105-440e-a722-381c9dcf504d scheduled for deletion"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
- * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
- * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+ * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
  *
  */
+
+ // Get All MediaItem Publication Rules
+
+ /**
+  * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules Get All MediaItem Publication Rules
+  * @apiName Get All MediaItem Publication Rules
+  * @apiGroup Publication_Rules
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Retrieves all publicationRuleIds assigned to a mediaItem.  Please review the [Content Restriction](/docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+  *
+  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+  *
+  * @apiParam (Path Parameters) {String} domainId The domainId
+  * @apiParam (Path Parameters) {String} catalogId The catalogId
+  * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+  *
+  * @apiParamExample {Url} Get Media Item Publication Rules Example:
+  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
+  *
+  * @apiSuccess (Response Fields) {String[]} publicationRuleIds A comma-separated array of publicationRuleIds assigned to the mediaItem
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 200 OK
+  *    [
+  *        "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5"
+  *    ]
+  *
+  * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+  *
+  *
+  */
+
+  // Get MediaItem Publication Rule Details
+
+  /**
+   * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Get MediaItem Publication Rule Details
+   * @apiName Get MediaItem Publication Rule Details
+   * @apiGroup Publication_Rules
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Retrieves configuration of a mediaItem-level publication rule.
+   *
+   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+   *
+   * @apiParam (Path Parameters) {String} domainId The domainId
+   * @apiParam (Path Parameters) {String} catalogId The catalogId
+   * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+   * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+   *
+   * @apiParamExample {Url} Get Media Item Publication Rule Example:
+   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
+   *
+   * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+   * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+   * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters
+   * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
+   * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered
+   * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
+   * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+   * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
+   * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+   * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+   * @apiSuccess (Response Fields) {String} id The publicationRuleId
+   * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+   * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
+   * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItemId
+   *
+   * @apiSuccessExample {json} Success Response:
+   *    HTTP/1.1 200 OK
+   *   {
+   *       "startDate": 1440720000,
+   *       "endDate": 1914105600,
+   *       "clientFilters": [
+   *           {
+   *               "variableName": "IpAddress",
+   *               "value": "127.0.0.1",
+   *               "filterType": "Equals",
+   *               "isDenied": true
+   *           }
+   *       ],
+   *       "countryRules": [
+   *           {
+   *               "countryCode": "FI",
+   *               "isDenied": true
+   *           }
+   *       ]
+   *       "id": "e4f3e3de-e580-42a7-9960-f43faccfbee5",
+   *       "domain": "1234abcd-1234-abcd-56ef-098765fedcba",
+   *       "catalog": "4321abcd-4321-dcba-fe65-567890fedcba",
+   *       "mediaitem": "09daf3a0-5efe-4048-a761-351137a23c6f"
+   *   }
+   *
+   *
+   * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+   *
+   *
+   */
+
+   // Create MediaItem Publication Rule
+
+   /**
+    * @api {post} domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules Create MediaItem Publication Rule
+    * @apiName Create MediaItem Publication Rule
+    * @apiGroup Publication_Rules
+    * @apiVersion 1.0.0
+    *
+    * @apiDescription Create a mediaItem publication rule.
+    *
+    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+    *
+    * @apiParam (Path Parameters) {String} domainId The domainId
+    * @apiParam (Path Parameters) {String} catalogId The catalogId
+    * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+    * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+    * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+    * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
+    * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} clientFilters.variableName The type of client variable being filtered
+    * @apiParam (Request Body Fields) {String} clientFilters.value A string against which requests will be filtered
+    * @apiParam (Request Body Fields) {String="Equals", "NotEquals", "In", "NotIn", "Contains", "NotContains", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith"} clientFilters.filterType The method of filtering against the value string
+    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
+    * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+    * @apiParam (Request Body Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    *
+    * @apiParamExample {json} Create Media Item Publication Rule Request Body Example:
+    *    {
+    *        "startDate": 1436384287,
+    *        "endDate": 1952003487,
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress",
+    *                "value": "127.0.0.1",
+    *                "filterType": "Equals",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI",
+    *                "isDenied": true
+    *            }
+    *        ]
+    *    }
+    *
+    * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
+    * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires,
+    * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters,
+    * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+    * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered,
+    * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+    * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
+    * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+    * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {String} id The publicationRuleId
+    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
+    * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItemId
+    *
+    * @apiSuccessExample {json} Success Response:
+    *    HTTP/1.1 200 OK
+    *    {
+    *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+    *        "startDate": 1436384287,
+    *        "endDate": 1952003487,
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress",
+    *                "value": "127.0.0.1",
+    *                "filterType": "Equals",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "id": "e4f3e3de-e580-42a7-9960-f43faccfbee5",
+    *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba",
+    *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba",
+    *        "mediaitem": "09daf3a0-5efe-4048-a761-351137a23c6f"
+    *    }
+    *
+    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+    * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+    *
+    *
+    */
+
+   // Update MediaItem Publication Rule
+
+   /**
+    * @api {put} domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Update MediaItem Publication Rule
+    * @apiName Update MediaItem Publication Rule
+    * @apiGroup Publication_Rules
+    * @apiVersion 1.0.0
+    *
+    * @apiDescription Update a mediaItem publication rule.
+    *
+    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+    *
+    * @apiParam (Path Parameters) {String} domainId The domainId
+    * @apiParam (Path Parameters) {String} catalogId The catalogId
+    * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+    * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+    * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+    * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
+    * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} clientFilters.variableName The type of client variable being filtered
+    * @apiParam (Request Body Fields) {String} clientFilters.value A string against which requests will be filtered
+    * @apiParam (Request Body Fields) {String="Equals", "NotEquals", "In", "NotIn", "Contains", "NotContains", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith"} clientFilters.filterType The method of filtering against the value string
+    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
+    * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+    * @apiParam (Request Body Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    *
+    * @apiParamExample {json} Update Media Item Publication Rule Request Body Example:
+    *    {
+    *        "startDate": 1436384287,
+    *        "endDate": 1952003487,
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress",
+    *                "value": "127.0.0.1",
+    *                "filterType": "Equals",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI",
+    *                "isDenied": true
+    *            }
+    *        ]
+    *    }
+    *
+    * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
+    * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires,
+    * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters,
+    * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+    * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered,
+    * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+    * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
+    * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+    * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {String} id The publicationRuleId
+    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
+    * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItemId
+    *
+    * @apiSuccessExample {json} Success Response:
+    *    HTTP/1.1 200 OK
+    *    {
+    *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+    *        "startDate": 1436384287,
+    *        "endDate": 1952003487,
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress",
+    *                "value": "127.0.0.1",
+    *                "filterType": "Equals",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "id": "e4f3e3de-e580-42a7-9960-f43faccfbee5",
+    *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba",
+    *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba",
+    *        "mediaitem": "09daf3a0-5efe-4048-a761-351137a23c6f"
+    *    }
+    *
+    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+    * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+    *
+    *
+    */
+
+    // Delete MediaItem Publication Rule
+
+    /**
+     * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Delete MediaItem Publication Rule
+     * @apiName Delete MediaItem Publication Rule
+     * @apiGroup Publication_Rules
+     * @apiVersion 1.0.0
+     *
+     * @apiDescription Deletes the specified mediaItem publication rule.
+     *
+     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+     *
+     * @apiParam (Path Parameters) {String} domainId The domainId
+     * @apiParam (Path Parameters) {String} catalogId The catalogId
+     * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+     *
+     * @apiParamExample {Url} Delete Media Item Publication Rule Example:
+     *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
+     *
+     * @apiSuccess (Response Fields) {String} id the publication rule id
+     *
+     * @apiSuccessExample {json} Success Response:
+     *    HTTP/1.1 200 OK
+     *    {
+     *        "id": "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5"
+     *    }
+     *
+     * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+     * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+     * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+     *
+     *
+     */
+
+
+    // Delete MediaItem
+
+    /**
+     * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Delete MediaItem
+     * @apiName Delete MediaItem
+     * @apiGroup Publication_Rules
+     * @apiVersion 1.0.0
+     *
+     * @apiDescription Deletes the specified mediaItem publication rule.
+     *
+     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+     *
+     * @apiParam (Path Parameters) {String} domainId The domainId
+     * @apiParam (Path Parameters) {String} catalogId The catalogId
+     * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+     *
+     * @apiParamExample {Url} Delete Media Item Publication Rule Example:
+     *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
+     *
+     * @apiSuccess (Response Fields) {String} id the publication rule id
+     *
+     * @apiSuccessExample {json} Success Response:
+     *    HTTP/1.1 200 OK
+     *    {
+     *        "id": "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5"
+     *    }
+     *
+     * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+     * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+     * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+     *
+     *
+     */

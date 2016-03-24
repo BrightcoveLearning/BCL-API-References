@@ -419,11 +419,11 @@
  *
  */
 
-// create media item publication rules
+// Create MediaItem Publication Rule
 
 /**
- * @api {post} domains/:domainId/catalog/:catalogId/mediaItems/:mediaitemId/publicationRules Create Media Item Publication Rule
- * @apiName Create Media Item Publication Rule
+ * @api {post} domains/:domainId/catalog/:catalogId/mediaItems/:mediaitemId/publicationRules Create MediaItem Publication Rule
+ * @apiName Create MediaItem Publication Rule
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
