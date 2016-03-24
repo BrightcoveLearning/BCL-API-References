@@ -1,4 +1,4 @@
-// get catalog list
+// Get All Catalogs
 
 /**
  * @api {get} /domains/:domainId/catalogs Get All Catalogs
@@ -281,14 +281,14 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Replaces the currently configured catalog transcode renditions with the set defined in the request body.
+ * @apiDescription Replace (overwrite) the specified catalog’s current rendition set, using an updated array in the request body. NOTE: This method will not add the specified rendition(s) to, nor will it remove renditions from, existing mediaitems in the specified catalog. Please contact Support if you also need renditions assigned to or removed from previously-ingested mediaItems in the catalog.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id
- * @apiParam (Request Body Fields) {String} id a rendition id
+ * @apiParam (Request Body Fields) {String} id a renditionId
  *
  * @apiParamExample {json} Replace Catalog Rendition Request Body Example:
  *    [
@@ -300,7 +300,7 @@
  *      }
  *    ]
  *
- * @apiSuccess (Response Fields) {String} id The id for a new rendition
+ * @apiSuccess (Response Fields) {String} Each renditionId to be assigned to catalog
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -329,7 +329,7 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Adds the selected rendition as indicated by the renditionId to the catalog.
+ * @apiDescription Add the specified new rendition to a catalog’s rendition set. New mediaItems ingested to the catalog will be assigned the specified rendition. NOTE: This method will not add the specified rendition to existing mediaItems in the catalog. Please contact Support if you also need new renditions assigned to previously-ingested mediaItems.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
@@ -342,7 +342,7 @@
  *      "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiSuccess (Response Fields) {String} id The id for the added rendition
+ * @apiSuccess (Response Fields) {String} id The new renditionId to be added to the catalog
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -366,18 +366,18 @@
  * @apiGroup Catalog
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes rendition as indicated by the renditionId from the catalog.
+ * @apiDescription Delete the specified rendition from a catalog’s rendition set. New mediaItems ingested to the catalog will no longer be assigned the specified rendition. NOTE: This method will not remove the specified rendition from existing mediaItems in the catalog. Please contact Support if you also need the specified rendition removed from previously-ingested mediaItems.
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
  * @apiParam (Path Parameters) {String} catalogId The catalog id
- * @apiParam (Path Parameters) {String} renditionId The rendition id to delete
+ * @apiParam (Path Parameters) {String} renditionId The rendition id to remove from the catalog set
  *
  * @apiParamExample {Url} Delete Catalog Rendition Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalog/62191781-a933-49d6-831f-83bdf51a26ac/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
- * @apiSuccess (Response Fields) {String} id The id of the deleted rendition
+ * @apiSuccess (Response Fields) {String} id The renditionId removed from the catalog rendition set
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -389,5 +389,331 @@
  * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
  *
+ *
+ */
+
+
+ // Get All Catalog Publication Rules
+
+ /**
+  * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules Get All Catalog Publication Rules
+  * @apiName Get All Catalog Publication Rules
+  * @apiGroup Publication_Rules
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Retrieves all publicationRuleIds assigned to a Catalog. Please review the [Content Restriction](/docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+  *
+  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+  *
+  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+  * @apiParam (Path Parameters) {String} catalogId The catalog id
+  *
+  * @apiParamExample {Url} Get Catalog Publication Rules Example:
+  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
+  *
+  * @apiSuccess (Response Fields) {String[]} publicationRuleIds A comma-separated array of publicationRuleIds assigned to the catalog (will be inherited by mediaItems ingested to the catalog)
+  *
+  * @apiSuccessExample {json} Success Response:
+  *    HTTP/1.1 200 OK
+  *    [
+  *        "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5",
+  *        "147184ae-1a51-4a63-bc10-3a9debbe03fa",
+  *        "b44f0463-7c69-45a2-8dfe-aa556c333b74",
+  *        "84658fcc-efe6-4dba-99e9-37601fbcf1c9",
+  *        "671a090b-9cc7-4362-a3b1-4794c1f15326",
+  *        "5d1d5044-05f0-4be2-9dad-323c9c6adf8f",
+  *        "e202e955-6653-4f33-91f0-c004b65c8a1e",
+  *        "a9ff5331-9eb8-45b3-8fc5-2a00bfb84642"
+  *    ]
+  *
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+  * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+  *
+  *
+  */
+
+  // Get Catalog Publication Rule Details
+
+  /**
+   * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationruleId Get Catalog Publication Rule Details
+   * @apiName Get Catalog Publication Rule Details
+   * @apiGroup Publication_Rules
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Retrieves configuration of a catalog-level publication rule.
+   *
+   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+   *
+   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+   * @apiParam (Path Parameters) {String} catalogId The catalog id
+   * @apiParam (Path Parameters) {String} publicationruleId The publication rule id
+   *
+   * @apiParamExample {Url} Get Catalog Publication RulesExample:
+   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
+   *
+   * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+   * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+   * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters
+   * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost)
+   * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered
+   * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith)
+   * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+   * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
+   * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+   * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+   * @apiSuccess (Response Fields) {String} id The publicationRuleId
+   * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+   * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
+   *
+   * @apiSuccessExample {json} Success Response:
+   *    HTTP/1.1 200 OK
+   *    {
+   *        "startDate": 1436384287,
+   *        "endDate": 1752003487,
+   *        "clientFilters": [
+   *            {
+   *                "variableName": "IpAddress",
+   *                "value": "127.0.0.1",
+   *                "filterType": "Equals",
+   *                "isDenied": true
+   *            }
+   *        ],
+   *        "countryRules": [
+   *            {
+   *                "countryCode": "FI",
+   *                "isDenied": true
+   *            }
+   *        ],
+   *        "id": "7454cab9-9491-43bb-84f4-b208487ca1fb",
+   *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba",
+   *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba"
+   *    }
+   *
+   * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+   * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+   *
+   *
+   */
+
+   // Create Catalog Publication Rule
+
+   /**
+    * @api {post} domains/:domainId/catalog/:catalogId/publicationRules Create Catalog Publication Rule
+    * @apiName Create Catalog Publication Rule
+    * @apiGroup Publication_Rules
+    * @apiVersion 1.0.0
+    *
+    * @apiDescription Create a catalog publication rule. NOTE: A new catalog publication rule created by this method will only be applied to new mediaItems ingested to the catalog, but will not be applied to existing mediaItems within. Please see below for a method to create or update publication rules assigned to individual mediaItems.
+    *
+    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+    *
+    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+    * @apiParam (Path Parameters) {String} catalogId The catalog id
+    * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+    * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+    * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
+    * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} clientFilters.variableName The type of client variable being filtered
+    * @apiParam (Request Body Fields) {String} clientFilters.value A string against which requests will be filtered
+    * @apiParam (Request Body Fields) {String="Equals", "NotEquals", "In", "NotIn", "Contains", "NotContains", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith"} clientFilters.filterType The method of filtering against the value string
+    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
+    * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    *
+    * @apiParamExample {json} Create Catalog Publication Rule Request Body Example:
+    *    {
+    *        "startDate": 1436384287,
+    *        "endDate": 1952003487,
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress",
+    *                "value": "127.0.0.1",
+    *                "filterType": "Equals",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI",
+    *                "isDenied": true
+    *            }
+    *        ]
+    *    }
+    *
+    * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
+    * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires,
+    * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters,
+    * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+    * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered,
+    * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+    * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
+    * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+    * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {String} id The publicationRuleId
+    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+    *
+    * @apiSuccessExample {json} Success Response:
+    *    HTTP/1.1 200 OK
+    *    {
+    *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+    *        "startDate": 1436384287
+    *        "endDate": 1952003487
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress"
+    *                "value": "127.0.0.1"
+    *                "filterType": "Equals"
+    *                "isDenied": true
+    *            }
+    *        ]
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI"
+    *                "isDenied": true
+    *            }
+    *        ]
+    *        "id": "7454cab9-9491-43bb-84f4-b208487ca1fb"
+    *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
+    *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba"
+    *    }
+    *
+    *
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
+    *
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+    *
+    *
+    */
+
+
+   // Update Catalog Publication Rule
+
+   /**
+    * @api {put} domains/:domainId/catalog/:catalogId/publicationRules/:publicationRuleId Update Catalog Publication Rule
+    * @apiName Update Catalog Publication Rule
+    * @apiGroup Publication_Rules
+    * @apiVersion 1.0.0
+    *
+    * @apiDescription Update a catalog publication rule. NOTE: Updates made by this method will only be applied to new mediaItems ingested to the catalog, but will not update publication rules of existing mediaItems within. Please see below for a method to update publication rules assigned to individual mediaItems.
+    *
+    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+    *
+    * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+    * @apiParam (Path Parameters) {String} catalogId The catalog id
+    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+    * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
+    * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
+    * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
+    * @apiParam (Request Body Fields) {String="IpAddress","UserAgent","ReferringHost"} clientFilters.variableName The type of client variable being filtered
+    * @apiParam (Request Body Fields) {String} clientFilters.value A string against which requests will be filtered
+    * @apiParam (Request Body Fields) {String="Equals", "NotEquals", "In", "NotIn", "Contains", "NotContains", "StartsWith", "NotStartsWith", "EndsWith", "NotEndsWith"} clientFilters.filterType The method of filtering against the value string
+    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiParam (Request Body Fields) {Object[]} [countryRules] Array of country-based filters
+    * @apiParam (Request Body Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
+    * @apiParam (Request Body Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    *
+    * @apiParamExample {json} Create Catalog Publication Rule Request Body Example:
+    *    {
+    *        "startDate": 1436384287,
+    *        "endDate": 1952003487,
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress",
+    *                "value": "127.0.0.1",
+    *                "filterType": "Equals",
+    *                "isDenied": true
+    *            }
+    *        ],
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI",
+    *                "isDenied": true
+    *            }
+    *        ]
+    *    }
+    *
+    * @apiSuccess (Response Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective,
+    * @apiSuccess (Response Fields) {Number} endDate Epoch time (in seconds) when publication rule expires,
+    * @apiSuccess (Response Fields) {Object[]} clientFilters Array of client-based filters,
+    * @apiSuccess (Response Fields) {String} clientFilters.variableName The type of client variable being filtered: (IpAddress, UserAgent, ReferringHost),
+    * @apiSuccess (Response Fields) {String} clientFilters.value A string against which requests will be filtered,
+    * @apiSuccess (Response Fields) {String} clientFilters.filterType The method of filtering against the value string: (Equals, NotEquals, In, NotIn, Contains, NotContains, StartsWith, NotStartsWith, EndsWith, NotEndsWith),
+    * @apiSuccess (Response Fields) {Boolean} clientFilters.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
+    * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
+    * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
+    * @apiSuccess (Response Fields) {String} id The publicationRuleId
+    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
+    *
+    * @apiSuccessExample {json} Success Response:
+    *    HTTP/1.1 200 OK
+    *    {
+    *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
+    *        "startDate": 1436384287
+    *        "endDate": 1952003487
+    *        "clientFilters": [
+    *            {
+    *                "variableName": "IpAddress"
+    *                "value": "127.0.0.1"
+    *                "filterType": "Equals"
+    *                "isDenied": true
+    *            }
+    *        ]
+    *        "countryRules": [
+    *            {
+    *                "countryCode": "FI"
+    *                "isDenied": true
+    *            }
+    *        ]
+    *        "id": "7454cab9-9491-43bb-84f4-b208487ca1fb"
+    *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
+    *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba"
+    *    }
+    *
+    *
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
+    *
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+    * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
+    *
+    *
+    */
+
+    // Delete Catalog Publication Rule
+
+/**
+ * @api {delete} /domains/{domainId}/catalogs/{catalogId}/publicationRules/{publicationRuleId} Delete Catalog Publication Rule
+ * @apiName Delete Catalog Publication Rule
+ * @apiGroup Domain
+ * @apiVersion 1.0.0
+ *
+ * @apiDescription Deletes the specified catalog publication rule. NOTE: Deleting a catalog publication rule will prevent it from being applied to new mediaItems ingested to the catalog, but will not delete publication rules of existing mediaItems within. Please see below for the method to delete publication rules assigned to mediaItems.
+ *
+ * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+ *
+ * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+ * @apiParam (Path Parameters) {String} catalogId The catalogId
+ * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+ *
+ * @apiParamExample {Url} Delete Domain Publication Rule Example:
+ *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
+ *
+ * @apiSuccess (Response Fields) {String} id id of the publication rule that was deleted
+ *
+ * @apiSuccessExample {json} Success Response:
+ *    HTTP/1.1 200 OK
+ *    {
+ *    "id": "8c9cdb48-90ac-450f-bc5d-0bb2cbe3a206"
+ *    }
+ *
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Forbidden &mdash; Missing or incorrect API Key
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 404: Not Found &mdash; Incorrect or invalid URL path
  *
  */

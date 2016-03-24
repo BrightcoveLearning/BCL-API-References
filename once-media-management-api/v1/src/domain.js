@@ -408,7 +408,7 @@
   * @apiGroup Domain
   * @apiVersion 1.0.0
   *
-  * @apiDescription Retrieves all publicationRuleIds configured on the Domain level. Please review the [Content Restriction](//docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
+  * @apiDescription Deletes the specified domain publication rule. NOTE: Deleting a domain publication rule will prevent it from being added to new catalogs, but will not delete publication rules of existing catalogs or mediaItems within. Please see below for methods to delete publication rules assigned to catalogs or mediaItems.
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
@@ -423,25 +423,7 @@
   * @apiSuccessExample {json} Success Response:
   *    HTTP/1.1 200 OK
   *    {
-  *        "channel": "5fba5bb0-5fba-5bb0-06ed-8768600306ed",
-  *        "startDate": 1436384287,
-  *        "endDate": 1752003487,
-  *        "clientFilters": [
-  *            {
-  *                "variableName": "IpAddress",
-  *                "value": "127.0.0.1",
-  *                "filterType": "Equals",
-  *                "isDenied": true
-  *            }
-  *        ],
-  *        "countryRules": [
-  *            {
-  *                "countryCode": "FI",
-  *                "isDenied": true
-  *            }
-  *        ],
-  *        "id": "602de576-68c3-403a-87f6-56108c6b1d1c",
-  *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
+  *    "id": "8c9cdb48-90ac-450f-bc5d-0bb2cbe3a206"
   *    }
   *
   * @apiError (Error 4xx) {json} UNAUTHORIZED 400: Bad Request &mdash; Incorrect or invalid request body

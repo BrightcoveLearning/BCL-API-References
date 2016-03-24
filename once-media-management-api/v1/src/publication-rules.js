@@ -290,11 +290,11 @@
  *
  */
 
-// get catalog publication rule
+// Get Catalog Publication Rule Details
 
 /**
- * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationruleId Get Catalog Publication Rule
- * @apiName Get Catalog Publication Rule
+ * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationruleId Get Catalog Publication Rule Details
+ * @apiName Get Catalog Publication Rule Details
  * @apiGroup Publication_Rules
  * @apiVersion 1.0.0
  *
