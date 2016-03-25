@@ -1921,7 +1921,7 @@
   *     ]
   *
   *
-  *
+  */
 
 // get hds_manifests
 
