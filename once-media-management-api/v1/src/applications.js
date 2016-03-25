@@ -115,52 +115,7 @@
  * @apiSuccess (Response Fields Example 2) {Number} postRollAdCount Leave at zero (the adServer will determine number of ads returned for postRoll position)
  *
  *
- * @apiSuccessExample {json} Example 1
- *    HTTP/1.1 200 OK
- *    // Example 1
- *    {
- *        "id": "2baf3c54-2baf-3c54-be91-147ffc57ebbe",
- *        "name": "ExampleApplication01",
- *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba",
- *        "adConfig": {
- *            "preRoll": {
- *                "id": "657d722b-a031-4422-87cc-6ae27329edf2",
- *                "name": "ExampleVASTPreRollConfig",
- *                "adServerId": "799c9ffa-78cc-4fc5-81ca-39297734ef2d",
- *                "adServerName": "ExampleVASTAdServer",
- *                "adPosition": "preroll"
- *            },
- *                  "postRoll": {
- *                "id": "a0314422-a031-4422-87cc-6ae27329edf2",
- *                "name": "ExampleVASTPostRollConfig",
- *                "adServerId": "799c9ffa-78cc-4fc5-81ca-39297734ef2d",
- *                "adServerName": "ExampleVASTAdServer",
- *                "adPosition": "postroll"
- *            }
- *        },
- *        "preRollAdCount": 1,
- *        "midRollAdCount": 0,
- *        "postRollAdCount": 1
- *    }
- *    // Example 2
- *    {
- *        "id": "a5ca87ef-a5ca-87ef-928c-70794563a8a1",
- *        "name": "ExampleApplication02",
- *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba",
- *        "adConfig": {
- *            "ad": {
- *                "id": "a96a8715-5b80-468f-9cf0-683e52f5768b",
- *                "name": "ExamplePodAdConfig",
- *                "adServerId": "4f7ceb38-5093-437b-883b-ba96c413c4d7",
- *                "adServerName": "ExamplePodAdServer",
- *                "adPosition": "dfp"
- *            }
- *        },
- *        "preRollAdCount": 0,
- *        "midRollAdCount": 0,
- *        "postRollAdCount": 0
- *    }
- * @apiSuccessExample {json} Example 2
+ * @apiSuccessExample {json} Examples 1 and 2
  *    HTTP/1.1 200 OK
  *    // Example 1
  *    {
@@ -397,8 +352,9 @@
 (`dfp` or `smartxml`)
  *
  *
- * @apiSuccessExample {json} Example 1:
+ * @apiSuccessExample {json} Examples 1 and 2
  *    HTTP/1.1 200 OK
+ *    // Example 1
  *    {
  *        "preRoll": {
  *            "id": "657d722b-a031-4422-87cc-6ae27329edf2",
@@ -422,9 +378,8 @@
  *            "adPosition": "postroll"
  *        }
  *    }
- *
- * @apiSuccessExample {json} Example 2:
  *    HTTP/1.1 200 OK
+ *    // Example 2
  *    {
  *        "ad": {
  *            "id": "a96a8715-5b80-468f-9cf0-683e52f5768b",
