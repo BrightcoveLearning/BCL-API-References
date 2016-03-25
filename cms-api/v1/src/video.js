@@ -992,7 +992,7 @@
  * @apiParam (Request Body Fields) {String} name video title
  * @apiParam (Request Body Fields) {Boolean} [complete] include (with value `true`) __ONLY__ for remote assets
  * @apiParam (Request Body Fields) {String} [description] video short description
- * @apiParam (Request Body Fields) {="AD_SIPPORTED", "FREE"} [economics="AD_SUPPORTED"] video short description
+ * @apiParam (Request Body Fields) {String="AD_SIPPORTED", "FREE"} [economics="AD_SUPPORTED"] video short description
  * @apiParam (Request Body Fields) {String} [long_description] video long description
  * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
  * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not

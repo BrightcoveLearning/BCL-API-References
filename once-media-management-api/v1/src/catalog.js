@@ -398,7 +398,7 @@
  /**
   * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules Get All Catalog Publication Rules
   * @apiName Get All Catalog Publication Rules
-  * @apiGroup Publication_Rules
+  * @apiGroup Catalog
   * @apiVersion 1.0.0
   *
   * @apiDescription Retrieves all publicationRuleIds assigned to a Catalog. Please review the [Content Restriction](/docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
@@ -438,7 +438,7 @@
   /**
    * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationRuleId Get Catalog Publication Rule Details
    * @apiName Get Catalog Publication Rule Details
-   * @apiGroup Publication_Rules
+   * @apiGroup Catalog
    * @apiVersion 1.0.0
    *
    * @apiDescription Retrieves configuration of a catalog-level publication rule.
@@ -502,7 +502,7 @@
    /**
     * @api {post} domains/:domainId/catalog/:catalogId/publicationRules Create Catalog Publication Rule
     * @apiName Create Catalog Publication Rule
-    * @apiGroup Publication_Rules
+    * @apiGroup Catalog
     * @apiVersion 1.0.0
     *
     * @apiDescription Create a catalog publication rule. NOTE: A new catalog publication rule created by this method will only be applied to new mediaItems ingested to the catalog, but will not be applied to existing mediaItems within. Please see below for a method to create or update publication rules assigned to individual mediaItems.
@@ -597,7 +597,7 @@
    /**
     * @api {put} domains/:domainId/catalog/:catalogId/publicationRules/:publicationRuleId Update Catalog Publication Rule
     * @apiName Update Catalog Publication Rule
-    * @apiGroup Publication_Rules
+    * @apiGroup Catalog
     * @apiVersion 1.0.0
     *
     * @apiDescription Update a catalog publication rule. NOTE: Updates made by this method will only be applied to new mediaItems ingested to the catalog, but will not update publication rules of existing mediaItems within. Please see below for a method to update publication rules assigned to individual mediaItems.

@@ -3,7 +3,7 @@
 /**
  * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems Get All MediaItems In Catalog
  * @apiName Get All MediaItems In Catalog
- * @apiGroup Media_Item
+ * @apiGroup MediaItem
  * @apiVersion 1.0.0
  *
  * @apiDescription Returns a collection of all media items within a catalog. This method fetches 20 media items per page, returns the totalResult to indicate the total number of media items and provides the previous or next page requests within the body.
@@ -14,8 +14,8 @@
  * @apiParam (Path Parameters) {String} catalogId TThe catalogId
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
- * @apiParam (URL Parameters) {String} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
- * @apiParam (URL Parameters) {String} [foreignKey] Filter to media items that have foreign key substring. E.g. foreignKey=foo could return media items with foreign key "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String {..255}} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
+ * @apiParam (URL Parameters) {String {..255}} [foreignKey] Filter to media items that have foreign key substring. E.g. foreignKey=foo could return media items with foreign key "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="name","createdate","updatedate"} [sortField="updatedate"] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
  * @apiParam (URL Parameters) {String="acs","desc"} [sortDirection="desc"] Sort ascending or descending.
  *
@@ -78,7 +78,7 @@
 /**
  * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Get MediaItem Details
  * @apiName Get MediaItem Details
- * @apiGroup Media_Item
+ * @apiGroup MediaItem
  * @apiVersion 1.0.0
  *
  * @apiDescription Retrieves details of a specified mediaItem.
@@ -182,7 +182,7 @@
 /**
  * @api {post} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Update MediaItem
  * @apiName Update MediaItem
- * @apiGroup Media_Item
+ * @apiGroup MediaItem
  * @apiVersion 1.0.0
  *
  * @apiDescription Updates the mediaItem to reflect the request body. NOTE: All mediaItem fields must be present in your request, not just those you wish to update. Existing fields with missing values in the update request will be overwritten with null values.
@@ -196,8 +196,8 @@
  * @apiParam (Request Body Fields) {String} id The mediaItemId
  * @apiParam (Request Body Fields) {String} catalogId The catalogId
  * @apiParam (Request Body Fields) {String} domainId The domainId
- * @apiParam (Request Body Fields) {String} [foreignKey] The unique identifier for the asset (max length: 255 characters)
- * @apiParam (Request Body Fields) {String} [title] The title of the asset (max length: 255 characters)
+ * @apiParam (Request Body Fields) {String {..255}} [foreignKey] The unique identifier for the asset (max length: 255 characters)
+ * @apiParam (Request Body Fields) {String {..255}} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} [description] Text description of the video
  * @apiParam (Request Body Fields) {String[]} [keywords] Array of video keywords
  * @apiParam (Request Body Fields) {Object[]} [cuePoints] An array of Cue Points objects
@@ -355,7 +355,7 @@
 /**
  * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Get Media Item
  * @apiName Get Media Item
- * @apiGroup Media_Item
+ * @apiGroup MediaItem
  * @apiVersion 1.0.0
  *
  * @apiDescription Returns the essential information of the media item.
@@ -389,7 +389,7 @@
  /**
   * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules Get All MediaItem Publication Rules
   * @apiName Get All MediaItem Publication Rules
-  * @apiGroup Publication_Rules
+  * @apiGroup MediaItem
   * @apiVersion 1.0.0
   *
   * @apiDescription Retrieves all publicationRuleIds assigned to a mediaItem.  Please review the [Content Restriction](/docs.brightcove.com/en/once/guides/once-vod-2-0.html#contentRestriction) section of our Once VOD 2.0 Guide for details on what Publication Rules can do and how they are inherited.
@@ -423,7 +423,7 @@
   /**
    * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Get MediaItem Publication Rule Details
    * @apiName Get MediaItem Publication Rule Details
-   * @apiGroup Publication_Rules
+   * @apiGroup MediaItem
    * @apiVersion 1.0.0
    *
    * @apiDescription Retrieves configuration of a mediaItem-level publication rule.
@@ -491,7 +491,7 @@
    /**
     * @api {post} domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules Create MediaItem Publication Rule
     * @apiName Create MediaItem Publication Rule
-    * @apiGroup Publication_Rules
+    * @apiGroup MediaItem
     * @apiVersion 1.0.0
     *
     * @apiDescription Create a mediaItem publication rule.
@@ -585,7 +585,7 @@
    /**
     * @api {put} domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Update MediaItem Publication Rule
     * @apiName Update MediaItem Publication Rule
-    * @apiGroup Publication_Rules
+    * @apiGroup MediaItem
     * @apiVersion 1.0.0
     *
     * @apiDescription Update a mediaItem publication rule.
@@ -680,7 +680,7 @@
     /**
      * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Delete MediaItem Publication Rule
      * @apiName Delete MediaItem Publication Rule
-     * @apiGroup Publication_Rules
+     * @apiGroup MediaItem
      * @apiVersion 1.0.0
      *
      * @apiDescription Deletes the specified mediaItem publication rule.
@@ -716,7 +716,7 @@
     /**
      * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Delete MediaItem
      * @apiName Delete MediaItem
-     * @apiGroup Publication_Rules
+     * @apiGroup MediaItem
      * @apiVersion 1.0.0
      *
      * @apiDescription Deletes the specified mediaItem publication rule.
@@ -726,12 +726,11 @@
      * @apiParam (Path Parameters) {String} domainId The domainId
      * @apiParam (Path Parameters) {String} catalogId The catalogId
      * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
-     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
      *
      * @apiParamExample {Url} Delete Media Item Publication Rule Example:
-     *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
+     *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a
      *
-     * @apiSuccess (Response Fields) {String} id the publication rule id
+     * @apiSuccess (Response Fields) {String} id The mediaItemId that was deleted
      *
      * @apiSuccessExample {json} Success Response:
      *    HTTP/1.1 200 OK
