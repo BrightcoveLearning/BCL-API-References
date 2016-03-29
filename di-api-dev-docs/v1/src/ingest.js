@@ -235,6 +235,20 @@
  * @apiError (Error 4xx) {json} NO_SOURCE 400: Unable to find a source to use
  * @apiError (Error 4xx) {json} CDN_CREDENTIALS 400: Unable to fetch CDN credentials
  * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
+ * @apiError (Error 4xx) {json} SUBMISSION_FAILURE Unable to submit job please try again later.
+ * @apiError (Error 4xx) {json} AUTH_ERROR Unable to authorize request.
+ * @apiError (Error 4xx) {json} BAD_ACCOUNT Account ID was missing or invalid.
+ * @apiError (Error 4xx) {json} BAD_VIDEO Video ID was missing or invalid.
+ * @apiError (Error 4xx) {json} MALFORMED_SOURCE_URL source url is malformed.
+ * @apiError (Error 4xx) {json} BAD_PROTOCOL_SOURCE_URL source url uses a unsupported protocol.
+ * @apiError (Error 4xx) {json} EXCEED_MAXIMUM_VTT_SOURCES vtt sources exceed the maximum size.
+ * @apiError (Error 4xx) {json} INVALID_VTT_SRC_LANGUAGE vtt srlang isn't a ISO639 alpha2 langurage code.
+ * @apiError (Error 4xx) {json} INVALID_VTT_KIND vtt kind is invalid.
+ * @apiError (Error 4xx) {json} NO_CAPTURE_IMAGE_ALLOWED capture-image is not allowed if an image source is provided.
+ * @apiError (Error 4xx) {json} UNPROCESSABLE_ENTITY request data contains some unprocessable entity.
+ * @apiError (Error 4xx) {json} MALFORMED_REQUEST Unable to parse request body.
+ * @apiError (Error 4xx) {json} CDN_CONFIGS Unable to fetch CDN credentials
+ * @apiError (Error 4xx) {json} AMBIGUOUS_REQUEST Both a master url and use_archived_master were set in the request.
  * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
  *
  * @apiErrorExample {json} 404 Error Response
