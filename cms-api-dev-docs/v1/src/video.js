@@ -1022,7 +1022,7 @@
  * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiParam (Request Body Fields) {Object[]} [text_tracks="[]"] array of text track maps
+ * @apiParam (Request Body Fields) {Object[]} [text_tracks="[]"] array of text track maps &mdash; **NOTE** text_tracks are **not** settable for ingested text_tracks, but **are** settable otherwise, and can be used to add text tracks to ingested or remote asset videos
  * @apiParam (Request Body Fields) {Url} text_tracks.src="" URL for the .vtt file
  * @apiParam (Request Body Fields) {String="captions","chapters","subtitles","metadata"} [text_tracks.kind=""] kind of text track
  * @apiParam (Request Body Fields) {String} text_tracks.srclang="" 2-letter language code, such as "en" or "ko"
