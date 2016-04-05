@@ -113,7 +113,7 @@
  *    ]
  *
  *//**
- * @api {get} /engagement/accounts/:account_id/video/:video_id Get Video Engagement
+ * @api {get} /engagement/accounts/:account_id/videos/:video_id Get Video Engagement
  * @apiName Get Video Engagement
  * @apiGroup Engagement
  * @apiVersion 1.0.0
