@@ -26,7 +26,7 @@
  * @apiParam (URL Parameters) {String="name","updated_at"} [sort="updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance or if there is no search string, results are sorted by updated_at descending
  *
  * @apiParamExample {Url} Search for Playlists Example:
- *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=tags:nature
+ *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists?q=type:EXPLICIT
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
  * @apiSuccess (Response Field) {DateString} created_at date/time created
