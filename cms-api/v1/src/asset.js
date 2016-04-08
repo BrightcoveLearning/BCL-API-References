@@ -453,7 +453,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Deletes a rendition for the given video. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Deletes a rendition for the given video. **Note**: this operation is **only** for remote renditions for remote asset videos &mdash; do **not** use it for renditions created by Video Cloud for ingested videos
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
