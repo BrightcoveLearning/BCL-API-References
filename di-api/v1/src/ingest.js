@@ -172,7 +172,7 @@
  * @apiParam (Request Body Fields) {Object[]} [text_tracks] array of text_track maps
  * @apiParam (Request Body Fields) {Url} text_tracks.url URL for a WebVTT file
  * @apiParam (Request Body Fields) {String} text_tracks.srclang ISO 639 2-letter (alpha-2) language code for the text tracks
- * @apiParam (Request Body Fields) {String="captions","subtitles","descriptions","chapters","metadata"} [text_tracks.kind="captions"] how the vtt file is meant to be used
+ * @apiParam (Request Body Fields) {String="captions","subtitles","chapters","metadata"} [text_tracks.kind="captions"] how the vtt file is meant to be used
  * @apiParam (Request Body Fields) {String} [text_tracks.label] user-readable title
  * @apiParam (Request Body Fields) {Boolean} [text_tracks.default] sets the default language for captions/subtitles
  * @apiParam (Request Body Fields) {Object} [poster] the video master to be ingested
