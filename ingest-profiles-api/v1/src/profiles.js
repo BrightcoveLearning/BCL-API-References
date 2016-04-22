@@ -129,6 +129,7 @@
  * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
  * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
+ * @apiSuccess (Response Fields) {String} renditions.id the rendition id
  * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding
  * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. Overrides `quality`
@@ -273,6 +274,7 @@
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
+ * @apiSuccess (Response Fields) {String} renditions.id the rendition id
  * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
  * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
@@ -414,6 +416,7 @@
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
+ * @apiSuccess (Response Fields) {String} renditions.id the rendition id
  * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
  * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
@@ -646,6 +649,7 @@
  * @apiSuccess (Response Fields) {Number} account_id Video Cloud account ID.
  * @apiSuccess (Response Fields) {String} description description of the profile
  * @apiSuccess (Response Fields) {Object[]} renditions array of rendition maps
+ * @apiSuccess (Response Fields) {String} renditions.id the rendition id
  * @apiSuccess (Response Fields) {String} renditions.aspect_mode how to handle mismatch between source and rendition aspect ratio
  * @apiSuccess (Response Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
