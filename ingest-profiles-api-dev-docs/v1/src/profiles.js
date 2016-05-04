@@ -374,10 +374,10 @@
  *          }
  *    ]
  *
- * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
+ * @apiError (Error 4xx) {json} NOT_FOUND 404: &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 404 Not Found&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: &lt;pre&gt; Not Found&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
  *
- * @apiErrorExample {json} 409 Error Response
+ * @apiErrorExample {json} 401 Error Response
  *     HTTP/1.1 401 NOT_AUTHORIZED
  *     [
  *         {
@@ -385,7 +385,9 @@
  *            "message": "Credentials are required to access this resource."
  *         }
  *     ]
- *
+ * @apiErrorExample {json} 404 Error Response
+ *    HTTP/1.1 404 Not Found
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html> *
  *
  */
 
