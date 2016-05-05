@@ -229,21 +229,42 @@
  *        "version": 1443700501853
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Invalid JSON &mdash; message varies according to the problem
- * @apiError (Error 4xx) {json} Bad Request 400: Reference id is already in use - &mdash; message varies according to the problem
- * @apiError (Error 4xx) {json} ILLEGAL_FIELD 400: Spelling error or other use of non-existent field
- * @apiError (Error 4xx) {json} Unprocessable Entity 422: required field missing &mdash; message varies according to the issue
+ * @apiError (Error 4xx) {html} Bad_Request 400: Invalid JSON &mdash; message varies according to the problem
+ * @apiError (Error 4xx) {html} Bad_Request 400: Reference id is already in use - &mdash; message varies according to the problem
+ * @apiError (Error 4xx) {html} Conflict 409: Could not create profile with this name and id (profile name or id already exists)
+ * @apiError (Error 4xx) {json} Unprocessable_Entity 422: required field missing &mdash; message varies according to the issue
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
- * @apiError (Error 4xx) {json} NOT_FOUND 404: &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 404 Not Found &mdash; &lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/578380001/profiles. Reason: &lt;pre&gt; Not Found&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
+ * @apiError (Error 4xx) {html} NOT_FOUND 404:  Resource not found
  *
- * @apiErrorExample {json} 400 Invalid JSON
+ * @apiErrorExample {html} 400 Invalid JSON
  *     HTTP/1.1 400 Bad Request
- *    &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 400 Unrecognized token 'true': was expecting 'null', 'true', 'false' or NaN&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 400&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/57838016001/profiles. Reason: &lt;pre&gt; Unrecognized token 'true': was expecting 'null', 'true', 'false' or NaN&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
- * @apiErrorExample {json} 400 Bad Request
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 400 Unrecognized token 'true': was expecting 'null', 'true', 'false' or NaN</title> </head>
+*    <body><h2>HTTP ERROR 400</h2>
+*    <p>Problem accessing /v1/accounts/57838016001/profiles. Reason: <pre> Unrecognized token 'true': was expecting 'null', 'true', 'false' or NaN</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+ * @apiErrorExample {html} 400 Bad Request
  *     HTTP/1.1 400 Duplicate reference_id
- *    &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 400 rendition list contains duplicate reference ID: ts1 (through reference chain: com.brightcove.profiles.common.model.Profile["renditions"])&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 400&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/57838016001/profiles. Reason: &lt;pre&gt; rendition list contains duplicate reference ID: ts1 (through reference chain: com.brightcove.profiles.common.model.Profile["renditions"])&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 400 rendition list contains duplicate reference ID: ts1 (through reference chain: com.brightcove.profiles.common.model.Profile["renditions"])</title> </head>
+*    <body><h2>HTTP ERROR 400</h2>
+*    <p>Problem accessing /v1/accounts/57838016001/profiles. Reason: <pre> rendition list contains duplicate reference ID: ts1 (through reference chain: com.brightcove.profiles.common.model.Profile["renditions"])</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+ * @apiErrorExample {html} 400 Bad Request
+ *     HTTP/1.1 409 Conflict
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 422 Unprocessable_Entity</title> </head>
+*    <body><h2>HTTP ERROR 422</h2> <p>Problem accessing /v1/accounts/57838016001/profiles. Reason: <pre> Unprocessable_Entity</pre></p>
+*    <h2>The request entity had the following errors:</h2>
+*    <ul><li>renditions[0].format may not be null (was null)</li></ul> </body> </html>
+ * @apiErrorExample {json} 422 Conflict
  *     HTTP/1.1 422 Missing Required Field
- *    &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 422 Unprocessable Entity&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 422&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/57838016001/profiles. Reason: &lt;pre&gt; Unprocessable Entity&lt;/pre&gt;&lt;/p&gt;&lt;h2&gt;The request entity had the following errors:&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;renditions[0].format may not be null (was null)&lt;/li&gt;&lt;/ul&gt; &lt;/body&gt; &lt;/html&gt;
+ *    [
+ *        {
+ *            "code": "CONFLICT",
+ *            "message": "Could not create profile with this name and id"
+ *        }
+ *    ]
  * @apiErrorExample {json} 401 NOT_AUTHORIZED
  *     HTTP/1.1 401 NOT_AUTHORIZED
  *     [
@@ -252,9 +273,12 @@
  *            "message": "Credentials are required to access this resource."
  *         }
  *     ]
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {html} 404 Error Response
  *    HTTP/1.1 404 Not Found
- *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html> *
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 Not Found</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  *
  */
@@ -386,7 +410,7 @@
  *    ]
  *
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
- * @apiError (Error 4xx) {json} NOT_FOUND 404: &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 404 Not Found&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/578380001/profiles. Reason: &lt;pre&gt; Not Found&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
+ * @apiError (Error 4xx) {html} NOT_FOUND 404: <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/578380001/profiles. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  * @apiErrorExample {json} 401 Error Response
  *     HTTP/1.1 401 NOT_AUTHORIZED
@@ -396,9 +420,12 @@
  *            "message": "Credentials are required to access this resource."
  *         }
  *     ]
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {html} 404 Error Response
  *    HTTP/1.1 404 Not Found
- *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html> *
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 Not Found</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  */
 
@@ -528,7 +555,7 @@
  *    }
  *
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
- * @apiError (Error 4xx) {json} NOT_FOUND 404: &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 404 Not Found&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/578380001/profiles. Reason: &lt;pre&gt; Not Found&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
+ * @apiError (Error 4xx) {html} NOT_FOUND 404: <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/578380001/profiles. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  * @apiErrorExample {json} 401 Error Response
  *     HTTP/1.1 401 NOT_AUTHORIZED
@@ -538,9 +565,12 @@
  *            "message": "Credentials are required to access this resource."
  *         }
  *     ]
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {html} 404 Error Response
  *    HTTP/1.1 404 Not Found
- *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html> *
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 Not Found</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  *
  */
@@ -768,14 +798,43 @@
  *        "version": 1443700501853
  *    }
  *
- * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
- * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 4xx) {json} ILLEGAL_FIELD 409: Spelling error or other use of non-existent field
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
+ * @apiError (Error 4xx) {html} Bad_Request 400: Invalid JSON &mdash; message varies according to the problem
+ * @apiError (Error 4xx) {html} Bad_Request 400: Reference id is already in use - &mdash; message varies according to the problem
+ * @apiError (Error 4xx) {html} Conflict 409: Could not create profile with this name and id (profile name or id already exists)
+ * @apiError (Error 4xx) {json} Unprocessable_Entity 422: required field missing &mdash; message varies according to the issue
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
- * @apiError (Error 4xx) {json} NOT_FOUND 404: &lt;html&gt; &lt;head&gt; &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/&gt; &lt;title&gt;Error 404 Not Found&lt;/title&gt; &lt;/head&gt; &lt;body&gt;&lt;h2&gt;HTTP ERROR 404&lt;/h2&gt; &lt;p&gt;Problem accessing /v1/accounts/578380001/profiles. Reason: &lt;pre&gt; Not Found&lt;/pre&gt;&lt;/p&gt;&lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;br/&gt; &lt;/body&gt; &lt;/html&gt;
+ * @apiError (Error 4xx) {html} NOT_FOUND 404:  Resource not found
  *
- * @apiErrorExample {json} 401 Error Response
+ * @apiErrorExample {html} 400 Invalid JSON
+ *     HTTP/1.1 400 Bad Request
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 400 Unrecognized token 'true': was expecting 'null', 'true', 'false' or NaN</title> </head>
+*    <body><h2>HTTP ERROR 400</h2>
+*    <p>Problem accessing /v1/accounts/57838016001/profiles. Reason: <pre> Unrecognized token 'true': was expecting 'null', 'true', 'false' or NaN</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+ * @apiErrorExample {html} 400 Bad Request
+ *     HTTP/1.1 400 Duplicate reference_id
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 400 rendition list contains duplicate reference ID: ts1 (through reference chain: com.brightcove.profiles.common.model.Profile["renditions"])</title> </head>
+*    <body><h2>HTTP ERROR 400</h2>
+*    <p>Problem accessing /v1/accounts/57838016001/profiles. Reason: <pre> rendition list contains duplicate reference ID: ts1 (through reference chain: com.brightcove.profiles.common.model.Profile["renditions"])</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+ * @apiErrorExample {html} 400 Bad Request
+ *     HTTP/1.1 409 Conflict
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 422 Unprocessable_Entity</title> </head>
+*    <body><h2>HTTP ERROR 422</h2> <p>Problem accessing /v1/accounts/57838016001/profiles. Reason: <pre> Unprocessable_Entity</pre></p>
+*    <h2>The request entity had the following errors:</h2>
+*    <ul><li>renditions[0].format may not be null (was null)</li></ul> </body> </html>
+ * @apiErrorExample {json} 422 Conflict
+ *     HTTP/1.1 422 Missing Required Field
+ *    [
+ *        {
+ *            "code": "CONFLICT",
+ *            "message": "Could not create profile with this name and id"
+ *        }
+ *    ]
+ * @apiErrorExample {json} 401 NOT_AUTHORIZED
  *     HTTP/1.1 401 NOT_AUTHORIZED
  *     [
  *         {
@@ -783,9 +842,12 @@
  *            "message": "Credentials are required to access this resource."
  *         }
  *     ]
- * @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {html} 404 Error Response
  *    HTTP/1.1 404 Not Found
- *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 Not Found</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html> *
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 Not Found</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  *
  */
@@ -859,7 +921,7 @@
  *    }
  *
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {html} NOT_FOUND 404:  Resource not found
  *
  * @apiErrorExample {json} 409 Error Response
  *     HTTP/1.1 401 NOT_AUTHORIZED
@@ -869,6 +931,14 @@
  *            "message": "Credentials are required to access this resource."
  *         }
  *     ]
+ *
+ * @apiErrorExample {html} 404 Error Response
+ *    HTTP/1.1 404 Not Found
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 Not Found</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/profiles/527d210ae4b0. Reason: <pre> Not Found</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+
  *
  *
  */
