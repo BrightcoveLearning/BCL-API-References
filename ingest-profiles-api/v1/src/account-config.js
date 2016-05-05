@@ -40,13 +40,11 @@
  *        "version": 1442409154636
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
+ * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource
+ * @apiError (Error 4xx) {html} NOT_FOUND 404: The api couldn't find the resource you requested
  *
  * @apiErrorExample {json} 409 Error Response
- *    HTTP/1.1 404 Not Found
+ *    HTTP/1.1 404 NOT_FOUND
  *    [
  *        {
  *            "error_code": "NOT_AUTHORIZED",
@@ -54,6 +52,12 @@
  *        }
  *    ]
  *
+ * @apiErrorExample {html} 404 Error Response
+ *    HTTP/1.1 404 NOT_FOUND
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 NOT_FOUND</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/configurtion. Reason: <pre> NOT_FOUND</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  */
 
@@ -105,21 +109,41 @@
  *        "version": 1443727850896
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
+ * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
+ * @apiError (Error 4xx) {html} NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {html} BAD_REQUEST 400: The JSON was not valid
+ * @apiError (Error 4xx) {json} CONFLICT 409: Account configuration already exists for 57838016001; please delete the configuration first, or update it instead.
  *
- * @apiErrorExample {json} 409 Error Response
- *    HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 401 Error Response
+ *    HTTP/1.1 401 NOT_AUTHORIZED
  *    [
  *        {
  *            "error_code": "NOT_AUTHORIZED",
  *            "message": "Credentials are required to access this resource."
  *        }
  *    ]
- *
- *
+ * @apiErrorExample {html} 404 Error Response
+ *    HTTP/1.1 404 NOT_FOUND
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 NOT_FOUND</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/configurtion. Reason: <pre> NOT_FOUND</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+* @apiErrorExample {html} 400 BAD_REQUEST
+*     HTTP/1.1 400 BAD_REQUEST
+*     <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*     <title>Error 400 Unexpected character ('d' (code 100)): was expecting a colon to separate field name and value</title> </head>
+*     <body><h2>HTTP ERROR 400</h2> <p>Problem accessing /v1/accounts/57838016001/configuration. Reason: <pre> Unexpected character ('d' (code 100)): was expecting a colon to separate field name and value</pre></p>
+*     <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+*
+* @apiErrorExample {json} 409 CONFLICT
+*    HTTP/1.1 409 CONFLICT
+*    [
+*        {
+*            "code": "CONFLICT",
+*            "message": "Account configuration already exists for 57838016001; please delete the configuration first, or update it instead."
+*        }
+*    ]
+*
  */
 
 // update default profile
@@ -171,19 +195,39 @@
  *        "version": 1443727850896
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
+ * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
+ * @apiError (Error 4xx) {html} NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {html} BAD_REQUEST 400: The JSON was not valid
+ * @apiError (Error 4xx) {json} CONFLICT 409: Account configuration already exists for 57838016001; please delete the configuration first, or update it instead.
  *
  * @apiErrorExample {json} 409 Error Response
- *    HTTP/1.1 404 Not Found
+ *    HTTP/1.1 404 NOT_FOUND
  *    [
  *        {
  *            "error_code": "NOT_AUTHORIZED",
  *            "message": "Credentials are required to access this resource."
  *        }
  *    ]
- *
+ * @apiErrorExample {html} 404 Error Response
+ *    HTTP/1.1 404 NOT_FOUND
+ *    <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*    <title>Error 404 NOT_FOUND</title> </head>
+*    <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/57838016001/configurtion. Reason: <pre> NOT_FOUND</pre></p>
+*    <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+* @apiErrorExample {html} 400 BAD_REQUEST
+*     HTTP/1.1 400 BAD_REQUEST
+*     <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+*     <title>Error 400 Unexpected character ('d' (code 100)): was expecting a colon to separate field name and value</title> </head>
+*     <body><h2>HTTP ERROR 400</h2> <p>Problem accessing /v1/accounts/57838016001/configuration. Reason: <pre> Unexpected character ('d' (code 100)): was expecting a colon to separate field name and value</pre></p>
+*     <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
+*
+* @apiErrorExample {json} 409 CONFLICT
+*    HTTP/1.1 409 CONFLICT
+*    [
+*        {
+*            "code": "CONFLICT",
+*            "message": "Account configuration already exists for 57838016001; please delete the configuration first, or update it instead."
+*        }
+*    ]
  *
  */
