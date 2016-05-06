@@ -337,6 +337,7 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 4xx) {json} MIXED_REMOTE_NOT_ALLOWED 403: Remote renditions may not be added to ingested videos
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
@@ -374,6 +375,15 @@
  *        "message": "Unable to process JSON"
  *    }
  *
+ * @apiErrorExample 403 MIXED_REMOTE_NOT_ALLOWED
+ *    HTTP/1.1 403 Forbidden
+ *    [
+ *        {
+ *            "error_code": "MIXED_REMOTE_NOT_ALLOWED",
+ *            "message": "It is forbidden to have only a subset of video renditions as remote assets."
+ *        }
+ *    ]
+ *
  * @apiErrorExample 422 ILLEGAL_FIELD
  *    HTTP/1.1 422 Unprocessable Entity
  *    [
@@ -383,6 +393,14 @@
  *        }
  *    ]
  *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  *
  */
 
@@ -486,6 +504,7 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
+ * @apiError (Error 4xx) {json} MIXED_REMOTE_NOT_ALLOWED 403: Remote renditions may not be added to ingested videos
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
@@ -522,6 +541,15 @@
  *        "error_code": "BAD_VALUE",
  *        "message": "Unable to process JSON"
  *    }
+ *
+ * @apiErrorExample 403 MIXED_REMOTE_NOT_ALLOWED
+ *    HTTP/1.1 403 Forbidden
+ *    [
+ *        {
+ *            "error_code": "MIXED_REMOTE_NOT_ALLOWED",
+ *            "message": "It is forbidden to have only a subset of video renditions as remote assets."
+ *        }
+ *    ]
  *
  * @apiErrorExample 422 ILLEGAL_FIELD
  *    HTTP/1.1 422 Unprocessable Entity
@@ -869,7 +897,14 @@
   *        }
   *    ]
   *
-  *
+  * @apiErrorExample 422 REQUIRED_FIELD
+  *    HTTP/1.1 422 Unprocessable Entity
+  *    [
+  *        {
+  *            "error_code": "VALIDATION_ERROR",
+  *            "message": "remote_url: REQUIRED_FIELD"
+  *        }
+  *    ]
   *
   */
 
@@ -1332,7 +1367,14 @@
    *        }
    *    ]
    *
-   *
+   * @apiErrorExample 422 REQUIRED_FIELD
+   *    HTTP/1.1 422 Unprocessable Entity
+   *    [
+   *        {
+   *            "error_code": "VALIDATION_ERROR",
+   *            "message": "remote_url: REQUIRED_FIELD"
+   *        }
+   *    ]
    */
 
   // patch poster
@@ -1795,7 +1837,14 @@
  *        }
  *    ]
  *
- *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  */
 
 // patch thumbnail
@@ -2251,7 +2300,14 @@
  *        }
  *    ]
  *
- *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  *
  */
 
@@ -2706,6 +2762,15 @@
  *
  *     ]
  *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
+ *
  */
 
 // patch hds_manifests
@@ -3157,7 +3222,14 @@
  *        }
  *    ]
  *
- *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  *
  */
 
@@ -3611,7 +3683,14 @@
  *        }
  *    ]
  *
- *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  */
 
 // patch ismc_manifests
@@ -4067,7 +4146,14 @@
  *        }
  *    ]
  *
- *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  */
 
 // patch dash_manifests
@@ -4184,7 +4270,14 @@
  *        }
  *    ]
  *
- *
+ * @apiErrorExample 422 REQUIRED_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "remote_url: REQUIRED_FIELD"
+ *        }
+ *    ]
  */
 
  // delete dash_manifest

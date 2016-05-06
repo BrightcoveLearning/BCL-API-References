@@ -6,3 +6,6 @@ HTTP/1.1 409 Conflict
         "message": "Could not create profile with this name and id"
     }
 ]
+
+
+*     HTTP/1.1 422 Missing Required Field
