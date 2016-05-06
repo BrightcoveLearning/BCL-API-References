@@ -84,6 +84,15 @@
  * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -170,6 +179,15 @@
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
  * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -560,6 +578,15 @@
  * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -606,6 +633,15 @@
  * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -650,6 +686,15 @@
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
  * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -745,6 +790,15 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -830,6 +884,15 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -837,6 +900,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -867,6 +931,15 @@
  * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
  * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found

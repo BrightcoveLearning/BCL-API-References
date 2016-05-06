@@ -65,6 +65,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -72,6 +81,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -120,6 +130,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -127,6 +146,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -327,6 +347,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -334,6 +363,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -384,6 +414,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -391,6 +430,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -442,6 +482,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -449,6 +498,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -490,6 +540,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -497,6 +556,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -538,6 +598,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -545,6 +614,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -585,6 +655,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -592,5 +671,6 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */

@@ -116,6 +116,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -208,6 +217,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -320,6 +338,15 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -434,6 +461,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -475,6 +511,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -552,6 +597,15 @@
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
   *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
+  *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
@@ -627,6 +681,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
@@ -706,6 +769,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
@@ -788,6 +860,15 @@
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
   *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
+  *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
@@ -830,6 +911,15 @@
    * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   *
+   * @apiErrorExample {json} 401 UNAUTHORIZED
+   *     HTTP/1.1 401 UNAUTHORIZED
+   *     [
+   *         {
+   *             "error_code": "UNAUTHORIZED",
+   *             "message": "Permission denied."
+   *         }
+   *     ]
    *
    * @apiErrorExample {json} 404 Error Response
    *     HTTP/1.1 404 Not Found
@@ -910,6 +1000,15 @@
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
    *
+   * @apiErrorExample {json} 401 UNAUTHORIZED
+   *     HTTP/1.1 401 UNAUTHORIZED
+   *     [
+   *         {
+   *             "error_code": "UNAUTHORIZED",
+   *             "message": "Permission denied."
+   *         }
+   *     ]
+   *
    * @apiErrorExample {json} 404 Error Response
    *     HTTP/1.1 404 Not Found
    *     [
@@ -987,6 +1086,15 @@
    * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   *
+   * @apiErrorExample {json} 401 UNAUTHORIZED
+   *     HTTP/1.1 401 UNAUTHORIZED
+   *     [
+   *         {
+   *             "error_code": "UNAUTHORIZED",
+   *             "message": "Permission denied."
+   *         }
+   *     ]
    *
    * @apiErrorExample {json} 404 Error Response
    *     HTTP/1.1 404 Not Found
@@ -1071,6 +1179,15 @@
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
    *
+   * @apiErrorExample {json} 401 UNAUTHORIZED
+   *     HTTP/1.1 401 UNAUTHORIZED
+   *     [
+   *         {
+   *             "error_code": "UNAUTHORIZED",
+   *             "message": "Permission denied."
+   *         }
+   *     ]
+   *
    * @apiErrorExample {json} 404 Error Response
    *     HTTP/1.1 404 Not Found
    *     [
@@ -1078,6 +1195,7 @@
    *             "error_code": "RESOURCE_NOT_FOUND"
    *         }
    *     ]
+   *
    *
    */
 
@@ -1153,6 +1271,15 @@
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
    *
+   * @apiErrorExample {json} 401 UNAUTHORIZED
+   *     HTTP/1.1 401 UNAUTHORIZED
+   *     [
+   *         {
+   *             "error_code": "UNAUTHORIZED",
+   *             "message": "Permission denied."
+   *         }
+   *     ]
+   *
    * @apiErrorExample {json} 404 Error Response
    *     HTTP/1.1 404 Not Found
    *     [
@@ -1194,6 +1321,15 @@
     * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
     * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
     * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+    *
+    * @apiErrorExample {json} 401 UNAUTHORIZED
+    *     HTTP/1.1 401 UNAUTHORIZED
+    *     [
+    *         {
+    *             "error_code": "UNAUTHORIZED",
+    *             "message": "Permission denied."
+    *         }
+    *     ]
     *
     * @apiErrorExample {json} 404 Error Response
     *     HTTP/1.1 404 Not Found
@@ -1273,6 +1409,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -1350,6 +1495,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -1434,6 +1588,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -1516,6 +1679,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -1557,6 +1729,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
@@ -1635,6 +1816,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -1709,6 +1899,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -1791,6 +1990,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -1798,6 +2006,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -1871,6 +2080,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -1878,6 +2096,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -1911,6 +2130,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
@@ -1987,6 +2215,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2061,6 +2298,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -2143,6 +2389,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2223,6 +2478,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2263,6 +2527,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
@@ -2340,6 +2613,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2414,6 +2696,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -2496,6 +2787,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2503,6 +2803,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -2576,6 +2877,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2583,6 +2893,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -2616,6 +2927,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
@@ -2693,6 +3013,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2767,6 +3096,15 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -2849,6 +3187,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2856,6 +3203,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -2929,6 +3277,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -2936,6 +3293,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  */
 
@@ -2970,6 +3328,15 @@
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
   *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
+  *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
@@ -2977,6 +3344,7 @@
   *             "error_code": "RESOURCE_NOT_FOUND"
   *         }
   *     ]
+  *
   *
   *
   */
@@ -3046,6 +3414,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -3053,6 +3430,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  *
  */
@@ -3121,6 +3499,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -3128,6 +3515,7 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
  *
  *
  */
@@ -3201,6 +3589,15 @@
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -3282,6 +3679,15 @@
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
  *
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
+ *     [
+ *         {
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
+ *         }
+ *     ]
+ *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
@@ -3322,6 +3728,15 @@
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
+  * @apiErrorExample {json} 401 UNAUTHORIZED
+  *     HTTP/1.1 401 UNAUTHORIZED
+  *     [
+  *         {
+  *             "error_code": "UNAUTHORIZED",
+  *             "message": "Permission denied."
+  *         }
+  *     ]
   *
   * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found

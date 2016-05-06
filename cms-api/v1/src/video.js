@@ -172,7 +172,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -180,7 +180,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 400 Error Response
+ * @apiErrorExample {json} 400 Error Response
  *     HTTP/1.1 400 INVALID_SORT
  *     [
  *         {
@@ -238,7 +238,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -246,7 +246,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 400 Error Response
+ * @apiErrorExample {json} 400 Error Response
  *     HTTP/1.1 400 INVALID_SORT
  *     [
  *         {
@@ -414,7 +414,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -608,7 +608,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -701,7 +701,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -808,7 +808,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -862,7 +862,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -909,7 +909,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1268,9 +1268,8 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 4xx) {json} ILLEGAL_FIELD 409: Spelling error or other use of non-existent field
+ * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
- * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -1281,13 +1280,38 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
  *
  *
  *
@@ -1329,7 +1353,7 @@
  *         }
  *     ]
  *
- *     @apiErrorExample {json} 404 Error Response
+ * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
@@ -1505,7 +1529,7 @@
   *         }
   *     ]
   *
-  *     @apiErrorExample {json} 404 Error Response
+  * @apiErrorExample {json} 404 Error Response
   *     HTTP/1.1 404 Not Found
   *     [
   *         {
