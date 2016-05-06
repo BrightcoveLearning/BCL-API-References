@@ -14,15 +14,15 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
- * @apiParam (Request Body Fields) {String} name video title
- * @apiParam (Request Body Fields) {String} [description] video short description
- * @apiParam (Request Body Fields) {String} [long_description] video long description
- * @apiParam (Request Body Fields) {String} [reference_id] video reference-id (must be unique within the account)
+ * @apiParam (Request Body Fields) {String{1..255}} name video title
+ * @apiParam (Request Body Fields) {String{0..250}} [description] video short description
+ * @apiParam (Request Body Fields) {String{0..5000}} [long_description] video long description
+ * @apiParam (Request Body Fields) {String{..150}} [reference_id] video reference-id (must be unique within the account)
  * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
  * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
  * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
- * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes](https://www.iso.org/obp/ui/)
+ * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
  * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
  * @apiParam (Request Body Fields) {Boolean} [geo.restricted=false] whether geo-restriction is enabled for this video
  * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
@@ -46,7 +46,8 @@
  *
  * @apiSuccess (Response Fields) {String} id video id
  * @apiSuccess (Response Fields) {String} name video title
- * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete
+ * @apiSuccess (Response Fields) {Boolean} complete whether processing is complete &mdash; __Note: when you create a new video, the complete property is automatically set to `false`. As soon as one rendition exists for the video, the complete property will be automatically set to `true`__
+ * @apiSuccess (Response Fields) {String} ad_keys string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example:
  * @apiSuccess (Response Fields) {DateString} created_at when the video was created
  * @apiSuccess (Response Fields) {Object} custom_fields={} map of fieldname-value pairs
  * @apiSuccess (Response Fields) {Object} cue_points array of cue point maps
@@ -58,7 +59,7 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} digital_master_id asset id of the digital master
- * @apiSuccess (Response Fields) {String} Economics whether video is AD_ENABLED (used by the Smart Player, not by the Brightcove Player)
+ * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
  * @apiSuccess (Response Fields) {Object} geo map of geo-filtering properties
  * @apiSuccess (Response Fields) {String} geo.countries=null array of ISO 3166 list of 2-letter codes(https://www.iso.org/obp/ui/)
  * @apiSuccess (Response Fields) {Boolean} geo.exclude_countries=false if true, country array is treated as a list of countries excluded from viewing
@@ -72,12 +73,14 @@
  * @apiSuccess (Response Fields) {Object} images.thumbnail map of thumbnail properties
  * @apiSuccess (Response Fields) {String} images.thumbnail.asset_id asset id for the thumbnail
  * @apiSuccess (Response Fields) {Object[]} images.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} images.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Url} images.thumbnail.sources.src URL for a thumbnail source image
  * @apiSuccess (Response Fields) {Url} images.thumbnail.src URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
+ * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
  * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
@@ -135,18 +138,49 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
- * @apiError (Error 4xx) {json} ILLEGAL_FIELD 409: Spelling error or other use of non-existent field
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
+ * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
  *
- * @apiErrorExample {json} 409 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 401 UNAUTHORIZED
+ *     HTTP/1.1 401 UNAUTHORIZED
  *     [
  *         {
- *            "error_code": "REFERENCE_ID_IN_USE",
- *            "message": "Reference id moose_2015_09_17 is already in use."
+ *             "error_code": "UNAUTHORIZED",
+ *             "message": "Permission denied."
  *         }
  *     ]
  *
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
+ *     [
+ *         {
+ *             "error_code": "RESOURCE_NOT_FOUND"
+ *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
  *
  */
 
@@ -231,24 +265,20 @@
  * @apiError (Error 4xx) {json} PROFILE 400: Unable to find profile by name
  * @apiError (Error 4xx) {json} NOT_SUBMITTED 400: Unable to submit job, please try again later
  * @apiError (Error 4xx) {json} NO_SUCH_VIDEO 400: Unable to find the referenced video
- * @apiError (Error 4xx) {json} BAD_ACCOUNT 400: Account ID was missing or invalid
  * @apiError (Error 4xx) {json} NO_SOURCE 400: Unable to find a source to use
  * @apiError (Error 4xx) {json} CDN_CREDENTIALS 400: Unable to fetch CDN credentials
  * @apiError (Error 4xx) {json} BAD_CALLBACKS 400: Callbacks were not in expected format
- * @apiError (Error 4xx) {json} SUBMISSION_FAILURE Unable to submit job please try again later.
- * @apiError (Error 4xx) {json} AUTH_ERROR Unable to authorize request.
- * @apiError (Error 4xx) {json} BAD_ACCOUNT Account ID was missing or invalid.
- * @apiError (Error 4xx) {json} BAD_VIDEO Video ID was missing or invalid.
- * @apiError (Error 4xx) {json} MALFORMED_SOURCE_URL source url is malformed.
- * @apiError (Error 4xx) {json} BAD_PROTOCOL_SOURCE_URL source url uses a unsupported protocol.
- * @apiError (Error 4xx) {json} EXCEED_MAXIMUM_VTT_SOURCES vtt sources exceed the maximum size.
- * @apiError (Error 4xx) {json} INVALID_VTT_SRC_LANGUAGE vtt srlang isn't a ISO639 alpha2 langurage code.
- * @apiError (Error 4xx) {json} INVALID_VTT_KIND vtt kind is invalid.
- * @apiError (Error 4xx) {json} NO_CAPTURE_IMAGE_ALLOWED capture-image is not allowed if an image source is provided.
- * @apiError (Error 4xx) {json} UNPROCESSABLE_ENTITY request data contains some unprocessable entity.
- * @apiError (Error 4xx) {json} MALFORMED_REQUEST Unable to parse request body.
+ * @apiError (Error 5xx) {json} SUBMISSION_FAILURE 500: Unable to submit job please try again later.
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 403: Unable to authorize request.
+ * @apiError (Error 4xx) {json} MALFORMED_SOURCE_URL 422: source url is malformed.
+ * @apiError (Error 4xx) {json} BAD_PROTOCOL_SOURCE_URL 422: source url uses a unsupported protocol.
+ * @apiError (Error 4xx) {json} EXCEED_MAXIMUM_VTT_SOURCES 422: vtt sources exceed the maximum size.
+ * @apiError (Error 4xx) {json} INVALID_VTT_KIND 422: vtt kind is invalid.
+ * @apiError (Error 4xx) {json} CONSTRAINT_VIOLATION 422: capture-image is not allowed if an image source is provided.
+ * @apiError (Error 4xx) {json} UNPROCESSABLE_ENTITY 422: request data contains some unprocessable entity.
+ * @apiError (Error 4xx) {json} BAD_REQUEST 400: Unable to parse request body.
  * @apiError (Error 4xx) {json} CDN_CONFIGS Unable to fetch CDN credentials
- * @apiError (Error 4xx) {json} AMBIGUOUS_REQUEST Both a master url and use_archived_master were set in the request.
+ * @apiError (Error 4xx) {json} AMBIGUOUS_REQUEST 400 Both a master url and use_archived_master were set in the request.
  * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
  *
  * @apiErrorExample {json} 404 Error Response
@@ -258,4 +288,68 @@
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 400 PROFILE
+ *    HTTP/1.1 400 Bad Request
+ *    [
+ *        {
+ *            "error_code": "PROFILE",
+ *            "message": "Unable to find profile by name."
+ *        }
+ *    ]
+ *
+ * @apiErrorExample {json} 404 Not Found
+ *    HTTP/1.1 404 Not Found
+ *    [
+ *        {
+ *            "error_code": "NO_SUCH_VIDEO",
+ *            "message": "Unable to find the referenced video."
+ *        }
+ *    ]
+ *
+ * @apiErrorExample 403 Forbidden
+ *    HTTP/1.1 403 Forbidden
+ *    [
+ *        {
+ *            "error_code": "UNAUTHORIZED",
+ *            "message": "Unable to authorize request."
+ *        }
+ *    ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 403 Bad Request
+ *    [
+ *        {
+ *            "error_code": "BAD_REQUEST",
+ *            "message": "Unable to parse request body."
+ *        }
+ *    ]
+ *
+ * @apiErrorExample 422 CONSTRAINT_VIOLATION
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "CONSTRAINT_VIOLATION",
+ *            "message": "capture-image is not allowed if an image source is provided."
+ *        }
+ *    ]
+ *
+ * @apiErrorExample 400 AMBIGUOUS_REQUEST
+ *    HTTP/1.1 400 Bad Request
+ *    [
+ *        {
+ *            "error_code": "AMBIGUOUS_REQUEST",
+ *            "message": "Both a master url and use_archived_master were set in the request."
+ *        }
+ *    ]
+ *
+ * @apiErrorExample 422 TYPE_VIOLATION
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "TYPE_VIOLATION",
+ *            "message": ".text_tracks.kind must be of type String"
+ *        }
+ *    ]
+ *
  */
