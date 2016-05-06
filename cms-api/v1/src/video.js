@@ -1061,7 +1061,6 @@
   * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
   * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
   * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
-  * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
   *
   * @apiErrorExample {json} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
@@ -1269,7 +1268,6 @@
  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
- * @apiError (Error 4xx) {json} VALIDATION_ERROR 409: the JSON data was not valid; error messages vary depending on the problem
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -1312,7 +1310,6 @@
  *            "message": "foo: ILLEGAL_FIELD"
  *        }
  *    ]
- *
  *
  *
  */

@@ -336,8 +336,10 @@
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -348,13 +350,38 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
  *
  *
  */
@@ -457,9 +484,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -470,13 +499,38 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
  *
  *
  */
@@ -767,8 +821,11 @@
   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
   * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
+  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
   *
   * @apiErrorExample {json} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
@@ -779,13 +836,39 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
-  *     HTTP/1.1 404 Not Found
+  * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
   *     [
   *         {
   *             "error_code": "RESOURCE_NOT_FOUND"
   *         }
   *     ]
+  *
+  * @apiErrorExample {json} 409 CONFLICT
+  *     HTTP/1.1 409 CONFLICT
+  *     [
+  *         {
+  *             "error_code": "REFERENCE_ID_IN_USE",
+  *             "message": "Reference id moose_2015_09_17 is already in use."
+  *         }
+  *     ]
+  *
+  * @apiErrorExample 400 Bad Request
+  *    HTTP/1.1 400 Bad Request
+  *    {
+  *        "error_code": "BAD_VALUE",
+  *        "message": "Unable to process JSON"
+  *    }
+  *
+  * @apiErrorExample 422 ILLEGAL_FIELD
+  *    HTTP/1.1 422 Unprocessable Entity
+  *    [
+  *        {
+  *            "error_code": "VALIDATION_ERROR",
+  *            "message": "foo: ILLEGAL_FIELD"
+  *        }
+  *    ]
+  *
   *
   *
   */
@@ -856,9 +939,11 @@
   * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
   * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
   * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-  * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
   * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
   * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+  *
   *
   * @apiErrorExample {json} 401 UNAUTHORIZED
   *     HTTP/1.1 401 UNAUTHORIZED
@@ -869,13 +954,38 @@
   *         }
   *     ]
   *
-  * @apiErrorExample {json} 404 Error Response
-  *     HTTP/1.1 404 Not Found
+  * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+  *     HTTP/1.1 404 RESOURCE_NOT_FOUND
   *     [
   *         {
   *             "error_code": "RESOURCE_NOT_FOUND"
   *         }
   *     ]
+  *
+  * @apiErrorExample {json} 409 CONFLICT
+  *     HTTP/1.1 409 CONFLICT
+  *     [
+  *         {
+  *             "error_code": "REFERENCE_ID_IN_USE",
+  *             "message": "Reference id moose_2015_09_17 is already in use."
+  *         }
+  *     ]
+  *
+  * @apiErrorExample 400 Bad Request
+  *    HTTP/1.1 400 Bad Request
+  *    {
+  *        "error_code": "BAD_VALUE",
+  *        "message": "Unable to process JSON"
+  *    }
+  *
+  * @apiErrorExample 422 ILLEGAL_FIELD
+  *    HTTP/1.1 422 Unprocessable Entity
+  *    [
+  *        {
+  *            "error_code": "VALIDATION_ERROR",
+  *            "message": "foo: ILLEGAL_FIELD"
+  *        }
+  *    ]
   *
   *
   */
@@ -1174,10 +1284,11 @@
    * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
    * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
    * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 4xx) {json} CONFLICT 409: VIDEO_STILL already exists on Video
    * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+   * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   *
    *
    * @apiErrorExample {json} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
@@ -1188,13 +1299,38 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 Error Response
-   *     HTTP/1.1 404 Not Found
+   * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+   *     HTTP/1.1 404 RESOURCE_NOT_FOUND
    *     [
    *         {
    *             "error_code": "RESOURCE_NOT_FOUND"
    *         }
    *     ]
+   *
+   * @apiErrorExample {json} 409 CONFLICT
+   *     HTTP/1.1 409 CONFLICT
+   *     [
+   *         {
+   *             "error_code": "REFERENCE_ID_IN_USE",
+   *             "message": "Reference id moose_2015_09_17 is already in use."
+   *         }
+   *     ]
+   *
+   * @apiErrorExample 400 Bad Request
+   *    HTTP/1.1 400 Bad Request
+   *    {
+   *        "error_code": "BAD_VALUE",
+   *        "message": "Unable to process JSON"
+   *    }
+   *
+   * @apiErrorExample 422 ILLEGAL_FIELD
+   *    HTTP/1.1 422 Unprocessable Entity
+   *    [
+   *        {
+   *            "error_code": "VALIDATION_ERROR",
+   *            "message": "foo: ILLEGAL_FIELD"
+   *        }
+   *    ]
    *
    *
    */
@@ -1267,9 +1403,11 @@
    * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
    * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
    * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
-   * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+   * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+   * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
    * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
    * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+   *
    *
    * @apiErrorExample {json} 401 UNAUTHORIZED
    *     HTTP/1.1 401 UNAUTHORIZED
@@ -1280,13 +1418,39 @@
    *         }
    *     ]
    *
-   * @apiErrorExample {json} 404 Error Response
-   *     HTTP/1.1 404 Not Found
+   * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+   *     HTTP/1.1 404 RESOURCE_NOT_FOUND
    *     [
    *         {
    *             "error_code": "RESOURCE_NOT_FOUND"
    *         }
    *     ]
+   *
+   * @apiErrorExample {json} 409 CONFLICT
+   *     HTTP/1.1 409 CONFLICT
+   *     [
+   *         {
+   *             "error_code": "REFERENCE_ID_IN_USE",
+   *             "message": "Reference id moose_2015_09_17 is already in use."
+   *         }
+   *     ]
+   *
+   * @apiErrorExample 400 Bad Request
+   *    HTTP/1.1 400 Bad Request
+   *    {
+   *        "error_code": "BAD_VALUE",
+   *        "message": "Unable to process JSON"
+   *    }
+   *
+   * @apiErrorExample 422 ILLEGAL_FIELD
+   *    HTTP/1.1 422 Unprocessable Entity
+   *    [
+   *        {
+   *            "error_code": "VALIDATION_ERROR",
+   *            "message": "foo: ILLEGAL_FIELD"
+   *        }
+   *    ]
+   *
    *
    */
 
@@ -1583,10 +1747,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} CONFLICT 409: THUMBNAIL already exists on Video
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -1597,13 +1762,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  */
 
@@ -1675,9 +1866,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -1688,13 +1881,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  */
 
@@ -1985,10 +2204,10 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} CONFLICT 409: HLS_MANIFEST already exists on Video
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -1999,13 +2218,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  *
  */
@@ -2076,9 +2321,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -2089,13 +2336,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  *
  */
@@ -2384,10 +2657,10 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} CONFLICT 409: HDS_MANIFEST already exists on Video
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -2398,12 +2671,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
+ *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *     ]
  *
  */
@@ -2474,9 +2774,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -2487,13 +2789,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  */
 
@@ -2782,10 +3110,10 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} CONFLICT 409: ISM_MANIFEST already exists on Video
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -2796,13 +3124,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  *
  */
@@ -2873,9 +3227,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -2886,13 +3242,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  *
  */
@@ -3182,10 +3564,10 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} CONFLICT 409: ISMC_MANIFEST already exists on Video
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -3196,13 +3578,38 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
  *
  *
  */
@@ -3273,9 +3680,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -3286,13 +3695,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  *
  */
@@ -3585,10 +4020,10 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} CONFLICT 409: MPD_MANIFEST already exists on Video
  * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -3599,13 +4034,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  */
 
@@ -3675,9 +4136,11 @@
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
- * @apiError (Error 4xx) {json} INVALID_RESOURCE 405: Only remote assets can be modified
+ * @apiError (Error 4xx) {json} VALIDATION_ERROR 422: "remote_url: REQUIRED_FIELD" &mdash; this endpoint can only be used to add remote assets
+ * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
  * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ *
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
@@ -3688,13 +4151,39 @@
  *         }
  *     ]
  *
- * @apiErrorExample {json} 404 Error Response
- *     HTTP/1.1 404 Not Found
+ * @apiErrorExample {json} 404 RESOURCE_NOT_FOUND
+ *     HTTP/1.1 404 RESOURCE_NOT_FOUND
  *     [
  *         {
  *             "error_code": "RESOURCE_NOT_FOUND"
  *         }
  *     ]
+ *
+ * @apiErrorExample {json} 409 CONFLICT
+ *     HTTP/1.1 409 CONFLICT
+ *     [
+ *         {
+ *             "error_code": "REFERENCE_ID_IN_USE",
+ *             "message": "Reference id moose_2015_09_17 is already in use."
+ *         }
+ *     ]
+ *
+ * @apiErrorExample 400 Bad Request
+ *    HTTP/1.1 400 Bad Request
+ *    {
+ *        "error_code": "BAD_VALUE",
+ *        "message": "Unable to process JSON"
+ *    }
+ *
+ * @apiErrorExample 422 ILLEGAL_FIELD
+ *    HTTP/1.1 422 Unprocessable Entity
+ *    [
+ *        {
+ *            "error_code": "VALIDATION_ERROR",
+ *            "message": "foo: ILLEGAL_FIELD"
+ *        }
+ *    ]
+ *
  *
  */
 
