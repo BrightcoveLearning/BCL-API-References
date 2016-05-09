@@ -1,7 +1,7 @@
 
 // Get Single Embed
 /**
- * @api {get} accounts/:account_id/players/:player_id/embeds/:embed_id Get Single Embed
+ * @api {get} /accounts/:account_id/players/:player_id/embeds/:embed_id Get Single Embed
  * @apiName Get Single Embed
  * @apiGroup Player Embeds
  * @apiVersion 1.0.0
@@ -107,7 +107,7 @@
 // Get a player's embeds
 
 /**
- * @api {get} accounts/:account_id/players/:player_id/embeds Get All Embeds
+ * @api {get} /accounts/:account_id/players/:player_id/embeds Get All Embeds
  * @apiName Get All Embeds
  * @apiGroup Player Embeds
  * @apiVersion 1.0.0
@@ -279,7 +279,7 @@
 
 // Create an Embed
 /**
- * @api {post} accounts/:account_id/players/:player_id/embeds Create an Embed
+ * @api {post} /accounts/:account_id/players/:player_id/embeds Create an Embed
  * @apiName Create an Embed
  * @apiGroup Player Embeds
  * @apiVersion 1.0.0
@@ -363,7 +363,7 @@
 
 // Publish an Embed
 /**
- * @api {post} accounts/:account_id/players/:player_id/embeds/:embed_id/publish Publish an Embed
+ * @api {post} /accounts/:account_id/players/:player_id/embeds/:embed_id/publish Publish an Embed
  * @apiName Publish an Embed
  * @apiGroup Player Embeds
  * @apiVersion 1.0.0
@@ -405,7 +405,7 @@
 
 // Delete an Embed
 /**
- * @api {delete} accounts/:account_id/players/:player_id/embeds/:embed_id Delete an Embed
+ * @api {delete} /accounts/:account_id/players/:player_id/embeds/:embed_id Delete an Embed
  * @apiName Delete an Embed
  * @apiGroup Player Embeds
  * @apiVersion 1.0.0
@@ -434,17 +434,3 @@
  *   "message": "Successfully deleted embed with the id: b3588e3f-1f67-4879-802d-339deb7dc939"
  * }
  */
-
-
-
-
-
-
-
-
-
-
-
-
-
-

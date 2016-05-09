@@ -1,7 +1,7 @@
 // Get a player configuration
 
 /**
- * @api {get}  accounts/:account_id/players/:player_id/configuration/:branch Get a Player Configuration
+ * @api {get}  /accounts/:account_id/players/:player_id/configuration/:branch Get a Player Configuration
  * @apiName Get a Player Configuration
  * @apiGroup Player Configurations
  * @apiVersion 1.0.0
@@ -98,7 +98,7 @@
 // Update a player configuration
 
 /**
- * @api {patch}  accounts/:account_id/players/:player_id/configuration Update a Player Configuration
+ * @api {patch}  /accounts/:account_id/players/:player_id/configuration Update a Player Configuration
  * @apiName Update a Player Configuration
  * @apiGroup Player Configurations
  * @apiVersion 1.0.0

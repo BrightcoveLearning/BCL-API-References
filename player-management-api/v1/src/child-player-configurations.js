@@ -1,7 +1,7 @@
 // Get an Embed Configuration
 
 /**
- * @api {get} accounts/:account_id/players/:player_id/players/:embed_id/:branch Get an Embed Configuration
+ * @api {get} /accounts/:account_id/players/:player_id/players/:embed_id/:branch Get an Embed Configuration
  * @apiName Get an Embed Configuration
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
@@ -41,7 +41,7 @@
 // Update an Embed Configuration
 
 /**
- * @api {patch} accounts/:account_id/players/:player_id/players/:embed_id/configuration Update an Embed Configuration
+ * @api {patch} /accounts/:account_id/players/:player_id/players/:embed_id/configuration Update an Embed Configuration
  * @apiName Update an Embed Configuration
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
@@ -95,7 +95,7 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
 // View Merged configurations
 
 /**
- * @api {get} accounts/:account_id/players/:player_id/players/:embed_id/configuration Get Configuration Combinations
+ * @api {get} /accounts/:account_id/players/:player_id/players/:embed_id/configuration Get Configuration Combinations
  * @apiName Get Configuration Combinations
  * @apiGroup Embed Configurations
  * @apiVersion 1.0.0
@@ -167,9 +167,3 @@ For a longer discussion of the this endpoint, see <a href="http://docs.brightcov
  *   "player_name": "MySamplePlayer"
 }
 */
-
-
-
-
-
-
