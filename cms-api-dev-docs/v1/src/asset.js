@@ -3872,7 +3872,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Gets the dash_manifests for a given video. **Notes**: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Gets the dash_manifests for a given video. **Notes**: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -4042,7 +4042,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Adds the location of a dash_manifest file for a remote asset. **Notes**: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Adds a location for a remote DASH manifest **Notes**: 1. you can have multiple dash manifests with profiles; you can have only one dash manifest without a profile, but one manifest without a profile can be combined with muliple manifests with profiles; 2. all manifests intended to be used with the CMS API should include a profile - only DASH manifests with profiles will be returned by the CMS API &mdash; only a single DASH manifest without a profile will be returned by the Media API 3. you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
