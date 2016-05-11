@@ -16,6 +16,7 @@
  * @apiParam (Request Body Fields) {String} name profile name (must be unique within the account)
  * @apiParam (Request Body Fields) {Number} account_id Video Cloud account ID.
  * @apiParam (Request Body Fields) {String} [description] description of the profile
+ * @apiParam (Request Body Fields) {Boolean} [keep_renditions=true] whether Video Cloud should keep a copy of the renditions or delete them after pushing them to the CDN
  * @apiParam (Request Body Fields) {Object[]} renditions array of rendition maps
  * @apiParam (Request Body Fields) {String="preserve","stretch","crop","pad"} [renditions.aspect_mode="preserve"] how to handle mismatch between source and rendition aspect ratio
  * @apiParam (Request Body Fields) {Number} renditions.audio_bitrate audio bitrate in kbps
