@@ -10,9 +10,11 @@
         "Get_Repository",
         "Create_Repository",
         "Delete_Repository",
+        "devsystemgroup",
         "Manipulating_Files",
         "Add_Update_File",
         "Delete_File",
-        "List_Files"
+        "List_Files",
+        "View File Contents"
     ]
 }

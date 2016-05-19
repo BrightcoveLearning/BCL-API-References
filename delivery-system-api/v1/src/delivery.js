@@ -133,15 +133,24 @@
  *
  */
 
+ /**
+  * @apiDefine devsystemgroup Manipulating Files
+  * There is nothing in the Manipulating Files calls to the API to display the contents of a file, but you can do so in these two ways:
+  * <ul>
+  *   <li>Browse the <code>public_url</code> that is part of the response in the file add/update</li>
+  *   <li>Use cURL to the file: <code>curl http://players.brightcove.net/:accountId/repos/:repoName/files/:filename</code></li>
+  * </ul>
+  */
+
  // add or update file
 
  /**
   * @api {put} /accounts/:accountId/repos/:repoName/files/:destinationFilename Add/Update File
   * @apiName Add/Update File
-  * @apiGroup Manipulating Files
+  * @apiGroup devsystemgroup
   * @apiVersion 1.0.0
   *
-  * @apiDescription This will add or update a file. The wanted file name is at the end of the endpoint. The <code>form contents</code> can be a file name, including relative path, or a JSON string.
+  * @apiDescription This will add or update a file. The wanted file name is at the end of the endpoint. The <code>form contents</code> can be a file name, including relative path, or any string. If the file has a <code>.json</code> extension, it will be checked for valid JSON format.
   *
   * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
   *
@@ -174,7 +183,7 @@
   /**
    * @api {delete} /accounts/:accountId/repos/:repoName/files/:filename Delete File
    * @apiName Delete File
-   * @apiGroup Manipulating Files
+   * @apiGroup devsystemgroup
    * @apiVersion 1.0.0
    *
    * @apiDescription Deletes a file in a repo.
@@ -203,7 +212,7 @@
    /**
     * @api {get} /accounts/:accountId/repos/:repoName/files List Files
     * @apiName List Files
-    * @apiGroup Manipulating Files
+    * @apiGroup devsystemgroup
     * @apiVersion 1.0.0
     *
     * @apiDescription Lists all the files in a repo.
