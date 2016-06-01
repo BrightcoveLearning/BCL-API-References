@@ -6,7 +6,7 @@
  * @apiGroup Profile
  * @apiVersion 1.0.0
  *
- * @apiDescription Create a custom ingest profile for the account. Note that you can also do this through [Brightcove Studio](https://studio.brightcove.com/products/videocloud/admin/ingestprofiles)
+ * @apiDescription Create a custom ingest profile for the account. Note that you can also do this through [Video Cloud Studio](https://studio.brightcove.com/products/videocloud/admin/ingestprofiles)
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
