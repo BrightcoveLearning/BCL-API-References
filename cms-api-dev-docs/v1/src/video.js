@@ -938,6 +938,7 @@
   *
   * @apiParam (Request Body Fields) {String{1..255}} name video title
   * @apiParam (Request Body Fields) {String{0..250}} [description] video short description
+  * @apiParam (Request Body Fields) {String="AD_SUPPORTED","FREE"} [economics="AD_SUPPORTED"] whether the video supports ads (used by the Smart Player, but not by the Brightcove Player)
   * @apiParam (Request Body Fields) {String{0..5000}} [long_description] video long description
   * @apiParam (Request Body Fields) {String{..150}} [reference_id] video reference-id (must be unique within the account)
   * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
