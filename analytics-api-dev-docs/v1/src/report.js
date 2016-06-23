@@ -31,8 +31,6 @@
  * @apiSuccess (Response Fields) {String} account.name the name of the Video Cloud account id
  * @apiSuccess (Response Fields) {Number} item_count the total number of items matching the request
  * @apiSuccess (Response Fields) {Object[]} items array of analytics objects for the videos returned
- * @apiSuccess (Response Fields) {Number} items.ad_start number of times an ad started
- * @apiSuccess (Response Fields) {Number} items.ad_end number of times an ad ended
  * @apiSuccess (Response Fields) {Number} items.ad_mode_begin number of times a player entered ad mode
  * @apiSuccess (Response Fields) {Number} items.ad_mode_complete number of times a player completed ad mode
  * @apiSuccess (Response Fields) {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
