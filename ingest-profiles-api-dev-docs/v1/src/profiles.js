@@ -60,10 +60,10 @@
  * @apiParam (Request Body Fields) {Number} renditions.width target frame width in pixels
  * @apiParam (Request Body Fields) {Object[]} renditions.watermarks array of watermark maps
  * @apiParam (Request Body Fields) {String} renditions.watermarks.url URL for the watermark image
- * @apiParam (Request Body Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiParam (Request Body Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%`
- * @apiParam (Request Body Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%` (use negative values like `-10` to position the watermark relative to the right edge)
- * @apiParam (Request Body Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%` (use negative values like `-10` to position the watermark relative to the bottom edge)
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.width width in pixels or percent of frame width; e.g. `20` or `10%` - decimal values like `10.5%` are __not__ permitted
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.height height in pixels or percent of frame width; e.g. `20` or `10%` - decimal values like `10.5%` are __not__ permitted
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.x distance from left edge to center of image as pixels or precent of frame width; e.g. `20` or `10%` (use negative values like `-10` to position the watermark relative to the right edge) - decimal values like `10.5%` are __not__ permitted
+ * @apiParam (Request Body Fields) {String} renditions.watermarks.y distance from top edge to center if image as pixels or percent of frame height; e.g. `20` or `10%` (use negative values like `-10` to position the watermark relative to the bottom edge) - decimal values like `10.5%` are __not__ permitted
  * @apiParam (Request Body Fields) {Object[]} packages array of package maps for DRM (see [Content Security](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/drm.html))
  * @apiParam (Request Body Fields) {String[]} packages.drm for MPEG-DASH, array of DRM types to apply, e.g. `["widevine", "playready"]`
  * @apiParam (Request Body Fields) {String} packages.package_type for MPEG-DASH, the package type is `dash`; for other formats, the package type is the DRM type, e.g. `widevine`
