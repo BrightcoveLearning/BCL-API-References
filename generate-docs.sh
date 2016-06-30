@@ -5,6 +5,8 @@ txtred=$(tput setaf 9) # red
 echo ${txtred}Copying src files to the -dev-docs folders
 echo ${txtyel}copying analytics-api src
 cp -R analytics-api/ analytics-api-dev-docs/
+echo ${txtyel}copying audience-api src
+cp -R audience-api/ audience-api-dev-docs/
 echo ${txtyel}copying data-dollection-api src
 cp -R data-collection-api/ data-collection-api-dev-docs/
 echo ${txtyel}copying cms-api src
@@ -36,6 +38,12 @@ echo ${txtyel}generating docs for analytics-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../analytics-api-dev-docs
 echo ${txtyel}generating docs for analytics-api-dev-docs
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
+cd ../audience-api
+echo ${txtyel}generating docs for audience-api
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
+cd ../audience-api-dev-docs
+echo ${txtyel}generating docs for audience-api-dev-docs
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
 cd ../data-collection-api
 echo ${txtyel}generating docs for data-collection-api
@@ -116,6 +124,8 @@ echo ${txtred}copying docs to Developer Docs directories....
 cd ..
 echo ${txtyel}copying analytics-api docs
 cp -R analytics-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/versions/v1
+echo ${txtyel}copying audience-api docs
+cp -R audience-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/audience-api/references/versions/v1
 echo ${txtyel}copying data-dollection-api docs
 cp -R data-collection-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/data-collection/v1
 echo ${txtyel}copying cms-api docs
