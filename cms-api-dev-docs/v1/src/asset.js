@@ -37,6 +37,7 @@
  * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
  * @apiSuccess (Response Fields) {String} name asset name
  * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
@@ -68,6 +69,7 @@
  *            "hls": null,
  *            "id": "4665726463001",
  *            "name": "RA - Great Blue Heron",
+ *            "key_systems": [],
  *            "progressive_download": false,
  *            "reference_id": "",
  *            "remote_stream_name": "",
@@ -168,6 +170,7 @@
  * @apiSuccess (Response Fields) {Number} encoding_rate average encoding rate in kbps
  * @apiSuccess (Response Fields) {Number} frame_height frame height in pixels
  * @apiSuccess (Response Fields) {Number} frame_width frame width in pixels
+ * @apiSuccess (Response Fields) {String[]} key_systems array of strings that denote the kind of encryption used for DRM packaged renditions
  * @apiSuccess (Response Fields) {String} name asset name
  * @apiSuccess (Response Fields) {Boolean} progressive_download whether ingested rendition is available by progressive download (not applicable to other asset types or remote renditions)
  * @apiSuccess (Response Fields) {String} reference_id video reference id (must be unique within the account)
@@ -197,6 +200,7 @@
  *        "hds": null,
  *        "hls": null,
  *        "id": "4665726463001",
+ *        "key_systems": [],
  *        "name": "RA - Great Blue Heron",
  *        "progressive_download": false,
  *        "reference_id": "",
