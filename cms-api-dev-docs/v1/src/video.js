@@ -70,8 +70,8 @@
  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of sharing properties (applicable only to multiple accounts)
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
@@ -320,8 +320,8 @@
  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
  * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
@@ -1006,8 +1006,8 @@
   * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
   * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
   * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
-  * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
-  * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+  * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
   * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
   * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
   * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
@@ -1213,8 +1213,8 @@
  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties
- * @apiSuccess (Response Fields) {DateString} starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
- * @apiSuccess (Response Fields) {DateString} ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} schedule.starts_at start date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
+ * @apiSuccess (Response Fields) {DateString} schedule.ends_at end date-time of availability in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiSuccess (Response Fields) {String} state state determines whether the video is playable or not
  * @apiSuccess (Response Fields) {Object} sharing map of the sharing properties for the video
  * @apiSuccess (Response Fields) {Boolean} sharing.by_external_acct whether the video was shared from another account
