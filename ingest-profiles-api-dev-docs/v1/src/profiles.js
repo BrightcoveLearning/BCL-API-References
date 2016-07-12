@@ -24,7 +24,7 @@
  * @apiParam (Request Body Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiParam (Request Body Fields) {String="aac-lc", "he-aac", "he-aac-v2"} renditions.max_aac_profile max aaic profile - `aac-lc` is the recommended value
  * @apiParam (Request Body Fields) {Boolean} [renditions.constant_bitrate=false] whether to use constant bitrate for encoding
- * @apiParam (Request Body Fields) {Number} [renditions.crf] 1-51, not used by default. Overrides `quality`
+ * @apiParam (Request Body Fields) {Number} [renditions.crf] 1-51, not used by default.
  * @apiParam (Request Body Fields) {Number} [renditions.decoder_bitrate_cap] In kbps, the max bitrate fed to the decoder
  * @apiParam (Request Body Fields) {String} [renditions.encryption_method] encryption_method to use, e.g. `aes-128`
  * @apiParam (Request Body Fields) {Number} [renditions.encryption_key_rotation_period=10] use a different key for each set of segments, rotating to a new key after this many segments
@@ -133,7 +133,7 @@
  * @apiSuccess (Response Fields) {String} renditions.id the rendition id
  * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. Overrides `quality`
+ * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
  * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
  * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
  * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
@@ -316,7 +316,7 @@
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
  * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. Overrides `quality`
+ * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
  * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
  * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
  * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
@@ -463,7 +463,7 @@
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
  * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. Overrides `quality`
+ * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
  * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
  * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
  * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
@@ -601,7 +601,7 @@
  * @apiParam (Request Body Fields) {Number=1,2} [renditions.audio_channels] number of audio channels
  * @apiParam (Request Body Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiParam (Request Body Fields) {Boolean} [renditions.constant_bitrate=false] whether to use constant bitrate for encoding
- * @apiParam (Request Body Fields) {Number} [renditions.crf] 1-51, not used by default. Overrides `quality`
+ * @apiParam (Request Body Fields) {Number} [renditions.crf] 1-51, not used by default.
  * @apiParam (Request Body Fields) {Number} [renditions.decoder_bitrate_cap] In kbps, the max bitrate fed to the decoder
  * @apiParam (Request Body Fields) {String} [renditions.encryption_method] encryption_method to use, e.g. `aes-128`
  * @apiParam (Request Body Fields) {Number} [renditions.encryption_key_rotation_period=10] use a different key for each set of segments, rotating to a new key after this many segments
@@ -702,7 +702,7 @@
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
  * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. Overrides `quality`
+ * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. 
  * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
  * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
  * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
