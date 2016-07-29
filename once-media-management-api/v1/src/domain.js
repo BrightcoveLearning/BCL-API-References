@@ -127,7 +127,7 @@
 // Get All Domain Publication Rules
 
 /**
- * @api {get} /domains/{domainId}/publicationRules Get All Domain Publication Rules
+ * @api {get} /domains/:domainId/publicationRules Get All Domain Publication Rules
  * @apiName Get All Domain Publication Rules
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -158,7 +158,7 @@
 // Get Domain Publication Rule Details
 
 /**
- * @api {get} /domains/{domainId}/publicationRules/:publicationRuleId Get Domain Publication Rule Details
+ * @api {get} /domains/:domainId/publicationRules/:publicationRuleId Get Domain Publication Rule Details
  * @apiName Get Domain Publication Rule Details
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -221,7 +221,7 @@
 // Create Domain Publication Rule
 
 /**
- * @api {post} /domains/{domainId}/publicationRules Create Domain Publication Rule
+ * @api {post} /domains/:domainId/publicationRules Create Domain Publication Rule
  * @apiName Create Domain Publication Rule
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -312,7 +312,7 @@
 // Update Domain Publication Rule
 
 /**
- * @api {put} /domains/{domainId}/publicationRules/:publicationRuleId Update Domain Publication Rule
+ * @api {put} /domains/:domainId/publicationRules/:publicationRuleId Update Domain Publication Rule
  * @apiName Update Domain Publication Rule
  * @apiGroup Domain
  * @apiVersion 1.0.0
@@ -403,7 +403,7 @@
  // Delete Domain Publication Rule
 
  /**
-  * @api {delete} /domains/{domainId}/publicationRules/:publicationRuleId Delete Domain Publication Rule
+  * @api {delete} /domains/:domainId/publicationRules/:publicationRuleId Delete Domain Publication Rule
   * @apiName Delete Domain Publication Rule
   * @apiGroup Domain
   * @apiVersion 1.0.0

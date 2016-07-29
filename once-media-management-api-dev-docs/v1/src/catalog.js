@@ -690,7 +690,7 @@
     // Delete Catalog Publication Rule
 
 /**
- * @api {delete} /domains/{domainId}/catalogs/{catalogId}/publicationRules/{publicationRuleId} Delete Catalog Publication Rule
+ * @api {delete} /domains/:domainId/catalogs/{catalogId}/publicationRules/{publicationRuleId} Delete Catalog Publication Rule
  * @apiName Delete Catalog Publication Rule
  * @apiGroup Domain
  * @apiVersion 1.0.0
