@@ -719,7 +719,7 @@
      * @apiGroup MediaItem
      * @apiVersion 1.0.0
      *
-     * @apiDescription Deletes the specified mediaItem publication rule.
+     * @apiDescription Deletes the specified mediaItem.
      *
      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
      *
