@@ -1124,7 +1124,7 @@
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID.
  *
- * @apiParam (Request Body Fields) {String{1..255}} name video title
+ * @apiParam (Request Body Fields) {String{1..255}} [name] video title
  * @apiParam (Request Body Fields) {String{..250}} [description] video short description
  * @apiParam (Request Body Fields) {String="AD_SIPPORTED", "FREE"} [economics="AD_SUPPORTED"] video short description
  * @apiSuccess (Request Body  Fields) {String{..1800}} [ad_keys=null] string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example:
