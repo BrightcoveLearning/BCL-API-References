@@ -119,7 +119,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID.
+ * @apiParam (Path Parameters) {Number} playlist_id Video Cloud playlist ID, or multiple playlist ids separated by commas.
  *
  * @apiParamExample {Url} Search for Playlists Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/playlists/749117323001

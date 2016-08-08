@@ -273,7 +273,7 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
- * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or `ref:reference_id`)
+ * @apiParam (Path Parameters) {Number} video_id Video Cloud video ID (or multiple ids separated by commas) (or `ref:reference_id` - only one reference id)
  *
  * @apiParamExample {Url} Get Video Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/videos/4492075574001
