@@ -136,6 +136,7 @@
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your client credentials were correct for the access token
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} BAD_VALUE 400: The JSON could not be parsed
  * @apiError (Error 4xx) {json} REFERENCE_ID_IN_USE 409: The specified reference id is already in use
  * @apiError (Error 4xx) {json} ILLEGAL_FIELD 422: Spelling error or use of non-existent field
@@ -276,6 +277,7 @@
  * @apiError (Error 4xx) {json} CONSTRAINT_VIOLATION 422: capture-image is not allowed if an image source is provided.
  * @apiError (Error 4xx) {json} UNPROCESSABLE_ENTITY 422: request data contains some unprocessable entity.
  * @apiError (Error 4xx) {json} BAD_REQUEST 400: Unable to parse request body.
+ * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} CDN_CONFIGS Unable to fetch CDN credentials
  * @apiError (Error 4xx) {json} AMBIGUOUS_REQUEST 400 Both a master url and use_archived_master were set in the request.
  * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Internal error, please try again later
