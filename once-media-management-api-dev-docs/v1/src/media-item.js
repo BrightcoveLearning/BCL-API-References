@@ -10,8 +10,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} catalogId TThe catalogId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} catalogId TThe catalog Id
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String {..255}} [title] Filter to media items that have title substring. E.g. title=foo could return media items with title "foo", "foobar", "foorific"
@@ -24,8 +24,8 @@
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of mediaItems in result set
  * @apiSuccess (Response Fields) {String} results.id Each mediaItem’s Id
- * @apiSuccess (Response Fields) {String} results.catalogId Each mediaItem’s parent catalogId
- * @apiSuccess (Response Fields) {String} results.domainId Each mediaItem’s parent domainId
+ * @apiSuccess (Response Fields) {String} results.catalogId Each mediaItem’s parent catalog Id
+ * @apiSuccess (Response Fields) {String} results.domainId Each mediaItem’s parent domain Id
  * @apiSuccess (Response Fields) {Boolean} results.isAd (Internal use only)
  * @apiSuccess (Response Fields) {String} results.foreignKey Each mediaItem’s foreignKey
  * @apiSuccess (Response Fields) {String} results.title Each mediaItem’s title
@@ -85,16 +85,16 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} catalogId The catalogId
- * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} catalogId The catalog Id
+ * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
  *
  * @apiParamExample {Url} Get Media Item Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
- * @apiSuccess (Response Fields) {String} id The mediaItemId
- * @apiSuccess (Response Fields) {String} catalogId The mediaItem’s parent catalogId
- * @apiSuccess (Response Fields) {String} domainId The mediaItem’s parent domainId
+ * @apiSuccess (Response Fields) {String} id The mediaItem Id
+ * @apiSuccess (Response Fields) {String} catalogId The mediaItem’s parent catalog Id
+ * @apiSuccess (Response Fields) {String} domainId The mediaItem’s parent domain Id
  * @apiSuccess (Response Fields) {String} foreignKey The mediaItem’s foreignKey
  * @apiSuccess (Response Fields) {String} title The mediaItem’s title
  * @apiSuccess (Response Fields) {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
@@ -189,13 +189,13 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} id The mediaItemId (this value cannot be changed)
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} catalogId The catalogId
+ * @apiParam (Path Parameters) {String} id The mediaItem Id (this value cannot be changed)
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} catalogId The catalog Id
  *
- * @apiParam (Request Body Fields) {String} id The mediaItemId
- * @apiParam (Request Body Fields) {String} catalogId The catalogId
- * @apiParam (Request Body Fields) {String} domainId The domainId
+ * @apiParam (Request Body Fields) {String} id The mediaItem Id
+ * @apiParam (Request Body Fields) {String} catalogId The catalog Id
+ * @apiParam (Request Body Fields) {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String {..255}} [foreignKey] The unique identifier for the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String {..255}} [title] The title of the asset (max length: 255 characters)
  * @apiParam (Request Body Fields) {String} [description] Text description of the video
@@ -265,9 +265,9 @@
  *        }
  *    }
  *
- * @apiSuccess (Response Fields) {String} id The mediaItemId
- * @apiSuccess (Response Fields) {String} catalogId The mediaItem’s parent catalogId
- * @apiSuccess (Response Fields) {String} domainId The mediaItem’s parent domainId
+ * @apiSuccess (Response Fields) {String} id The mediaItem Id
+ * @apiSuccess (Response Fields) {String} catalogId The mediaItem’s parent catalog Id
+ * @apiSuccess (Response Fields) {String} domainId The mediaItem’s parent domain Id
  * @apiSuccess (Response Fields) {String} foreignKey The mediaItem’s foreignKey
  * @apiSuccess (Response Fields) {String} title The mediaItem’s title
  * @apiSuccess (Response Fields) {Number} draftVersion The iteration of that specific mediaItem (will increment if a new version of the video is ingested)
@@ -362,14 +362,14 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} catalogId The catalogId
- * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} catalogId The catalog Id
+ * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id (you can substitute `foreignKey` for `mediaItemId`)
  *
  * @apiParamExample {Url} Ingest Request Body Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/4eca7ac5-3954-416d-bb23-e65aa511b85a/mediaItems/efe70c1f-ebd2-4c5e-856a-a54a8e97415f
  *
- * @apiSuccess (Response Fields) {String} delete value will contain the mediaItemId the message "scheduled for deletion"
+ * @apiSuccess (Response Fields) {String} delete Value will contain The mediaItem Id the message "scheduled for deletion"
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -396,9 +396,9 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domainId
-  * @apiParam (Path Parameters) {String} catalogId The catalogId
-  * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+  * @apiParam (Path Parameters) {String} domainId The domain Id
+  * @apiParam (Path Parameters) {String} catalogId The catalog Id
+  * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
   *
   * @apiParamExample {Url} Get Media Item Publication Rules Example:
   *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -430,10 +430,10 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domainId
-   * @apiParam (Path Parameters) {String} catalogId The catalogId
-   * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
-   * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+   * @apiParam (Path Parameters) {String} domainId The domain Id
+   * @apiParam (Path Parameters) {String} catalogId The catalog Id
+   * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+   * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
    *
    * @apiParamExample {Url} Get Media Item Publication Rule Example:
    *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac/publicationRules
@@ -448,10 +448,10 @@
    * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
    * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
    * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-   * @apiSuccess (Response Fields) {String} id The publicationRuleId
-   * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
-   * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
-   * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItemId
+   * @apiSuccess (Response Fields) {String} id The publicationRule Id
+   * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domain Id
+   * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalog Id
+   * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItem Id
    *
    * @apiSuccessExample {json} Success Response:
    *    HTTP/1.1 200 OK
@@ -498,9 +498,9 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domainId
-    * @apiParam (Path Parameters) {String} catalogId The catalogId
-    * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+    * @apiParam (Path Parameters) {String} domainId The domain Id
+    * @apiParam (Path Parameters) {String} catalogId The catalog Id
+    * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -542,10 +542,10 @@
     * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
     * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
     * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess (Response Fields) {String} id The publicationRuleId
-    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
-    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
-    * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItemId
+    * @apiSuccess (Response Fields) {String} id The publicationRule Id
+    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domain Id
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalog Id
+    * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItem Id
     *
     * @apiSuccessExample {json} Success Response:
     *    HTTP/1.1 200 OK
@@ -592,10 +592,10 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domainId
-    * @apiParam (Path Parameters) {String} catalogId The catalogId
-    * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
-    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+    * @apiParam (Path Parameters) {String} domainId The domain Id
+    * @apiParam (Path Parameters) {String} catalogId The catalog Id
+    * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -637,10 +637,10 @@
     * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
     * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
     * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess (Response Fields) {String} id The publicationRuleId
-    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
-    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
-    * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItemId
+    * @apiSuccess (Response Fields) {String} id The publicationRule Id
+    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domain Id
+    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalog Id
+    * @apiSuccess (Response Fields) {String} mediaItem The publication rule’s parent mediaItem Id
     *
     * @apiSuccessExample {json} Success Response:
     *    HTTP/1.1 200 OK
@@ -687,10 +687,10 @@
      *
      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
      *
-     * @apiParam (Path Parameters) {String} domainId The domainId
-     * @apiParam (Path Parameters) {String} catalogId The catalogId
-     * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
-     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+     * @apiParam (Path Parameters) {String} domainId The domain Id
+     * @apiParam (Path Parameters) {String} catalogId The catalog Id
+     * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
+     * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
      *
      * @apiParamExample {Url} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/publicationRules
@@ -723,14 +723,14 @@
      *
      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
      *
-     * @apiParam (Path Parameters) {String} domainId The domainId
-     * @apiParam (Path Parameters) {String} catalogId The catalogId
-     * @apiParam (Path Parameters) {String} mediaItemId The mediaItemId
+     * @apiParam (Path Parameters) {String} domainId The domain Id
+     * @apiParam (Path Parameters) {String} catalogId The catalog Id
+     * @apiParam (Path Parameters) {String} mediaItemId The mediaItem Id
      *
      * @apiParamExample {Url} Delete Media Item Publication Rule Example:
      *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a
      *
-     * @apiSuccess (Response Fields) {String} id The mediaItemId that was deleted
+     * @apiSuccess (Response Fields) {String} id The mediaItem Id that was deleted
      *
      * @apiSuccessExample {json} Success Response:
      *    HTTP/1.1 200 OK

@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
@@ -68,13 +68,13 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Request Example:
  *    https://api.unicornmedia.com/media-management-api/domain/4eca7ac5-3954-416d-bb23-e65aa511b85a/catalogs/62191781-a933-49d6-831f-83bdf51a26ac
  *
- * @apiSuccess (Response Fields) {String} id The catalogId
+ * @apiSuccess (Response Fields) {String} id The catalog Id
  * @apiSuccess (Response Fields) {String} name The catalog name
  * @apiSuccess (Response Fields) {Boolean} domainId The catalog’s parent domainId
  *
@@ -105,7 +105,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name The new catalog name
  * @apiParam (Request Body Fields) {Object[]} [renditions] An array of renditions to be assigned to the catalog. If omitted, catalog will be assigned default domain renditions.
  * @apiParam (Request Body Fields) {String} renditions.id Each renditionId to be assigned to the catalog
@@ -154,8 +154,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Request Body Fields) {String} id The catalogId to be updated
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Request Body Fields) {String} id The catalog Id to be updated
  * @apiParam (Request Body Fields) {String} name The new catalog name
  *
  * @apiParamExample {json} Update Catalog Request Body Example:
@@ -194,7 +194,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  *
  * @apiParamExample {Url} Get Catalog Renditions Example:
@@ -238,7 +238,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id
  *
@@ -285,7 +285,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id
  * @apiParam (Request Body Fields) {String} id a renditionId
@@ -333,7 +333,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Request Body Fields) {String} id a rendition id to add
  *
@@ -370,7 +370,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} catalogId The catalog id
  * @apiParam (Path Parameters) {String} renditionId The rendition id to remove from the catalog set
  *
@@ -405,7 +405,7 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domainId
+  * @apiParam (Path Parameters) {String} domainId The domain Id
   * @apiParam (Path Parameters) {String} catalogId The catalog id
   *
   * @apiParamExample {Url} Get Catalog Publication Rules Example:
@@ -445,7 +445,7 @@
    *
    * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
    *
-   * @apiParam (Path Parameters) {String} domainId The domainId
+   * @apiParam (Path Parameters) {String} domainId The domain Id
    * @apiParam (Path Parameters) {String} catalogId The catalog id
    * @apiParam (Path Parameters) {String} publicationRuleId The publication rule id
    *
@@ -462,7 +462,7 @@
    * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
    * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
    * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-   * @apiSuccess (Response Fields) {String} id The publicationRuleId
+   * @apiSuccess (Response Fields) {String} id The publicationRule Id
    * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
    * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
    *
@@ -509,7 +509,7 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domainId
+    * @apiParam (Path Parameters) {String} domainId The domain Id
     * @apiParam (Path Parameters) {String} catalogId The catalog id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
@@ -552,7 +552,7 @@
     * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
     * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
     * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess (Response Fields) {String} id The publicationRuleId
+    * @apiSuccess (Response Fields) {String} id The publicationRule Id
     * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
     * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
@@ -604,9 +604,9 @@
     *
     * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
     *
-    * @apiParam (Path Parameters) {String} domainId The domainId
+    * @apiParam (Path Parameters) {String} domainId The domain Id
     * @apiParam (Path Parameters) {String} catalogId The catalog id
-    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+    * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
     * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
     * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
     * @apiParam (Request Body Fields) {Object[]} [clientFilters] Array of client-based filters
@@ -648,7 +648,7 @@
     * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters,
     * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered,
     * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
-    * @apiSuccess (Response Fields) {String} id The publicationRuleId
+    * @apiSuccess (Response Fields) {String} id The publicationRule Id
     * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
     * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
@@ -699,9 +699,9 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} catalogId The catalogId
- * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} catalogId The catalog Id
+ * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
  *
  * @apiParamExample {Url} Delete Domain Publication Rule Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76

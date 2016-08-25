@@ -15,7 +15,7 @@
  * @apiParamExample {Url} Get Domain Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7
  *
- * @apiSuccess (Response Fields) {String} id The domainId
+ * @apiSuccess (Response Fields) {String} id The domain Id
  * @apiSuccess (Response Fields) {String} name The domain name
  *
  * @apiSuccessExample {json} Success Response:
@@ -50,7 +50,7 @@
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions
  *
  * @apiSuccess (Response Fields) {Object[]} results Array of rendition objects
- * @apiSuccess (Response Fields) {String} results.id Each renditionId
+ * @apiSuccess (Response Fields) {String} results.id Each rendition Id
  * @apiSuccess (Response Fields) {String} results.name Each rendition name
  * @apiSuccess (Response Fields) {Boolean} results.default If true, will be assigned to new catalogs by default
  *
@@ -96,7 +96,7 @@
  * @apiParamExample {Url} Get Rendition Settings Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/renditions/076ea1a2-a35b-11e4-bfdb-005056837bc7
  *
- * @apiSuccess (Response Fields) {String} id The renditionId
+ * @apiSuccess (Response Fields) {String} id The rendition Id
  * @apiSuccess (Response Fields) {String} name The rendition name
  * @apiSuccess (Response Fields) {Number} width The frame width in pixels
  * @apiSuccess (Response Fields) {Number} height The frame height in pixels
@@ -168,7 +168,7 @@
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+ * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
  *
  * @apiParamExample {Url} Get Domain Publication Rule Example:
  *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76
@@ -184,7 +184,7 @@
  * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
  * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
  * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
- * @apiSuccess (Response Fields) {String} id The publicationRuleId
+ * @apiSuccess (Response Fields) {String} id The publicationRule Id
  * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
  *
  * @apiSuccessExample {json} Success Response:
@@ -275,7 +275,7 @@
  * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
  * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
  * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
- * @apiSuccess (Response Fields) {String} id The publicationRuleId
+ * @apiSuccess (Response Fields) {String} id The publicationRule Id
  * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
  *
  * @apiSuccessExample {json} Success Response:
@@ -322,7 +322,7 @@
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
  * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
- * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+ * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
  *
  * @apiParam (Request Body Fields) {Number} startDate Epoch time (in seconds) when publication rule becomes effective
  * @apiParam (Request Body Fields) {Number} endDate Epoch time (in seconds) when publication rule expires
@@ -367,7 +367,7 @@
  * @apiSuccess (Response Fields) {Object[]} countryRules Array of country-based filters
  * @apiSuccess (Response Fields) {String} countryRules.countryCode [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code being filtered
  * @apiSuccess (Response Fields) {Boolean} countryRules.isDenied True: All other values will be permitted; False: Only this value will be permitted
- * @apiSuccess (Response Fields) {String} id The publicationRuleId
+ * @apiSuccess (Response Fields) {String} id The publicationRule Id
  * @apiSuccess (Response Fields) {String} domain The publication rule’s parent domainId
  *
  * @apiSuccessExample {json} Success Response:
@@ -413,7 +413,7 @@
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
-  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRuleId
+  * @apiParam (Path Parameters) {String} publicationRuleId The publicationRule Id
   *
   * @apiParamExample {Url} Delete Domain Publication Rule Example:
   *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/publicationRules/796350e-2125-4f04-b33a-59488aaa76

@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
@@ -68,13 +68,13 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} applicationId The applicationId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} applicationId The application Id
  *
  * @apiParamExample {Url} Get Application Details Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/2baf3c54-2baf-3c54-be91-147ffc57ebbe
  *
- * @apiSuccess (Response Fields Example 1) {String} id The applicationId
+ * @apiSuccess (Response Fields Example 1) {String} id The application Id
  * @apiSuccess (Response Fields Example 1) {String} name The application's name
  * @apiSuccess (Response Fields Example 1) {String} domainId The application's parent domainId
  * @apiSuccess (Response Fields Example 1) {Object} adConfig An object set of ads configured to the application
@@ -100,7 +100,7 @@
  * @apiSuccess (Response Fields Example 1) {Number} midRollAdCount The number of single VAST ads to be requested for the midRoll position
  * @apiSuccess (Response Fields Example 1) {Number} postRollAdCount The number of single VAST ads to be requested for the posRoll position
  *
- * @apiSuccess (Response Fields Example 2) {String} id The applicationId
+ * @apiSuccess (Response Fields Example 2) {String} id The application Id
  * @apiSuccess (Response Fields Example 2) {String} name The application's name
  * @apiSuccess (Response Fields Example 2) {String} domainId The application's parent domainId
  * @apiSuccess (Response Fields Example 2) {Object} adConfig An object set of ads configured to the application
@@ -179,7 +179,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name Name of the new application
  * @apiParam (Request Body Fields) {Number} [preRollAdCount] Number of single VAST ads to be requested for the preRoll position (required only if using single VAST adConfig)
  * @apiParam (Request Body Fields) {Number} [midRollAdCount] Number of single VAST ads to be requested for the midRoll position (required only if using single VAST adConfig)
@@ -193,7 +193,7 @@
  *        "postRollAdCount":0
  *    }
  *
- * @apiSuccess (Response Fields) {String} id The applicationId
+ * @apiSuccess (Response Fields) {String} id The application Id
  * @apiSuccess (Response Fields) {String} name The application's name
  * @apiSuccess (Response Fields) {String} domainId The application's parent domainId
  * @apiSuccess (Response Fields) {Object} adConfig Will remain null until adConfig has been added (see methods below)
@@ -231,8 +231,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} applicationId The applicationId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} applicationId The application Id
  * @apiParam (Request Body Fields) {String} name Name of the new application
  * @apiParam (Request Body Fields) {Number} [preRollAdCount] Number of single VAST ads to be requested for the preRoll position (required only if using single VAST adConfig)
  * @apiParam (Request Body Fields) {Number} [midRollAdCount] Number of single VAST ads to be requested for the midRoll position (required only if using single VAST adConfig)
@@ -246,7 +246,7 @@
  *        "postRollAdCount":1
  *    }
  *
- * @apiSuccess (Response Fields) {String} id The applicationId
+ * @apiSuccess (Response Fields) {String} id The application Id
  * @apiSuccess (Response Fields) {String} name The application's name
  * @apiSuccess (Response Fields) {String} domainId The application's parent domainId
  * @apiSuccess (Response Fields) {Object} adConfig Will remain null until adConfig has been added (see methods below)
@@ -284,13 +284,13 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} applicationId The applicationId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} applicationId The application Id
  *
  * @apiParamExample {Url} Delete Application Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications
  *
- * @apiSuccess (Response Fields) {String} id The applicationId
+ * @apiSuccess (Response Fields) {String} id The application Id
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 OK
@@ -318,8 +318,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} applicationId The applicationId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} applicationId The application Id
  *
  * @apiParamExample {Url} Get Application Ad Configuration Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig
@@ -410,8 +410,8 @@
 
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} applicationId The applicationId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} applicationId The application Id
  * @apiParam (Request Body Fields Example 1) {Object} [preRoll] A single VAST adConfig for the preRoll slot
  * @apiParam (Request Body Fields Example 1) {String} preRoll.name The new/updated adConfig name
  * @apiParam (Request Body Fields Example 1) {String} preRoll.adServerId The adServerId which will be requested for a single VAST ad
@@ -452,7 +452,7 @@
  *        }
  *    }
  *
- * @apiSuccess (Response Fields Example 1) {String} id The applicationId
+ * @apiSuccess (Response Fields Example 1) {String} id The application Id
  * @apiSuccess (Response Fields Example 1) {String} name The application's name
  * @apiSuccess (Response Fields Example 1) {String} domainId The application’s parent domainId
  * @apiSuccess (Response Fields Example 1) {Object} adConfig An object set of ads configured to the application
@@ -477,7 +477,7 @@
  * @apiSuccess (Response Fields Example 1) {String} preRollAdCount The number of single VAST ads to be requested for the preRoll position
  * @apiSuccess (Response Fields Example 1) {String} midRollAdCount The number of single VAST ads to be requested for the miodRoll position
  * @apiSuccess (Response Fields Example 1) {String} postRollAdCount The number of single VAST ads to be requested for the postRoll position
- * @apiSuccess (Response Fields Example 2) {String} id The applicationId
+ * @apiSuccess (Response Fields Example 2) {String} id The application Id
  * @apiSuccess (Response Fields Example 2) {String} name The application's name
  * @apiSuccess (Response Fields Example 2) {String} domainId The application's parent domainId
  * @apiSuccess (Response Fields Example 2) {Object} adConfig An object set of ads configured to the application
@@ -543,8 +543,8 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
- * @apiParam (Path Parameters) {String} applicationId The applicationId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
+ * @apiParam (Path Parameters) {String} applicationId The application Id
  *
  * @apiParamExample {Url} Delete Ad Configurations Example:
  *    https://api.unicornmedia.com/media-management-api/domains/4eca7ac5-3954-416d-bb23-e65aa511b85a/applications/adConfig

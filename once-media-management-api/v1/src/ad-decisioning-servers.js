@@ -10,7 +10,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (URL Parameters) {Number(1-100)} [pageSize=20] The number of items to return for the request
  * @apiParam (URL Parameters) {Number} [page=0] The set of items (based on `pageSize`) to return
  * @apiParam (URL Parameters) {String} [name] Filter to applications that have name substring. E.g. name=foo could return applications named "foo", "foobar", "foorific"
@@ -69,7 +69,7 @@
   *
   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
   *
-  * @apiParam (Path Parameters) {String} domainId The domainId
+  * @apiParam (Path Parameters) {String} domainId The domain Id
   * @apiParam (Path Parameters) {String} adserverId The adServerId
   *
   * @apiParamExample {Url} Get Ad Decisioning Server Example:
@@ -116,7 +116,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name The new adServer’s name
  * @apiParam (Request Body Fields) {String} baseURL The new adServer’s base URL
  * @apiParam (Request Body Fields) {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. **If your base URL requires no variables, include an empty variables object ("variables": {})**
@@ -172,7 +172,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Request Body Fields) {String} name The new adServer’s name
  * @apiParam (Request Body Fields) {String} baseURL The new adServer’s base URL
  * @apiParam (Request Body Fields) {Object} variables An object set of query string key/value pairs to be inserted/appended to the base URL at request time. **If your base URL requires no variables, include an empty variables object ("variables": {})**
@@ -229,7 +229,7 @@
  *
  * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
  *
- * @apiParam (Path Parameters) {String} domainId The domainId
+ * @apiParam (Path Parameters) {String} domainId The domain Id
  * @apiParam (Path Parameters) {String} adserverId The adServerId
  *
  * @apiParamExample {Url} Delete Ad Decisioning Server Request Body Example:
