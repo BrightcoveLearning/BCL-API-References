@@ -46,8 +46,7 @@
  * @apiParam (Request Body Fields) {Number} [renditions.max_frame_rate] Limits the frame rate rather than sets it, use as an alternative to frame rate
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
  * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
- * @apiParam (Request Body Fields) {String="zip","tar"} [renditions.package_format] Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
- * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
+  * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
  * @apiParam (Request Body Fields) {Boolean} [renditions.skip_video] Set to `true` to skip video encoding for audio-only renditions
  * @apiParam (Request Body Fields) {Number=1-5} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiParam (Request Body Fields) {String} [renditions.streaming_delivery_format] Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
@@ -623,8 +622,7 @@
  * @apiParam (Request Body Fields) {Number} [renditions.max_frame_rate] Limits the frame rate rather than sets it, use as an alternative to frame rate
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
  * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
- * @apiParam (Request Body Fields) {String="zip","tar"} [renditions.package_format] Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
- * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
+  * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
  * @apiParam (Request Body Fields) {Boolean} [renditions.skip_video] Set to `true` to skip video encoding for audio-only renditions
  * @apiParam (Request Body Fields) {Number=1-5} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiParam (Request Body Fields) {String} [renditions.streaming_delivery_format] Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
@@ -702,7 +700,7 @@
  * @apiSuccess (Response Fields) {Number} renditions.audio_channels number of audio channels
  * @apiSuccess (Response Fields) {String} renditions.audio_codec audio codec, e.g. `aac`
  * @apiSuccess (Response Fields) {Boolean} renditions.constant_bitrate whether to use constant bitrate for encoding &mdash; this field is not relevant for h.264 video and will be ignored
- * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default. 
+ * @apiSuccess (Response Fields) {Number} renditions.crf 1-51, not used by default.
  * @apiSuccess (Response Fields) {Number} renditions.decoder_bitrate_cap In kbps, the max bitrate fed to the decoder
  * @apiSuccess (Response Fields) {String} renditions.encryption_method encryption_method to use, e.g. `aes-128`
  * @apiSuccess (Response Fields) {Number} renditions.encryption_key_rotation_period use a different key for each set of segments, rotating to a new key after this many segments
