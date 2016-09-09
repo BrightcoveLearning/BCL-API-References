@@ -1149,6 +1149,7 @@
  * @apiParam (Request Body Fields) {Object} [link={}] map of scheduling properties
  * @apiParam (Request Body Fields) {String{..255}} [link.text] text for the link
  * @apiParam (Request Body Fields) {Url{..250}} [link.url] URL for the link
+ * @apiParam (Request Body Fields) {DateString} published_at ISO-8601 date-time string indicating when the video was published
  * @apiParam (Request Body Fields) {Object} [schedule={}] map of scheduling properties
  * @apiParam (Request Body Fields) {DateString} [starts_at=null] start date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
  * @apiParam (Request Body Fields) {DateString} [ends_at=null] end date-time of availability in [ISO-8601](http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format

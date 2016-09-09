@@ -6,7 +6,7 @@
  * @apiGroup View Events
  * @apiVersion 1.0.0
  *
- * @apiDescription Get view events for an account
+ * @apiDescription Get view events for an account - note that only view events that have been _processed_ will appear in the response
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
