@@ -452,6 +452,7 @@
  * @apiSuccess (Response Field) {Number} duration duration in milliseconds
  * @apiSuccess (Response Field) {Number} encoding_rate encoding rate in kbps
  * @apiSuccess (Response Field) {Number} height frame height in pixels
+ * @apiSuccess (Response Field) {Boolean} remote whether the source is a remote asset
  * @apiSuccess (Response Field) {Number} size file size in bytes
  * @apiSuccess (Response Field) {Url} src URL for HTTP rendition
  * @apiSuccess (Response Field) {String} steam_name the stream name on the CDN

@@ -407,6 +407,7 @@
  *    ]
  *
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
+ * @apiError (Error 4xx) {json} PROFILE_ERROR 409: profile rendition count exceeds configured rendition limit 
  * @apiError (Error 4xx) {html} NOT_FOUND 404: <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 NOT_FOUND</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/578380001/profiles. Reason: <pre> NOT_FOUND</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  * @apiErrorExample {json} 401 Error Response
