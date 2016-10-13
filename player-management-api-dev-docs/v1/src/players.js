@@ -497,7 +497,7 @@
 // Update a single player (not player configuration)
 
 /**
- * @api {patch} accounts/:account_id/players/:player_id Update a Player
+ * @api {patch} /accounts/:account_id/players/:player_id Update a Player
  * @apiName Update a Player
  * @apiGroup Players
  * @apiVersion 1.0.0
@@ -582,7 +582,7 @@
 // Delete a player
 
 /**
- * @api {delete} accounts/:account_id/players/:player_id Delete a Player
+ * @api {delete} /accounts/:account_id/players/:player_id Delete a Player
  * @apiName Delete a Player
  * @apiGroup Players
  * @apiVersion 1.0.0
