@@ -51,7 +51,7 @@
  *        "totalResults": 2
  }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -98,7 +98,7 @@
   *        }
   *    }
   *
-  * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
   *
@@ -154,7 +154,7 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -210,7 +210,7 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -243,7 +243,7 @@
  *        "id": "4df36e4c-f418-403d-b17e-60c99dbe65b4",
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *

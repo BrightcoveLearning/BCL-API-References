@@ -25,7 +25,7 @@
  *        "name": "ExampleDomain"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -71,7 +71,7 @@
  *        ]
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -116,7 +116,7 @@
  *        "codecsValue": "mp4a.40.2,avc1.42001f"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -149,7 +149,7 @@
  *        "602de576-68c3-403a-87f6-56108c6b1d1c"
  *    ]
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -211,7 +211,7 @@
  *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -302,7 +302,7 @@
  *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -394,7 +394,7 @@
  *        "domain": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -426,7 +426,7 @@
   *    "id": "8c9cdb48-90ac-450f-bc5d-0bb2cbe3a206"
   *    }
   *
-  * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
   *

@@ -65,7 +65,7 @@
  *        "totalResults": 2
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -170,7 +170,7 @@
  *        }
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -343,7 +343,7 @@
  *        }
  *    }
  *    *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -377,7 +377,7 @@
  *      "delete": "MediaItem: 1eb36535-1105-440e-a722-381c9dcf504d scheduled for deletion"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -387,7 +387,7 @@
  // Get All MediaItem Publication Rules
 
  /**
-  * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules Get All MediaItem Publication Rules
+  * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules Get All MediaItem Publication Rules
   * @apiName Get All MediaItem Publication Rules
   * @apiGroup MediaItem
   * @apiVersion 1.0.0
@@ -411,7 +411,7 @@
   *        "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5"
   *    ]
   *
-  * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
   *
@@ -421,7 +421,7 @@
   // Get MediaItem Publication Rule Details
 
   /**
-   * @api {get} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Get MediaItem Publication Rule Details
+   * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Get MediaItem Publication Rule Details
    * @apiName Get MediaItem Publication Rule Details
    * @apiGroup MediaItem
    * @apiVersion 1.0.0
@@ -479,7 +479,7 @@
    *   }
    *
    *
-   * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
    * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
    * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
    *
@@ -489,7 +489,7 @@
    // Create MediaItem Publication Rule
 
    /**
-    * @api {post} domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules Create MediaItem Publication Rule
+    * @api {post} /domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules Create MediaItem Publication Rule
     * @apiName Create MediaItem Publication Rule
     * @apiGroup MediaItem
     * @apiVersion 1.0.0
@@ -573,7 +573,7 @@
     *        "mediaitem": "09daf3a0-5efe-4048-a761-351137a23c6f"
     *    }
     *
-    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
     * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
     * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
     *
@@ -583,7 +583,7 @@
    // Update MediaItem Publication Rule
 
    /**
-    * @api {put} domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Update MediaItem Publication Rule
+    * @api {put} /domains/:domainId/catalog/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Update MediaItem Publication Rule
     * @apiName Update MediaItem Publication Rule
     * @apiGroup MediaItem
     * @apiVersion 1.0.0
@@ -668,7 +668,7 @@
     *        "mediaitem": "09daf3a0-5efe-4048-a761-351137a23c6f"
     *    }
     *
-    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
     * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
     * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
     *
@@ -678,7 +678,7 @@
     // Delete MediaItem Publication Rule
 
     /**
-     * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Delete MediaItem Publication Rule
+     * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/publicationRules/:publicationRuleId Delete MediaItem Publication Rule
      * @apiName Delete MediaItem Publication Rule
      * @apiGroup MediaItem
      * @apiVersion 1.0.0
@@ -703,7 +703,7 @@
      *        "id": "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5"
      *    }
      *
-     * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+     * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
      * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
      * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
      *
@@ -714,7 +714,7 @@
     // Delete MediaItem
 
     /**
-     * @api {delete} domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Delete MediaItem
+     * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Delete MediaItem
      * @apiName Delete MediaItem
      * @apiGroup MediaItem
      * @apiVersion 1.0.0
@@ -738,7 +738,7 @@
      *        "id": "c039f7e3-5b3d-4aec-a8d9-6346ccc57dd5"
      *    }
      *
-     * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+     * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
      * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
      * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
      *

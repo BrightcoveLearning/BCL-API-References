@@ -48,7 +48,7 @@
  *        "totalResults": 2
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -86,7 +86,7 @@
  *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -135,7 +135,7 @@
  *        "domainId": "1234abcd-1234-abcd-56ef-098765fedcba"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -174,7 +174,7 @@
  *        "name": "ExampleCatalog001",
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -219,7 +219,7 @@
  *        ]
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -265,7 +265,7 @@
  *        "codecsValue": "mp4a.40.2,avc1.42001f"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -313,7 +313,7 @@
  *      }
  *    ]
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -350,7 +350,7 @@
  *      "id": "5ff484d6-a33d-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -385,7 +385,7 @@
  *      "id": "076ea1a2-a35b-11e4-bfdb-005056837bc7"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
@@ -396,7 +396,7 @@
  // Get All Catalog Publication Rules
 
  /**
-  * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules Get All Catalog Publication Rules
+  * @api {get} /domains/:domainId/catalogs/:catalogId/publicationRules Get All Catalog Publication Rules
   * @apiName Get All Catalog Publication Rules
   * @apiGroup Catalog
   * @apiVersion 1.0.0
@@ -426,7 +426,7 @@
   *        "a9ff5331-9eb8-45b3-8fc5-2a00bfb84642"
   *    ]
   *
-  * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+  * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
   *
@@ -436,7 +436,7 @@
   // Get Catalog Publication Rule Details
 
   /**
-   * @api {get} domains/:domainId/catalogs/:catalogId/publicationRules/:publicationRuleId Get Catalog Publication Rule Details
+   * @api {get} /domains/:domainId/catalogs/:catalogId/publicationRules/:publicationRuleId Get Catalog Publication Rule Details
    * @apiName Get Catalog Publication Rule Details
    * @apiGroup Catalog
    * @apiVersion 1.0.0
@@ -490,7 +490,7 @@
    *        "catalog": "4321abcd-4321-dcba-fe65-567890fedcba"
    *    }
    *
-   * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
    * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
    * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
    *
@@ -500,7 +500,7 @@
    // Create Catalog Publication Rule
 
    /**
-    * @api {post} domains/:domainId/catalog/:catalogId/publicationRules Create Catalog Publication Rule
+    * @api {post} /domains/:domainId/catalog/:catalogId/publicationRules Create Catalog Publication Rule
     * @apiName Create Catalog Publication Rule
     * @apiGroup Catalog
     * @apiVersion 1.0.0
@@ -584,7 +584,7 @@
     *
     * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
-    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
     * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
     * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
     *
@@ -595,7 +595,7 @@
    // Update Catalog Publication Rule
 
    /**
-    * @api {put} domains/:domainId/catalog/:catalogId/publicationRules/:publicationRuleId Update Catalog Publication Rule
+    * @api {put} /domains/:domainId/catalog/:catalogId/publicationRules/:publicationRuleId Update Catalog Publication Rule
     * @apiName Update Catalog Publication Rule
     * @apiGroup Catalog
     * @apiVersion 1.0.0
@@ -680,7 +680,7 @@
     *
     * @apiSuccess (Response Fields) {String} catalog The publication rule’s parent catalogId
     *
-    * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+    * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
     * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
     * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
     *
@@ -714,7 +714,7 @@
  *    "id": "8c9cdb48-90ac-450f-bc5d-0bb2cbe3a206"
  *    }
  *
- * @apiError (Error 4xx) {json} Bad Request 400: Bad Request &mdash; Incorrect or invalid request body
+ * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
  * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
  * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
  *
