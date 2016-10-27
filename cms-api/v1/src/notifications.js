@@ -74,7 +74,7 @@
  * @apiGroup notificationGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Establishes up to 10 endpoints that video change s should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will <strong>not</strong> trigger change events.
+ * @apiDescription Establishes up to 10 endpoints that video changes should be sent to. Any change in video metadata will trigger a video change event and a notification &mdash; changes to assets used by the video will <strong>not</strong> trigger change events.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))

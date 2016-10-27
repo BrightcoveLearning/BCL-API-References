@@ -1346,7 +1346,7 @@
  * @apiError (Error 4xx) {json} TOO_MANY_REQUESTS 429: You are submitting too many simultaneous requests or too many requests per second
  * @apiError (Error 4xx) {json} REFERENCES_EXIST 409: The video is in one or more manual playlists
  * @apiError (Error 4xx) {json} PRE_CONDITION_FAILED 412: usually this means the caller provided an ETag that didn't match the version of the video
- * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Erroe in the backend
+ * @apiError (Error 5xx) {json} INTERNAL_ERROR 500: Error in the backend
  *
  * @apiErrorExample {json} 401 UNAUTHORIZED
  *     HTTP/1.1 401 UNAUTHORIZED
