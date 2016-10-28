@@ -1173,8 +1173,7 @@
  *         ],
  *         "custom_fields": {
  *             "topic": "wildlife",
- *             "subtopic": "mam
- *             mals"
+ *             "subtopic": "mammals"
  *         }
  *     }
  *
