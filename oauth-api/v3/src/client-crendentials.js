@@ -324,7 +324,8 @@
  *                "video-cloud/playlist/all",
  *                "video-cloud/video/all",
  *                "video-cloud/player/all"
- *            ],
+ *            ]
+ *        }],
  *        "name":"SampleClient"
  *    }
  *
