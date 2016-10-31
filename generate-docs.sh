@@ -136,8 +136,10 @@ echo ${txtyel}copying ingest-profiles-api docs
 cp -R ingest-profiles-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/ingest-profiles-api/reference/versions/v1
 echo ${txtyel}copying oauth-api docs
 cp -R oauth-api-dev-docs/v3/doc/ ../BCL-developer-docs/en/video-cloud/oauth-api/reference/versions/v3
+cp -R oauth-api-dev-docs/v4/doc/ ../BCL-developer-docs/en/video-cloud/oauth-api/reference/versions/v4
 echo ${txtyel}copying oauth-api docs to perform
 cp -R oauth-api-dev-docs/v3/doc/ ../BCL-developer-docs/en/perform/oauth-api/reference/versions/v3
+cp -R oauth-api-dev-docs/v4/doc/ ../BCL-developer-docs/en/perform/oauth-api/reference/versions/v4
 echo ${txtyel}copying delivery-system-api docs
 cp -R delivery-system-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/concepts/delivery-system-api/references/v1
 echo ${txtyel}copying delivery-system-api docs to perform
