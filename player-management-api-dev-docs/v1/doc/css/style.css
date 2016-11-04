@@ -7,7 +7,7 @@ body {
 }
 
 body, p, a, div, th, td {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 400;
   font-size: 16px;
 }
@@ -36,12 +36,12 @@ h1 {
   line-height: 50px;
   margin: 0 0 10px 0;
   padding: 0;
-  padding-top: 120px;
+  padding-top: 130px;
   margin-top: -80px;
 }
 
 h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: normal;
   font-size: 24px;
   line-height: 40px;
@@ -55,14 +55,14 @@ section {
 }
 
 section h1 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   padding-bottom: 14px;
   margin: 0 0 20px 0;
   padding: 0;
-  padding-top: 120px;
+  padding-top: 130px;
   margin-top: -80px;
 
 }
@@ -79,7 +79,7 @@ article h1 {
 }
 
 article h2 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
@@ -87,7 +87,7 @@ article h2 {
 }
 
 article h3 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 18px;
@@ -95,7 +95,7 @@ article h3 {
 }
 
 article h4 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 16px;
@@ -111,7 +111,7 @@ table {
 th {
   background-color: #f5f5f5;
   text-align: left;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 700;
   padding: 4px 8px;
   border: #e0e0e0 1px solid;
@@ -148,7 +148,7 @@ td {
 }
 
 #apidoc h1 {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
@@ -194,31 +194,89 @@ pre.language-html:before {
   position: absolute;
   top: -30px;
   left: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 600;
   font-size: 15px;
   display: inline-block;
   padding: 2px 5px;
   border-radius: 6px;
   text-transform: uppercase;
-  background-color: #3387CC;
+  background-color: #3387CC !important;
   color: #ffffff;
 }
 
+p>code.method {
+  margin-bottom: -2em;
+}
+
+code.method[data-type="get"] {
+  background-color: green !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -2em;
+}
+
+code.method[data-type="patch"] {
+  background-color: #6687CC !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -2em;
+}
+
+code.method[data-type="put"] {
+  background-color: #e5c500 !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -2em;
+}
+
+code.method[data-type="post"] {
+  background-color: #4070ec !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -2em;
+}
+
+code.method[data-type="delete"] {
+  background-color: #ed0039 !important;
+  color: #FFF;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: -2em;
+}
+
 pre.language-html[data-type="get"]:before {
-  background-color: green;
+  background-color: green !important;
+  height: 0;
+}
+
+pre.language-html[data-type="patch"]:before {
+  background-color: #3387CC !important;
+  height: 0;
 }
 
 pre.language-html[data-type="put"]:before {
-  background-color: #e5c500;
+  background-color: #e5c500 !important;
+  height: 0;
 }
 
 pre.language-html[data-type="post"]:before {
-  background-color: #4070ec;
+  background-color: #4070ec !important;
+  height: 0;
 }
 
 pre.language-html[data-type="delete"]:before {
-  background-color: #ed0039;
+  background-color: #ed0039 !important;
+  height: 0;
 }
 
 pre.language-api .str {
@@ -265,7 +323,68 @@ pre.language-json .pun {
 }
 */
 
-/* ------------------------------------------------------------------------------------------
+ /* ------------------------------------------------------------------------------------------
+ * Topnav
+ * ------------------------------------------------------------------------------------------ */
+#navWrapper {background-color: #333;}
+.title-area {
+    background-color: #333;
+    max-height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.top-bar {
+    background-color: #333;
+}
+ #navMenuLeft {
+     background-color: #333;
+     max-height: 40px;
+     position: fixed;
+     top: 0;
+     left: 170px;
+ }
+ #navMenuRight {
+     background-color: #333;
+     max-height: 40px;
+     position: fixed;
+     top: 0;
+     right: 0;
+ }
+ section.top-bar-section {
+     position: absolute;
+     top: 0;
+     max-height: 40px;
+ }
+ .top-bar-section ul {
+     position: relative;
+     top: 0;
+     max-height: 40px;
+ }
+ .top-bar-section ul li {
+     position: relative;
+     top: 0;
+     max-height: 40px;
+ }
+ .top-bar-section ul li a {
+     position: relative;
+     top: 0;
+     max-height: 40px;
+ }
+ .breadcrumbs {
+    font-size: 11px;
+    margin-left: -1rem;
+    position: fixed;
+    top: 40px;
+    height: 26px;
+    width: 100%;
+    z-index: 6;
+}
+ .breadcrumbs a {
+    font-size: 11px;
+}
+
+ /* ------------------------------------------------------------------------------------------
  * Sidenav
  * ------------------------------------------------------------------------------------------ */
 .sidenav {
@@ -273,7 +392,7 @@ pre.language-json .pun {
   margin: 0;
   padding: 20px;
   position: fixed;
-  top: 0;
+  top: 65px;
   left: 0;
   bottom: 0;
   overflow-x: hidden;
@@ -290,16 +409,18 @@ pre.language-json .pun {
   border: 0;
   border-left: transparent 4px solid;
   border-right: transparent 4px solid;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
+  padding-left: 16px;
+  text-indent: -12px;;
 }
 
 .sidenav > li.nav-header > a {
   padding: 5px 15px;
   border: 1px solid #e5e5e5;
   width: 190px;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Open Sans","Source Sans Pro", sans-serif;
   font-weight: 700;
   font-size: 16px;
   background-color: #ffffff;
@@ -528,6 +649,8 @@ ul.nav-tabs {
 
   #content {
     margin-left: 0;
+    position: relative;
+    top: 130px;
   }
 
   a {
