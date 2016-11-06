@@ -31,6 +31,8 @@ echo ${txtyel}copying once-media-management-api src
 cp -R once-media-management-api/ once-media-management-api-dev-docs/
 echo ${txtyel}copying once-status-api src
 cp -R once-status-api/ once-status-api-dev-docs/
+echo ${txtyel}copying live-api src
+cp -R live-api/ live-api-dev-docs/
 echo ${txtyel}Finished copying src files
 echo ${txtred}Generating API docs...
 cd analytics-api
@@ -119,6 +121,12 @@ apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../player-management-api-dev-docs
 echo ${txtyel}generating docs for player-management-api-dev-docs
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
+cd ../live-api-dev-docs
+echo ${txtyel}generating docs for live-api
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
+cd ../live-api-dev-docs
+echo ${txtyel}generating docs for live-api-dev-docs
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
 echo ${txtgrn}finished generating docs
 echo ${txtred}copying docs to Developer Docs directories....
 cd ..
@@ -158,5 +166,7 @@ echo ${txtyel}copying once-media-management-api docs
 cp -R once-media-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/media-management-api/versions/v1
 echo ${txtyel}copying once-status-api docs
 cp -R once-status-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/status-api/versions/v1
+echo ${txtyel}copying live-api docs
+cp -R live-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/live/references/live-api/versions/v1
 echo ${txtgrn}Finished!
 echo ${txtrst}
