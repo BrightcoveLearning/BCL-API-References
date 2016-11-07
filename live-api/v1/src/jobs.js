@@ -21,11 +21,12 @@
  * @apiParam (Request Body Fields) {mixed[]} [notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
  * @apiParam (Request Body Fields) {String} notifications.url Destination for the notification.
  * @apiParam (Request Body Fields) {String} [notifications.credentials] Credentials for the destination, if required.
- * @apiParam (Request Body Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
+ * @apiParam (Request Body Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It is recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
  * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
  * @apiParam (Request Body Fields) {String} add_cdns.prepend TODO
  * @apiParam (Request Body Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
+ * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for VOD assets to be created from the live stream.
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
@@ -97,6 +98,10 @@
  *    }
  *
  * @apiParamExample {json} Live Stream Transmuxed Rendition Example:
+ *     // When using a transmuxed rendition within a multi-bitrate HLS output,
+ *     // the segment_size and keyframe_interval should be avoided on any of the outputs
+ *     // to ensure segments and keyframes follow the input GOP structure.
+ *     //If not, the system will return an error in the job creation request.
  *    {
  *        "live_stream": true,
  *        "region": "us-west-2",
@@ -136,7 +141,31 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Live Stream VOD to S3 Example:
+ * @apiParamExample {json} Live Stream with VOD Example:
+ *    {
+ *        "live_stream": true,
+ *        "region": "us-west-2",
+ *        "reconnect_time": 20,
+ *        "live_sliding_window_duration":30,
+ *        "outputs": [
+ *            {
+ *                "label": "hls720p",
+ *                "live_stream": true,
+ *                "width": 960,
+ *                "height": 540,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 1843,
+ *                "segment_seconds": 6
+ *            },
+ *            {
+ *                "url":"s3://YOUR_BUCKET/live/20160403004644_test.mp4",
+ *                "credentials": "YOUR_CREDENTIALS"
+ *            }
+ *        ]
+ *    }
+ *
+ * @apiParamExample {json} Live Stream with VOD and Notifications Example:
  *    {
  *        "live_stream": true,
  *        "region": "us-west-2",
@@ -183,8 +212,11 @@
  *    }
  *
  * @apiSuccess (Response Fields) {String} id Id for the stream.
- * @apiSuccess (Response Fields) {Object[]} outputs Array of rendition outputs.
- * @apiSuccess (Response Fields) {String} outputs.id Id for the rendition.
+ * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
+ * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
+ * @apiSuccess (Response Fields) {String} outputs.playback_url Media HLS manifest for the specified rendition (non-SSAI).
+ * @apiSuccess (Response Fields) {String} outputs.playback_url_dvr Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
+ * @apiSuccess (Response Fields) {String} outputs.playback_url_vod Media HLS manifest of the Live stream for the last 24 hours. (non-SSAI).
  * @apiSuccess (Response Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
  * @apiSuccess (Response Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Note* Your ad server must be configured by your account team. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags. Default is false. Currently no outputs can be specified with a SSAI enabled stream.
  * @apiSuccess (Response Fields) {String="Us-west-2", "ap-southeast-2", "ap-northeast-1"} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
@@ -201,7 +233,7 @@
  * @apiSuccess (Response Fields) {String} add_cdns.prepend TODO
  * @apiSuccess (Response Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  *
- * @apiSuccessExample {json} Success Response:
+ * @apiSuccessExample {json} Success Response Standard Live Stream:
  *    HTTP/1.1 200 OK
  *    {
  *      "id": "edb92295e0f744f088f473ac047538c3",
