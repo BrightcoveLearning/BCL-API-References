@@ -167,6 +167,6 @@ cp -R once-media-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/r
 echo ${txtyel}copying once-status-api docs
 cp -R once-status-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/once/references/status-api/versions/v1
 echo ${txtyel}copying live-api docs
-cp -R live-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/live/references/live-api/versions/v1
+cp -R live-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/live/references/versions/v1
 echo ${txtgrn}Finished!
 echo ${txtrst}

@@ -1,100 +1,279 @@
-// get report
+// Create a Standard Live Job
 
 /**
- * @api {get} /data Get Analytics Report
- * @apiName Get Analytics Report
- * @apiGroup Report
+ * @api {post} /v1/jobs Create a Live Job
+ * @apiName Create a Standard Live Job
+ * @apiGroup Live_Jobs
  * @apiVersion 1.0.0
  *
- * @apiDescription Get an analytics report on one or more dimensions. Note that the fields returned in the response will vary according to the dimension(s) requested and the fields specified in the `fields` parameter
+ * @apiDescription Create a live stream
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
- * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
+ * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
- * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas
- * @apiParam (URL Parameters) {Number} [limit=10] number of videos to return
- * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
- * @apiParam (URL Parameters) {String} [sort=video_view] field to sort results by (for video dimension reports, valid sort fields include the video metadata fields `video.name`, `video.tags`, `video.reference_id` and `video.custom_fields` - see ([Fields and Sort](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#fieldsAndSorting)))
- * @apiParam (URL Parameters) {String} [fields=video_view] fields to return for items; see [Dimensions and Fields](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#metrics) for the available fields for each dimension
- * @apiParam (URL Parameters) {String="account","browser_type","city","country","region","date","date-time","device_manufacturer","device_os","device_type","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#reportDimensions) for which combined dimensions are supported
- * @apiParam (URL Parameters) {String="dimension==value"} [where] one or more dimension==value pairs to filter the results; see [Where Filters](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#filterValues) for details
- * @apiParam (URL Parameters) {mixed} [from="(30 days before now)"] Start time for the period covered by the report &mdash; `alltime` or epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
- * @apiParam (URL Parameters) {mixed} [to="now"] End time for the period covered by the report &mdash; `now` or epoch time in milliseconds or a date in the format `yyyy-mm-dd` (such as `2013-09-26`)
- * @apiParam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] format to return the results in
- * @apiParam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
+ * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
+ * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Note* Your ad server must be configured by your account team. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags. Default is false. Currently no outputs can be specified with a SSAI enabled stream.
+ * @apiParam (Request Body Fields) {String="Us-west-2", "ap-southeast-2", "ap-northeast-1"} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
+ * @apiParam (Request Body Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
+ * @apiParam (Request Body Fields) {Number{0-93600}} [event_length] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
+ * @apiParam (Request Body Fields) {Number{0-7200}} [live_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
+ * @apiParam (Request Body Fields) {Number{1-5}} [max_hls_protocol_version=3] Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
+ * @apiParam (Request Body Fields) {mixed[]} [notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
+ * @apiParam (Request Body Fields) {String} notifications.url Destination for the notification.
+ * @apiParam (Request Body Fields) {String} [notifications.credentials] Credentials for the destination, if required.
+ * @apiParam (Request Body Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It is recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
+ * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
+ * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
+ * @apiParam (Request Body Fields) {String} add_cdns.prepend TODO
+ * @apiParam (Request Body Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
+ * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for VOD assets to be created from the live stream.
+ * @apiParam (Request Body Fields) {String} outputs.label Label for the VOD asset.
+ * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If live_stream is false, or is not set, the output will be treated as a VOD output.
+ * @apiParam (Request Body Fields) {Number{0-172800}} [outputs.duration] Clipping API option 1. Duration (in seconds) to clip back from Live. Note: Clipping API only requires one of the three options for specifying duration or time.
+ * @apiParam (Request Body Fields) {Number{0-2147483647}} [outputs.stream_start_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
+ * @apiParam (Request Body Fields) {Number{stream_start_time-stream_start_time+172800}} [outputs.stream_end_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
+ * @apiParam (Request Body Fields) {Number{current_time..}} [outputs.stream_end_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
  *
- * @apiParamExample {Url} Video Dimension Report Example:
- *     https://analytics.api.brightcove.com/v1/data?accounts=20318290001&dimensions=video&fields=video_view,video_impression&limit=1
- *
- * @apiSuccess (Response Fields) {String} account the Video Cloud account id
- * @apiSuccess (Response Fields) {String} account.name the name of the Video Cloud account id
- * @apiSuccess (Response Fields) {Number} item_count the total number of items matching the request
- * @apiSuccess (Response Fields) {Object[]} items array of analytics objects for the videos returned
- * @apiSuccess (Response Fields) {Number} items.ad_mode_begin number of times a player entered ad mode
- * @apiSuccess (Response Fields) {Number} items.ad_mode_complete number of times a player completed ad mode
- * @apiSuccess (Response Fields) {Number} items.bytes_delivered the total bytes of data delivered, including the videos, other assets such as images and captions, and the player code &mdash; some of the date is obtained from CDNs and may not be available for up to 3 days
- * @apiSuccess (Response Fields) {Number} items.engagement_score the calculated engagement score for the video
- * @apiSuccess (Response Fields) {Number} items.play_rate video views divided by video impressions
- * @apiSuccess (Response Fields) {Number} items.play_request number of play requests received for a video
- * @apiSuccess (Response Fields) {String} items.video the video id
- * @apiSuccess (Response Fields) {String} items.duration the duration of the video in seconds
- * @apiSuccess (Response Fields) {Number} items.video_engagement_1 number of views at the 1% point of the video duration
- * @apiSuccess (Response Fields) {Number} items.video_engagement_25 number of views at the 25% point of the video duration
- * @apiSuccess (Response Fields) {Number} items.video_engagement_50 number of views at the 50% point of the video duration
- * @apiSuccess (Response Fields) {Number} items.video_engagement_75 number of views at the 75% point of the video duration
- * @apiSuccess (Response Fields) {Number} items.video_engagement_100 number of views at the 100% point of the video duration
- * @apiSuccess (Response Fields) {Number} items.video_impression number of times the video was loaded in a player
- * @apiSuccess (Response Fields) {String} items.name name of the video
- * @apiSuccess (Response Fields) {Number} items.video_percent_viewed average percentage of the video played when viewed
- * @apiSuccess (Response Fields) {Number} items.video_seconds_viewed total seconds of the video viewed
- * @apiSuccess (Response Fields) {Number} items.video_view number of times some portion of the video was viewed
- * @apiSuccess (Response Fields) {Object} summary of all videos matching this request that had views
- * @apiSuccess (Response Fields) {Number} video_engagement_1 number of views at the 1% point of the video duration for all videos
- * @apiSuccess (Response Fields) {Number} video_engagement_25 number of views at the 25% point of the video duration for all videos
- * @apiSuccess (Response Fields) {Number} video_engagement_50 number of views at the 50% point of the video duration for all videos
- * @apiSuccess (Response Fields) {Number} video_engagement_75 number of views at the 75% point of the video duration for all videos
- * @apiSuccess (Response Fields) {Number} video_engagement_100 number of views at the 100% point of the video duration for all videos
- *
- * @apiSuccessExample {json} Success Response:
- *    HTTP/1.1 200 OK
+ * @apiParamExample {json} Standard Live Stream Example:
  *    {
- *        "account": "20318290001",
- *        "account.name": "BC Training Videos",
- *        "item_count": 125,
- *        "items": [
+ *        "live_stream": true,
+ *        "region": "us-west-2",
+ *        "reconnect_time": 20,
+ *        "live_sliding_window_duration": 30,
+ *        "outputs": [
  *            {
- *                "engagement_score": 189.443,
- *                "play_rate": 0.667,
- *                "video": "2127084613001",
- *                "video_duration": "341",
- *                "video_engagement_1": 3.0000000000000004,
- *                "video_engagement_25": 3.0000000000000004,
- *                "video_engagement_50": 4.000000000000001,
- *                "video_engagement_75": 4.000000000000001,
- *                "video_engagement_100": 3.0000000000000004,
- *                "video_impression": 3,
- *                "video_name": "Live Streaming using Telestream Wirecast (Japanese)",
- *                "video_percent_viewed": 378.88563049853377,
- *                "video_seconds_viewed": 1292,
- *                "video_view": 2
+ *                "label": "hls720p",
+ *                "live_stream": true,
+ *                "width": 960,
+ *                "height": 540,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 1843,
+ *                "segment_seconds": 6,
+ *                "keyframe_interval": 60
+ *            },
+ *            {
+ *                "label": "hls480p",
+ *                "live_stream": true,
+ *                "width": 640,
+ *                "height": 360,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 819,
+ *                "segment_seconds": 6,
+ *                "keyframe_interval": 60
  *            }
- *        ],
- *        "summary": {
- *            "video_engagement_1": 1875.083,
- *            "video_engagement_25": 1356.95,
- *            "video_engagement_50": 1107.931,
- *            "video_engagement_75": 956.374,
- *            "video_engagement_100": 777.37,
- *            "video_seconds_viewed": 238952,
- *            "video_percent_viewed": 115377.945,
- *            "video_impression": 11479,
- *            "video_view": 2013,
- *            "play_rate": 0.175,
- *            "engagement_score": 57.316
- *        }
+ *        ]
  *    }
  *
+ * @apiParamExample {json} Live Stream Custom Origin Example:
+ *    {
+ *        "live_stream": true,
+ *        "region": "us-west-2",
+ *        "reconnect_time": 30,
+ *        "outputs": [
+ *            {
+ *                "label": "hls720p",
+ *                "live_stream": true,
+ *                "width": 960,
+ *                "height": 540,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 1843,
+ *                "segment_seconds": 6,
+ *                "keyframe_interval": 60
+ *            },
+ *            {
+ *                "label": "hls480p",
+ *                "live_stream": true,
+ *                "width": 640,
+ *                "height": 360,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 819,
+ *                "segment_seconds": 6,
+ *                "keyframe_interval": 60
+ *            },
+ *            {
+ *                "type":"playlist",
+ *                "url":"s3://YOUR_BUCKET/custom/playlist.m3u8",
+ *                "credentials":"YOUR_CREDENTIALS"
+ *                "streams": [{"source": "hls480p"},{"source": "hls720p"}]
+ *            }
+ *        ]
+ *    }
+ *
+ * @apiParamExample {json} Live Stream Transmuxed Rendition Example:
+ *     // When using a transmuxed rendition within a multi-bitrate HLS output,
+ *     // the segment_size and keyframe_interval should be avoided on any of the outputs
+ *     // to ensure segments and keyframes follow the input GOP structure.
+ *     //If not, the system will return an error in the job creation request.
+ *    {
+ *        "live_stream": true,
+ *        "region": "us-west-2",
+ *        "reconnect_time": 20,
+ *        "outputs": [
+ *            {
+ *                "label": "hls1080p transmux",
+ *                "live_stream": true,
+ *                "copy_video": true,
+ *                "copy_audio": true,
+ *                "segment_seconds": 6
+ *            },
+ *            {
+ *                "label": "hls720p",
+ *                "live_stream": true,
+ *                "width": 960,
+ *                "height": 540,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 1843,
+ *                "segment_seconds": 6
+ *            },
+ *            {
+ *                "label": "hls480p",
+ *                "live_stream": true,
+ *                "width": 640,
+ *                "height": 360,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 819,
+ *                "segment_seconds": 6
+ *            },
+ *            {
+ *                "url":"s3://YOUR_BUCKET/live/20160403004644_test.mp4",
+ *                "credentials": "YOUR_CREDENTIALS"
+ *            }
+ *        ]
+ *    }
+ *
+ * @apiParamExample {json} Live Stream with VOD Example:
+ *    {
+ *        "live_stream": true,
+ *        "region": "us-west-2",
+ *        "reconnect_time": 20,
+ *        "live_sliding_window_duration":30,
+ *        "outputs": [
+ *            {
+ *                "label": "hls720p",
+ *                "live_stream": true,
+ *                "width": 960,
+ *                "height": 540,
+ *                "video_codec": "h264",
+ *                "h264_profile": "main",
+ *                "video_bitrate": 1843,
+ *                "segment_seconds": 6
+ *            },
+ *            {
+ *                "url":"s3://YOUR_BUCKET/live/20160403004644_test.mp4",
+ *                "credentials": "YOUR_CREDENTIALS"
+ *            }
+ *        ]
+ *    }
+ *
+ * @apiParamExample {json} Live Stream with VOD and Notifications Example:
+ *    {
+ *        "live_stream": true,
+ *        "region": "us-west-2",
+ *        "reconnect_time": 20,
+ *        "notifications": [
+ *            “http://httpbin.org/post?liveStateChange",
+ *            {
+ *                "url": "http://httpbin.org/post?liveStarted",
+ *                "event": "first_segment_uploaded"
+ *            },
+ *            {
+ *                "url": "http://httpbin.org/post?liveFinished",
+ *                "event": "output_finished"
+ *            }],
+ *        "outputs": [
+ *        {
+ *            "label": "hls720p",
+ *            "live_stream": true,
+ *            "height": 720,
+ *            "video_bitrate": 2000,
+ *            "segment_seconds": 6,
+ *            "video_codec": "h264",
+ *            "h264_profile": "high",
+ *            "segment_seconds": 6
+ *        },
+ *        {
+ *            "label": "hls360p",
+ *            "live_stream": true,
+ *            "height": 360,
+ *            "video_bitrate": 650,
+ *            "segment_seconds": 6
+ *        },
+ *        {
+ *            "url":"s3://YOUR_BUCKET/path/filename.mp4",
+ *            "credentials": "YOUR_CREDENTIALS”,
+ *            "notifications":    [{
+ *                "url": "http://httpbin.org/post?vodStateChange"
+ *            },
+ *            {
+ *                "url": "http://httpbin.org/post?vodFinished",
+ *                "event": "output_finished"
+ *            }]
+ *        }]
+ *    }
+ *
+ * @apiSuccess (Response Fields) {String} id Id for the stream.
+ * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
+ * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
+ * @apiSuccess (Response Fields) {String} outputs.playback_url Media HLS manifest for the specified rendition (non-SSAI).
+ * @apiSuccess (Response Fields) {String} outputs.playback_url_dvr Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
+ * @apiSuccess (Response Fields) {String} outputs.playback_url_vod Media HLS manifest of the Live stream for the last 24 hours. (non-SSAI).
+ * @apiSuccess (Response Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
+ * @apiSuccess (Response Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Note* Your ad server must be configured by your account team. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags. Default is false. Currently no outputs can be specified with a SSAI enabled stream.
+ * @apiSuccess (Response Fields) {String="Us-west-2", "ap-southeast-2", "ap-northeast-1"} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
+ * @apiSuccess (Response Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
+ * @apiSuccess (Response Fields) {Number{0-93600}} [event_length] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
+ * @apiSuccess (Response Fields) {Number{0-7200}} [live_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
+ * @apiSuccess (Response Fields) {Number{1-5}} [max_hls_protocol_version=3] Sets the maximum HLS protocol version to use. Special features will be used as available. Default is 3.
+ * @apiSuccess (Response Fields) {mixed[]} [notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
+ * @apiSuccess (Response Fields) {String} notifications.url Destination for the notification.
+ * @apiSuccess (Response Fields) {String} [notifications.credentials] Credentials for the destination, if required.
+ * @apiSuccess (Response Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
+ * @apiSuccess (Response Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
+ * @apiSuccess (Response Fields) {String} add_cdns.label A lable to identify the CDN.
+ * @apiSuccess (Response Fields) {String} add_cdns.prepend TODO
+ * @apiSuccess (Response Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
+ *
+ * @apiSuccessExample {json} Success Response Standard Live Stream:
+ *    HTTP/1.1 200 OK
+ *    {
+ *      "id": "edb92295e0f744f088f473ac047538c3",
+ *      "outputs": [
+ *        {
+ *          "id": "0-edb92295e0f744f088f473ac047538c3",
+ *          "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
+ *          "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
+ *          "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8",
+ *          "label": "hls720p"
+ *        },
+ *        {
+ *          "id": "1-edb92295e0f744f088f473ac047538c3",
+ *          "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
+ *          "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
+ *          "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8",
+ *          "label": "hls480p"
+ *        },
+ *        {
+ *          "id": "2-edb92295e0f744f088f473ac047538c3",
+ *          "playlist_type": "defaultS3",
+ *          "type": "playlist",
+ *          "filename": "playlist.m3u8",
+ *          "dvr_filename": "playlist_dvr.m3u8",
+ *          "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+ *          "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
+ *        }
+ *      ],
+ *      "stream_url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
+ *      "stream_name": "alive",
+ *      "encryption": {},
+ *      "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+ *      "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
+ *    } *
  *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested

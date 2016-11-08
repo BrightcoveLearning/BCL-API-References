@@ -5,7 +5,7 @@
     "title": "Live API Reference",
     "url": "https://api.bcovlive.io",
     "order": [
-        "Jobs",
+        "Live_Jobs",
         "VODs"
     ]
 }
