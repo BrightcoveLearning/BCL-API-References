@@ -28,11 +28,34 @@
  * @apiParam (Request Body Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for VOD assets to be created from the live stream.
  * @apiParam (Request Body Fields) {String} outputs.label Label for the VOD asset.
- * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If live_stream is false, or is not set, the output will be treated as a VOD output.
+ * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If `live_stream` is false, or is not set, the output will be treated as a VOD output.
  * @apiParam (Request Body Fields) {Number{0-172800}} [outputs.duration] Clipping API option 1. Duration (in seconds) to clip back from Live. Note: Clipping API only requires one of the three options for specifying duration or time.
  * @apiParam (Request Body Fields) {Number{0-2147483647}} [outputs.stream_start_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
  * @apiParam (Request Body Fields) {Number{stream_start_time-stream_start_time+172800}} [outputs.stream_end_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
- * @apiParam (Request Body Fields) {Number{current_time..}} [outputs.stream_end_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
+ * @apiParam (Request Body Fields) {Number{current_time-future_time}} [outputs.start_time] Clipping API option 3. Universal epoch time, in seconds, to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
+ * @apiParam (Request Body Fields) {Number{start_time-start_time+172800}} [outputs.end_time] Clipping API option 3. Universal epoch time, in seconds, to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
+ * @apiParam (Request Body Fields) {Boolean} [outputs.copy_video] Specifying `copy_video` will take the video track from the input video file and transmux it into the resulting output file.
+ * @apiParam (Request Body Fields) {Boolean} [outputs.copy_audio] Specifying `copy_audio` will take the audio track from the input video file and transmux it into the resulting output file.
+ * @apiParam (Request Body Fields) {Boolean} [outputs.skip_video] Specifying `skip_video` will take the audio track from the input video file and transmux it into the resulting output file.
+ * @apiParam (Request Body Fields) {Boolean} [outputs.skip_audio] Specifying `skip_audio` will take the audio track from the input video file and transmux it into the resulting output file.
+ * @apiParam (Request Body Fields) {Number} [outputs.width] Video frame width. If no width is supplied, we will use the original width, or scale to size of height setting.
+ * @apiParam (Request Body Fields) {Number} [outputs.height] Video frame height. If no height is supplied, we will use the original height, or scale to size or width setting.
+ * @apiParam (Request Body Fields) {String="h264"} [outputs.video_codec] The output video codec. Note: Only h264 is supported.
+ * @apiParam (Request Body Fields) {String} [outputs.h264_profile] H.264 has three commonly-used profiles: Baseline (lowest), Main, and High. Lower levels are easier to decode, but higher levels offer better compression. For the best compression quality, choose High. For playback on low-CPU machines or many mobile devices, choose Baseline.
+ * @apiParam (Request Body Fields) {Number{16-10000}} outputs.video_bitrate Set the maximum number of frames between each keyframe. A greater number of keyframes will increase the size of your output file, but will allow for more precise scrubbing in most players. It’s recommended to have at least one keyframe per segment. If keyframe_interval is not provided, keyframes will follow the input GOP structure. Note: If outputing multi-bitrate with transmuxed renditions, it’s recommended to not set the keyframe interval for any outputs to ensure the keyframes are aligned.
+ * @apiParam (Request Body Fields) {String="aac"} [outputs.audio_codec] The output audio codec to use. Note: Only aac is supported.
+ * @apiParam (Request Body Fields) {Number{16-1024}} outputs.audio_bitrate An output bitrate setting, in Kbps
+ * @apiParam (Request Body Fields) {Number{1-20}} outputs.segment_seconds Sets the maximum duration of each segment in a segmented output.
+ * @apiParam (Request Body Fields) {mixed[]} [outputs.notifications] Array of notification destination objects or strings.  A notification will be sent to the destination when selected event occurs. You can use a simple string with a url: "http://log:pass@httpbin.org/post", or you can use an object.
+ * @apiParam (Request Body Fields) {String} outputs.notifications.url Destination for the notification.
+ * @apiParam (Request Body Fields) {String} [outputs.notifications.credentials] Credentials for the destination, if required.
+ * @apiParam (Request Body Fields) {String} [outputs.rendition_label] Indicates what rendition to use to create a VOD output (from the live job) or which renditions to use in an. By default, the system uses any transmuxed rendition or the highest resolution outputs if there is no transmuxed output.
+ * @apiParam (Request Body Fields) {String="playlist"} [outputs.type] The only type supported is a playlist. This is used for generating multiple master playlists with different renditions in the HLS manifest with the defined stream labels.
+ * @apiParam (Request Body Fields) {Array} [outputs.streams] When creating a playlist, the streams field is used to define which output renditions (by label) should be included in the manifest. Example format [{"source": "1080p"}, {"source": "720p"}].
+ * @apiParam (Request Body Fields) {String} [outputs.url] For VOD, URL is mandatory and sets the destination of the final asset destination. For access restricted origins, the credentials a can be passed along with the URL or stored within the Brightcove system. For Live, this is reserved for future use.
+ * @apiParam (Request Body Fields) {String} [outputs.credentials] Credentials with private and public keys can be stored with Brightcove to avoid passing plain text on API requests. This is required if the S3 or FTP origins are restricted. If credentials are not provided, it will be assumed that the origin restrictions are set to public or credentials are passed along with the URL.
+ * @apiParam (Request Body Fields) {Object} [outputs.videocloud] Video Cloud customer have the option to push their clips directly through Dynamic Ingest. Options "{"video": {"name"}, "ingest": { }". The video object will be sent to the CMS API and can include (description, tags, etc.). Note: the account_id and reference_id will be added automatically. If overriding the reference_id, ensure that the id does not already exist or the job will fail. For more information see: [CMS-API-CreateVideo](http://docs.brightcove.com/en/video-cloud/cms-api/references/cms-api/versions/v1/index.html#api-videoGroup-Create_Video). The ingest object will be sent to the Dynamic Ingest API and can include (master, profile, poster, callbacks, etc). Note: the account_id and video_id are added automatically. For more information see: [DI-API-IngestVideo](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset).
+
  *
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
@@ -177,7 +200,7 @@
  *        "region": "us-west-2",
  *        "reconnect_time": 20,
  *        "notifications": [
- *            “http://httpbin.org/post?liveStateChange",
+ *            "http://httpbin.org/post?liveStateChange",
  *            {
  *                "url": "http://httpbin.org/post?liveStarted",
  *                "event": "first_segment_uploaded"
@@ -206,7 +229,7 @@
  *        },
  *        {
  *            "url":"s3://YOUR_BUCKET/path/filename.mp4",
- *            "credentials": "YOUR_CREDENTIALS”,
+ *            "credentials": "YOUR_CREDENTIALS",
  *            "notifications":    [{
  *                "url": "http://httpbin.org/post?vodStateChange"
  *            },
