@@ -25,6 +25,10 @@
  * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
  * @apiParam (Request Body Fields) {String} add_cdns.prepend TODO
+ * @apiParam (Request Body Fields) {Object[]} [encryption] Array of encryption algorithms for the output stream. Only the AES-128 method is currently support and only for non-SSAI jobs. Format: “{“method”, “key”, “external_url”}”. Providing a key will overwrite the randomly generated key and providing the external_url for license serving will override the key serving from Brightcove. These fields are optional.
+ * @apiParam (Request Body Fields) {String} encryption.method The encryption method - currently only "AES-128" is support
+ * @apiParam (Request Body Fields) {String} [encryption.key] Providing a key will overwrite the randomly generated key.
+ * @apiParam (Request Body Fields) {String} encryption.external_url Providing an external URL for the key server will override key-serving from Brightcove.
  * @apiParam (Request Body Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for VOD assets to be created from the live stream.
  * @apiParam (Request Body Fields) {String} outputs.label Label for the VOD asset.
@@ -798,6 +802,22 @@
   * @apiSuccess (Response Fields) {DateTimeString} job.submitted_at ISO 8601 date-time string representing when the job was submitted
   * @apiSuccess (Response Fields) {Boolean} job.test TODO
   * @apiSuccess (Response Fields) {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
+  * @apiSuccess (Response Fields) {String} job.region The Amazon AWS region to use for encoding the job
+  * @apiSuccess (Response Fields) {Number} job.reconnect_time The time, in seconds, that the system will wait for a stream to reconnect to the encoder
+  * @apiSuccess (Response Fields) {Number} job.event_length The time, in seconds, that the system will keep the live stream available
+  * @apiSuccess (Response Fields) {Number} job.live_sliding_window_duration The time, in seconds, kept in the live DVR manifest
+  * @apiSuccess (Response Fields) {Boolean} job.live_stream Indicates whether this is a live stream or VOD
+  * @apiSuccess (Response Fields) {Boolean} job.ad_insertion Indicates whether SSAI is enabled
+  * @apiSuccess (Response Fields) {Boolean} job.metadata_passthrough TODO
+  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes TODO
+  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes_rate TODO
+  * @apiSuccess (Response Fields) {String} job.playback_url Playback URL for the live stream
+  * @apiSuccess (Response Fields) {String} job.playback_url_dvr Playback URL for the live DVR
+  * @apiSuccess (Response Fields) {Object[]} job.encryption Array of encryption algorithms for the output stream. Only the AES-128 method is currently support and only for non-SSAI jobs. Format: “{“method”, “key”, “external_url”}”. Providing a key will overwrite the randomly generated key and providing the external_url for license serving will override the key serving from Brightcove. These fields are optional.
+  * @apiSuccess (Response Fields) {String} job.encryption.method The encryption method - currently only "AES-128" is support
+  * @apiSuccess (Response Fields) {String} job.encryption.key Provided key that will override the randomly generated key.
+  * @apiSuccess (Response Fields) {String} job.encryption.external_url Provided external URL for the key server that will override key-serving from Brightcove.
+  * @apiSuccess (Response Fields) {Object} job.input_media_file Object containing properties for the input media file
   *
   * @apiSuccessExample {json} Success Response Get Live Job Details:
   *    {
