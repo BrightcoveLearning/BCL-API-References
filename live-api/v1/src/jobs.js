@@ -399,6 +399,43 @@
  *            }
  *        ]
  *    }
+ *
+ * @apiParamExample {json} Live Stream with SSAI and VOD output Example:
+ *    {
+ *            "ad_insertion": true,
+ *            "live_stream": true,
+ *            "region": "us-west-2",
+ *            "reconnect_time": 180,
+ *            "slate": "bbbff5ad67a94941be8cb987ba23049d",
+ *            "notifications": [
+ *                "http://httpbin.org/post"
+ *            ],
+ *            "add_cdns":[{
+ *                "label": "akamai-test",
+ *                "prepend": "vrnginx-useast.akamai.com",
+ *                "protocol": "http"
+ *            }],
+ *            "outputs": [
+ *                {
+ *                    "label": "hls720p",
+ *                    "live_stream": true,
+ *                    "height": 720,
+ *                    "video_bitrate": 2400,
+ *                    "segment_seconds": 6,
+ *                    "keyframe_interval": 90
+ *                },{
+ *                    "label": "hls480p",
+ *                    "live_stream": true,
+ *                    "height": 480,
+ *                    "video_bitrate": 1000,
+ *                    "segment_seconds": 6,
+ *                    "keyframe_interval": 90
+ *                }, {
+ *                "url":"s3://YOUR_BUCKET/live/20160403004644_test.mp4",
+ *                "credentials": "YOUR_CREDENTIALS"
+ *            }]
+ *    }
+ *
  * @apiSuccess (Response Fields) {String} id Id for the stream.
  * @apiSuccess (Response Fields) {Object[]} outputs Details on each output rendition of the Live job.
  * @apiSuccess (Response Fields) {String} outputs.id The unique id for the rendition.
@@ -658,6 +695,39 @@
  *      "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
  *    }
  *
+ * @apiSuccessExample {json} Success Response Live Stream with SSAI and VOD output:
+ *    HTTP/1.1 200 OK
+ *    {
+ *       "id": "3158f1c9bc5c462182079f434ba4ae0a",
+ *       "outputs": [
+ *          {
+ *             "id": "03158f1c9bc5c462182079f434ba4ae0a",
+ *             "playback_url":"http://host/jobId/us-west-2/profile_0/chunklist.m3u8",
+ *             "Playback_url_dvr": "http://host/jobId/us-west-2/profile_0/chunklist_dvr.m3u8",
+ *             "playback_url_vod": "http://host/jobId/us-west-2/profile_0/chunklist_vod.m3u8",
+ *             "label": "Out0"
+ *          },
+ *          {
+ *             "id": "13158f1c9bc5c462182079f434ba4ae0a",
+ *             "playback_url": "http://host/jobId/us-west-2/profile_1/chunklist.m3u8",
+ *             "playback_url_dvr": "http://host/jobId/us-west-2/profile_1/chunklist_dvr.m3u8",
+ *             "playback_url_vod": "http://host/jobId/us-west-2/profile_1/chunklist_vod.m3u8",
+ *             "label": "Out1"
+ *          },
+ *          {
+ *             "id": "23158f1c9bc5c462182079f434ba4ae0a",
+ *             "playback_url": "http://host/jobId/us-west-2/profile_2/chunklist.m3u8",
+ *             "playback_url_dvr": "http://host/jobId/us-west-2/profile_2/chunklist_dvr.m3u8",
+ *             "playback_url_vod": "http://host/jobId/us-west-2/profile_2/chunklist_vod.m3u8",
+ *             "label": "Out2"
+ *          }
+ *       ],
+ *       "stream_url": "rtmp://ep6-usw2.a-live.io:1935/3158f1c9bc5c462182079f434ba4ae0a",
+ *       "stream_name": "alive",
+ *       "playback_url": "http://host/jobId/us-west-2/playlist.m3u8",
+ *       "playback_url_dvr": "http://host/jobId/us-west-2/playlist_dvr.m3u8"
+ *    }
+ *
  * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your key is correct
  * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
  *
@@ -677,12 +747,12 @@
  // Stop Live Job
 
  /**
-  * @api {post} /v1/jobs/:jobId/cancel Stop a Live Job
+  * @api {put} /v1/jobs/:jobId/cancel Stop a Live Job
   * @apiName Stop Live Job
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
   *
-  * @apiDescription Create a live stream
+  * @apiDescription Stop a live stream
   *
   * @apiHeader {String} Content-Type Content-Type: application/json
   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
@@ -694,9 +764,207 @@
   *
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
   *
-  * @apiSuccessExample {json} Success Response Standard Live Stream:
+  * @apiSuccessExample {json} Success Response Stop a Live Stream:
   *    {
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
+  *    }
+  *
+  */
+
+// Get Live Job Details
+
+ /**
+  * @api {get} /v1/jobs/:jobId/cancel Get Live Job Details
+  * @apiName Get Live Job Details
+  * @apiGroup Live_Jobs
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Get Live Job Details
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+  *
+  * @apiParamExample {url} Live Stream Custom Origin Example:
+  *     https://api.bcovlive.io/v1/jobs/3158f1c9bc5c462182079f434ba4ae0a
+  *
+  * @apiSuccess (Response Fields) {Object} job Object containing the job details
+  * @apiSuccess (Response Fields) {DateTimeString} job.created_at ISO 8601 date-time string representing when the job was created
+  * @apiSuccess (Response Fields) {DateTimeString} job.finished_at ISO 8601 date-time string representing when the live stream was stopped
+  * @apiSuccess (Response Fields) {String} job.id The live job id
+  * @apiSuccess (Response Fields) {Boolean} job.privacy TODO
+  * @apiSuccess (Response Fields) {String} job.state The current state of the job
+  * @apiSuccess (Response Fields) {DateTimeString} job.submitted_at ISO 8601 date-time string representing when the job was submitted
+  * @apiSuccess (Response Fields) {Boolean} job.test TODO
+  * @apiSuccess (Response Fields) {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
+  *
+  * @apiSuccessExample {json} Success Response Get Live Job Details:
+  *    {
+  *      "job": {
+  *        "created_at": "2016-11-06T20:12:46.571Z",
+  *        "finished_at": "2016-11-06T20:43:16.063Z",
+  *        "id": "edb92295e0f744f088f473ac047538c3",
+  *        "privacy": false,
+  *        "state": "finished",
+  *        "submitted_at": "2016-11-06T20:12:46.571Z",
+  *        "test": false,
+  *        "updated_at": "2016-11-06T20:42:55.980Z",
+  *        "region": "us-west-2",
+  *        "reconnect_time": 20,
+  *        "event_length": 0,
+  *        "live_sliding_window_duration": 30,
+  *        "live_stream": true,
+  *        "ad_insertion": false,
+  *        "metadata_passthrough": false,
+  *        "out_worker_bytes": 0,
+  *        "out_worker_bytes_rate": 0,
+  *        "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+  *        "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8",
+  *        "encryption": {},
+  *        "input_media_file": {
+  *          "audio_bitrate_in_kbps": null,
+  *          "audio_codec": null,
+  *          "audio_sample_rate": null,
+  *          "audio_tracks": null,
+  *          "channels": null,
+  *          "created_at": "2016-11-06T20:12:46.571Z",
+  *          "duration_in_ms": 1478464996063,
+  *          "error_class": null,
+  *          "error_message": null,
+  *          "file_size_bytes": null,
+  *          "finished_at": "2016-11-06T20:43:16.063Z",
+  *          "format": null,
+  *          "frame_rate": null,
+  *          "height": null,
+  *          "id": "input-edb92295e0f744f088f473ac047538c3",
+  *          "md5_checksum": null,
+  *          "privacy": false,
+  *          "state": "finished",
+  *          "test": false,
+  *          "updated_at": "2016-11-06T20:42:55.980Z",
+  *          "video_bitrate_in_kbps": null,
+  *          "video_codec": null,
+  *          "width": null,
+  *          "total_bitrate_in_kbps": null,
+  *          "url": null
+  *        },
+  *        "stream": {
+  *          "created_at": null,
+  *          "finished_at": "2016-11-06T20:43:16.063Z",
+  *          "height": null,
+  *          "id": "stream-edb92295e0f744f088f473ac047538c3",
+  *          "name": "alive",
+  *          "protocol": null,
+  *          "state": null,
+  *          "test": false,
+  *          "updated_at": null,
+  *          "width": null,
+  *          "total_bitrate_in_kbps": null,
+  *          "duration": 1478464996.063,
+  *          "region": "us-west-2",
+  *          "url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
+  *          "location": {
+  *            "source": {
+  *              "latitude": null,
+  *              "longitude": null,
+  *              "location": null
+  *            },
+  *            "destination": {
+  *              "latitude": null,
+  *              "longitude": null,
+  *              "location": null
+  *            },
+  *            "distance": null
+  *          },
+  *          "in_worker_bytes": 0,
+  *          "in_worker_bytes_rate": 0
+  *        },
+  *        "output_media_files": [
+  *          {
+  *            "audio_bitrate_in_kbps": 196.608,
+  *            "audio_codec": "AAC",
+  *            "audio_sample_rate": null,
+  *            "channels": null,
+  *            "created_at": "2016-11-06T20:12:46.571Z",
+  *            "duration_in_ms": 1478464996063,
+  *            "error_class": null,
+  *            "error_message": null,
+  *            "file_size_bytes": null,
+  *            "finished_at": "2016-11-06T20:43:16.063Z",
+  *            "format": null,
+  *            "fragment_duration_in_ms": null,
+  *            "frame_rate": null,
+  *            "height": 540,
+  *            "id": "0-edb92295e0f744f088f473ac047538c3",
+  *            "md5_checksum": null,
+  *            "privacy": false,
+  *            "rfc_6381_audio_codec": null,
+  *            "rfc_6381_video_codec": null,
+  *            "state": "finished",
+  *            "test": false,
+  *            "updated_at": "2016-11-06T20:42:55.980Z",
+  *            "video_bitrate_in_kbps": 1887.232,
+  *            "video_codec": "H.264",
+  *            "video_codec_profile": "main",
+  *            "width": 960,
+  *            "label": "hls720p",
+  *            "total_bitrate_in_kbps": 2083.84,
+  *            "keyframe_interval": 60,
+  *            "keyframe_interval_follow_source": false,
+  *            "segment_seconds": 6,
+  *            "live_stream": true,
+  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist.m3u8",
+  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_dvr.m3u8",
+  *            "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_0/chunklist_vod.m3u8"
+  *          },
+  *          {
+  *            "audio_bitrate_in_kbps": 196.608,
+  *            "audio_codec": "AAC",
+  *            "audio_sample_rate": null,
+  *            "channels": null,
+  *            "created_at": "2016-11-06T20:12:46.571Z",
+  *            "duration_in_ms": 1478464996063,
+  *            "error_class": null,
+  *            "error_message": null,
+  *            "file_size_bytes": null,
+  *            "finished_at": "2016-11-06T20:43:16.063Z",
+  *            "format": null,
+  *            "fragment_duration_in_ms": null,
+  *            "frame_rate": null,
+  *            "height": 360,
+  *            "id": "1-edb92295e0f744f088f473ac047538c3",
+  *            "md5_checksum": null,
+  *            "privacy": false,
+  *            "rfc_6381_audio_codec": null,
+  *            "rfc_6381_video_codec": null,
+  *            "state": "finished",
+  *            "test": false,
+  *            "updated_at": "2016-11-06T20:42:55.980Z",
+  *            "video_bitrate_in_kbps": 838.656,
+  *            "video_codec": "H.264",
+  *            "video_codec_profile": "main",
+  *            "width": 640,
+  *            "label": "hls480p",
+  *            "total_bitrate_in_kbps": 1035.264,
+  *            "keyframe_interval": 60,
+  *            "keyframe_interval_follow_source": false,
+  *            "segment_seconds": 6,
+  *            "live_stream": true,
+  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist.m3u8",
+  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_dvr.m3u8",
+  *            "playback_url_vod": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/profile_1/chunklist_vod.m3u8"
+  *          },
+  *          {
+  *            "playlist_type": "defaultS3",
+  *            "type": "playlist",
+  *            "filename": "playlist.m3u8",
+  *            "dvr_filename": "playlist_dvr.m3u8",
+  *            "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
+  *            "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
+  *          }
+  *        ]
+  *      }
   *    }
   *
   */
