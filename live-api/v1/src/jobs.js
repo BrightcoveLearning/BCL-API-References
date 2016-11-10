@@ -833,6 +833,80 @@
   * @apiSuccess (Response Fields) {Number} job.input_media_file.frame_rate Frame rate of the input file
   * @apiSuccess (Response Fields) {Number} job.input_media_file.height Frame height of the input file
   * @apiSuccess (Response Fields) {String} job.input_media_file.id System id of the input file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.md5_checksum Checksum for the input file
+  * @apiSuccess (Response Fields) {Boolean} job.input_media_file.privacy `TODO`
+  * @apiSuccess (Response Fields) {String} job.input_media_file.state Current state of input file processing
+  * @apiSuccess (Response Fields) {Boolean} job.input_media_file.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.updated_at ISO 8601 date-time string representing when the input file was last modified
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.video_codec Video codec of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.width Frame width of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.total_bitrate_in_kbps Total bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.url URL for the input media file
+  * @apiSuccess (Response Fields) {Object} job.stream Object containing properties for the live stream
+  * @apiSuccess (Response Fields) {DateTimeString} job.stream.created_at ISO 8601 date-time string representing when the stream was created
+  * @apiSuccess (Response Fields) {Number} job.stream.duration ISO Duration of the stream in seconds
+  * @apiSuccess (Response Fields) {DateTimeString} job.stream.finished_at ISO 8601 date-time string representing when the stream was finished
+  * @apiSuccess (Response Fields) {Number} job.stream.height Frame height of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.id System id of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.name Name of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.protocol Protocol of the stream - either `HTTP` or `HTTPS`
+  * @apiSuccess (Response Fields) {Boolean} job.stream.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.stream.updated_at ISO 8601 date-time string representing when the stream was last modified
+  * @apiSuccessExample {json} Success Response Get Live Job Details:
+  * @apiSuccess (Response Fields) {Number} job.stream.video_bitrate_in_kbps Video bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.stream.video_codec Video codec of the input media file
+  * @apiSuccess (Response Fields) {Number} job.stream.width Frame width of the stream
+  * @apiSuccess (Response Fields) {Number} job.stream.total_bitrate_in_kbps Total bitrate of the stream
+  * @apiSuccess (Response Fields) {String} job.stream.region AWS region for the stream
+  * @apiSuccess (Response Fields) {String} job.stream.url URL for the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.location Object representing the location of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source Object representing the location source of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source.latitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source.longitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.location.source.location `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.destination Object representing the destination of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source Object representing the destination source of the stream
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source.latitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source.longitude `TODO`
+  * @apiSuccess (Response Fields) {Object} job.stream.destination.source.location `TODO`
+  * @apiSuccess (Response Fields) {Number} job.stream.in_worker_bytes `TODO`
+  * @apiSuccess (Response Fields) {Number} job.stream.in_worker_bytes_rate `TODO`
+  * @apiSuccess (Response Fields) {Object[]} job.output_media_files Array of objects containing properties for the output media files
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_bitrate_in_kbps Audio bitrate of the output media file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.audio_codec Audio codec of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_sample_rate Audio sample rate of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_tracks `TODO`
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.channels `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.created_at ISO 8601 date-time string representing when the output file was created
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.duration_in_ms ISO 8601 date-time string representing when the output file was created
+  * @apiSuccess (Response Fields) {String} job.output_media_files.error_class Type of error thrown
+  * @apiSuccess (Response Fields) {String} job.output_media_files.error_message Error message thrown
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.file_size_bytes File size
+  * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.finished_at ISO 8601 date-time string representing when the output file was finished
+  * @apiSuccess (Response Fields) {String} job.output_media_files.format Format of the output file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.fragment_duration_in_ms `TODO`
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.frame_rate Frame rate of the output file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.height Frame height of the output file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.id System id of the output file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.md5_checksum Checksum for the output file
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.privacy `TODO`
+  * @apiSuccess (Response Fields) {String} job.output_media_files.rfc_6381_audio_codec `TODO`
+  * @apiSuccess (Response Fields) {String} job.output_media_files.rfc_6381_video_codec `TODO`
+  * @apiSuccess (Response Fields) {String} job.output_media_files.state Current state of output file processing
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.test `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.updated_at ISO 8601 date-time string representing when the output file was last modified
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.video_bitrate_in_kbps Video bitrate of the output media file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.video_codec Video codec of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.width Frame width of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.total_bitrate_in_kbps Total bitrate of the output media file
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.keyframe_interval Keyframe interval for the output media file
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.keyframe_interval_follow_source Whether keyframe rate for the output matches the source
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.live_stream Whether the output is a live stream
+  * @apiSuccess (Response Fields) {Boolean} job.output_media_files.keyframe_interval Keyframe interval for the output media file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url URL for the output file
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_dvr Live DVR url for live stream output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_vod URL URL for VOD output
   *
   * @apiSuccessExample {json} Success Response Get Live Job Details:
   *    {
