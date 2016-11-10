@@ -24,7 +24,7 @@
  * @apiParam (Request Body Fields) {String="first_segment_uploaded", "output_finished", "state_changed"} [notifications.event="state_changed"] Event type to send notifications for.  It is recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
  * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
- * @apiParam (Request Body Fields) {String} add_cdns.prepend TODO
+ * @apiParam (Request Body Fields) {String} add_cdns.prepend `TODO`
  * @apiParam (Request Body Fields) {Object[]} [encryption] Array of encryption algorithms for the output stream. Only the AES-128 method is currently support and only for non-SSAI jobs. Format: “{“method”, “key”, “external_url”}”. Providing a key will overwrite the randomly generated key and providing the external_url for license serving will override the key serving from Brightcove. These fields are optional.
  * @apiParam (Request Body Fields) {String} encryption.method The encryption method - currently only "AES-128" is support
  * @apiParam (Request Body Fields) {String} [encryption.key] Providing a key will overwrite the randomly generated key.
@@ -459,7 +459,7 @@
  * @apiSuccess (Response Fields) {String} [notifications.event="state_changed"] Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
  * @apiSuccess (Response Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiSuccess (Response Fields) {String} add_cdns.label A lable to identify the CDN.
- * @apiSuccess (Response Fields) {String} add_cdns.prepend TODO
+ * @apiSuccess (Response Fields) {String} add_cdns.prepend `TODO`
  * @apiSuccess (Response Fields) {String} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  *
  * @apiSuccessExample {json} Success Response Standard Live Stream:
@@ -797,10 +797,10 @@
   * @apiSuccess (Response Fields) {DateTimeString} job.created_at ISO 8601 date-time string representing when the job was created
   * @apiSuccess (Response Fields) {DateTimeString} job.finished_at ISO 8601 date-time string representing when the live stream was stopped
   * @apiSuccess (Response Fields) {String} job.id The live job id
-  * @apiSuccess (Response Fields) {Boolean} job.privacy TODO
+  * @apiSuccess (Response Fields) {Boolean} job.privacy `TODO`
   * @apiSuccess (Response Fields) {String} job.state The current state of the job
   * @apiSuccess (Response Fields) {DateTimeString} job.submitted_at ISO 8601 date-time string representing when the job was submitted
-  * @apiSuccess (Response Fields) {Boolean} job.test TODO
+  * @apiSuccess (Response Fields) {Boolean} job.test `TODO`
   * @apiSuccess (Response Fields) {DateTimeString} job.updated_at ISO 8601 date-time string representing when the job was last modified
   * @apiSuccess (Response Fields) {String} job.region The Amazon AWS region to use for encoding the job
   * @apiSuccess (Response Fields) {Number} job.reconnect_time The time, in seconds, that the system will wait for a stream to reconnect to the encoder
@@ -808,9 +808,9 @@
   * @apiSuccess (Response Fields) {Number} job.live_sliding_window_duration The time, in seconds, kept in the live DVR manifest
   * @apiSuccess (Response Fields) {Boolean} job.live_stream Indicates whether this is a live stream or VOD
   * @apiSuccess (Response Fields) {Boolean} job.ad_insertion Indicates whether SSAI is enabled
-  * @apiSuccess (Response Fields) {Boolean} job.metadata_passthrough TODO
-  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes TODO
-  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes_rate TODO
+  * @apiSuccess (Response Fields) {Boolean} job.metadata_passthrough `TODO`
+  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes `TODO`
+  * @apiSuccess (Response Fields) {Number} job.out_worker_bytes_rate `TODO`
   * @apiSuccess (Response Fields) {String} job.playback_url Playback URL for the live stream
   * @apiSuccess (Response Fields) {String} job.playback_url_dvr Playback URL for the live DVR
   * @apiSuccess (Response Fields) {Object[]} job.encryption Array of encryption algorithms for the output stream. Only the AES-128 method is currently support and only for non-SSAI jobs. Format: “{“method”, “key”, “external_url”}”. Providing a key will overwrite the randomly generated key and providing the external_url for license serving will override the key serving from Brightcove. These fields are optional.
@@ -818,6 +818,21 @@
   * @apiSuccess (Response Fields) {String} job.encryption.key Provided key that will override the randomly generated key.
   * @apiSuccess (Response Fields) {String} job.encryption.external_url Provided external URL for the key server that will override key-serving from Brightcove.
   * @apiSuccess (Response Fields) {Object} job.input_media_file Object containing properties for the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_bitrate_in_kbps Audio bitrate of the input media file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.audio_codec Audio codec of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_sample_rate Audio sample rate of the input media file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_tracks `TODO`
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.channels `TODO`
+  * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.created_at ISO 8601 date-time string representing when the input file was created
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.duration_in_ms ISO 8601 date-time string representing when the input file was created
+  * @apiSuccess (Response Fields) {String} job.input_media_file.error_class Type of error thrown
+  * @apiSuccess (Response Fields) {String} job.input_media_file.error_message Error message thrown
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.file_size_bytes File size
+  * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.finished_at ISO 8601 date-time string representing when the input file was finished
+  * @apiSuccess (Response Fields) {String} job.input_media_file.format Format of the input file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.frame_rate Frame rate of the input file
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.height Frame height of the input file
+  * @apiSuccess (Response Fields) {String} job.input_media_file.id System id of the input file
   *
   * @apiSuccessExample {json} Success Response Get Live Job Details:
   *    {
