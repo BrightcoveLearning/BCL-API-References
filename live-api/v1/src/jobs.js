@@ -769,6 +769,7 @@
   * @apiSuccess (Response Fields) {String} id The job id for the stream that was stopped
   *
   * @apiSuccessExample {json} Success Response Stop a Live Stream:
+  *    HTTP/1.1 200 OK
   *    {
   *        "id": "3158f1c9bc5c462182079f434ba4ae0a"
   *    }
@@ -778,7 +779,7 @@
 // Get Live Job Details
 
  /**
-  * @api {get} /v1/jobs/:jobId/cancel Get Live Job Details
+  * @api {get} /v1/jobs/:jobId/ Get Live Job Details
   * @apiName Get Live Job Details
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
@@ -853,7 +854,6 @@
   * @apiSuccess (Response Fields) {String} job.stream.protocol Protocol of the stream - either `HTTP` or `HTTPS`
   * @apiSuccess (Response Fields) {Boolean} job.stream.test `TODO`
   * @apiSuccess (Response Fields) {DateTimeString} job.stream.updated_at ISO 8601 date-time string representing when the stream was last modified
-  * @apiSuccessExample {json} Success Response Get Live Job Details:
   * @apiSuccess (Response Fields) {Number} job.stream.video_bitrate_in_kbps Video bitrate of the input media file
   * @apiSuccess (Response Fields) {String} job.stream.video_codec Video codec of the input media file
   * @apiSuccess (Response Fields) {Number} job.stream.width Frame width of the stream
@@ -913,6 +913,7 @@
   * @apiSuccess (Response Fields) {String} job.output_media_files.dvr_filename File name for the DVR playlist manifest
   *
   * @apiSuccessExample {json} Success Response Get Live Job Details:
+  *    HTTP/1.1 200 OK
   *    {
   *      "job": {
   *        "created_at": "2016-11-06T20:12:46.571Z",
@@ -1099,6 +1100,7 @@
   * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds.
   *
   * @apiParamExample {json} Live Stream Cuepoint Insertion Request Body Example:
+  *    HTTP/1.1 200 OK
   *    {
   *       "duration":30
   *    }

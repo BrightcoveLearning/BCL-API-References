@@ -1,61 +1,88 @@
-// get status
+// Create a VOD Clip by Duration from Live
 
 /**
- * @api {get} /data/status Get Available Date Range
- * @apiName Get Available Date Range
- * @apiGroup Report
- * @apiVersion 1.0.0
- *
- * @apiDescription Get the date range for which reconciled data is available for any Analytics API report. All parameters are allowed, but only `account`, `dimensions`, and `where` affect the result &mdash; all others are ignored.
- * **Note that date range for this request must fall within the available date range for the dimensions requested &mdash; the simplest thing to do is to use `from=alltime`**
- *
- * @apiHeader {String} Content-Type Content-Type: application/json
- * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
- * @apiHeader {String} Accept-Encoding Accept-Encoding: gzip (optional)
- *
- * @apiParam (URL Parameters) {Number} accounts one or more Video Cloud account IDs separated by commas
- * @apiParam (URL Parameters) {Number} [limit=10] ignored
- * @apiParam (URL Parameters) {Number} [offset=0] ignored
- * @apiParam (URL Parameters) {String} [sort=video_view] ignored
- * @apiParam (URL Parameters) {String} [fields=video_view] ignored
- * @apiParam (URL Parameters) {String="account","city","country","region","date","date-time","device_os","device_type","player","referrer_domain","destination_domain","search_terms","source_type","video"} dimensions one or more dimensions to report on; see [Multiple Dimensions](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#reportDimensions) for which combined dimensions are supported
- * @apiParam (URL Parameters) {String="dimension==value"} [where] one or more dimension==value pairs to filter the results; see [Where Filters](http://docs.brightcove.com/en/video-cloud/analytics-api/getting-started/api-overview.html#filterValues) for details
- * @apiParam (URL Parameters) {mixed} [from="(30 days before now)"] ignored
- * @apiParam (URL Parameters) {mixed} [to="now"] ignored
- * @apiParam (URL Parameters) {String="json","csv","xlsx"]} [format="json"] ignored
- * @apiParam (URL Parameters) {Boolean} [reconciled] if true, only reconciled data is returned; if false, only realtime data is returned; if not present, both reconciled and realtime data are returned
- *
- * @apiParamExample {Url} Video Dimension Report Example:
- *     https://analytics.api.brightcove.com/v1/data/status?accounts=20318290001&dimensions=account,device_os,country
- *
- * @apiSuccess (Response Fields) {DateString} reconciled_from the earliest date that you can use for `from` and get reconciled data
- * @apiSuccess (Response Fields) {DateString} reconciled_to the latest date that you can use for `to` and get reconciled data (realtime data may be available for later dates)
- *
- * @apiSuccessExample {json} Success Response:
- *    HTTP/1.1 200 OK
- *    {
- *        "reconciled_from": "2015-10-19",
- *        "reconciled_to": "2015-11-04"
- *    }
- *
- *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} BAD_REQUEST 400: The message fields of the response contains information about what caused the error such as `invalid value for sort parameter`
- * @apiError (Error 4xx) {json} UNSUPPORTED_FIELD_COMBINATION_ERROR 400: The message fields of the response contains information about what invalid fields were specifed
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: This error occurs when the api request is made with an HTTP method other than GET
- * @apiError (Error 5xx) {json} SERVER_ERROR 500: Issue in Brightcove system; try again later
- * @apiError (Error 5xx) {json} PROCESSING 500: The analytics API may send back this message if it encounters a long running query. Once the query has finished it will be stored in the server’s cache for up to 5 minutes. Therefore we suggest querying the API 4 minutes after receiving this error
- *
- * @apiErrorExample {json} 404 Error Response
- *    HTTP/1.1 400 BAD_REQUEST
- *    [
- *        {
- *            "error_code": "TIME_RANGE_UNAVAILABLE",
- *            "message": "data is not available for the requested dimensions during the requested time period",
- *            "request_id": "4f13a9e1-2e0b-4fef-a040-d67846493bd6"
- *        }
- *    ]
- *
- *
- */
+  * @api {post} /v1/vods Create VOD Clip
+  * @apiName Create VOD Clip
+  * @apiGroup VODs
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Create VOD clips from a Live Stream.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (Request Body Fields) {String} live_job_id The id of Live Stream job to create the VOD clip from.
+  * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs
+  * @apiParam (Request Body Fields) {String} outputs.label Label for the output
+  * @apiParam (Request Body Fields) {Number} outputs.duration Duration of the clip in seconds
+  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
+  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
+  * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
+  * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
+  * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
+  * @apiParam (Request Body Fields) {String} outputs.credentials `TODO`
+  * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
+  * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Video-Create_Video_Object)
+  * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video injestion - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
+  *
+  * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
+  *    {
+  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+  *        "outputs":[
+  *            {
+  *                "label": "last 60 secs of live job",
+  *                "duration": 60,
+  *                "url": "ftp://log:pass@yourftpserver.com:21/live/test_dur60.mp4"
+  *            }
+  *        ]
+  *    }
+  *
+  * @apiParamExample {json} Create a VOD Clip by an Offset from the Start Request Body Example:
+  *    {
+  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+  *        "outputs":[
+  *            {
+  *                "label": "60 secs by stream from min 2 to min 3",
+  *                "stream_start_time": 120,
+  *                "stream_end_time": 180,
+  *                "url": "ftp://yourftpserver.com/live/test_stream_min2to3.mp4",
+  *                "credentials": "YOUR_CREDENTIALS"
+  *            }
+  *        ]
+  *    }
+  *
+  * @apiParamExample {json} Create a VOD Clip by Unix Timestamp Request Body Example:
+  *    {
+  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+  *        "outputs":[
+  *            {
+  *                "label": "60 secs by timestamp”,
+  *                "start_time": 1471375580,
+  *                "end_time": 1471375640,
+  *                "url": "ftp://yourftpserver.com/live/test_stream_timestamp.mp4",
+  *                "credentials": "YOUR_CREDENTIALS"
+  *            }
+  *        ]
+  *    }
+  *
+  * @apiParamExample {json} Create a VOD Clip and Push to Video Cloud Example:
+  *    {
+  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+  *        "outputs":[
+  *            {
+  *                "label": "last 60 secs if live job",
+  *                "duration": 60,
+  *                "credentials": "VC_CREDENTIALS",
+  *                "videocloud": {
+  *                    "video": {
+  *                        "name": "TEST"
+  *                    },
+  *                    "ingest": { }
+  *                }
+  *            }
+  *        ]
+  *    }
+  *
+  * @apiSuccess (Response Fields) {String} TODO
+  *
+  */

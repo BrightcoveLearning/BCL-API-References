@@ -15,7 +15,15 @@
   * @apiParam (Request Body Fields) {Object[]} outputs Array of VOD outputs
   * @apiParam (Request Body Fields) {String} outputs.label Label for the output
   * @apiParam (Request Body Fields) {Number} outputs.duration Duration of the clip in seconds
+  * @apiParam (Request Body Fields) {Number} outputs.stream_start_time Start time in seconds for the clip relative to the start time of the live stream
+  * @apiParam (Request Body Fields) {Number} outputs.stream_end_time End time in seconds for the clip relative to the start time of the live stream
+  * @apiParam (Request Body Fields) {Number} outputs.start_time Start time for the clip in Epoch (Unix) time (seconds)
+  * @apiParam (Request Body Fields) {Number} outputs.end_time End time for the clip in Epoch (Unix) time (seconds)
   * @apiParam (Request Body Fields) {String} outputs.url URL for the clip
+  * @apiParam (Request Body Fields) {String} outputs.credentials `TODO`
+  * @apiParam (Request Body Fields) {Object} outputs.videocloud An object containing inputs for Video Cloud ingestion
+  * @apiParam (Request Body Fields) {Object} outputs.videocloud.video An object containing inputs for Video Cloud video object creation - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Video-Create_Video_Object)
+  * @apiParam (Request Body Fields) {Object} outputs.videocloud.ingest An object containing inputs for Video Cloud video injestion - see the [Dynamic Ingest Reference](http://docs.brightcove.com/en/video-cloud/di-api/reference/versions/v1/index.html#api-Ingest-Ingest_Media_Asset) - do **not** include the `master` field, as that information will be provided by the Live API
   *
   * @apiParamExample {json} Create a VOD Clip by Duration from Live Request Body Example:
   *    {
@@ -53,6 +61,24 @@
   *                "end_time": 1471375640,
   *                "url": "ftp://yourftpserver.com/live/test_stream_timestamp.mp4",
   *                "credentials": "YOUR_CREDENTIALS"
+  *            }
+  *        ]
+  *    }
+  *
+  * @apiParamExample {json} Create a VOD Clip and Push to Video Cloud Example:
+  *    {
+  *        "live_job_id":"PUT-LIVE-JOB-ID-HERE",
+  *        "outputs":[
+  *            {
+  *                "label": "last 60 secs if live job",
+  *                "duration": 60,
+  *                "credentials": "VC_CREDENTIALS",
+  *                "videocloud": {
+  *                    "video": {
+  *                        "name": "TEST"
+  *                    },
+  *                    "ingest": { }
+  *                }
   *            }
   *        ]
   *    }

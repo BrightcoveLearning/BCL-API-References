@@ -121,7 +121,7 @@ apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../player-management-api-dev-docs
 echo ${txtyel}generating docs for player-management-api-dev-docs
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
-cd ../live-api-dev-docs
+cd ../live-api
 echo ${txtyel}generating docs for live-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../live-api-dev-docs
