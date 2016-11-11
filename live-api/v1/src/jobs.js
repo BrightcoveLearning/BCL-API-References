@@ -906,7 +906,11 @@
   * @apiSuccess (Response Fields) {Boolean} job.output_media_files.keyframe_interval Keyframe interval for the output media file
   * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url URL for the output file
   * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_dvr Live DVR url for live stream output
-  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_vod URL URL for VOD output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playback_url_vod  URL for VOD output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.playlist_type Playlist type for playlist output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.type Will be `playlist` for playlist output
+  * @apiSuccess (Response Fields) {String} job.output_media_files.filename File name for the playlist manifest
+  * @apiSuccess (Response Fields) {String} job.output_media_files.dvr_filename File name for the DVR playlist manifest
   *
   * @apiSuccessExample {json} Success Response Get Live Job Details:
   *    {
@@ -1075,5 +1079,31 @@
   *        ]
   *      }
   *    }
+  *
+  */
+
+// Manual Ad Cue Point Insertion
+
+/**
+  * @api {post} /v1/jobs/:jobId/cuepoint Manual Ad Cue Point Insertion
+  * @apiName Manual Ad Cue Point Insertion
+  * @apiGroup Live_Jobs
+  * @apiVersion 1.0.0
+  *
+  * @apiDescription Inserts a manual Cue-Out with a duration to the Live ingest point.
+  *
+  * @apiHeader {String} Content-Type Content-Type: application/json
+  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+  *
+  * @apiParam (URL Parameters) {String} jobId The job id you want details for.
+  * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds.
+  *
+  * @apiParamExample {json} Live Stream Cuepoint Insertion Request Body Example:
+  *    {
+  *       "duration":30
+  *    }
+  *
+  * @apiSuccess (Response Fields) {String} live_job_id The id of the live stream job
+  * @apiSuccess (Response Fields) {Boolean} inserted Whether the cuepoint was successfully inserted
   *
   */
