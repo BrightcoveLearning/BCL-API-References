@@ -779,7 +779,7 @@
 // Get Live Job Details
 
  /**
-  * @api {get} /v1/jobs/:jobId/ Get Live Job Details
+  * @api {get} /v1/jobs/:jobId Get Live Job Details
   * @apiName Get Live Job Details
   * @apiGroup Live_Jobs
   * @apiVersion 1.0.0
