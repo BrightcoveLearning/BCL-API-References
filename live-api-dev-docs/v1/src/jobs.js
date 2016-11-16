@@ -124,7 +124,7 @@
  *            {
  *                "type":"playlist",
  *                "url":"s3://YOUR_BUCKET/custom/playlist.m3u8",
- *                "credentials":"YOUR_CREDENTIALS"
+ *                "credentials":"YOUR_CREDENTIALS",
  *                "streams": [{"source": "hls480p"},{"source": "hls720p"}]
  *            }
  *        ]
