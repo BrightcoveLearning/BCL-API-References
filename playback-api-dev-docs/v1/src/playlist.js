@@ -44,6 +44,7 @@
  * @apiSuccess (Response Fields) {Object[]} videos.poster.sources array of poster source maps
  * @apiSuccess (Response Fields) {String} videos.poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} videos.poster URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} videos.projection The mapping projection for 360° videos, e.g. "equirectangular"
  * @apiSuccess (Response Fields) {Object[]} videos.thumbnail.sources array of thumbnail source maps
  * @apiSuccess (Response Fields) {String} videos.thumbnail.sources.src URL for a thumbnail source image
  * @apiSuccess (Response Fields) {String} videos.thumbnail URL for the default thumbnail source image
@@ -72,6 +73,7 @@
  * @apiSuccess (Response Fields) {String} videos.text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} videos.text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} videos.text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {String} videos.text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  * @apiSuccess (Response Fields) {DateString} videos.updated_at when the video was last modified
  * @apiSuccess (Response Fields) {Object} videos.ad_keys=null map of key/value pairs for ad requests
  *
@@ -307,6 +309,7 @@
  * @apiSuccess (Response Fields) {Object[]} videos.poster.sources array of poster source maps
  * @apiSuccess (Response Fields) {String} videos.poster.sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} videos.poster URL for the default poster source image
+ * @apiSuccess (Response Fields) {String} videos.projection The mapping projection for 360° videos, e.g. "equirectangular"
  * @apiSuccess (Response Fields) {Object[]} videos.thumbnail.sources array of thumbnail source maps
  * @apiSuccess (Response Fields) {String} videos.thumbnail.sources.src URL for a thumbnail source image
  * @apiSuccess (Response Fields) {String} videos.thumbnail URL for the default thumbnail source image
@@ -335,6 +338,7 @@
  * @apiSuccess (Response Fields) {String} videos.text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} videos.text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} videos.text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {String} videos.text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  * @apiSuccess (Response Fields) {DateString} videos.updated_at when the video was last modified
  * @apiSuccess (Response Fields) {Object} videos.ad_keys=null map of key/value pairs for ad requests
  *
