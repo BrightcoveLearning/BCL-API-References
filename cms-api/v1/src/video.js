@@ -91,6 +91,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
+ * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  *
  * @apiSuccessExample {json} Success Response:
  *     HTTP/1.1 200 OK
@@ -341,6 +342,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  * @apiSuccessExample {json} Success Response:
@@ -1032,6 +1034,7 @@
   * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
   * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
   * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+  * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
   * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
   *
   * @apiSuccessExample {json} Success Response:
@@ -1169,6 +1172,7 @@
  * @apiParam (Request Body Fields) {String} [text_tracks.mime_type=""] mime-type for the track
  * @apiParam (Request Body Fields) {String} [text_tracks.label=""] label for the track
  * @apiParam (Request Body Fields) {Boolean} [text_tracks.default=false] whether this is the default track
+ * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  * @apiParamExample {json} Update Video Example:
  *     {
@@ -1244,6 +1248,7 @@
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
  * @apiSuccess (Response Fields) {String} text_tracks.label label for the track
  * @apiSuccess (Response Fields) {Boolean} text_tracks.default whether this is the default track
+ * @apiSuccess (Response Fields) {String} text_tracks.in_band_metadata_track_dispatch_type If this field is present, it means that references for this text track are available in the associated video's manifest
  * @apiSuccess (Response Fields) {DateString} updated_at when the video was last modified
  *
  *
