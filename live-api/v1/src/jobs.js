@@ -459,7 +459,7 @@
  * @apiSuccess (Response Fields) {String} [notifications.event="state_changed"] Event type to send notifications for.  It’s recommended to set events on the job and not individual rendition outputs since renditions will finish simultaneously.
  * @apiSuccess (Response Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiSuccess (Response Fields) {String} add_cdns.label A lable to identify the CDN.
- * @apiSuccess (Response Fields) {String} add_cdns.prepend `TODO`
+ * @apiSuccess (Response Fields) {String} add_cdns.prepend Typically, a domain or path to prepend to addresses
  * @apiSuccess (Response Fields) {String} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  *
  * @apiSuccessExample {json} Success Response Standard Live Stream:
@@ -822,8 +822,8 @@
   * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_bitrate_in_kbps Audio bitrate of the input media file
   * @apiSuccess (Response Fields) {String} job.input_media_file.audio_codec Audio codec of the input media file
   * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_sample_rate Audio sample rate of the input media file
-  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_tracks `TODO`
-  * @apiSuccess (Response Fields) {Number} job.input_media_file.channels `TODO`
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_tracks The number of audio tracks
+  * @apiSuccess (Response Fields) {Number} job.input_media_file.channels The number of audio channels
   * @apiSuccess (Response Fields) {DateTimeString} job.input_media_file.created_at ISO 8601 date-time string representing when the input file was created
   * @apiSuccess (Response Fields) {Number} job.input_media_file.duration_in_ms ISO 8601 date-time string representing when the input file was created
   * @apiSuccess (Response Fields) {String} job.input_media_file.error_class Type of error thrown
@@ -876,8 +876,8 @@
   * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_bitrate_in_kbps Audio bitrate of the output media file
   * @apiSuccess (Response Fields) {String} job.output_media_files.audio_codec Audio codec of the output media file
   * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_sample_rate Audio sample rate of the output media file
-  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_tracks `TODO`
-  * @apiSuccess (Response Fields) {Number} job.output_media_files.channels `TODO`
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.audio_tracks The number of audio tracks
+  * @apiSuccess (Response Fields) {Number} job.output_media_files.channels The number of audio channels
   * @apiSuccess (Response Fields) {DateTimeString} job.output_media_files.created_at ISO 8601 date-time string representing when the output file was created
   * @apiSuccess (Response Fields) {Number} job.output_media_files.duration_in_ms ISO 8601 date-time string representing when the output file was created
   * @apiSuccess (Response Fields) {String} job.output_media_files.error_class Type of error thrown
