@@ -1129,7 +1129,7 @@
  * @apiVersion 1.0.0
  *
  * @apiDescription Update a video's metadata
- * _note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_
+ * _note that this API does not ingest any media files - use the [Dynamic Ingest API](http://docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) for ingestion_. Also note that replacing WebVTT text tracks is a two-step operation - see [Add WebVTT Captions](http://docs.brightcove.com/en/video-cloud/cms-api/guides/webvtt.html#replaceTracks) for details.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
