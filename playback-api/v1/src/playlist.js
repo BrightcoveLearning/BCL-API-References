@@ -41,12 +41,12 @@
  * @apiSuccess (Response Fields) {String} videos.description video short description
  * @apiSuccess (Response Fields) {Number} videos.duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} videos.economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {Object[]} videos.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} videos.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Object[]} videos.poster_sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} videos.poster_sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} videos.poster URL for the default poster source image
  * @apiSuccess (Response Fields) {String} videos.projection The mapping projection for 360° videos, e.g. "equirectangular"
- * @apiSuccess (Response Fields) {Object[]} videos.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} videos.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Object[]} videos.thumbnail_sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} videos.thumbnail_sources.src URL for a thumbnail source image
  * @apiSuccess (Response Fields) {String} videos.thumbnail URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} videos.link map of scheduling properties
  * @apiSuccess (Response Fields) {String} videos.link.text text for the link
