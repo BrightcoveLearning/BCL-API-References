@@ -247,16 +247,27 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 4xx) {json} VIDEO_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} PLAYLIST_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} ACCOUNT_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: Only GET, HEAD and OPTIONS are allowed for this api
+ * @apiError (Error 5xx) {json} INTERNAL_SERVER_ERROR 500: Internal server error, usually will have more information in the logs
+ * @apiError (Error 5xx) {json} BAD_GATEWAY 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} ACCOUNT_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_URLS_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} PLAYLIST_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} SERVICE_UNAVAILABLE 503: Returned this response from a backend server
+ * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT 504: Either a backend server or one of the servers they rely on timed out
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
+ *             "error_code": "PLAYLIST_NOT_FOUND"
  *         }
  *     ]
  *
@@ -306,12 +317,12 @@
  * @apiSuccess (Response Fields) {String} videos.description video short description
  * @apiSuccess (Response Fields) {Number} videos.duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} videos.economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {Object[]} videos.poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} videos.poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Object[]} videos.poster_sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} videos.poster_sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} videos.poster URL for the default poster source image
  * @apiSuccess (Response Fields) {String} videos.projection The mapping projection for 360° videos, e.g. "equirectangular"
- * @apiSuccess (Response Fields) {Object[]} videos.thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} videos.thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Object[]} videos.thumbnail_sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} videos.thumbnail_sources.src URL for a thumbnail source image
  * @apiSuccess (Response Fields) {String} videos.thumbnail URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} videos.link map of scheduling properties
  * @apiSuccess (Response Fields) {String} videos.link.text text for the link
@@ -719,16 +730,27 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed - check to make sure your client credentials were correct for the access token
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} INVALID_SORT 400: sort parameter specified and invalid field
- * @apiError (Error 4xx) {json} INVALID_SEARCH 400: search string invalid (may not have been URI-encoded)
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 4xx) {json} VIDEO_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} PLAYLIST_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} ACCOUNT_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: Only GET, HEAD and OPTIONS are allowed for this api
+ * @apiError (Error 5xx) {json} INTERNAL_SERVER_ERROR 500: Internal server error, usually will have more information in the logs
+ * @apiError (Error 5xx) {json} BAD_GATEWAY 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} ACCOUNT_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_URLS_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} PLAYLIST_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} SERVICE_UNAVAILABLE 503: Returned this response from a backend server
+ * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT 504: Either a backend server or one of the servers they rely on timed out
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
+ *             "error_code": "PLAYLIST_NOT_FOUND"
  *         }
  *     ]
  *

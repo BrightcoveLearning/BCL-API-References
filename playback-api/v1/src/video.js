@@ -287,18 +287,27 @@
  *      "created_at": "2015-02-27T19:10:55.425Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} FORBIDDEN 403: The asset cannot be retrieved because: 1) DOMAIN: the video is restricted from playing on the current domain; 2) CLIENT_IP: the video is restricted at the current IP address; 3) CLIENT_GEO: the video is restricted from playing in the current geo region
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 4xx) {json} VIDEO_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} PLAYLIST_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} ACCOUNT_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: Only GET, HEAD and OPTIONS are allowed for this api
+ * @apiError (Error 5xx) {json} INTERNAL_SERVER_ERROR 500: Internal server error, usually will have more information in the logs
+ * @apiError (Error 5xx) {json} BAD_GATEWAY 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} ACCOUNT_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_URLS_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} PLAYLIST_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} SERVICE_UNAVAILABLE 503: Returned this response from a backend server
+ * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT 504: Either a backend server or one of the servers they rely on timed out
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
+ *             "error_code": "VIDEO_NOT_FOUND"
  *         }
  *     ]
  *
@@ -337,12 +346,12 @@
  * @apiSuccess (Response Fields) {String} description video short description
  * @apiSuccess (Response Fields) {Number} duration video duration in milliseconds
  * @apiSuccess (Response Fields) {String} economics whether video is AD_SUPPORTED
- * @apiSuccess (Response Fields) {Object[]} poster.sources array of poster source maps
- * @apiSuccess (Response Fields) {String} poster.sources.src URL for a poster source image
+ * @apiSuccess (Response Fields) {Object[]} poster_sources array of poster source maps
+ * @apiSuccess (Response Fields) {String} poster_sources.src URL for a poster source image
  * @apiSuccess (Response Fields) {String} poster URL for the default poster source image
  * @apiSuccess (Response Fields) {String} projection The mapping projection for 360° videos, e.g. "equirectangular"
- * @apiSuccess (Response Fields) {Object[]} thumbnail.sources array of thumbnail source maps
- * @apiSuccess (Response Fields) {String} thumbnail.sources.src URL for a thumbnail source image
+ * @apiSuccess (Response Fields) {Object[]} thumbnail_sources array of thumbnail source maps
+ * @apiSuccess (Response Fields) {String} thumbnail_sources.src URL for a thumbnail source image
  * @apiSuccess (Response Fields) {String} thumbnail URL for the default thumbnail source image
  * @apiSuccess (Response Fields) {Object} link map of scheduling properties
  * @apiSuccess (Response Fields) {String} link.text text for the link
@@ -592,18 +601,27 @@
  *      "created_at": "2015-02-27T19:10:55.425Z"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: Authentication failed; check to make sure your policy key is correct
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The api couldn't find the resource you requested
- * @apiError (Error 4xx) {json} NOT_AVAILABLE 400: The resource you are requesting is temporarily unavailable
- * @apiError (Error 4xx) {json} FORBIDDEN 403: The video cannot be retrieved because: 1) DOMAIN: the video is restricted from playing on the current domain; 2) CLIENT_IP: the video is restricted at the current IP address; 3) CLIENT_GEO: the video is restricted from playing in the current geo region
- * @apiError (Error 5xx) {json} UNKNOWN 500: Issue in Brightcove system; try again later.
- * @apiError (Error 5xx) {json} TIMEOUT 500: Server likely too busy; try again later.
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 400: BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 4xx) {json} UNAUTHORIZED 401: INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 4xx) {json} VIDEO_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} PLAYLIST_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} ACCOUNT_NOT_FOUND 404: The designated resource was not found
+ * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: Only GET, HEAD and OPTIONS are allowed for this api
+ * @apiError (Error 5xx) {json} INTERNAL_SERVER_ERROR 500: Internal server error, usually will have more information in the logs
+ * @apiError (Error 5xx) {json} BAD_GATEWAY 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} ACCOUNT_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} VIDEO_URLS_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} PLAYLIST_RETRIEVE_FAILURE 502: Bad response from a backend server
+ * @apiError (Error 5xx) {json} SERVICE_UNAVAILABLE 503: Returned this response from a backend server
+ * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT 504: Either a backend server or one of the servers they rely on timed out
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
  *     [
  *         {
- *             "error_code": "RESOURCE_NOT_FOUND"
+ *             "error_code": "VIDEO_NOT_FOUND"
  *         }
  *     ]
  *
