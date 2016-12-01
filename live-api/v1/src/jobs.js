@@ -30,8 +30,8 @@
  * @apiParam (Request Body Fields) {String} [encryption.key] Providing a key will overwrite the randomly generated key.
  * @apiParam (Request Body Fields) {String} encryption.external_url Providing an external URL for the key server will override key-serving from Brightcove.
  * @apiParam (Request Body Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
- * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for VOD assets to be created from the live stream.
- * @apiParam (Request Body Fields) {String} outputs.label Label for the VOD asset.
+ * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for live and VOD assets to be created from the live stream.
+ * @apiParam (Request Body Fields) {String} outputs.label Label for the live or VOD asset.
  * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If `live_stream` is false, or is not set, the output will be treated as a VOD output.
  * @apiParam (Request Body Fields) {Number{0-172800}} [outputs.duration] Clipping API option 1. Duration (in seconds) to clip back from Live. Note: Clipping API only requires one of the three options for specifying duration or time.
  * @apiParam (Request Body Fields) {Number{0-2147483647}} [outputs.stream_start_time] Clipping API option 2. An offset, in seconds, from the start of the live stream to mark the beginning of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
@@ -40,8 +40,8 @@
  * @apiParam (Request Body Fields) {Number{start_time-start_time+172800}} [outputs.end_time] Clipping API option 3. Universal epoch time, in seconds, to mark the end of the clip. Note: Clipping API only requires one of the three options for specifying duration or time.
  * @apiParam (Request Body Fields) {Boolean} [outputs.copy_video] Specifying `copy_video` will take the video track from the input video file and transmux it into the resulting output file.
  * @apiParam (Request Body Fields) {Boolean} [outputs.copy_audio] Specifying `copy_audio` will take the audio track from the input video file and transmux it into the resulting output file.
- * @apiParam (Request Body Fields) {Boolean} [outputs.skip_video] Specifying `skip_video` will take the audio track from the input video file and transmux it into the resulting output file.
- * @apiParam (Request Body Fields) {Boolean} [outputs.skip_audio] Specifying `skip_audio` will take the audio track from the input video file and transmux it into the resulting output file.
+ * @apiParam (Request Body Fields) {Boolean} [outputs.skip_video] Specifying `skip_video` will take the audio track from the input video file and transmux it into the resulting output file (removes the video track).
+ * @apiParam (Request Body Fields) {Boolean} [outputs.skip_audio] Specifying `skip_audio` will take the video track from the input video file and transmux it into the resulting output file (removes the audio track).
  * @apiParam (Request Body Fields) {Number} [outputs.width] Video frame width. If no width is supplied, we will use the original width, or scale to size of height setting.
  * @apiParam (Request Body Fields) {Number} [outputs.height] Video frame height. If no height is supplied, we will use the original height, or scale to size or width setting.
  * @apiParam (Request Body Fields) {String="h264"} [outputs.video_codec] The output video codec. Note: Only h264 is supported.
