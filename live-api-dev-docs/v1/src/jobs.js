@@ -47,7 +47,7 @@
  * @apiParam (Request Body Fields) {String="h264"} [outputs.video_codec] The output video codec. Note: Only h264 is supported.
  * @apiParam (Request Body Fields) {String="baseline","main","high"} [outputs.h264_profile] H.264 has three commonly-used profiles: Baseline (lowest), Main, and High. Lower levels are easier to decode, but higher levels offer better compression. For the best compression quality, choose High. For playback on low-CPU machines or many mobile devices, choose Baseline.
  * @apiParam (Request Body Fields) {Number{16-10000}} outputs.keyframe_interval The maximum number of frames between each keyframe.
- * @apiParam (Request Body Fields) {Number{16-10000}} outputs.video_bitrate The target video bitrate for the output, in kbps.
+ * @apiParam (Request Body Fields) {Number{16-10000}} outputs.video_bitrate Set the maximum number of frames between each keyframe. A greater number of keyframes will increase the size of your output file, but will allow for more precise scrubbing in most players. It’s recommended to have at least one keyframe per segment. If keyframe_interval is not provided, keyframes will follow the input GOP structure. Note: If outputing multi-bitrate with transmuxed renditions, it’s recommended to not set the keyframe interval for any outputs to ensure the keyframes are aligned.
  * @apiParam (Request Body Fields) {String="aac"} [outputs.audio_codec] The output audio codec to use. Note: Only aac is supported.
  * @apiParam (Request Body Fields) {Number{16-1024}} outputs.audio_bitrate An output bitrate setting for the audio track, in Kbps
  * @apiParam (Request Body Fields) {Number{1-20}} outputs.segment_seconds Sets the maximum duration of each segment in a segmented output.
