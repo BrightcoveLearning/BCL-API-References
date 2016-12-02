@@ -247,21 +247,18 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
- * @apiError (Error 4xx) {json} VIDEO_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} PLAYLIST_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} ACCOUNT_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: Only GET, HEAD and OPTIONS are allowed for this api
- * @apiError (Error 5xx) {json} INTERNAL_SERVER_ERROR 500: Internal server error, usually will have more information in the logs
- * @apiError (Error 5xx) {json} BAD_GATEWAY 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} ACCOUNT_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} VIDEO_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} VIDEO_URLS_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} PLAYLIST_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} SERVICE_UNAVAILABLE 503: Returned this response from a backend server
- * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT 504: Either a backend server or one of the servers they rely on timed out
+ * @apiError (Error 400) BAD_REQUEST BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 401) UNAUTHORIZED INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 404) PLAYLIST_NOT_FOUND The designated resource was not found
+ * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
+ * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
+ * @apiError (Error 405) METHOD_NOT_ALLOWED Only GET, HEAD and OPTIONS are allowed for this api
+ * @apiError (Error 500) INTERNAL_SERVER_ERROR Internal server error, usually will have more information in the logs
+ * @apiError (Error 502) BAD_GATEWAY Bad response from a backend server
+ * @apiError (Error 502) ACCOUNT_RETRIEVE_FAILURE Bad response from a backend server
+ * @apiError (Error 502) PLAYLIST_RETRIEVE_FAILURE Bad response from a backend server
+ * @apiError (Error 503) SERVICE_UNAVAILABLE Returned this response from a backend server
+ * @apiError (Error 504) GATEWAY_TIMEOUT Either a backend server or one of the servers they rely on timed out
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
@@ -730,21 +727,18 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 4xx) {json} UNAUTHORIZED 400: BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
- * @apiError (Error 4xx) {json} UNAUTHORIZED 401: INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
- * @apiError (Error 4xx) {json} VIDEO_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} PLAYLIST_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} RESOURCE_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} ACCOUNT_NOT_FOUND 404: The designated resource was not found
- * @apiError (Error 4xx) {json} METHOD_NOT_ALLOWED 405: Only GET, HEAD and OPTIONS are allowed for this api
- * @apiError (Error 5xx) {json} INTERNAL_SERVER_ERROR 500: Internal server error, usually will have more information in the logs
- * @apiError (Error 5xx) {json} BAD_GATEWAY 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} ACCOUNT_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} VIDEO_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} VIDEO_URLS_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} PLAYLIST_RETRIEVE_FAILURE 502: Bad response from a backend server
- * @apiError (Error 5xx) {json} SERVICE_UNAVAILABLE 503: Returned this response from a backend server
- * @apiError (Error 5xx) {json} GATEWAY_TIMEOUT 504: Either a backend server or one of the servers they rely on timed out
+ * @apiError (Error 400) BAD_REQUEST BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 401) UNAUTHORIZED INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 404) PLAYLIST_NOT_FOUND The designated resource was not found
+ * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
+ * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
+ * @apiError (Error 405) METHOD_NOT_ALLOWED Only GET, HEAD and OPTIONS are allowed for this api
+ * @apiError (Error 500) INTERNAL_SERVER_ERROR Internal server error, usually will have more information in the logs
+ * @apiError (Error 502) BAD_GATEWAY Bad response from a backend server
+ * @apiError (Error 502) ACCOUNT_RETRIEVE_FAILURE Bad response from a backend server
+ * @apiError (Error 502) PLAYLIST_RETRIEVE_FAILURE Bad response from a backend server
+ * @apiError (Error 503) SERVICE_UNAVAILABLE Returned this response from a backend server
+ * @apiError (Error 504) GATEWAY_TIMEOUT Either a backend server or one of the servers they rely on timed out
  *
  * @apiErrorExample {json} 404 Error Response
  *     HTTP/1.1 404 Not Found
