@@ -247,8 +247,8 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 400) BAD_REQUEST BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
- * @apiError (Error 401) UNAUTHORIZED INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 400) BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 401) INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
  * @apiError (Error 404) PLAYLIST_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
@@ -727,8 +727,8 @@
  *        "account_id": "57838016001"
  *    }
  *
- * @apiError (Error 400) BAD_REQUEST BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
- * @apiError (Error 401) UNAUTHORIZED INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 400) BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
+ * @apiError (Error 401) INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
  * @apiError (Error 404) PLAYLIST_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
