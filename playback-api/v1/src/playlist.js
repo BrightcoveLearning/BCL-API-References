@@ -253,7 +253,7 @@
  * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
  * @apiError (Error 405) METHOD_NOT_ALLOWED Only GET, HEAD and OPTIONS are allowed for this api
- * @apiError (Error 500) INTERNAL_SERVER_ERROR Internal server error, usually will have more information in the logs
+ * @apiError (Error 500) INTERNAL_SERVER_ERROR Something went wrong on our side while handling the request
  * @apiError (Error 502) BAD_GATEWAY Bad response from a backend server
  * @apiError (Error 502) ACCOUNT_RETRIEVE_FAILURE Bad response from a backend server
  * @apiError (Error 502) PLAYLIST_RETRIEVE_FAILURE Bad response from a backend server
@@ -733,7 +733,7 @@
  * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
  * @apiError (Error 405) METHOD_NOT_ALLOWED Only GET, HEAD and OPTIONS are allowed for this api
- * @apiError (Error 500) INTERNAL_SERVER_ERROR Internal server error, usually will have more information in the logs
+ * @apiError (Error 500) INTERNAL_SERVER_ERROR Something went wrong on our side while handling the request
  * @apiError (Error 502) BAD_GATEWAY Bad response from a backend server
  * @apiError (Error 502) ACCOUNT_RETRIEVE_FAILURE Bad response from a backend server
  * @apiError (Error 502) PLAYLIST_RETRIEVE_FAILURE Bad response from a backend server
