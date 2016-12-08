@@ -6,6 +6,7 @@
     "url": "https://api.bcovlive.io",
     "order": [
         "Live_Jobs",
+        "SSAI",
         "VODs"
     ]
 }
