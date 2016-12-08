@@ -59,6 +59,8 @@
  * @apiSuccess (Response Fields) {String} sources.type the type (for HLS streams)
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {Object[]} text_tracks.sources array of sources for .vtt files (note that in many cases there will be one source with a `src` value idential to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (Response Fields) {String} text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value idential to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track
@@ -371,6 +373,8 @@
  * @apiSuccess (Response Fields) {String} sources.type the type (for HLS streams)
  * @apiSuccess (Response Fields) {Object} text_tracks array of text track maps
  * @apiSuccess (Response Fields) {String} text_tracks.src URL for the .vtt file
+ * @apiSuccess (Response Fields) {Object[]} text_tracks.sources array of sources for .vtt files (note that in many cases there will be one source with a `src` value idential to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
+ * @apiSuccess (Response Fields) {String} text_tracks.sources.src URL for the .vtt file (note that in many cases there will be one source with a `src` value idential to the `text_tracks.src` value, but this array is included in case there are multiple protocols available, such as `http` and `https`)
  * @apiSuccess (Response Fields) {String} text_tracks.kind kind of text track
  * @apiSuccess (Response Fields) {String} text_tracks.srclang 2-letter language code, such as "en" or "ko"
  * @apiSuccess (Response Fields) {String} text_tracks.mime_type mime-type for the track

@@ -12,8 +12,8 @@
  * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
  *
  * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
- * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Note* Your ad server must be configured by your account team. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags. Default is false. Currently no outputs can be specified with a SSAI enabled stream.
- * @apiParam (Request Body Fields) {String="Us-west-2", "ap-southeast-2", "ap-northeast-1"} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
+ * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
+ * @apiParam (Request Body Fields) {String} region AWS region list specified for the account.
  * @apiParam (Request Body Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder.
  * @apiParam (Request Body Fields) {Number{0-93600}} [event_length] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
  * @apiParam (Request Body Fields) {Number{0-7200}} [live_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
@@ -25,11 +25,6 @@
  * @apiParam (Request Body Fields) {Object[]} [add_cdns] Array of additional CDN providers to be used for manifest generation. For each CDN provided, the manifest will be prepended accordingly
  * @apiParam (Request Body Fields) {String} add_cdns.label A lable to identify the CDN.
  * @apiParam (Request Body Fields) {String} add_cdns.prepend CDN hostname to be prepended to addresses
- * @apiParam (Request Body Fields) {Object[]} [encryption] Array of encryption algorithms for the output stream. Only the AES-128 method is currently support and only for non-SSAI jobs. Format: “{“method”, “key”, “external_url”}”. Providing a key will overwrite the randomly generated key and providing the external_url for license serving will override the key serving from Brightcove. These fields are optional.
- * @apiParam (Request Body Fields) {String} encryption.method The encryption method - currently only "AES-128" is support
- * @apiParam (Request Body Fields) {String} [encryption.key] Providing a key will overwrite the randomly generated key.
- * @apiParam (Request Body Fields) {String} encryption.external_url Providing an external URL for the key server will override key-serving from Brightcove.
- * @apiParam (Request Body Fields) {String="HTTP", "HTTPS"} add_cdns.protocol Protocol to use in sending the stream to the CDN.
  * @apiParam (Request Body Fields) {Object[]} outputs Array of output specifications for live and VOD assets to be created from the live stream.
  * @apiParam (Request Body Fields) {String} outputs.label Label for the live or VOD asset.
  * @apiParam (Request Body Fields) {Boolean} outputs.live_stream For jobs, setting live_stream to true indicates the output is a live rendition. If `live_stream` is false, or is not set, the output will be treated as a VOD output.
@@ -64,7 +59,7 @@
  * @apiParamExample {json} Standard Live Stream Example:
  *    {
  *        "live_stream": true,
- *        "region": "us-west-2",
+ *        "region": "my-region-list",
  *        "reconnect_time": 20,
  *        "live_sliding_window_duration": 30,
  *        "outputs": [
@@ -96,7 +91,7 @@
  * @apiParamExample {json} Live Stream Custom Origin Example:
  *    {
  *        "live_stream": true,
- *        "region": "us-west-2",
+ *        "region": "my-region-list",
  *        "reconnect_time": 30,
  *        "outputs": [
  *            {
@@ -137,7 +132,7 @@
  *     //If not, the system will return an error in the job creation request.
  *    {
  *        "live_stream": true,
- *        "region": "us-west-2",
+ *        "region": "my-region-list,
  *        "reconnect_time": 20,
  *        "outputs": [
  *            {
@@ -177,7 +172,7 @@
  * @apiParamExample {json} Live Stream with VOD Example:
  *    {
  *        "live_stream": true,
- *        "region": "us-west-2",
+ *        "region": "my-region-list",
  *        "reconnect_time": 20,
  *        "live_sliding_window_duration":30,
  *        "outputs": [
@@ -201,7 +196,7 @@
  * @apiParamExample {json} Live Stream with VOD and Notifications Example:
  *    {
  *        "live_stream": true,
- *        "region": "us-west-2",
+ *        "region": "my-region-list",
  *        "reconnect_time": 20,
  *        "notifications": [
  *            "http://httpbin.org/post?liveStateChange",
@@ -247,7 +242,7 @@
  * @apiParamExample {json} Live Stream with Multiple Output Playlists Example:
  *   {
  *       "live_stream": true,
- *       "region": "us-west-2",
+ *       "region": "my-region-list",
  *       "reconnect_time": 180,
  *       "outputs": [{
  *           "label": "hls1080p",
@@ -294,7 +289,7 @@
  *     // for the CDN’s provided in the job request.
  *    {
  *        "live_stream": true,
- *        "region": "us-west-2",
+ *        "region": "my-region-list",
  *        "reconnect_time": 30,
  *        "add_cdns":[
  *            {
@@ -334,81 +329,13 @@
  *        ]
  *    }
  *
- * @apiParamExample {json} Live Stream using AES-128 Encryption with an Internal Key Server Example:
- *    {
- *        "live_stream": true,
- *        "region": "us-west-2",
- *        "reconnect_time": 30,
- *        "encryption": {
- *            "method": "aes-128",
- *        }
- *        "outputs": [
- *            {
- *                "label": "hls1",
- *                "live_stream": true,
- *                "width": 960,
- *                "height": 540,
- *                "video_codec": "h264",
- *                "h264_profile": "main",
- *                "video_bitrate": 1843,
- *                "segment_seconds": 6,
- *                "keyframe_interval": 60
- *            },
- *            {
- *                "label": "hls2",
- *                "live_stream": true,
- *                "width": 640,
- *                "height": 360,
- *                "video_codec": "h264",
- *                "h264_profile": "main",
- *                "video_bitrate": 819,
- *                "segment_seconds": 6,
- *                "keyframe_interval": 60
- *            }
- *        ]
- *    }
  *
- * @apiParamExample {json} Live Stream with AES-128 with Custom Key and License Serving Location Example:
- *    {
- *        "live_stream": true,
- *        "region": "us-west-2",
- *        "reconnect_time": 30,
- *        "encryption": {
- *            "method": "aes-128",
- *            "key": "SuperSecret",
- *            "external_url": "https://myserver/mykey/a.key"
- *        }
- *        "outputs": [
- *            {
- *                "label": "hls1",
- *                "live_stream": true,
- *                "width": 960,
- *                "height": 540,
- *                "video_codec": "h264",
- *                "h264_profile": "main",
- *                "video_bitrate": 1843,
- *                "segment_seconds": 6,
- *                "keyframe_interval": 60
- *            },
- *            {
- *                "label": "hls2",
- *                "live_stream": true,
- *                "width": 640,
- *                "height": 360,
- *                "video_codec": "h264",
- *                "h264_profile": "main",
- *                "video_bitrate": 819,
- *                "segment_seconds": 6,
- *                "keyframe_interval": 60
- *            }
- *        ]
- *    }
  *
  * @apiParamExample {json} Live Stream with SSAI and VOD output Example:
  *    {
  *            "ad_insertion": true,
  *            "live_stream": true,
- *            "region": "us-west-2",
+ *            "region": "my-region-list,
  *            "reconnect_time": 180,
  *            "slate": "bbbff5ad67a94941be8cb987ba23049d",
  *            "notifications": [
@@ -447,7 +374,7 @@
  * @apiSuccess (Response Fields) {String} outputs.playback_url_dvr Media HLS manifest with a configurable DVR window. Default 100 seconds (non-SSAI).
  * @apiSuccess (Response Fields) {String} outputs.playback_url_vod Media HLS manifest of the Live stream for the last 24 hours. (non-SSAI).
  * @apiSuccess (Response Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
- * @apiSuccess (Response Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Note* Your ad server must be configured by your account team. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags. Default is false. Currently no outputs can be specified with a SSAI enabled stream.
+ * @apiSuccess (Response Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiSuccess (Response Fields) {String} region You can specify an Amazon AWS region to use for encoding a job and we will process the job on servers in the region specified. It’s recommended to use the region closest to your encoder.
  * @apiSuccess (Response Fields) {Number} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. Default is set to 30 seconds.
  * @apiSuccess (Response Fields) {Number} [event_length] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
@@ -493,7 +420,6 @@
  *      ],
  *      "stream_url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
  *      "stream_name": "alive",
- *      "encryption": {},
  *      "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
  *      "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8"
  *    }
@@ -561,7 +487,6 @@
  *      ],
  *      "stream_url": "rtmp://host/edcd4d356228417d80345a0c91864efe",
  *      "stream_name": "alive",
- *      "encryption": {},
  *      "playback_url": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
  *      "playback_url_dvr": "http://playback.bcovlive.io/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3_dvr.m3u8",
  *      "playback_url_s3": "s3://BUCKET/edcd4d356228417d80345a0c91864efe/us-west-2/8b31bafdb20d462ea2e6e336a67ed4f3.m3u8",
@@ -636,68 +561,6 @@
  *      ]
  *    }
  *
- * @apiSuccessExample {json} Success Response Live Stream using AES-128 Encryption with an Internal Key Server:
- *    HTTP/1.1 200 OK
- *    {
- *      "id": "b3c20e416f964fb1b67334877bade99b",
- *      "outputs": [
- *        {
- *          "id": "0b3c20e416f964fb1b67334877bade99b",
- *          "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
- *          "label": "hls1"
- *        },
- *        {
- *          "id": "1b3c20e416f964fb1b67334877bade99b",
- *          "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_vod.m3u8",
- *          "label": "hls2"
- *        }
- *      ],
- *      "encryption":{
- *          "method":"aes-128",
- *          "key":"01234567890123450123456789012345"
- *      },
- *      "stream_url": "rtmp://ep16-usw2.a-live.io:1935/b3c20e416f964fb1b67334877bade99b",
- *      "stream_name": "alive",
- *      "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist.m3u8",
- *      "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist_dvr.m3u8",
- *      "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
- *    }
- *
- * @apiSuccessExample {json} Success Response Live Stream with AES-128 with Custom Key and License Serving Location:
- *    HTTP/1.1 200 OK
- *    {
- *      "id": "b3c20e416f964fb1b67334877bade99b",
- *      "outputs": [
- *        {
- *          "id": "0b3c20e416f964fb1b67334877bade99b",
- *          "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
- *          "label": "hls1"
- *        },
- *        {
- *          "id": "1b3c20e416f964fb1b67334877bade99b",
- *          "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist.m3u8",
- *          "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_dvr.m3u8",
- *          "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_1/chunklist_vod.m3u8",
- *          "label": "hls2"
- *        }
- *      ],
- *      "encryption":{
- *          "method":"aes-128",
- *          "key":"01234567890123450123456789012345",
- *          "key_url":"https://myserver/mykey/a.key"
- *      },
- *      "stream_url": "rtmp://ep16-usw2.a-live.io:1935/b3c20e416f964fb1b67334877bade99b",
- *      "stream_name": "alive",
- *      "playback_url": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist.m3u8",
- *      "playback_url_dvr": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/playlist_dvr.m3u8",
- *      "playback_url_vod": "http://playback.bcovlive.io/b3c20e416f964fb1b67334877bade99b/us-west-2/profile_0/chunklist_vod.m3u8",
- *    }
  *
  * @apiSuccessExample {json} Success Response Live Stream with SSAI and VOD output:
  *    HTTP/1.1 200 OK
@@ -814,10 +677,6 @@
   * @apiSuccess (Response Fields) {Number} job.out_worker_bytes_rate `TODO`
   * @apiSuccess (Response Fields) {String} job.playback_url Playback URL for the live stream
   * @apiSuccess (Response Fields) {String} job.playback_url_dvr Playback URL for the live DVR
-  * @apiSuccess (Response Fields) {Object[]} job.encryption Array of encryption algorithms for the output stream. Only the AES-128 method is currently support and only for non-SSAI jobs. Format: “{“method”, “key”, “external_url”}”. Providing a key will overwrite the randomly generated key and providing the external_url for license serving will override the key serving from Brightcove. These fields are optional.
-  * @apiSuccess (Response Fields) {String} job.encryption.method The encryption method - currently only "AES-128" is support
-  * @apiSuccess (Response Fields) {String} job.encryption.key Provided key that will override the randomly generated key.
-  * @apiSuccess (Response Fields) {String} job.encryption.external_url Provided external URL for the key server that will override key-serving from Brightcove.
   * @apiSuccess (Response Fields) {Object} job.input_media_file Object containing properties for the input media file
   * @apiSuccess (Response Fields) {Number} job.input_media_file.audio_bitrate_in_kbps Audio bitrate of the input media file
   * @apiSuccess (Response Fields) {String} job.input_media_file.audio_codec Audio codec of the input media file
@@ -858,7 +717,7 @@
   * @apiSuccess (Response Fields) {String} job.stream.video_codec Video codec of the input media file
   * @apiSuccess (Response Fields) {Number} job.stream.width Frame width of the stream
   * @apiSuccess (Response Fields) {Number} job.stream.total_bitrate_in_kbps Total bitrate of the stream
-  * @apiSuccess (Response Fields) {String} job.stream.region AWS region for the stream
+  * @apiSuccess (Response Fields) {String} job.stream.region AWS region list specified for the account
   * @apiSuccess (Response Fields) {String} job.stream.url URL for the stream
   * @apiSuccess (Response Fields) {Object} job.stream.location Object representing the location of the stream
   * @apiSuccess (Response Fields) {Object} job.stream.location.source Object representing the location source of the stream
@@ -924,7 +783,7 @@
   *        "submitted_at": "2016-11-06T20:12:46.571Z",
   *        "test": false,
   *        "updated_at": "2016-11-06T20:42:55.980Z",
-  *        "region": "us-west-2",
+  *        "region": "my-region-list,
   *        "reconnect_time": 20,
   *        "event_length": 0,
   *        "live_sliding_window_duration": 30,
@@ -935,7 +794,6 @@
   *        "out_worker_bytes_rate": 0,
   *        "playback_url": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist.m3u8",
   *        "playback_url_dvr": "http://playback.bcovlive.io/edb92295e0f744f088f473ac047538c3/us-west-2/playlist_dvr.m3u8",
-  *        "encryption": {},
   *        "input_media_file": {
   *          "audio_bitrate_in_kbps": null,
   *          "audio_codec": null,
@@ -976,7 +834,7 @@
   *          "width": null,
   *          "total_bitrate_in_kbps": null,
   *          "duration": 1478464996.063,
-  *          "region": "us-west-2",
+  *          "region": "my-region-list,
   *          "url": "rtmp://ep4-usw2.bcovlive.io:1935/edb92295e0f744f088f473ac047538c3",
   *          "location": {
   *            "source": {
