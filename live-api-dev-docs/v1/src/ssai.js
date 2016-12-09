@@ -138,7 +138,21 @@
   *        "application_segment_buffer": 4
   *    }
   *
-  * @apiSuccess (Response Fields) {String} TODO
+  * @apiSuccess (Response Fields) {Object} application The ad application object
+  * @apiSuccess (Response Fields) {String} application.account_id The account id
+  * @apiSuccess (Response Fields) {String} application.description The ad application description
+  * @apiSuccess (Response Fields) {String} application.segment_buffer The amount of a segment to be buffered in seconds
+  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
+  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
@@ -185,7 +199,21 @@
     * @apiParam (Request Body Fields) {Object} account_id The account id
     *
     *
-    * @apiSuccess (Response Fields) {String} TODO
+    * @apiSuccess (Response Fields) {Object} application The ad application object
+    * @apiSuccess (Response Fields) {String} application.account_id The account id
+    * @apiSuccess (Response Fields) {String} application.description The ad application description
+    * @apiSuccess (Response Fields) {String} application.segment_buffer The amount of a segment to be buffered in seconds
+    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
+    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+    * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+    * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+    * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+    * @apiSuccess (Response Fields) {String} application.application_id The ad application id
+    * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
     *
     * @apiSuccessExample {json} Success response for create ad application
     *    [
@@ -314,9 +342,14 @@
   *    }
   *
   *
-  * @apiSuccess (Response Fields) {String} TODO
+  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
+  * @apiSuccess (Response Fields) {String} account_id Id for the account
+  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
+  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
+  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
+  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
   *
-  * @apiSuccessExample {json} Success response for create ad application
+  * @apiSuccessExample {json} Success response for create slate media resource
   *    {
   *      "media_source_asset_id": "NEW_UUID",
   *      "account_id": "ACCOUNT_ID",
@@ -342,11 +375,14 @@
   *
   * @apiParam (URL Parameters) {String} SLATE_MSA_ID URL The id for the Slate media source asset
   *
+  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
+  * @apiSuccess (Response Fields) {String} account_id Id for the account
+  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
+  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
+  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
+  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
   *
-  *
-  * @apiSuccess (Response Fields) {String} TODO
-  *
-  * @apiSuccessExample {json} Success response for create ad application
+  * @apiSuccessExample {json} Success response for delete media source asset
   *    {
   *      "media_source_asset_id": "MSA_UUID",
   *      "media_source_asset_type": "slate",
@@ -372,11 +408,14 @@
   *
   * @apiParam (URL Parameters) {String} ACCOUNT_ID URL The account id
   *
+  * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
+  * @apiSuccess (Response Fields) {String} account_id Id for the account
+  * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
+  * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
+  * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
+  * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
   *
-  *
-  * @apiSuccess (Response Fields) {String} TODO
-  *
-  * @apiSuccessExample {json} Success response for create ad application
+  * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
   *    [
   *      {
   *        "media_source_asset_id": "MSA_UUID_1",
