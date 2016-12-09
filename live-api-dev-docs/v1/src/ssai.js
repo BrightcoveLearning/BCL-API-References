@@ -45,7 +45,18 @@
   *        "application_segment_buffer": 4
   *    }
   *
-  * @apiSuccess (Response Fields) {String} TODO
+  * @apiSuccess (Response Fields) {Object} application The ad application object
+  * @apiSuccess (Response Fields) {String} application.account_id The account id
+  * @apiSuccess (Response Fields) {String} application.description The ad application description
+  * @apiSuccess (Response Fields) {String} application.segment_buffer The amount of a segment to be buffered in seconds
+  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration The ad configuration object for the application
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_description The ad configuration description
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.response_type The ad configuration response type (`Dfp`, `Vast`, or `SmartXML`)
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_strategy The ad configuration strategy (`SingleAdResponse`, or `MultipleAdResponse`)
+  * @apiSuccess (Response Fields) {Object[]} application.application_ad_configuration.ad_configuration_transforms The ad configuration transforms
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
+  * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
