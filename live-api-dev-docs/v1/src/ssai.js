@@ -57,6 +57,9 @@
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xpath The ad configuration transform xpath
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_transforms.xslt The ad configuration transform xslt
   * @apiSuccess (Response Fields) {String} application.application_ad_configuration.ad_configuration_url_format The URL template for the ad server
+  * @apiSuccess (Response Fields) {Object} application.application_ad_configuration.ad_configuration_variables Key/value pairs for the ad server URL template
+  * @apiSuccess (Response Fields) {String} application.application_id The ad application id
+  * @apiSuccess (Response Fields) {Boolean} inserted Whether the ad application was successfully inserted
   *
   * @apiSuccessExample {json} Success response for create ad application
   *    {
