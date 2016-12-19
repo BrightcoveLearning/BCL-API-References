@@ -253,6 +253,7 @@
  *
  * @apiError (Error 400) BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
  * @apiError (Error 401) INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 401) FORBIDDEN Videos cannot be played back at this location because of the domain, ip, or geo restriction policy - note that in the case of geo-restriction where some of the videos cannot be played back, you will get a success response that will include an `errors` array indicating that restricted videos are not included
  * @apiError (Error 404) PLAYLIST_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
@@ -737,6 +738,7 @@
  *
  * @apiError (Error 400) BAD_REQUEST Mis-formatted request, i.e. duplicate query parameters supplied
  * @apiError (Error 401) INVALID_POLICY_KEY Must provide a BCOV-Policy header with a legal policy key
+ * @apiError (Error 401) FORBIDDEN Videos cannot be played back at this location because of the domain, ip, or geo restriction policy - note that in the case of geo-restriction where some of the videos cannot be played back, you will get a success response that will include an `errors` array indicating that restricted videos are not included
  * @apiError (Error 404) PLAYLIST_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) RESOURCE_NOT_FOUND The designated resource was not found
  * @apiError (Error 404) ACCOUNT_NOT_FOUND The designated resource was not found
