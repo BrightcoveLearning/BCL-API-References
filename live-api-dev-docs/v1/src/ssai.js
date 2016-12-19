@@ -322,7 +322,7 @@
   // Ingest Slate Media Source Asset
 
 /**
-  * @api {post} /v1/ssai/slate Ingest Slate Media Source Asset
+  * @api {post} /v1/ssai/slates Ingest Slate Media Source Asset
   * @apiName Ingest Slate Media Source Asset
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -363,7 +363,7 @@
   // Delete Slate Media Source Asset
 
 /**
-  * @api {delete} /v1/ssai/slate/:SLATE_MSA_ID Delete Slate Media Source Asset
+  * @api {delete} /v1/ssai/slates/:SLATE_MSA_ID Delete Slate Media Source Asset
   * @apiName Delete Slate Media Source Asset
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -396,7 +396,7 @@
   // Get Slate Media Source Assets
 
 /**
-  * @api {get} /v1/ssai/slate/:ACCOUNT_ID Get Slate Media Source Assets
+  * @api {get} /v1/ssai/slates/:ACCOUNT_ID Get Slate Media Source Assets
   * @apiName Get Slate Media Source Assets
   * @apiGroup SSAI
   * @apiVersion 1.0.0

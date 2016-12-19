@@ -9,6 +9,8 @@ echo ${txtyel}copying audience-api src
 cp -R audience-api/ audience-api-dev-docs/
 echo ${txtyel}copying data-dollection-api src
 cp -R data-collection-api/ data-collection-api-dev-docs/
+echo ${txtyel}copying data-dollection-api-v1 src
+cp -R data-collection-api/ data-collection-api-dev-docs-v1/
 echo ${txtyel}copying cms-api src
 cp -R cms-api/ cms-api-dev-docs/
 echo ${txtyel}copying di-api src
@@ -49,9 +51,15 @@ echo ${txtyel}generating docs for audience-api-dev-docs
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
 cd ../data-collection-api
 echo ${txtyel}generating docs for data-collection-api
-apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
+apidoc -i v2/src/  -f .js -o v2/doc/ -t ../template
 cd ../data-collection-api-dev-docs
 echo ${txtyel}generating docs for data-collection-api-dev-docs
+apidoc -i v2/src/  -f .js -o v2/doc/ -t ../template-v1
+cd ../data-collection-api-v1
+echo ${txtyel}generating docs for data-collection-api-v1
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
+cd ../data-collection-api-dev-docs-v1
+echo ${txtyel}generating docs for data-collection-api-dev-docs-v1
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v1
 cd ../cms-api
 echo ${txtyel}generating docs for cms-api
@@ -135,7 +143,9 @@ cp -R analytics-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analyt
 echo ${txtyel}copying audience-api docs
 cp -R audience-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/audience-api/references/versions/v1
 echo ${txtyel}copying data-dollection-api docs
-cp -R data-collection-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/data-collection/v1
+cp -R data-collection-api-dev-docs/v2/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/data-collection/v2
+echo ${txtyel}copying data-dollection-api-v1 docs
+cp -R data-collection-api-dev-docs-v1/v1/doc/ ../BCL-developer-docs/en/video-cloud/analytics-api/references/data-collection/v1
 echo ${txtyel}copying cms-api docs
 cp -R cms-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/cms-api/references/cms-api/versions/v1
 echo ${txtyel}copying di-api docs
