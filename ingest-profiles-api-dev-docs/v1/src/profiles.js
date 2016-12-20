@@ -40,7 +40,7 @@
  * @apiParam (Request Body Fields) {Number} [renditions.keyframe_rate] Maximum number of keyframes per second
  * @apiParam (Request Body Fields) {String="poster","thumbnail"} [renditions.label] Image type for image renditions; __required__ for image renditions
  * @apiParam (Request Body Fields) {Boolean} [renditions.live_stream] Whether this will be for live streaming video
- * @apiParam (Request Body Fields) {Number} [renditions.live_sliding_window_duration] Duration of stream to keep available for LiveDVR delivery (in seconds)
+ * @apiParam (Request Body Fields) {Number{300-1800}} [renditions.live_sliding_window_duration] Duration of stream to keep available for LiveDVR delivery (in seconds)
  * @apiParam (Request Body Fields) {Number} [renditions.max_video_bitrate] Maximum video bitrate (h.264 only)
  * @apiParam (Request Body Fields) {Number} [renditions.max_frame_rate] Limits the frame rate rather than sets it, use as an alternative to frame rate
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
@@ -407,7 +407,7 @@
  *    ]
  *
  * @apiError (Error 4xx) {json} NOT_AUTHORIZED 401: Credentials are required to access this resource.
- * @apiError (Error 4xx) {json} PROFILE_ERROR 409: profile rendition count exceeds configured rendition limit 
+ * @apiError (Error 4xx) {json} PROFILE_ERROR 409: profile rendition count exceeds configured rendition limit
  * @apiError (Error 4xx) {html} NOT_FOUND 404: <html> <head> <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/> <title>Error 404 NOT_FOUND</title> </head> <body><h2>HTTP ERROR 404</h2> <p>Problem accessing /v1/accounts/578380001/profiles. Reason: <pre> NOT_FOUND</pre></p><br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> </body> </html>
  *
  * @apiErrorExample {json} 401 Error Response
@@ -614,7 +614,7 @@
  * @apiParam (Request Body Fields) {Number} [renditions.keyframe_rate] Maximum number of keyframes per second
  * @apiParam (Request Body Fields) {String="poster","thumbnail"} [renditions.label] Image type for image renditions; __required__ for image renditions
  * @apiParam (Request Body Fields) {Boolean} [renditions.live_stream] Whether this will be for live streaming video
- * @apiParam (Request Body Fields) {Number} [renditions.live_sliding_window_duration] Duration of stream to keep available for LiveDVR delivery (in seconds)
+ * @apiParam (Request Body Fields) {Number{300-1800}} [renditions.live_sliding_window_duration] Duration of stream to keep available for LiveDVR delivery (in seconds)
  * @apiParam (Request Body Fields) {Number} [renditions.max_video_bitrate] Maximum video bitrate (h.264 only)
  * @apiParam (Request Body Fields) {Number} [renditions.max_frame_rate] Limits the frame rate rather than sets it, use as an alternative to frame rate
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
