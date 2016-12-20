@@ -26,7 +26,6 @@
  * @apiParam (URL Parameters: `video_impression` Events) {String} [video_name] the video name
  * @apiParam (URL Parameters: `video_view` Events) {String} [video] the video id
  * @apiParam (URL Parameters: `video_view` Events) {String} [video_name] the video name
- * @apiParam (URL Parameters: `video_view` Events) {String} [load_time_ms] The time, in milliseconds, between initiating data load for the video and the video becoming playable
  * @apiParam (URL Parameters: `video_view` Events) {String} [start_time_ms] The time, in milliseconds, between initiation of playback and the first frame of the video being rendered. This can be different depending on the experience, for instance, if there are no pre-roll ads configured, this measurement is the time between the `play_request` and `video_view` events. If there is a preroll ad, the time between `ad_mode_begin` and `ad_mode_complete` should not be included
  * @apiParam (URL Parameters: `video_engagement` Events) {String} [video] the video id
  * @apiParam (URL Parameters: `video_engagement` Events) {String} [video_name] the video name
