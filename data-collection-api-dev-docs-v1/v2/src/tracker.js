@@ -22,6 +22,7 @@
  * @apiParam (URL Parameters: All Requests) {String} [region] ISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
  * @apiParam (URL Parameters: All Requests) {String} [region_name] Human readable region name (override in case the system can not detect geographic information from the IP address) **Not typically included**
  * @apiParam (URL Parameters: All Requests) {String} [city] City name **Not typically included**
+ * @apiParam (URL Parameters: All Requests) {String} [yser] A unique user identifier - if not provided or blank, Video Cloud uses the fallback method of using the `Source IP address + the User-Agent` String as the unique identifier; __Note that Brightcove uses this information only to calculate unique users. The user data itself cannot retrieved via the API or Analytics module__
  * @apiParam (URL Parameters: `video_impression` Events) {String} [video] the video id
  * @apiParam (URL Parameters: `video_impression` Events) {String} [video_name] the video name
  * @apiParam (URL Parameters: `video_view` Events) {String} [video] the video id
