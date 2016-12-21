@@ -22,7 +22,11 @@
  * @apiParam (URL Parameters: All Requests) {String} [region] ISO-3166 (alpha 2) region code (override in case the system can not detect geographic information from the IP address) **Not typically included**
  * @apiParam (URL Parameters: All Requests) {String} [region_name] Human readable region name (override in case the system can not detect geographic information from the IP address) **Not typically included**
  * @apiParam (URL Parameters: All Requests) {String} [city] City name **Not typically included**
- * @apiParam (URL Parameters: All Requests) {String} [yser] A unique user identifier - if not provided or blank, Video Cloud uses the fallback method of using the `Source IP address + the User-Agent` String as the unique identifier; __Note that Brightcove uses this information only to calculate unique users. The user data itself cannot retrieved via the API or Analytics module__
+ * @apiParam (URL Parameters: All Requests) {String} [user] A unique user identifier - if not provided or blank, Video Cloud uses the fallback method of using the `Source IP address + the User-Agent` String as the unique identifier; __Note that Brightcove uses this information only to calculate unique users. The user data itself cannot retrieved via the API or Analytics module__
+ * @apiParam (URL Parameters: `catalog_request` Events) {String} [catalog_url] The destination url associated with the catalog_request event
+ * @apiParam (URL Parameters: `catalog_response` Events) {String} [catalog_url] The destination url associated with the catalog_request event that initiated this response
+ * @apiParam (URL Parameters: `catalog_response` Events) {Number} [response_time_ms] The time, in milliseconds, between the catalog_request event and the catalog_response event
+ * @apiParam (URL Parameters: `error` Events) {Number} [error_code] A platform specific error code associated with the event
  * @apiParam (URL Parameters: `video_impression` Events) {String} [video] the video id
  * @apiParam (URL Parameters: `video_impression` Events) {String} [video_name] the video name
  * @apiParam (URL Parameters: `video_view` Events) {String} [video] the video id
