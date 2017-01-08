@@ -1,7 +1,7 @@
 // Create an Ad application_ad_configuration
 
 /**
-  * @api {post} /v1/ssai/application_ad_configuration Create Ad Configuration
+  * @api {post} /v1/ssai/application Create Ad Configuration
   * @apiName Create Ad Configuration
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -93,7 +93,7 @@
 // Update an Ad application_ad_configuration
 
 /**
-  * @api {put} /v1/ssai/application_ad_configuration/:application_id Update Ad Configuration
+  * @api {put} /v1/ssai/application/:application_id Update Ad Configuration
   * @apiName Update Ad Configuration
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -115,7 +115,7 @@
   * @apiParam (Request Body Fields) {String} account_id Your account id.
   * @apiParam (Request Body Fields) {Number} application_segment_buffer The amount of ad content to buffer, in seconds.
   *
-  * @apiParamExample {json} Create an ad configuration example:
+  * @apiParamExample {json} Update an ad configuration example:
   *    {
   *        "application_ad_configuration": {
   *            "ad_configuration_description": "Human readable description of the configuration",
@@ -335,7 +335,7 @@
   * @apiParam (Request Body Fields) {String} source_url URL for the slate to ingest
   * @apiParam (Request Body Fields) {String} account_id The account id
   *
-  * @apiParamExample {json} Create an ad configuration example:
+  * @apiParamExample {json} Ingest Slate Media Source Asset example:
   *    {
   *        "source_url": "https://somesourceasset.com/slate-to-ingest.mp4",
   *        "account_id": "ACCOUNT_ID"
@@ -363,7 +363,7 @@
   // Delete Slate Media Source Asset
 
 /**
-  * @api {delete} /v1/ssai/slates/:SLATE_MSA_ID Delete Slate Media Source Asset
+  * @api {delete} /v1/ssai/slate/:SLATE_MSA_ID Delete Slate Media Source Asset
   * @apiName Delete Slate Media Source Asset
   * @apiGroup SSAI
   * @apiVersion 1.0.0
@@ -396,7 +396,7 @@
   // Get Slate Media Source Assets
 
 /**
-  * @api {get} /v1/ssai/slates/:ACCOUNT_ID Get Slate Media Source Assets
+  * @api {get} /v1/ssai/slate/:ACCOUNT_ID Get Slate Media Source Assets
   * @apiName Get Slate Media Source Assets
   * @apiGroup SSAI
   * @apiVersion 1.0.0
