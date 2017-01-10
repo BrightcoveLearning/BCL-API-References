@@ -15,13 +15,13 @@
  * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiParam (Request Body Fields) {String} region AWS region list specified for the account.
  * @apiParam (Request Body Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder.
- * @apiParam (Request Body Fields) {Object} [encryption] encryption to apply to the stream
- * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use
- * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type
- * @apiParam (Request Body Fields) {String} [encryption.key] The encryption key - either a `key` or a `passphrase` is required
+ * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
+ * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use.
+ * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type, depending on whether an internal or external key server will be used.
+ * @apiParam (Request Body Fields) {String} [encryption.key] The encryption key - either a `key` or a `passphrase` is required; if the `type` is `external`, `key` is required.
  * @apiParam (Request Body Fields) {String} [encryption.passphrase] The encryption key - either a `key` or a `passphrase` is required
  * @apiParam (Request Body Fields) {Boolean} [encryption.key_rotation=false] Whether to use key rotation
- * @apiParam (Request Body Fields) {Number} [encryption.rotate_every=10] Interval for key rotation in seconds
+ * @apiParam (Request Body Fields) {Number} [encryption.rotate_every=10] Interval for key rotation in video segments
  * @apiParam (Request Body Fields) {String} [encryption.external_url] The URL for the external encryption key - this field is required if you specify `type` as `external`, and the external key must match the `key` value
  * @apiParam (Request Body Fields) {Number{0-93600}} [event_length=0] The minimum time, in seconds, to keep a live stream available. At any point within the specified event_length you may reconnect to your stream. The event_length setting goes into effect as soon as streaming begins.
  * @apiParam (Request Body Fields) {Number{0-7200}} [live_sliding_window_duration=100] The time, in seconds, to keep in the live DVR manifest. If the stream duration is longer than the window duration, segment references will be removed first in first out. Default is 100 seconds.
