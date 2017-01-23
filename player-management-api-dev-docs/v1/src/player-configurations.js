@@ -141,7 +141,7 @@
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} [player.template.name] name of player template
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} [player.template.version] version of player template
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [playlist] indicates if a playlist should be used
- * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [playlist.playOnSelect] indicates if a video loaded from a playlist should play on load
+ * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Boolean} [playOnSelect] indicates if a video loaded from a playlist should play on load; if using Playlists version 2 this property is set in the plugin configuration
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {Object[]} [plugins] array of plugin objects
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {String} [plugins.name] name of plugin
  * @apiParam (Request Body Fields - Note: Fields in configuration objects need to be set only if you wish to change their values) {JSON} [plugins.options] configuration options for plugin
