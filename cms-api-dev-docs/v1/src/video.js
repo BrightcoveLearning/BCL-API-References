@@ -1151,7 +1151,8 @@
  * @apiParam (Request Body Fields) {String{1..255}} [name] video title
  * @apiParam (Request Body Fields) {String{..250}} [description] video short description
  * @apiParam (Request Body Fields) {String="AD_supported", "FREE"} [economics="AD_SUPPORTED"] video short description
- * @apiSuccess (Request Body  Fields) {String{..1800}} [ad_keys=null] string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands. For example:
+ * @apiSuccess (Request Body Fields) {String{..1800}} [ad_keys=null] string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands.
+ * @apiParam (Request Body Fields) {Boolean} [drm_disabled] if DRM is enabled for the account, setting this field to `true` will prevent this video from being DRM-protected
  * @apiParam (Request Body Fields) {String{..5000}} [long_description] video long description
  * @apiParam (Request Body Fields) {String="equirectangular"} [projection=null] Used for 360 video
  * @apiParam (Request Body Fields) {String{..150}} [reference_id] video reference-id (must be unique within the account)
