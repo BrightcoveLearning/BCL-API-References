@@ -3,7 +3,7 @@ txtyel=$(tput setaf 7) # Yellow
 txtgrn=$(tput setaf 6) # Green
 txtred=$(tput setaf 9) # red
 echo ${txtyel}copying once-status-api src
-cp -R once-status-api/ once-status-api-dev-docs/once-media-management-api-dev-docs/
+cp -R once-status-api/ once-status-api-dev-docs/
 cd once-status-api
 echo ${txtyel}generating docs for once-status-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template

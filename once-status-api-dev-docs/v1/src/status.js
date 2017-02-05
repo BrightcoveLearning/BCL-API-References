@@ -43,6 +43,15 @@
  * @apiSuccess (Response Fields) {DateString} steps.ingest.output.description.lastModified Date/time the media item was last modified
  * @apiSuccess (Response Fields) {String} steps.ingest.output.description.etag Date/time the media item etag
  * @apiSuccess (Response Fields) {Number} steps.ingest.output.description.fileSize size of the output media item in bytes
+ * @apiSuccess (Response Fields) {Object} steps.timedtext The timed text object for captions
+ * @apiSuccess (Response Fields) {String} steps.timedtext.name The human readable name for captions
+ * @apiSuccess (Response Fields) {String} steps.timedtext.status The status of the job processing for captions
+ * @apiSuccess (Response Fields) {Number} steps.timedtext.startTime The start time for processing the captions
+ * @apiSuccess (Response Fields) {Number} steps.timedtext.completeTime The complete time for processing the captions
+ * @apiSuccess (Response Fields) {Object[]} steps.timedtext.output Array of timed text output objects
+ * @apiSuccess (Response Fields) {String} steps.timedtext.output.id The id for the output
+ * @apiSuccess (Response Fields) {String} steps.timedtext.output.timedTextType The type for this timed text set
+ * @apiSuccess (Response Fields) {Array} steps.timedtext.output.languages Array of language codes for the captions
  * @apiSuccess (Response Fields) {Object} steps.transcode The transcode step
  * @apiSuccess (Response Fields) {String} steps.transcode.name The name of the step
  * @apiSuccess (Response Fields) {String} steps.transcode.status The status of transcode step: COMPLETE, PENDING, PROCESSING, SKIPPED, or ERROR
@@ -125,6 +134,19 @@
  *                        "fileSize": 60047891
  *                    }
  *                }
+ *            },
+ *            "timedtext":{
+ *            "name": "timedtext",
+ *            "status": "COMPLETE",
+ *            "startTime": 1415648968000,
+ *            "completeTime": 1485890202000,
+ *            "output":[
+ *                         {
+ *                             "id": "5a150d7b-efae-47a0-a589-4d696af0dc15",
+ *                             "timedTextType": "SUBTITLE",
+ *                             "languages":["en", "fr"]
+ *                         }
+ *                     ]
  *            },
  *            "transcode": {
  *                "name": "transcode",
@@ -228,4 +250,3 @@
  *
  *
  */
-
