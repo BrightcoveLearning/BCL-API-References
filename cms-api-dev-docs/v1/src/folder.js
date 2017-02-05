@@ -17,6 +17,8 @@
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
+ * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
+ * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
  *
  * @apiParamExample {Url} Get Folders Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders
@@ -167,6 +169,8 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  * @apiParam (Path Parameters) {Number} folder_id the folder ID.
+ * @apiParam (URL Parameters) {Number} [limit=20] number of videos to return
+ * @apiParam (URL Parameters) {Number} [offset=0] number of videos to skip in the response
  *
  * @apiParamExample {Url} Get Videos in Folder Example:
  *     https://cms.api.brightcove.com/v1/accounts/57838016001/folders/560039dfe4b0471bef470c47/videos
