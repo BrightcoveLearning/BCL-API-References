@@ -753,7 +753,6 @@
  *        "type": "ACTIVATED_NEWEST_TO_OLDEST",
  *        "limit": 20
  *        "search": "tags:\"sealife\",\"water\""
- *        ]
  *    }
  *
  * @apiSuccess (Response Field) {String} account_id Video Cloud account id
