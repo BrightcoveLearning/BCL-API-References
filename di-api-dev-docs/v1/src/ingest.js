@@ -219,7 +219,7 @@
  * @apiParam (Request Body Fields) {Number} [thumbnail.height] pixel height of the image
  * @apiParam (Request Body Fields) {Number} [thumbnail.width] pixel width of the image
  * @apiParam (Request Body Fields) {Boolean} [capture-images] whether poster and thumbnail should be captured during transcoding; defaults to `true` if the the profile has image renditions, `false` if it does not
- * @apiParam (Request Body Fields) {String[]} [callbacks] array of URLs that [notifications](http://docs.brightcove.com/en/video-cloud/media-management/guides/notifications.html) should be sent to
+ * @apiParam (Request Body Fields) {String[]} [callbacks] array of URLs that [notifications](http://docs.brightcove.com/en/video-cloud/di-api/guides/notifications.html) should be sent to
  *
  * @apiParamExample {json} Ingest Request Example:
  *    {
