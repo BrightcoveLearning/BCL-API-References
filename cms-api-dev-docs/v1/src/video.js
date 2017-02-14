@@ -961,7 +961,7 @@
   * @apiParam (Request Body Fields) {String{..150}} [reference_id] video reference-id (must be unique within the account)
   * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
   * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
-  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
+  * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
   * @apiParam (Request Body Fields) {Object} [geo={}] map of geo-filtering properties
   * @apiParam (Request Body Fields) {String[]} [geo.countries=null] array of [ISO 3166 list of 2-letter codes __in lower-case__](https://www.iso.org/obp/ui/)
   * @apiParam (Request Body Fields) {Boolean} [geo.exclude_countries=false] if true, country array is treated as a list of countries excluded from viewing
@@ -1159,7 +1159,7 @@
  * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
  * @apiParam (Request Body Fields) {String="AD_SUPPORTED","FREE"} [economics="AD_SUPPORTED"] whether the video supports ads (used by the Smart Player, but not by the Brightcove Player)
  * @apiParam (Request Body Fields) {String[]} [tags="[]"] array of tags
- * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs
+ * @apiParam (Request Body Fields) {Object} [custom_fields={}] map of fieldname-value pairs; values have a maximum length of 1024 single-byte characters
  * @apiParam (Request Body Fields) {Object[]} [cue_points="[]"] array of cue point maps
  * @apiParam (Request Body Fields) {String} [cue_points.name] cue point name
  * @apiParam (Request Body Fields) {String="AD","CODE"} [cue_points.type=AD] cue point type
