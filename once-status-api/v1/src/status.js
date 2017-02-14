@@ -15,7 +15,7 @@
  * @apiParamExample {Url} Status Request Example:
  *     https://api.unicornmedia.com/status-api/statuses/2796350e-2125-4f04-b33a-59488aaa76c7
  *
- * @apiSuccess (Response Fields) {String} status The overall status of the job: COMPLETE, PENDING, PROCESSING, SKIPPED, WARN or ERROR
+ * @apiSuccess (Response Fields) {String} status The overall status of the job: `COMPLETE`, `PENDING`, `PROCESSING`, `SKIPPED`, `WARN` or `ERROR` (`WARN`indicates that the job completed and the video is playable, but there was an issue with processing some asset, usually timed text )
  * @apiSuccess (Response Fields) {Number} startTime The time when the job began in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Number} completeTime The time when the job finished in epoch time (milliseconds)
  * @apiSuccess (Response Fields) {Object} steps The steps of the job
