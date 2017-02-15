@@ -431,3 +431,107 @@
   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
   *
   */
+
+  // get domain timedText
+
+  /**
+   * @api {get} /domains/:domainId/timedText Get All Domain Timed Text
+   * @apiName Get All Domain Timed Text
+   * @apiGroup Domain
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Retrieves all timed text for captions and subtitles for the domain.
+   *
+   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+   *
+   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+   *
+   * @apiParamExample {Url} Get Domain Timed Text Example:
+   *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/timedText
+   *
+   * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects
+   * @apiSuccess (Response Fields) {String} results.id Each timedText Id
+   * @apiSuccess (Response Fields) {String} results.domainId The domain id
+   * @apiSuccess (Response Fields) {String[]} results.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
+   * @apiSuccess (Response Fields) {String} results.format The format of the captions or subtitles, such as `SRT`
+   * @apiSuccess (Response Fields) {Number} results.version The version of the captions or subtitles
+   * @apiSuccess (Response Fields) {String} prev URL to get the previous 20 results (if any)
+   * @apiSuccess (Response Fields) {String} next URL to get the next 20 results (if any)
+   * @apiSuccess (Response Fields) {Number} totalResults The total number of results (will be `null` unless there are more than 20 results)
+   *
+   * @apiSuccessExample {json} Success Response:
+   *    HTTP/1.1 200 OK
+   *    {
+   *        "results": [{
+   *            "id": "1e0a4a12-4aae-4975-97ea-f934292ef483",
+   *            "domainId": "869a60ba-25da-4458-a558-50664e7a969d",
+   *            "languages": ["en"],
+   *            "format": "SRT",
+   *            "version": 0
+   *        }, {
+   *            "id": "a44eb311-b1a6-4d0c-ba92-d54841c51126",
+   *            "domainId": "869a60ba-25da-4458-a558-50664e7a969d",
+   *            "languages": ["en"],
+   *            "format": "SRT",
+   *            "version": 0
+   *        }, {
+   *            "id": "c3255f78-e2e7-4a3c-bb78-240756ea9f9a",
+   *            "domainId": "869a60ba-25da-4458-a558-50664e7a969d",
+   *            "languages": ["fr"],
+   *            "format": "SRT",
+   *            "version": 0
+   *        }],
+   *        "prev": null,
+   *        "next": null,
+   *        "totalResults": null
+   *    }
+   *
+   * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+   *
+   *
+   */
+
+
+  // get domain timedText asset by id
+
+  /**
+   * @api {get} /domains/:domainId/timedText/:timedTextId Get Domain Timed Text Asset
+   * @apiName Get Domain Timed Text Asset
+   * @apiGroup Domain
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Retrieves details of a timed text asset for captions and subtitles.
+   *
+   * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+   *
+   * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+   * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
+   *
+   * @apiParamExample {Url} Get Domain Timed Text Example:
+   *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/timedText/a44eb311-b1a6-4d0c-ba92-d54841c51126
+   *
+   * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects
+   * @apiSuccess (Response Fields) {String} results.id Each timedText Id
+   * @apiSuccess (Response Fields) {String} results.domainId The domain id
+   * @apiSuccess (Response Fields) {String[]} results.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
+   * @apiSuccess (Response Fields) {String} results.format The format of the captions or subtitles, such as `SRT`
+   * @apiSuccess (Response Fields) {Number} results.version The version of the captions or subtitles
+   *
+   * @apiSuccessExample {json} Success Response:
+   *    HTTP/1.1 200 OK
+   *    {
+   *        "id": "a44eb311-b1a6-4d0c-ba92-d54841c51126",
+   *        "domainId": "869a60ba-25da-4458-a558-50664e7a969d",
+   *        "languages": ["en"],
+   *        "format": "SRT",
+   *        "version": 0
+   *    }
+   *
+   * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
+   * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+   * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+   *
+   *
+   */

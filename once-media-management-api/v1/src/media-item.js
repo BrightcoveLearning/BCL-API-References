@@ -353,8 +353,8 @@
 // delete media item
 
 /**
- * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Get Media Item
- * @apiName Get Media Item
+ * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId Delete Media Item
+ * @apiName Delete Media Item
  * @apiGroup MediaItem
  * @apiVersion 1.0.0
  *
@@ -744,3 +744,198 @@
      *
      *
      */
+
+     // get media item timedText assets
+
+     /**
+      * @api {get} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/timedText Get Media Item Timed Text Asset
+      * @apiName Get Media Item Timed Text Asset
+      * @apiGroup MediaItem
+      * @apiVersion 1.0.0
+      *
+      * @apiDescription Retrieves the timed text asset for captions and subtitles for a specified media item.
+      *
+      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+      *
+      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
+      *
+      * @apiParamExample {Url} Get Media Item Timed Text Example:
+      *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs/4321abcd-4321-dcba-fe65-567890fedcba/mediaItems/09daf3a0-5efe-4048-a761-351137a23c6f/timedText
+      *
+      * @apiSuccess (Response Fields) {Object[]} results Array of timedText objects
+      * @apiSuccess (Response Fields) {String} results.id Each timedText Id
+      * @apiSuccess (Response Fields) {String[]} results.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
+      * @apiSuccess (Response Fields) {String} results.timedTextType The type  of the timed text: `CAPTION` or `SUBTITLE`, or `EMBEDDED`
+      *
+      * @apiSuccessExample {json} Success Response:
+      *    HTTP/1.1 200 OK
+      *    {
+      *        "results": [{
+      *            "id": "6e376b50-e8e5-46fe-922c-17199e5950cd",
+      *            "languages": ["kr"],
+      *            "timedTextType": "SUBTITLE"
+      *        }, {
+      *            "id": "a44eb311-b1a6-4d0c-ba92-d54841c51126",
+      *            "languages": ["en"],
+      *            "timedTextType": "CAPTION"
+      *        }, {
+      *            "id": "c3255f78-e2e7-4a3c-bb78-240756ea9f9a",
+      *            "languages": ["fr"],
+      *            "timedTextType": "SUBTITLE"
+      *        }]
+      *    }
+      *
+      * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
+      * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+      * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+      *
+      *
+      */
+
+     // create media item timedText assets
+
+     /**
+      * @api {post} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/timedText Create Media Item Timed Text Asset
+      * @apiName Create Media Item Timed Text Asset
+      * @apiGroup MediaItem
+      * @apiVersion 1.0.0
+      *
+      * @apiDescription Creates a timed text asset for captions and subtitles for a specified media item.
+      *
+      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+      *
+      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
+      *
+      * @apiParam (Request Body Fields) {String} domain The domain id
+      * @apiParam (Request Body Fields) {String} catalog The catalog id
+      * @apiParam (Request Body Fields) {String} mediaItem The mediaItem id
+      * @apiParam (Request Body Fields) {Object} timedText The timed text object
+      * @apiParam (Request Body Fields) {Object} timedText.media Object detailing the timed text media asset
+      * @apiParam (Request Body Fields) {String} timedText.media.sourceURL Location of the timed text media asset
+      * @apiParam (Request Body Fields) {String="CAPTION","SUBTITLE","EMBEDDED"} timedText.timedTextType The type for the timed text
+      * @apiParam (Request Body Fields) {String[]} timedText.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
+      *
+      * @apiParamExample {json} Create Timed Text Example:
+      *    {
+      *        "domain":"869a60ba-25da-4458-a558-50664e7a969d",
+      *        "catalog":"5daddac0-b74e-43c4-a560-f5d690893857",
+      *        "mediaItem":"045da231-a9ae-4444-a46b-6a865be222aa",
+      *        "timedText": {
+      *            "media": {
+      *                "sourceURL": "https://s3-us-west-2.amazonaws.com/tjones-test-resources/timedText/longCaptionLines.srt"
+      *            },
+      *            "timedTextType": "SUBTITLE",
+      *            "languages": ["en"]
+      *        }
+      *    }
+      *
+      * @apiSuccess (Response Fields) {String} requestId The job id for the request
+      *
+      * @apiSuccessExample {json} Success Response:
+      *    HTTP/1.1 200 OK
+      *    {
+      *        "requestId": "0e574fc1-f3ea-4825-af7e-fd09055f0524"
+      *    }
+      *
+      * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
+      * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+      * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+      *
+      *
+      */
+
+     // update media item timedText assets
+
+     /**
+      * @api {post} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/timedText/:timedTextId Update Media Item Timed Text Asset
+      * @apiName Update Update Item Timed Text Asset
+      * @apiGroup MediaItem
+      * @apiVersion 1.0.0
+      *
+      * @apiDescription Updates a timed text asset for captions and subtitles for a specified media item.
+      *
+      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+      *
+      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
+      * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
+      *
+      * @apiParam (Request Body Fields) {String} domain The domain id
+      * @apiParam (Request Body Fields) {String} catalog The catalog id
+      * @apiParam (Request Body Fields) {String} mediaItem The mediaItem id
+      * @apiParam (Request Body Fields) {Object} timedText The timed text object
+      * @apiParam (Request Body Fields) {Object} timedText.media Object detailing the timed text media asset
+      * @apiParam (Request Body Fields) {String} timedText.media.sourceURL Location of the timed text media asset
+      * @apiParam (Request Body Fields) {String="CAPTION","SUBTITLE","EMBEDDED"} timedText.timedTextType The type for the timed text
+      * @apiParam (Request Body Fields) {String[]} timedText.languages An array of ISO 639-1 two-letter language codes for the captions or subtitles - for example: `["en", "fr"]`
+      *
+      * @apiParamExample {json} Update Timed Text Example:
+      *    {
+      *        "domain":"869a60ba-25da-4458-a558-50664e7a969d",
+      *        "catalog":"5daddac0-b74e-43c4-a560-f5d690893857",
+      *        "mediaItem":"045da231-a9ae-4444-a46b-6a865be222aa",
+      *        "timedText": {
+      *            "media": {
+      *                "sourceURL": "https://s3-us-west-2.amazonaws.com/tjones-test-resources/timedText/longCaptionLines.srt"
+      *            },
+      *            "timedTextType": "SUBTITLE",
+      *            "languages": ["en"]
+      *        }
+      *    }
+      *
+      * @apiSuccess (Response Fields) {String} requestId The job id for the request
+      *
+      * @apiSuccessExample {json} Success Response:
+      *    HTTP/1.1 200 OK
+      *    {
+      *        "requestId": "0e574fc1-f3ea-4825-af7e-fd09055f0524"
+      *    }
+      *
+      * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
+      * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+      * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+      *
+      *
+      */
+
+
+     // delete media item timedText assets
+
+     /**
+      * @api {delete} /domains/:domainId/catalogs/:catalogId/mediaItems/:mediaItemId/timedText/:timedTextId Delete Media Item Timed Text Asset
+      * @apiName Delete Update Item Timed Text Asset
+      * @apiGroup MediaItem
+      * @apiVersion 1.0.0
+      *
+      * @apiDescription Deletes a timed text asset for captions and subtitles for a specified media item.
+      *
+      * @apiHeader {String} X-BC-ONCE-API-KEY: {api_key}
+      *
+      * @apiParam (Path Parameters) {String} domainId The domain id for your Once account
+      * @apiParam (Path Parameters) {String} catalogId The id for the catalog that the media item belongs to
+      * @apiParam (Path Parameters) {String} mediaItemId The id for the media item
+      * @apiParam (Path Parameters) {String} timedTextId The id for the timed text asset
+      *
+      *
+      * @apiParamExample {url} Delete Timed Text Example:
+      *     https://api.unicornmedia.com/media-management-api/domains/2796350e-2125-4f04-b33a-59488aaa76c7/catalogs/4321abcd-4321-dcba-fe65-567890fedcba/mediaItems/09daf3a0-5efe-4048-a761-351137a23c6f/timedText/6e376b50-e8e5-46fe-922c-17199e5950cd
+      *
+      * @apiSuccess (Response Fields) {String} requestId The job id for the request
+      *
+      * @apiSuccessExample {json} Success Response:
+      *    HTTP/1.1 200 OK
+      *    {
+      *        "requestId": "0e574fc1-f3ea-4825-af7e-fd09055f0524"
+      *    }
+      *
+      * @apiError (Error 4xx) {json} Bad Request - json - 400: Bad Request &mdash; Incorrect or invalid request body
+      * @apiError (Error 4xx) {json} Forbidden 403: Forbidden &mdash; Missing or incorrect API Key
+      * @apiError (Error 4xx) {json} Not Found 404: Not Found &mdash; Incorrect or invalid URL path
+      *
+      *
+      */
