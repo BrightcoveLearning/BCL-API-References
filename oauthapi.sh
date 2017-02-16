@@ -11,7 +11,7 @@ apidoc -i v4/src/  -f .js -o v4/doc/ -t ../template
 cd ../oauth-api-dev-docs
 echo ${txtyel}generating docs for oauth-api-dev-docs
 apidoc -i v4/src/  -f .js -o v3/doc/ -t ../template-v0
-apidoc -i v4/src/  -f .js -o v3/doc/ -t ../template-v0
+apidoc -i v4/src/  -f .js -o v4/doc/ -t ../template-v0
 cd ..
 echo ${txtyel}copying oauth-api docs
 cp -R oauth-api-dev-docs/v3/doc/ ../BCL-developer-docs/en/video-cloud/oauth-api/reference/versions/v3
