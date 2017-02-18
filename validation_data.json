@@ -1,0 +1,1708 @@
+{
+  "independentSegments" : false,
+  "playlistKind" : "master",
+  "gzipEncoded" : false,
+  "dataID" : 0,
+  "messages" : [
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=563200,CODECS=\"mp4a.40.2,avc1.420015\",RESOLUTION=480x270,AUDIO=\"audio-0\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=872300,CODECS=\"mp4a.40.2,avc1.42001e\",RESOLUTION=640x360,AUDIO=\"audio-1\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=1125300,CODECS=\"mp4a.40.2,avc1.4d001e\",RESOLUTION=640x360,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=1454200,CODECS=\"mp4a.40.2,avc1.4d001f\",RESOLUTION=960x540,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=2003100,CODECS=\"mp4a.40.2,avc1.4d001f\",RESOLUTION=960x540,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=2341900,CODECS=\"mp4a.40.2,avc1.4d001f\",RESOLUTION=1280x720,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=4013900,CODECS=\"mp4a.40.2,avc1.640028\",RESOLUTION=1920x1080,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=4339500,CODECS=\"mp4a.40.2,avc1.4d0028\",RESOLUTION=1920x1080,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=4579300,CODECS=\"mp4a.40.2,avc1.640028\",RESOLUTION=1920x1080,AUDIO=\"audio-2\""
+    },
+    {
+      "errorParserCode" : -12274,
+      "errorComment" : "PROGRAM-ID has been deprecated and is no longer a valid attribute for #EXT-X-STREAM-INF",
+      "errorStatusCode" : 0,
+      "errorParserLine" : "#EXT-X-STREAM-INF:PROGRAM-ID=0,BANDWIDTH=6743000,CODECS=\"mp4a.40.2,avc1.4d001f\",RESOLUTION=1280x720,AUDIO=\"audio-2\""
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 5,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 872.30 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 8,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 2003.10 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 10,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 4013.90 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 7,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 1454.20 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 9,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 2341.90 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 12,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 4579.30 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 11,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 4339.50 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 6,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 1125.30 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    },
+    {
+      "errorComment" : "Measured peak bitrate compared to master playlist declared value exceeds error tolerance",
+      "errorReferenceDataID" : 13,
+      "errorStatusCode" : -1,
+      "errorDetail" : "Measured: 0.00 kb\/s, Master playlist: 6743.00 kb\/s, Error: inf%, Combined rendition name: en (Main)"
+    }
+  ],
+  "validatorVersion" : "1.2(160525)",
+  "validatorTimestamp" : "2017-02-17T10:12:23-05:00",
+  "sslHosts" : {
+    "https:\/\/manifest.prod.boltdns.net" : {
+      "sslNegotiatedProtocolVersion" : 8,
+      "sslNegotiatedCipher" : 49199,
+      "sslRSAKeySizeInBits" : 2048
+    },
+    "https:\/\/bcbolt446c5271-a.akamaihd.net" : {
+      "sslNegotiatedProtocolVersion" : 8,
+      "sslNegotiatedCipher" : 49200,
+      "sslRSAKeySizeInBits" : 2048
+    }
+  },
+  "sslContentDeliveredSecurely" : true,
+  "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/10s\/master.m3u8?fastly_token=NThjYmZlMGNfZWJkZTFiZjQxN2Y2ZjZhOTE4ZDgxYzBjMGYxMTI0ZDY0MWE4ZDgyODUzODAwNDA3ZmQ0NGRmODU0Y2UyY2RlYQ%3D%3D",
+  "variants" : [
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfMTNhZGFmNDQ0N2NhM2RhNWQzNzNkNzljOTQxYzdlZDQyNzVlZDdkYzRlMGM4NTg0YzYxZjRjZWE2N2RjNzE2Mw%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.42001e",
+      "playlistResolutionHeight" : 360,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-1",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfNTY5MDkzM2JjYTA2NzkyMzQ5OTJlZTFlMjFhMDY2NGM3MmI3Nzk1NWMwNTg0Y2Y3YjQ2MzhmODQyZmJlN2UwMQ%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 872300,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/*~hmac=86f3a386574c815352a11653f3e06d1d79f6efc7ad40448d552447a0c9db83a3",
+              "dataID" : 29,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/*~hmac=86f3a386574c815352a11653f3e06d1d79f6efc7ad40448d552447a0c9db83a3",
+              "dataID" : 30,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/*~hmac=86f3a386574c815352a11653f3e06d1d79f6efc7ad40448d552447a0c9db83a3",
+              "dataID" : 31,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/*~hmac=86f3a386574c815352a11653f3e06d1d79f6efc7ad40448d552447a0c9db83a3",
+              "dataID" : 32,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d82116d4-4aef-429c-bd11-18cd756cd09f\/*~hmac=86f3a386574c815352a11653f3e06d1d79f6efc7ad40448d552447a0c9db83a3",
+              "dataID" : 33,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 640,
+              "trackVideoLevel" : 30,
+              "trackVideoHeight" : 360,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 66,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 640,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 5
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfNGJlMDdmZGY0ZWE3MmU4M2ExZGFmYTBhOGZlNGIwZDRhN2Y4ZWViZjJiM2E5MjBhZjQyZDcxZTdiZWQ5ZTBlNA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.4d001f",
+      "playlistResolutionHeight" : 540,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 2003100,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/*~hmac=10536bccd294d099e8d737a5a17513d336902fc6d759ed4c1890918cc20575b7",
+              "dataID" : 39,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/*~hmac=10536bccd294d099e8d737a5a17513d336902fc6d759ed4c1890918cc20575b7",
+              "dataID" : 40,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/*~hmac=10536bccd294d099e8d737a5a17513d336902fc6d759ed4c1890918cc20575b7",
+              "dataID" : 41,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/*~hmac=10536bccd294d099e8d737a5a17513d336902fc6d759ed4c1890918cc20575b7",
+              "dataID" : 42,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/77432bed-ad51-408b-98f3-f7a2457218b9\/*~hmac=10536bccd294d099e8d737a5a17513d336902fc6d759ed4c1890918cc20575b7",
+              "dataID" : 43,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 960,
+              "trackVideoLevel" : 31,
+              "trackVideoHeight" : 540,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 77,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 960,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 8
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfNjBiODQ5Y2U5MzZlOTVjYjk1ZWE2M2Y0YzgyMDlhYmQzNTEwMTUwZTEzZWFiYzJkOTFiZjhiYmIxZWM3NjUwNQ%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.640028",
+      "playlistResolutionHeight" : 1080,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 4013900,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/*~hmac=61280e7914784c5a0410c3913028997ceda009efff5dc436277ebd0e479a367a",
+              "dataID" : 19,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/*~hmac=61280e7914784c5a0410c3913028997ceda009efff5dc436277ebd0e479a367a",
+              "dataID" : 20,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/*~hmac=61280e7914784c5a0410c3913028997ceda009efff5dc436277ebd0e479a367a",
+              "dataID" : 21,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/*~hmac=61280e7914784c5a0410c3913028997ceda009efff5dc436277ebd0e479a367a",
+              "dataID" : 22,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d3c149a5-38d0-41d1-9df4-79e0e527f9ad\/*~hmac=61280e7914784c5a0410c3913028997ceda009efff5dc436277ebd0e479a367a",
+              "dataID" : 23,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 1920,
+              "trackVideoLevel" : 40,
+              "trackVideoHeight" : 1080,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 100,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 1920,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 10
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfOWI2NzQyNGU4YWIyZmVkZDQ1ZmJjMTU3NjMxM2M5YmM1MDBjYTgwYmUwM2I1ZTY4YTliZTY1ZjVlNzkyZTAxNA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.4d001f",
+      "playlistResolutionHeight" : 540,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 1454200,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/*~hmac=0f6a3761f0c6d53d2e9d5531b4d973b274a71f4f9e43ee1e9b19d5d38503bd91",
+              "dataID" : 49,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/*~hmac=0f6a3761f0c6d53d2e9d5531b4d973b274a71f4f9e43ee1e9b19d5d38503bd91",
+              "dataID" : 50,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/*~hmac=0f6a3761f0c6d53d2e9d5531b4d973b274a71f4f9e43ee1e9b19d5d38503bd91",
+              "dataID" : 51,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/*~hmac=0f6a3761f0c6d53d2e9d5531b4d973b274a71f4f9e43ee1e9b19d5d38503bd91",
+              "dataID" : 52,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/2d54b4d1-f0dd-4aea-b67f-6f3b6e3d0bdf\/*~hmac=0f6a3761f0c6d53d2e9d5531b4d973b274a71f4f9e43ee1e9b19d5d38503bd91",
+              "dataID" : 53,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 960,
+              "trackVideoLevel" : 31,
+              "trackVideoHeight" : 540,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 77,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 960,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 7
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfMmVmYTQ0OGVmY2ZlNzNhYzQzZTRlZjE3NDY0ZTdjZDRiNjMxNTJkMDhiYWZkMmZhNzExN2NlNWM5NjEyYWJkNA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.4d001f",
+      "playlistResolutionHeight" : 720,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 2341900,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/5x\/segment0.ts?akamai_token=exp=1489764486~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/*~hmac=0ad5d8e8075d16f6752cdc17be03015b78a4bf4e2fb56028b940b66ab1b43dbd",
+              "dataID" : 74,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/5x\/segment1.ts?akamai_token=exp=1489764486~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/*~hmac=0ad5d8e8075d16f6752cdc17be03015b78a4bf4e2fb56028b940b66ab1b43dbd",
+              "dataID" : 75,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/5x\/segment2.ts?akamai_token=exp=1489764486~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/*~hmac=0ad5d8e8075d16f6752cdc17be03015b78a4bf4e2fb56028b940b66ab1b43dbd",
+              "dataID" : 76,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/5x\/segment3.ts?akamai_token=exp=1489764486~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/*~hmac=0ad5d8e8075d16f6752cdc17be03015b78a4bf4e2fb56028b940b66ab1b43dbd",
+              "dataID" : 77,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/5x\/segment4.ts?akamai_token=exp=1489764486~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/4977f455-6266-4c72-a353-05ee3bb83954\/*~hmac=0ad5d8e8075d16f6752cdc17be03015b78a4bf4e2fb56028b940b66ab1b43dbd",
+              "dataID" : 78,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 1280,
+              "trackVideoLevel" : 31,
+              "trackVideoHeight" : 720,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 77,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 1280,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 9
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfYzNhZjMwNjUwOTgyMmVlNzM3M2NmYjNmNjEwNjE5MzQwNDhlMjJhMWY3NTA0YWZjYzg3MGMzYTAxMTI4OTlhNg%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.640028",
+      "playlistResolutionHeight" : 1080,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 4579300,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/*~hmac=f4cef90e37a5a33c7e7998f7242b77cbc7383a7d28b4caf962f9420f4dc4b2a7",
+              "dataID" : 64,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/*~hmac=f4cef90e37a5a33c7e7998f7242b77cbc7383a7d28b4caf962f9420f4dc4b2a7",
+              "dataID" : 65,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/*~hmac=f4cef90e37a5a33c7e7998f7242b77cbc7383a7d28b4caf962f9420f4dc4b2a7",
+              "dataID" : 66,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/*~hmac=f4cef90e37a5a33c7e7998f7242b77cbc7383a7d28b4caf962f9420f4dc4b2a7",
+              "dataID" : 67,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/cf806261-f395-4392-8186-ec2066bf8998\/*~hmac=f4cef90e37a5a33c7e7998f7242b77cbc7383a7d28b4caf962f9420f4dc4b2a7",
+              "dataID" : 68,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 1920,
+              "trackVideoLevel" : 40,
+              "trackVideoHeight" : 1080,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 100,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 1920,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 12
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfZTQ5YTAyMTFjZWVhOWFiMzRiYmRiZmUyMjhhNjIzNTcwZjkxMWIzNmMwMDU5NTM4OTkxNjc1YWFkMTBhZmE4ZA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.4d0028",
+      "playlistResolutionHeight" : 1080,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 4339500,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/*~hmac=72f57037acd092bb1d06ae66b0a15f0debc498825671c68d2a91a6de5e8c7ad8",
+              "dataID" : 14,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/*~hmac=72f57037acd092bb1d06ae66b0a15f0debc498825671c68d2a91a6de5e8c7ad8",
+              "dataID" : 15,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/*~hmac=72f57037acd092bb1d06ae66b0a15f0debc498825671c68d2a91a6de5e8c7ad8",
+              "dataID" : 16,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/*~hmac=72f57037acd092bb1d06ae66b0a15f0debc498825671c68d2a91a6de5e8c7ad8",
+              "dataID" : 17,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/d1f62b39-e89d-4b31-8522-78cd5acc0c30\/*~hmac=72f57037acd092bb1d06ae66b0a15f0debc498825671c68d2a91a6de5e8c7ad8",
+              "dataID" : 18,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 1920,
+              "trackVideoLevel" : 40,
+              "trackVideoHeight" : 1080,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 77,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 1920,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 11
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfZWU0MzI2ZmZjZTJjMGIyNmI4Zjc3ZWVmMDI0MDU5MmU3YzJhZTllZTdkYThiMzQxZmE2ODZiZTU2Y2JkZTgwZA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.4d001e",
+      "playlistResolutionHeight" : 360,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 1125300,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/*~hmac=9eca8a41e00ec21abc093d5732d42959e695b34dd9a0d4b92b40e34a98b77c09",
+              "dataID" : 69,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/*~hmac=9eca8a41e00ec21abc093d5732d42959e695b34dd9a0d4b92b40e34a98b77c09",
+              "dataID" : 70,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/*~hmac=9eca8a41e00ec21abc093d5732d42959e695b34dd9a0d4b92b40e34a98b77c09",
+              "dataID" : 71,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/*~hmac=9eca8a41e00ec21abc093d5732d42959e695b34dd9a0d4b92b40e34a98b77c09",
+              "dataID" : 72,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/84b3277a-73b7-4b9a-bd29-16c5c7e59e72\/*~hmac=9eca8a41e00ec21abc093d5732d42959e695b34dd9a0d4b92b40e34a98b77c09",
+              "dataID" : 73,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 640,
+              "trackVideoLevel" : 30,
+              "trackVideoHeight" : 360,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 77,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 640,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 6
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfYjk3NjY3ZTRjYTZjNGMyOTFkYTRmMjI1MmQ5YmU5ZTA4MjliMWEzM2FiYzI2NjY1ZWUzNzU4ZGJjOTExNzM5NA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 490959,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.420015",
+      "playlistResolutionHeight" : 270,
+      "measuredMaxBitrate" : 587462,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-0",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfNWI0YmJhZTAwZDMxODA3YTQwYjlmMzIzNjY1Y2Y0OTc2MzRiNzljZTU4NGZlY2E0MGMwMzZiZjI4YTY5OGNjNg%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 563200,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/5x\/segment0.ts?akamai_token=exp=1489764351~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/*~hmac=95c4d399cb82b2e51869973c415b429c13662db7bafc614fbb5a5a863ab8b3d7",
+              "dataID" : 24,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/5x\/segment1.ts?akamai_token=exp=1489764351~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/*~hmac=95c4d399cb82b2e51869973c415b429c13662db7bafc614fbb5a5a863ab8b3d7",
+              "dataID" : 25,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/5x\/segment2.ts?akamai_token=exp=1489764351~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/*~hmac=95c4d399cb82b2e51869973c415b429c13662db7bafc614fbb5a5a863ab8b3d7",
+              "dataID" : 26,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/5x\/segment3.ts?akamai_token=exp=1489764351~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/*~hmac=95c4d399cb82b2e51869973c415b429c13662db7bafc614fbb5a5a863ab8b3d7",
+              "dataID" : 27,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/5x\/segment4.ts?akamai_token=exp=1489764351~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/a7cd3c9b-a3a4-4a73-9090-7c117f3315d4\/*~hmac=95c4d399cb82b2e51869973c415b429c13662db7bafc614fbb5a5a863ab8b3d7",
+              "dataID" : 28,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 587462.4,
+            "measuredMeanBitrate" : 490959.8049684686
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 480,
+              "trackVideoLevel" : 21,
+              "trackVideoHeight" : 270,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 66,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 480,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 4
+    },
+    {
+      "playlistType" : "VOD",
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfZTA4MjFjOGM1MzgyMTM4ZWM3MGViZDhhMmYzZTJhYzU5MzdhZjNlODA3ZTIyZWMxNjQyNjFjMmI4ODQzODg3MA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "parsedSegmentsCount" : 5,
+      "hasEndTag" : true,
+      "playlistCodecs" : "mp4a.40.2,avc1.4d001f",
+      "playlistResolutionHeight" : 720,
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "audioGroup" : {
+        "playlistGroupID" : "audio-2",
+        "renditions" : [
+          {
+            "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+            "persistentID" : 0
+          }
+        ]
+      },
+      "closedCaptionGroup" : {
+        "playlistGroupID" : "CC",
+        "renditions" : [
+          {
+            "persistentID" : 1
+          }
+        ]
+      },
+      "iframeOnly" : false,
+      "playlistKind" : "media",
+      "playlistMaxBitrate" : 6743000,
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/*~hmac=536c16294298598c39df9eec492e03321ef074b800555b191dfdfe9aeb49d267",
+              "dataID" : 44,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/*~hmac=536c16294298598c39df9eec492e03321ef074b800555b191dfdfe9aeb49d267",
+              "dataID" : 45,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/*~hmac=536c16294298598c39df9eec492e03321ef074b800555b191dfdfe9aeb49d267",
+              "dataID" : 46,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/*~hmac=536c16294298598c39df9eec492e03321ef074b800555b191dfdfe9aeb49d267",
+              "dataID" : 47,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 10,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/585b3329-3a85-4003-b76e-764c10f05a8c\/*~hmac=536c16294298598c39df9eec492e03321ef074b800555b191dfdfe9aeb49d267",
+              "dataID" : 48,
+              "videoFrameRate" : 30,
+              "segmentCryptMethod" : "NONE",
+              "videoStartsWithIDR" : true,
+              "segmentDurationTag" : 9.632999999999999,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackVideoIDRStandardDeviation" : 0,
+              "trackId" : 1,
+              "trackVideoWidth" : 1280,
+              "trackVideoLevel" : 31,
+              "trackVideoHeight" : 720,
+              "trackMediaType" : "vide",
+              "trackVideoIDRInterval" : 2,
+              "trackVideoIsInterlaced" : false,
+              "trackVideoProfile" : 77,
+              "trackMediaSubType" : "avc1"
+            }
+          ]
+        }
+      ],
+      "playlistResolutionWidth" : 1280,
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 13
+    },
+    {
+      "playlistType" : "VOD",
+      "playlistDefault" : true,
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfNWI0YmJhZTAwZDMxODA3YTQwYjlmMzIzNjY1Y2Y0OTc2MzRiNzljZTU4NGZlY2E0MGMwMzZiZjI4YTY5OGNjNg%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "playlistName" : "en (Main)",
+      "playlistLanguage" : "en",
+      "parsedSegmentsCount" : 5,
+      "persistentID" : 0,
+      "playlistAutoselect" : true,
+      "hasEndTag" : true,
+      "playlistMediaType" : "soun",
+      "isRendition" : true,
+      "playlistGroupID" : "audio-0",
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "playlistKind" : "media",
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/*~hmac=d2840a4d802edf4f12e13c25979989500ef99f4d7f3c845284e40e1da7f2e2db",
+              "dataID" : 34,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/*~hmac=d2840a4d802edf4f12e13c25979989500ef99f4d7f3c845284e40e1da7f2e2db",
+              "dataID" : 35,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/*~hmac=d2840a4d802edf4f12e13c25979989500ef99f4d7f3c845284e40e1da7f2e2db",
+              "dataID" : 36,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/*~hmac=d2840a4d802edf4f12e13c25979989500ef99f4d7f3c845284e40e1da7f2e2db",
+              "dataID" : 37,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/16ffb1f2-3803-4a77-87c4-4c9d7886d691\/*~hmac=d2840a4d802edf4f12e13c25979989500ef99f4d7f3c845284e40e1da7f2e2db",
+              "dataID" : 38,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.752000000000001,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackMediaType" : "soun",
+              "trackAudioChannelCount" : 2,
+              "trackId" : 1,
+              "trackAudioSampleRate" : 44100,
+              "trackMediaSubType" : "aac ",
+              "trackAudioChannelLayout" : "Stereo (L R)"
+            }
+          ]
+        }
+      ],
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 1
+    },
+    {
+      "playlistType" : "VOD",
+      "playlistDefault" : true,
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfNTY5MDkzM2JjYTA2NzkyMzQ5OTJlZTFlMjFhMDY2NGM3MmI3Nzk1NWMwNTg0Y2Y3YjQ2MzhmODQyZmJlN2UwMQ%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "playlistName" : "en (Main)",
+      "playlistLanguage" : "en",
+      "parsedSegmentsCount" : 5,
+      "persistentID" : 0,
+      "playlistAutoselect" : true,
+      "hasEndTag" : true,
+      "playlistMediaType" : "soun",
+      "isRendition" : true,
+      "playlistGroupID" : "audio-1",
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "playlistKind" : "media",
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/*~hmac=5d463bdacd16f4649d6dd374df078411e28405b2dcc3036bb7b2b4b72d48f6e9",
+              "dataID" : 54,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/*~hmac=5d463bdacd16f4649d6dd374df078411e28405b2dcc3036bb7b2b4b72d48f6e9",
+              "dataID" : 55,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/*~hmac=5d463bdacd16f4649d6dd374df078411e28405b2dcc3036bb7b2b4b72d48f6e9",
+              "dataID" : 56,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/*~hmac=5d463bdacd16f4649d6dd374df078411e28405b2dcc3036bb7b2b4b72d48f6e9",
+              "dataID" : 57,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/3a615400-2b7b-4017-97af-e8b768c99fe6\/*~hmac=5d463bdacd16f4649d6dd374df078411e28405b2dcc3036bb7b2b4b72d48f6e9",
+              "dataID" : 58,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.752000000000001,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackMediaType" : "soun",
+              "trackAudioChannelCount" : 2,
+              "trackId" : 1,
+              "trackAudioSampleRate" : 44100,
+              "trackMediaSubType" : "aac ",
+              "trackAudioChannelLayout" : "Stereo (L R)"
+            }
+          ]
+        }
+      ],
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 2
+    },
+    {
+      "playlistType" : "VOD",
+      "playlistDefault" : true,
+      "processedSegmentsCount" : 5,
+      "url" : "https:\/\/manifest.prod.boltdns.net\/manifest\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/10s\/rendition.m3u8?fastly_token=NThjYzAwODVfODMxY2NmMWI0OGUyZTllMTA3YWQyOWViNjRlZGRhM2ZkMzgwMmM5NjMzODQyNWEwMTRmYTlhMzFmMWFhZjYxNA%3D%3D",
+      "hasDiscSequenceTag" : false,
+      "measuredMeanBitrate" : 0,
+      "playlistName" : "en (Main)",
+      "playlistLanguage" : "en",
+      "parsedSegmentsCount" : 5,
+      "persistentID" : 0,
+      "playlistAutoselect" : true,
+      "hasEndTag" : true,
+      "playlistMediaType" : "soun",
+      "isRendition" : true,
+      "playlistGroupID" : "audio-2",
+      "measuredMaxBitrate" : 0,
+      "independentSegments" : false,
+      "playlistKind" : "media",
+      "sslContentDeliveredSecurely" : true,
+      "discontinuities" : [
+        {
+          "segments" : [
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/5x\/segment0.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/*~hmac=34f28531ea3ac43672d4b271a202b0f41b1735060f4f66292d70f362972bf1f4",
+              "dataID" : 59,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 0,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/5x\/segment1.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/*~hmac=34f28531ea3ac43672d4b271a202b0f41b1735060f4f66292d70f362972bf1f4",
+              "dataID" : 60,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 1,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/5x\/segment2.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/*~hmac=34f28531ea3ac43672d4b271a202b0f41b1735060f4f66292d70f362972bf1f4",
+              "dataID" : 61,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 2,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/5x\/segment3.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/*~hmac=34f28531ea3ac43672d4b271a202b0f41b1735060f4f66292d70f362972bf1f4",
+              "dataID" : 62,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.984999999999999,
+              "mediaSequence" : 3,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            },
+            {
+              "discontinuityDomain" : 0,
+              "segmentByteRangeLength" : 0,
+              "url" : "https:\/\/bcbolt446c5271-a.akamaihd.net\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/5x\/segment4.ts?akamai_token=exp=1489764485~acl=\/media\/v1\/hls\/v5\/clear\/57838016001\/aca858ce-48d2-4a62-9f9d-9e6813f1610f\/8203042f-a0c8-40b1-8cba-353029db15ee\/*~hmac=34f28531ea3ac43672d4b271a202b0f41b1735060f4f66292d70f362972bf1f4",
+              "dataID" : 63,
+              "segmentCryptMethod" : "NONE",
+              "segmentDurationTag" : 9.752000000000001,
+              "mediaSequence" : 4,
+              "sslContentDeliveredSecurely" : true,
+              "segmentByteRangeOffset" : 0
+            }
+          ],
+          "measurements" : {
+            "measuredMaxBitrate" : 0,
+            "measuredMeanBitrate" : 0
+          },
+          "tracks" : [
+            {
+              "trackMediaType" : "soun",
+              "trackAudioChannelCount" : 2,
+              "trackId" : 1,
+              "trackAudioSampleRate" : 44100,
+              "trackMediaSubType" : "aac ",
+              "trackAudioChannelLayout" : "Stereo (L R)"
+            }
+          ]
+        }
+      ],
+      "playlistTargetDuration" : 10,
+      "gzipEncoded" : false,
+      "dataID" : 3
+    }
+  ],
+  "dataVersion" : 1
+}
