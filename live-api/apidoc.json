@@ -10,8 +10,8 @@
         "Get_Live_Job_Details",
         "Stop_a_Live_Job",
         "Manual_Ad_Cue_Point_Insertion",
-        "VODs",
-        "Create_VOD_Clip"
+        "Clips",
+        "Create_VOD_Clip",
         "SSAI",
         "Get_Account_Ad_Configurations",
         "Create_Ad_Configuration",

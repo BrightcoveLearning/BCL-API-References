@@ -3,7 +3,7 @@
 /**
   * @api {post} /v1/vods Create VOD Clip
   * @apiName Create VOD Clip
-  * @apiGroup VODs
+  * @apiGroup Clips
   * @apiVersion 1.0.0
   *
   * @apiDescription Create VOD clips from a Live Stream.
