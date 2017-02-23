@@ -6,7 +6,19 @@
     "url": "https://api.bcovlive.io",
     "order": [
         "Live_Jobs",
+        "Create_a_Live_Job",
+        "Get_Live_Job_Details",
+        "Stop_a_Live_Job",
+        "Manual_Ad_Cue_Point_Insertion",
+        "VODs",
+        "Create_VOD_Clip"
         "SSAI",
-        "VODs"
+        "Get_Account_Ad_Configurations",
+        "Create_Ad_Configuration",
+        "Get_Ad_Configuration",
+        "Update_Ad_Configuration",
+        "Get_Slate_Media_Source_Assets",
+        "Ingest_Slate_Media_Source_Asset",
+        "Delete_Slate_Media_Source_Asset"
     ]
 }
