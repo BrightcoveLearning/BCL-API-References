@@ -9,7 +9,7 @@ echo ${txtyel}generating docs for live-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../live-api-dev-docs
 echo ${txtyel}generating docs for live-api-dev-docs
-apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v2
 cd ..
 echo ${txtyel}copying live-api docs
 cp -R live-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/live/references/versions/v1
