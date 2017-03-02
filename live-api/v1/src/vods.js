@@ -83,6 +83,19 @@
   *        ]
   *    }
   *
-  * @apiSuccess (Response Fields) {String} TODO
+  * @apiSuccess (Response Fields) {Object} vod_jobs The clip response object
+  * @apiSuccess (Response Fields) {Object} vod_jobs.jvod_id The clip job id
+  * @apiSuccess (Response Fields) {Object} vod_jobs.label The clip label (from the input)
+  *
+  * @apiSuccessExample {json} Creation of a clip
+  *    {
+  *      "vod_jobs": [
+  *        {
+  *          "jvod_id": "9582606c50d84be5ad4bc104f2aa3360",
+  *          "label": "last 60 secs of live job"
+  *        }
+  *      ],
+  *      "live_job_id": "88ba5d87b61a4ef3a6dddabd0c38d319"
+  *    }
   *
   */
