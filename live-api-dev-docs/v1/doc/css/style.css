@@ -206,7 +206,7 @@ pre.language-html:before {
 }
 
 p>code.method {
-  margin-bottom: 2em;
+  margin-bottom: -2em;
 }
 
 code.method[data-type="get"] {
