@@ -84,8 +84,9 @@
   *    }
   *
   * @apiSuccess (Response Fields) {Object} vod_jobs The clip response object
-  * @apiSuccess (Response Fields) {Object} vod_jobs.jvod_id The clip job id
-  * @apiSuccess (Response Fields) {Object} vod_jobs.label The clip label (from the input)
+  * @apiSuccess (Response Fields) {String} vod_jobs.jvod_id The clip job id
+  * @apiSuccess (Response Fields) {String} vod_jobs.label The clip label (from the input)
+  * @apiSuccess (Response Fields) {String} live_job_id The clip label (from the input)
   *
   * @apiSuccessExample {json} Creation of a clip
   *    {
