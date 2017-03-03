@@ -14,7 +14,7 @@
  * @apiParam (Request Body Fields) {Boolean} live_stream Indicates that the job is a live streaming job.
  * @apiParam (Request Body Fields) {Boolean} [ad_insertion=false] Setting this parameter to true will enable server side ad insertion (SSAI) on the job. Current support includes, DFP, Freewheel, or any VAST 2.0/3.0 ad tags.
  * @apiParam (Request Body Fields) {String} region AWS region list specified for the account.
- * @apiParam (Request Body Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder.
+ * @apiParam (Request Body Fields) {Number{0-1800}} [reconnect_time=30] The time, in seconds, to wait for a stream to reconnect to the encoder. If the reconnect time passes without the stream reconnecting, the job will automatically finish. To prevent job from finishing unless you manually cancel it, set `reconnect_time` to `0`
  * @apiParam (Request Body Fields) {Object} [encryption] Encryption to apply to the stream.
  * @apiParam (Request Body Fields) {String="aes-128"} encryption.method The encryption method to use.
  * @apiParam (Request Body Fields) {String="internal","external"} encryption.type The encryption type, depending on whether an internal or external key server will be used.
