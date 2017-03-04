@@ -1116,7 +1116,6 @@
   * @apiParam (Request Body Fields) {Number} duration An integer value to indicate the length of the ad break in seconds.
   *
   * @apiParamExample {json} Live Stream Cuepoint Insertion Request Body Example:
-  *    HTTP/1.1 200 OK
   *    {
   *       "duration":30
   *    }
