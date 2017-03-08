@@ -46,6 +46,15 @@
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
  * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
   * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
+  * @apiParam (Request Body Fields) {Object} [renditions.skip] A set of conditions for skippiung creation of this rendition [see Conditional Output](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/conditional-output.html)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.min_audio_bitrate] the minimum audio bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.max_audio_bitrate] the maximum audio bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.min_video_bitrate] the minimum video bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.max_video_bitrate] the maximum video bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Boolean} [renditions.skip.require_audio] if true the source must include an audio track
+  * @apiParam (Request Body Fields) {Boolean} [renditions.skip.require_video] if true the source must include a video track
+  * @apiParam (Request Body Fields) {String} [renditions.skip.min_size] the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+  * @apiParam (Request Body Fields) {String} [renditions.skip.max_size] the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
  * @apiParam (Request Body Fields) {Boolean} [renditions.skip_video] Set to `true` to skip video encoding for audio-only renditions
  * @apiParam (Request Body Fields) {Number=1-5} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiParam (Request Body Fields) {String} [renditions.streaming_delivery_format] Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
@@ -155,6 +164,15 @@
  * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
  * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
  * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/conditional-output.html)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
  * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
  * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
@@ -337,6 +355,15 @@
  * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
  * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
  * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/conditional-output.html)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
  * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
  * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
@@ -620,6 +647,15 @@
  * @apiParam (Request Body Fields) {String="video","audio","image"} [renditions.media_type="video"] the media type of the rendition
  * @apiParam (Request Body Fields) {Boolean} [renditions.one_pass=false] force one-pass encoding
   * @apiParam (Request Body Fields) {String} [renditions.reference_id] A reference id for the rendition that is unique within the account - required for DRM packaging
+  * @apiParam (Request Body Fields) {Object} [renditions.skip] A set of conditions for skippiung creation of this rendition [see Conditional Output](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/conditional-output.html)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.min_audio_bitrate] the minimum audio bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.max_audio_bitrate] the maximum audio bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.min_video_bitrate] the minimum video bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Number} [renditions.skip.max_video_bitrate] the maximum video bitrate that the source must have (kbps)
+  * @apiParam (Request Body Fields) {Boolean} [renditions.skip.require_audio] if true the source must include an audio track
+  * @apiParam (Request Body Fields) {Boolean} [renditions.skip.require_video] if true the source must include a video track
+  * @apiParam (Request Body Fields) {String} [renditions.skip.min_size] the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+  * @apiParam (Request Body Fields) {String} [renditions.skip.max_size] the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
  * @apiParam (Request Body Fields) {Boolean} [renditions.skip_video] Set to `true` to skip video encoding for audio-only renditions
  * @apiParam (Request Body Fields) {Number=1-5} [renditions.speed=3] a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiParam (Request Body Fields) {String} [renditions.streaming_delivery_format] Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
@@ -721,6 +757,15 @@
  * @apiSuccess (Response Fields) {Boolean} renditions.one_pass force one-pass encoding
  * @apiSuccess (Response Fields) {String} renditions.package_format Creates a zip or tar file containing all the media files of an output, and uploads this single package rather than all the individual files
  * @apiSuccess (Response Fields) {String} renditions.reference_id A reference id for the rendition that is unique within the account - required for DRM packaging
+ * @apiSuccess (Response Fields) {Object} renditions.skip A set of conditions for skippiung creation of this rendition [see Conditional Output](http://docs.brightcove.com/en/video-cloud/ingest-profiles-api/guides/conditional-output.html)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.min_audio_bitrate the minimum audio bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.max_audio_bitrate the maximum audio bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.min_video_bitrate the minimum video bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Number} renditions.skip.max_video_bitrate the maximum video bitrate that the source must have (kbps)
+ * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_audio if true the source must include an audio track
+ * @apiSuccess (Response Fields) {Boolean} renditions.skip.require_video if true the source must include a video track
+ * @apiSuccess (Response Fields) {String} renditions.skip.min_size the source must be at least this resolution - string of the form "widthxheight" (e.g. "400x225")
+ * @apiSuccess (Response Fields) {String} renditions.skip.max_size the source must be at most this resolution - string of the form "widthxheight" (e.g. "1920x1080")
  * @apiSuccess (Response Fields) {Boolean} renditions.skip_video Set to `true` to skip video encoding for audio-only renditions
  * @apiSuccess (Response Fields) {Number} renditions.speed a target transcoding speed. Slower transcoding allows for more advanced file compression, while faster transcoding is possible by skipping some advanced compression features
  * @apiSuccess (Response Fields) {String} renditions.streaming_delivery_format Sets the format/protocol for an output that will be delivered using a specific streaming configuration, including necessary manifests, directory
