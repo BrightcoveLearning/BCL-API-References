@@ -1,7 +1,7 @@
 /**
  * @apiDefine videoGroup Video
  * The video operations allow you to create, retrieve, update, and delete video objects in Video Cloud. (You cannot ingest any assets with the CMS API &mdash;
- * to add actual asset files, including videos, use the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html).) You
+ * to add actual asset files, including videos, use the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html).) You
  * can also search for videos, get a count of all your videos or of search results, get the sources, images, and digital master for a video, get the playlists
  * the video belongs to, and remove it from all playlists. There is also a GET request to return all custom fields for the account.
  */
@@ -210,7 +210,7 @@
  *
  * @apiParam (Path Parameters) {String} account_id Video Cloud account ID.
  *
-  * @apiParam (URL Parameters) {String} [q] search string - see[search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
+  * @apiParam (URL Parameters) {String} [q] search string - see [search guide](http://docs.brightcove.com/en/video-cloud/cms-api/guides/search-videos.html#combinesearchcriteria) for details
  * @apiParam (URL Parameters) {String="name", "reference_id", "created_at", "published_at", "updated_at", "schedule_starts_at", "schedule_ends_at", "state", "plays_total", "plays_trailing_week"} [sort="-updated_at"] field to sort results by; if absent and there is a search string, results are sorted by relevance &mdash; note that `plays_total` and `plays_trailing_week` are **not** included in the response
  *
  * @apiParamExample {Url} Search Count Example:

@@ -252,7 +252,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Add a rendition to the given video. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Add a rendition to the given video. Ingested assets must be added via the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -419,7 +419,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Update the location for a remote rendition. Ingested renditions must be updated by retranscoding the video via [Dynamic Ingest](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) or Studio. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Update the location for a remote rendition. Ingested renditions must be updated by retranscoding the video via [Dynamic Ingest](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html) or Studio. **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -1276,7 +1276,7 @@
    * @apiGroup assetGroup
    * @apiVersion 1.0.0
    *
-   * @apiDescription Adds a poster file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+   * @apiDescription Adds a poster file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
    *
    * @apiHeader {String} Content-Type Content-Type: application/json
    * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
@@ -1751,7 +1751,7 @@
  * @apiGroup assetGroup
  * @apiVersion 1.0.0
  *
- * @apiDescription Adds a thumbnail file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//:docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
+ * @apiDescription Adds a thumbnail file for a remote asset. Ingested assets must be added via the [Dynamic Ingest API](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di.html). **Note**: you can use `/videos/ref:reference_id` instead of `/videos/video_id`
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))
