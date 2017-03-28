@@ -11,7 +11,7 @@ echo ${txtyel}generating docs for player-management-api
 apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template
 cd ../player-management-api-dev-docs
 echo ${txtyel}generating docs for player-management-api-dev-docs
-apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v0
+apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v2
 echo ${txtgrn}finished generating docs
 echo ${txtred}copying docs to Developer Docs directories....
 cd ..
