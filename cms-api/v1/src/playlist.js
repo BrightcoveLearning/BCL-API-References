@@ -257,6 +257,7 @@
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {Object} schedule map of scheduling properties

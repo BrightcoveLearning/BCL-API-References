@@ -294,7 +294,7 @@
 
  You can add special field names to the configuration object to control array inheritance, and change the default behavior of embeds overriding common player data. If a array field in an embed's configuration has a child item called `array_prepend` or `array_append` the data will be correspondingly prepended or appended to the common player's data for the like field.
 
- See the **Array fields** section of the <a href="http://docs.brightcove.com/en/video-cloud/player-management/guides/embeds.html#arrayfields">Embeds Guide</a> for a complete discussion.
+ See the **Array fields** section of the <a href="http://docs.brightcove.com/en/player/player-management/guides/embeds.html#arrayfields">Embeds Guide</a> for a complete discussion.
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
  * @apiHeader {String} Authorization Authorization: Bearer access_token (see [Getting Access Tokens](http://docs.brightcove.com/en/video-cloud/oauth-api/guides/get-token.html))

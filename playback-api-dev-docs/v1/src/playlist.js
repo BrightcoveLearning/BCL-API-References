@@ -54,6 +54,7 @@
  * @apiSuccess (Response Fields) {String} videos.link.text text for the link
  * @apiSuccess (Response Fields) {String} videos.link.url URL for the link
  * @apiSuccess (Response Fields) {String} videos.long_description video long description
+ * @apiSuccess (Response Fields) {Boolean} videos.offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} videos.reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {String[]} videos.tags array of tags
  * @apiSuccess (Response Fields) {Object[]} videos.sources array of video sources (renditions)
@@ -332,6 +333,7 @@
  * @apiSuccess (Response Fields) {String} videos.link.text text for the link
  * @apiSuccess (Response Fields) {String} videos.link.url URL for the link
  * @apiSuccess (Response Fields) {String} videos.long_description video long description
+ * @apiSuccess (Response Fields) {Boolean} videos.offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} videos.reference_id video reference-id (must be unique within the account)
  * @apiSuccess (Response Fields) {String[]} videos.tags array of tags
  * @apiSuccess (Response Fields) {Object[]} videos.sources array of video sources (renditions)

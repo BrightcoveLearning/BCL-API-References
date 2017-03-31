@@ -15,9 +15,7 @@ apidoc -i v1/src/  -f .js -o v1/doc/ -t ../template-v2
 echo ${txtgrn}finished generating docs
 echo ${txtred}copying docs to Developer Docs directories....
 cd ..
-echo ${txtyel}copying player-management-api docs to video cloud
-cp -R player-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/video-cloud/player-management/reference/versions/v1
-echo ${txtyel}copying player-management-api docs to perform
-cp -R player-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/perform/player-management/reference/versions/v1
+echo ${txtyel}copying player-management-api docs to player docs
+cp -R player-management-api-dev-docs/v1/doc/ ../BCL-developer-docs/en/player/player-management/reference/versions/v1
 echo ${txtgrn}Finished!
 echo ${txtrst}

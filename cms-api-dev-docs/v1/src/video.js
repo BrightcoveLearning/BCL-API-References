@@ -67,6 +67,7 @@
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
@@ -321,6 +322,7 @@
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
@@ -1019,6 +1021,7 @@
   * @apiSuccess (Response Fields) {String} link.text text for the link
   * @apiSuccess (Response Fields) {Url} link.url URL for the link
   * @apiSuccess (Response Fields) {String} long_description video long description
+  * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
   * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
   * @apiSuccess (Response Fields) {String} projection used for 360 videos
   * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format
@@ -1151,6 +1154,7 @@
  * @apiSuccess (Request Body Fields) {String{..1800}} [ad_keys=null] string representing the ad key/value pairs assigned to the video. Key/value pairs are formatted as key=value and are separated by ampersands.
  * @apiParam (Request Body Fields) {Boolean} [drm_disabled] if DRM is enabled for the account, setting this field to `true` will prevent this video from being DRM-protected (this field is only available for accounts enabled for [Dynamic Delivery](//docs.brightcove.com/en/video-cloud/di-api/getting-started/overview-di-dynamic-delivery.html) and DRM)
  * @apiParam (Request Body Fields) {String{..5000}} [long_description] video long description
+ * @apiSuccess (Request Boduy Fields) {Boolean} [offline_enabled=false] whether video is enabled for offline viewing
  * @apiParam (Request Body Fields) {String="equirectangular"} [projection=null] Used for 360 video
  * @apiParam (Request Body Fields) {String{..150}} [reference_id] video reference-id (must be unique within the account)
  * @apiParam (Request Body Fields) {String="ACTIVE","INACTIVE"} [state=ACTIVE] state determines whether the video is playable or not
@@ -1235,6 +1239,7 @@
  * @apiSuccess (Response Fields) {String} link.text text for the link
  * @apiSuccess (Response Fields) {Url} link.url URL for the link
  * @apiSuccess (Response Fields) {String} long_description video long description
+ * @apiSuccess (Response Fields) {Boolean} offline_enabled whether video is enabled for offline viewing
  * @apiSuccess (Response Fields) {String} original_filename the original file name for the uploaded video
  * @apiSuccess (Response Fields) {String} projection used for 360 videos
  * @apiSuccess (Response Fields) {DateString} published_at start date-time of first activation in ISO-8601(http://www.ecma-international.org/ecma-262/5.1/#sec-15.9.1.15) format

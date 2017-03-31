@@ -115,7 +115,7 @@ You can also use a `PUT` HTTP method instead of the `PATCH` shown here. When usi
 
 Using this endpoint does not change any configurations, it is only useful for seeing results of merging changes to configurations.
 
-For a longer discussion of the this endpoint, see <a href="http://docs.brightcove.com/en/video-cloud/player-management/guides/merged-configurations.html">Merged Configurations API</a>.
+For a longer discussion of the this endpoint, see <a href="http://docs.brightcove.com/en/player/player-management/guides/merged-configurations.html">Merged Configurations API</a>.
 
  *
  * @apiHeader {String} Content-Type Content-Type: application/json
