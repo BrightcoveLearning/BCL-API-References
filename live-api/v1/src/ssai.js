@@ -284,8 +284,8 @@
  // Delete an ad application
 
 /**
-  * @api {delete} /v1/ssai/application/:application_id Create Ad Configuration
-  * @apiName Create Ad Configuration
+  * @api {delete} /v1/ssai/application/:application_id Delete Ad Configuration
+  * @apiName Delete Ad Configuration
   * @apiGroup SSAI
   * @apiVersion 1.0.0
   *
@@ -532,6 +532,152 @@
    * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
    * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
    * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+   *
+   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+   *    {
+   *        "beacon_set": {
+   *            "account_id": "USER's ACCOUNT ID",
+   *            "beacon_set_id": "BEACON_SET_ID",
+   *            "beacon_urls": [{
+   *                "beacon_url": "https://myserver.com/beaconRX/load",
+   *                "beacon_type": "Load"
+   *            },
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/play",
+   *                "beacon_type": "Play"
+   *            }],
+   *            "updated_beacon_set": {
+   *                "beacon_set_id": "BEACON_SET_ID",
+   *                "beacon_urls": [{
+   *                    "beacon_url": "https://myserver.com/beaconRX/load",
+   *                    "beacon_type": "Load"
+   *                },
+   *                {
+   *                    "beacon_url": "https://myserver.com/beaconRX/play",
+   *                    "beacon_type": "Play"
+   *                }],
+   *                "account_id": "USER's ACCOUNT ID"
+   *            }
+   *        }
+   *    }
+   *
+   */
+
+   // Get beacon sets
+
+   /**
+     * @api {get} /v1/ssai/beaconsets/:account_id Get beacon sets
+     * @apiName Get beacon sets
+     * @apiGroup SSAI
+     * @apiVersion 1.0.0
+     *
+     * @apiDescription Get all beacon sets for an account.
+     *
+     * @apiHeader {String} Content-Type Content-Type: application/json
+     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+     *
+     * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+     *
+     *
+     * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
+     * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
+     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
+     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
+     * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
+     * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
+     * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+     *
+     * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+     *    [{
+     *        "account_id": "USER's ACCOUNT ID",
+     *        "beacon_set_id": "BEACON_SET_ID_1",
+     *        "beacon_urls": [{
+     *            "beacon_url": "https://myserver.com/beaconRX/load",
+     *            "beacon_type": "Load"
+     *        }]
+     *    },
+     *    {
+     *        "account_id": "USER's ACCOUNT ID",
+     *        "beacon_set_id": "BEACON_SET_ID_2",
+     *        "beacon_urls": [{
+     *           "beacon_url": "https://myserver.com/beaconRX2/load",
+     *           "beacon_type": "Load"
+     *        },
+     *        {
+     *           "beacon_url": "https://myserver.com/beaconRX2/play",
+     *           "beacon_type": "Play"
+     *        }]
+     *    }]
+     *
+     */
+
+
+   // Get beacon sets for user
+
+   /**
+     * @api {get} /v1/ssai/beaconsets Get beacon sets for user
+     * @apiName Get beacon sets for user
+     * @apiGroup SSAI
+     * @apiVersion 1.0.0
+     *
+     * @apiDescription Get all beacon sets for the requesting user.
+     *
+     * @apiHeader {String} Content-Type Content-Type: application/json
+     * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+     *
+     *
+     *
+     * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
+     * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
+     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
+     * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
+     * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
+     * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
+     * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+     *
+     * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+     *    [{
+     *        "account_id": "USER's ACCOUNT ID",
+     *        "beacon_set_id": "BEACON_SET_ID_1",
+     *        "beacon_urls": [{
+     *            "beacon_url": "https://myserver.com/beaconRX/load",
+     *            "beacon_type": "Load"
+     *        }]
+     *    },
+     *    {
+     *        "account_id": "USER's ACCOUNT ID",
+     *        "beacon_set_id": "BEACON_SET_ID_2",
+     *        "beacon_urls": [{
+     *           "beacon_url": "https://myserver.com/beaconRX2/load",
+     *           "beacon_type": "Load"
+     *        },
+     *        {
+     *           "beacon_url": "https://myserver.com/beaconRX2/play",
+     *           "beacon_type": "Play"
+     *        }]
+     *    }]
+     *
+     */
+
+
+
+ // Delete a beacon set
+
+ /**
+   * @api {delete} /v1/ssai/beaconset/BEACON_SET_ID Delete beacon set
+   * @apiName Delete beacon set
+   * @apiGroup SSAI
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Deletes a beacon set.
+   *
+   * @apiHeader {String} Content-Type Content-Type: application/json
+   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+   *
+   * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+   *
+   * @apiSuccess (Response Fields) {String} beacon_set_id The beacon set id
+   * @apiSuccess (Response Fields) {Boolean} deleted Whether the beacon set was deleted successfully
    *
    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
    *    {

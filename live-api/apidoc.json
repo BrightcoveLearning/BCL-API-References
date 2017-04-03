@@ -13,12 +13,18 @@
         "Clips",
         "Create_VOD_Clip",
         "SSAI",
-        "Get_Account_Ad_Configurations",
         "Create_Ad_Configuration",
-        "Get_Ad_Configuration",
         "Update_Ad_Configuration",
-        "Get_Slate_Media_Source_Assets",
+        "Delete_Ad_Configuration",
+        "Get_Account_Ad_Configurations",
+        "Get_Ad_Configuration",
         "Ingest_Slate_Media_Source_Asset",
-        "Delete_Slate_Media_Source_Asset"
+        "Delete_Slate_Media_Source_Asset",
+        "Get_Slate_Media_Source_Assets",
+        "Create_beacon_set",
+        "Update_beacon_set",
+        "Get_beacon_sets",
+        "Get_beacon_sets_for_user",
+        "Delete_beacon_set"
     ]
 }
