@@ -445,34 +445,120 @@
    * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
    * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
    * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon variables
+   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_type the beacon type - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon types
+   *
+   * @apiParamExample {json} Ingest Slate Media Source Asset example:
+   *    {
+   *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
+   *        "beacon_urls": [
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
+   *                "beacon_type": "Load"
+   *            },
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
+   *                "beacon_type": "Play"
+   *            }
+   *        ]
+   *    }
    *
    *
-   * @apiSuccess (Response Fields) {String} media_source_asset_id Id for the slate asset
-   * @apiSuccess (Response Fields) {String} account_id Id for the account
-   * @apiSuccess (Response Fields) {String} media_source_asset_description User identifiable description for the slate
-   * @apiSuccess (Response Fields) {Boolean} media_source_asset_default Whether this is the default media source asset
-   * @apiSuccess (Response Fields) {String} media_source_asset_type The media asset type
-   * @apiSuccess (Response Fields) {String} media_source_asset_url URL for the media asset to be ingested
-   * @apiSuccess (Response Fields) {String} media_source_asset_status Current status of the ingestion of the media asset
+   * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
+   * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
+   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
+   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
+   * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
+   * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
+   * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
    *
    * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
-   *    [
-   *      {
-   *        "media_source_asset_id": "MSA_UUID_1",
-   *        "media_source_asset_type": "slate",
-   *        "media_source_asset_default": false,
-   *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
-   *        "account_id": "ACCOUNT_ID",
-   *        "media_source_asset_status": "ready"
-   *      },
-   *      {
-   *        "media_source_asset_id": "MSA_UUID_2",
-   *        "media_source_asset_type": "slate",
-   *        "media_source_asset_default": true,
-   *        "media_source_asset_url": "http://someS3urlpath.com/media.mp4",
-   *        "account_id": "ACCOUNT_ID",
-   *        "media_source_asset_status": "ready"
-   *      }
-   *    ]
+   *    {
+   *        "beacon_set": {
+   *            "beacon_urls": [{
+   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
+   *                "beacon_type": "Load"
+   *            },
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
+   *                "beacon_type": "Play"
+   *            }],
+   *            "beacon_set_id": "Inserted Beacon Set ID",
+   *            "account_id": "USER's ACCOUNT ID"
+   *        }
+   *        "inserted": true
+   *    }
+   *
+   */
+
+ // Update a beacon set
+
+ /**
+   * @api {put} /v1/ssai/beaconset/BEACON_SET_ID Update beacon set
+   * @apiName Update beacon set
+   * @apiGroup SSAI
+   * @apiVersion 1.0.0
+   *
+   * @apiDescription Updates a beacon set.
+   *
+   * @apiHeader {String} Content-Type Content-Type: application/json
+   * @apiHeader {String} X-API-KEY X-API-KEY: {APIKey}
+   *
+   * @apiParam (URL Parameters) {String} BEACON_SET_ID URL The id for the beacon set
+   * @apiParam (Request Body Fields) {String} [account_id] URL for the slate to ingest
+   * @apiParam (Request Body Fields) {Object[]} beacon_urls Array of beacon URLs
+   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_url URL format for the beacon - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon variables
+   * @apiParam (Request Body Fields) {String} beacon_urls.beacon_type the beacon type - see (http://docs.brightcove.com/en/live/guides/ssai.html#Beacons) for the valid beacon types
+   *
+   * @apiParamExample {json} Ingest Slate Media Source Asset example:
+   *    {
+   *        "account_id": "USER's ACCOUNT ID", [Optional - If omitted, the Account ID of the requesting user is used.]
+   *        "beacon_urls": [
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/load?position=load&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
+   *                "beacon_type": "Load"
+   *            },
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/{{job.job_id}}/play?position=play&sid={{session.session_id}}&jid={{job.job_id}}&app={{application_ad_configuration.description}}&rnd32={{random.int32}}&rnd64={{random.int64}}&bid={{random.uuid}}&t={{server.timestamputc}}&ua={{client.useragent}}&ip={{client.ipaddress}}&ref={{client.referrer}}&ref={{client.referer}}&ab={{live.adbreak}}&abd={{live.adbreakduration}}&abdi={{live.adbreakdurationint}}",
+   *                "beacon_type": "Play"
+   *            }
+   *        ]
+   *    }
+   *
+   *
+   * @apiSuccess (Response Fields) {Object} beacon_set The beacon set object
+   * @apiSuccess (Response Fields) {Object[]} beacon_set.beacon_urls Array of beacon URLs
+   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_url Beacon URL
+   * @apiSuccess (Response Fields) {String} beacon_set.beacon_urls.beacon_type Beacon type
+   * @apiSuccess (Response Fields) {String} beacon_sets.beacon_set_id Id for the beacon set
+   * @apiSuccess (Response Fields) {String} beacon_sets.account_id Id for the account
+   * @apiSuccess (Response Fields) {Boolean} inserted Whether the beacon set was added successfully
+   *
+   * @apiSuccessExample {json} Success response for Get Slate Media Source Assets
+   *    {
+   *        "beacon_set": {
+   *            "account_id": "USER's ACCOUNT ID",
+   *            "beacon_set_id": "BEACON_SET_ID",
+   *            "beacon_urls": [{
+   *                "beacon_url": "https://myserver.com/beaconRX/load",
+   *                "beacon_type": "Load"
+   *            },
+   *            {
+   *                "beacon_url": "https://myserver.com/beaconRX/play",
+   *                "beacon_type": "Play"
+   *            }],
+   *            "updated_beacon_set": {
+   *                "beacon_set_id": "BEACON_SET_ID",
+   *                "beacon_urls": [{
+   *                    "beacon_url": "https://myserver.com/beaconRX/load",
+   *                    "beacon_type": "Load"
+   *                },
+   *                {
+   *                    "beacon_url": "https://myserver.com/beaconRX/play",
+   *                    "beacon_type": "Play"
+   *                }],
+   *                "account_id": "USER's ACCOUNT ID"
+   *            }
+   *        }
+   *    }
    *
    */
