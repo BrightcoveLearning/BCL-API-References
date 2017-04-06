@@ -15,10 +15,10 @@
  * @apiParam (Request Body Fields (Concise Format)) {Object} key-data data for the policy key (used for concise format)
  * @apiParam (Request Body Fields (Concise Format)) {String} key-data.account-id Video Cloud account id
  * @apiParam (Request Body Fields (Concise Format)) {String[]} [key-data.allowed-domains] For domain restriction, the domains this key will work on (concise format)
- * @apiParam (Request Body Fields (Full Format)) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format)
- * @apiParam (Request Body Fields (Full Format)) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key
- * @apiParam (Request Body Fields (Full Format)) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or`
- * @apiParam (Request Body Fields (Full Format)) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API
+ * @apiParam (Request Body Fields (Full Format DEPRECATED)) {Object[]} policies an array of policy objects (required if using the full format rather than the concise format) **The full format is deprecated - please use the concise format instead**
+ * @apiParam (Request Body Fields (Full Format DEPRECATED)) {Object} policies.pattern the logical pattern for specifying accounts or domains allowed or denied access to the Playback API with this key **The full format is deprecated - please use the concise format instead**
+ * @apiParam (Request Body Fields (Full Format DEPRECATED)) {String} policies.pattern.logical-operator the logical operator is used to match accounts or domains; operators allowed are `=`, `!=`, `contains?`, and `not-contains?`; logical operators may be combined using `and` or `or` **The full format is deprecated - please use the concise format instead**
+ * @apiParam (Request Body Fields (Full Format DEPRECATED)) {String="allow","deny"} policies.effect whether domains/accounts matching the pattern should be allowed or denied access to the Playback API **The full format is deprecated - please use the concise format instead**
  *
  * @apiParamExample {json} Create Policy Request Body Examples:
  *     // concise format
@@ -30,30 +30,7 @@
  *         ]
  *     }
  *     // full format
- *     {
- *          "policies": [
- *              {
- *                  "pattern": {
- *                      "!=": [
- *                          "1752604059001"
- *                      ]
- *                  },
- *                  "effect": "deny"
- *              },
- *              {
- *                  "pattern": {
- *                      "not-contains?": [
- *                          [
- *                              "http://www.mysite.com",
- *                              "https://secure.mysite.com"
- *                          ],
- *                          "[request.domain]"
- *                      ]
- *                  },
- *                  "effect": "deny"
- *              }
- *          ]
- *      }
+ *     // the full format is DEPRECATED and should not be used
  *
  * @apiSuccess (Response Fields) {String} key_string the policy key string
  * @apiSuccess (Response Fields) {Object} key-data map of key data prescribing the policy
